@@ -1,0 +1,73 @@
+	<script type="application/ld+json">
+
+		[
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "Центрофинанс",
+				"url": "{{url}}",
+				"logo": "{{url}}/og.png",
+				"telephone": "8 800 777 37 37",
+				"email": "info@centrofinans.ru",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "г. Северодвинск",
+					"streetAddress": "ул. Карла Маркса, д. 46, офис 303"
+				}
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "WPHeader",
+				"name": "{{ title }}",
+				"description": "{{ description }}"
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement":
+				[
+					{
+						"@type": "ListItem",
+						"position": "1",
+						"item":
+						{
+							"@id": "{{ url }}",
+							"name": "Центрофинанс"
+						}
+					}
+				]
+			},
+{% if ogType == "article" %}
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"name": "{{ title }}",
+				"headline": "{{ headline | truncate(110) }}",
+				"description": "{{ description }}",
+				"author": "Центрофинанс",
+				"publisher": {
+					"@type": "Organization",
+					"name": "Центрофинанс",
+					"url": "{{url}}",
+					"logo": {
+						"@type": "ImageObject",
+						"name": "Центрофинанс",
+						"url": "{{url}}/og.png"
+					}
+				},
+				"dateModified": "2018-10-04",
+				"datePublished": "2018-10-04",
+				"url": "{{ url }}/{{ urlCurrent }}",
+				"mainEntityOfPage": "{{ url }}/{{ urlCurrent }}",
+				"image": "{{url}}/{{ ogImage }}",
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "5",
+					"ratingCount": "6"
+				}
+			}
+{% endif %}
+
+		]
+
+	</script>
