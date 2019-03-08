@@ -1,26 +1,16 @@
 :root {
 
-	--color: #2a3246;
+	--color: #393939;
 
-	--red: #ff0142;
+	--red: #dc1e38;
 
-	--gray: #ccd1e1;
+	--border: #dedede;
 
-	--border: #e6e9ef;
-
-	--error: #f9360b;
-
-	--light: #888792;
-
-	--yellow: #ffee2f;
-
-	--bg: #fbfbfc;
-
-	--borderPage: 5px;
+	--error: #dc1e38;
 
 }
 
-$desktop: (min-width: 1200px);
-$mdWidth: (max-width: 1199px);
+$desktop: (min-width: 1000px);
+$mdWidth: (max-width: 999px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);
