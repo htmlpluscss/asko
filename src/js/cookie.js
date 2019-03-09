@@ -1,6 +1,6 @@
 (function(cookie){
 
-//	Cookies.set('BITRIX_SM_infoCookie', 'close');
+//	Cookies.set('infoCookie', 'close');
 
 
 })(document.querySelector('.cookie'));

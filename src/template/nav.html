@@ -1,0 +1,374 @@
+{% set nav = [
+
+	{
+		parent: "Почему Asko",
+		link: "pochemu_asko",
+		columns: [
+			{
+				head: "Как готовить с ASKO",
+				link: "pochemu_asko/kak_gotovit_s_asko",
+				list: [
+					{
+						name: "Преимущество духовок ASKO",
+						link: "pochemu_asko/pochemu_duhovye_shkafy"
+					},
+					{
+						name: "Режим “Шеф-повар”",
+						link: "pochemu_asko/shef-povar"
+					},
+					{
+						name: "Как работают газовые поверхности",
+						link: "pochemu_asko/rabochie_poverhnosti_wok"
+					},
+					{
+						name: "Готовим на индукционных поверхностях",
+						link: "pochemu_asko/induction_poverhnosti"
+					},
+					{
+						name: "Вытяжки ASKO в помощь",
+						link: "pochemu_asko/vytyajki_asko_v_pomosch"
+					}
+				]
+			},
+			{
+				head: "Преимущества посудомоечных машин ASKO",
+				link: "pochemu_asko/preimuschestva_posudomoechnyh_mashin",
+				list: [
+					{
+						name: "Orrefors рекомендует ASKO",
+						link: "pochemu_asko/orrefors"
+					}
+				}
+			}
+		]
+	},
+	{
+		parent: "Техника для кухни",
+		link: "catalog/tekhnika_dlya_kuhni",
+		columns: [
+			{
+				head: "Духовые шкафы",
+				link: "catalog/duhovye_shkafy",
+				list: [
+					{
+						name: "Пиролитические духовые шкафы",
+						link: "catalog/piroliticheskie"
+					},
+					{
+						name: "Духовые шкафы с паром",
+						link: "catalog/duhovye_shkafy_s_parom"
+					},
+					{
+						name: "Стандартные духовые шкафы",
+						link: "catalog/standartnye_duhovye_shkafy"
+					},
+					{
+						name: "Аксессуары",
+						link: "catalog/aksessuary_dlya_duhovok"
+					}
+				]
+			},
+			{
+				head: "Компактные духовые шкафы",
+				link: "catalog/kompaktnye_duhovye_shkafy",
+				list: [
+					{
+						name: "Компактные духовые шкафы с паром",
+						link: "catalog/s_parom"
+					},
+					{
+						name: "Компактные пиролитические духовые шкафы",
+						link: "catalog/kompakt_piroliticheskie"
+					},
+					{
+						name: "Компактные духовые шкафы комбинированные с СВЧ",
+						link: "catalog/kombinirovannye_s_svch"
+					},
+					{
+						name: "Микроволновые печи",
+						link: "catalog/mikrovolnovye_pechi"
+					}
+				]
+			},
+			{
+				head: "Варочные панели",
+				link: "catalog/varochnye_paneli",
+				list: [
+					{
+						name: "Стеклокерамические панели HiLight",
+						link: "catalog/steklokeramicheskie_paneli_hilight"
+					},
+					{
+						name: "Индукционные панели",
+						link: "catalog/indukcionnye_paneli"
+					},
+					{
+						name: "Газовые панели",
+						link: "catalog/gazovye_paneli"
+					},
+					{
+						name: "Комбинированные панели",
+						link: "catalog/combi"
+					},
+					{
+						name: "Панели Domino",
+						link: "catalog/paneli_domino"
+					},
+					{
+						name: "Аксессуары",
+						link: "catalog/aksessuary"
+					}
+				]
+			},
+			{
+				head: "Посудомоечные машины",
+				link: "catalog/posudomoechnye_mashiny",
+				list: [
+					{
+						name: "Отдельностоящие посудомоечные машины",
+						link: "catalog/otdelnostoyashchie_posudomoechnye_mashiny"
+					},
+					{
+						name: "Встраиваемые посудомоечные машины",
+						link: "catalog/vstraivaemye_posudomoechnye_mashiny"
+					}
+				]
+			},
+			{
+				head: "Вытяжки",
+				link: "catalog/vytyazhki",
+				list: [
+					{
+						name: "Настенные вытяжки",
+						link: "catalog/nastennye_vytyazhki"
+					},
+					{
+						name: "Островные вытяжки",
+						link: "catalog/ostrovnye_vytyazhki"
+					},
+					{
+						name: "Встраиваемые вытяжки",
+						link: "catalog/recessed"
+					},
+					{
+						name: "Аксессуары",
+						link: "catalog/aksessuary_dlya_vytyazhek"
+					}
+				]
+			},
+			{
+				head: "Кофемашины",
+				link: "catalog/kofemashiny",
+				list: [
+
+				]
+			},
+			{
+				head: "Подогреватели посуды",
+				link: "catalog/podogrevateli_posudy",
+				list: [
+					{
+						name: "Вакууматоры",
+						link: "catalog/vakuumatory"
+					}
+				]
+			},
+			{
+				head: "Холодильники - морозильники",
+				link: "catalog/holodilniki-morozilniki",
+				list: [
+					{
+						name: "Встраиваемые холодильники",
+						link: "catalog/vstraivaemye_holodilniki"
+					},
+					{
+						name: "Аксессуары для холодильников",
+						link: "catalog/aksessuary_dlya_holodilnikov"
+					}
+				}
+			}
+		]
+	},
+	{
+		parent: "Уход за бельем",
+		link: "catalog/uhod_za_belem",
+		columns: [
+			{
+				head: "Стиральные машины",
+				link: "catalog/stiralnye_mashiny",
+				list: [
+					{
+						name: "Отдельностоящие стиральные машины",
+						link: "catalog/otdelnostoyashchie_stiralnye_mashiny"
+					},
+					{
+						name: "Встраиваемые стиральные машины",
+						link: "catalog/vstraivaemye_stiralnye_mashiny"
+					}
+				]
+			},
+			{
+				head: "Сушильные машины",
+				link: "catalog/sushilnye_mashiny",
+				list: [
+					{
+						name: "Конденсационные сушильные машины",
+						link: "catalog/kondensacionnye_sushilnye_mashiny"
+					},
+					{
+						name: "Сушильные машины с тепловым насосом",
+						link: "catalog/sushilnye_mashiny_s_teplovym_nasosom"
+					},
+					{
+						name: "Встраиваемые сушильные машины",
+						link: "catalog/vstraivaemye_sushilnye_mashiny"
+					}
+				]
+			},
+			{
+				head: "Сушильные шкафы",
+				link: "catalog/sushilnye_shkafy",
+				list: [
+					{
+						name: "Вентиляционные сушильные шкафы",
+						link: "catalog/ventilyacionnye"
+					}
+				]
+			},
+			{
+				head: "Аксессуары Hidden Helpers",
+				link: "catalog/aksessuary_hidden_helpers",
+				list: [
+
+				}
+			}
+		]
+	},
+	{
+		parent: "PROFESSIONAL",
+		link: "catalog/professional",
+		columns: [
+			{
+				head: "Профессиональный уход за бельем",
+				link: "catalog/professionalnyi_yhod_za_belem",
+				list: [
+					{
+						name: "Стиральные машины",
+						link: "catalog/professionalnye_stiralnye_mashiny"
+					},
+					{
+						name: "Сушильные машины",
+						link: "catalog/professionalnye_sushilnye_mashiny"
+					},
+					{
+						name: "Сушильные шкафы",
+						link: "catalog/professionalnye_sushilnye_shkafy"
+					}
+				]
+			},
+			{
+				head: "Профессиональная мойка посуды",
+				link: "catalog/professionalnaya_moika_posudy",
+				list: [
+					{
+						name: "Посудомоечные машины",
+						link: "catalog/professionalnye_posudomoechnye_mashiny"
+					}
+				]
+			}
+		]
+	}
+
+] %}
+
+	<nav class="nav">
+
+		<ul class="nav__list">
+
+{% for parent in nav %}
+
+			<li class="nav__item">
+
+				<a href="{{ parent.link }}" title="{{ parent.parent }}" class="nav__link">
+					{{ parent.parent }}
+				</a>
+
+				<div class="nav__sub">
+
+					<div class="center">
+
+{% for columns in parent.columns %}
+
+						<ul class="nav__column">
+
+							<li>
+								<a href="{{ columns.link }}" title="{{ columns.head }}">
+									{{ columns.head }}
+								</a>
+							</li>
+
+{% for list in columns.list %}
+
+							<li>
+								<a href="{{ list.link }}" title="{{ list.name }}">
+									{{ list.name }}
+								</a>
+							</li>
+
+{% endfor %}
+
+						</ul>
+
+{% endfor %}
+
+					</div>
+
+				</div>
+
+			</li>
+
+{% endfor %}
+
+		</ul>
+
+	</nav>
+
+<!-- {% set menuFullCol = 0 %}
+
+
+	{% if item.head %}
+
+	{% set menuFullCol = menuFullCol + 1 %}
+
+	{% if loop.first == false %}
+
+							</ul>
+
+						</div>
+
+		{% endif %}
+
+						<div class="header__menu-full-col header__menu-full-col--{{ menuFullCol }}">
+
+							<p class="header__menu-full-head">
+								{{item.head}}
+							</p>
+
+							<ul class="header__menu-full-list">
+
+	{% else %}
+
+								<li class="header__menu-full-item">
+									<a class="header__menu-full-link{% if item.title == 'Центрофорбс' %} header__menu-full-link--target-blank" target="_blank" rel="nofollow{% endif %}" href="/">{{ item.title }}</a>
+								</li>
+
+		{% if loop.last %}
+
+							</ul>
+
+						</div>
+
+		{% endif %}
+
+	{% endif %}
+ -->

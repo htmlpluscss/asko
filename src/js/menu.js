@@ -8,24 +8,24 @@
 
 	btn.addEventListener('click', function () {
 
-		if(CF.OpenMenu) {
+		if(ASKO.OpenMenu) {
 
-			CF.body.classList.remove('menu-show');
+			ASKO.body.classList.remove('menu-show');
 
-			window.scrollTo(0,CF.windowScrollOld);
+			window.scrollTo(0,ASKO.windowScrollOld);
 
-			CF.OpenMenu = false;
+			ASKO.OpenMenu = false;
 
 		}
 		else {
 
-			CF.OpenMenu = true;
+			ASKO.OpenMenu = true;
 
 			// записываем значение скролла страницы
-			CF.windowScrollOld = window.pageYOffset;
+			ASKO.windowScrollOld = window.pageYOffset;
 			window.scrollTo(0,0);
 
-			CF.body.classList.add('menu-show');
+			ASKO.body.classList.add('menu-show');
 
 		}
 

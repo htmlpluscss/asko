@@ -1,60 +1,30 @@
-	<header class="header{% if headerMod %} header--{{ headerMod }}{% endif %}">
+	<header class="header">
 
-		<div class="center-new">
+		<div class="header__main">
 
-			<div class="header__top">
+			<div class="center">
 
 				<a class="header__logo" href="/">
-					Центрофинанс
+					Фирменный магазин <span class="visuallyhidden">ASKO</span>
 				</a>
 
-				<div class="header__geo">
-
-					<div class="header__geo-confirm hide">
-
-						<p>
-							Информация будет отображается для вашего региона:
-							<b class="header__geo-confirm-name">Северодвинск</b>
-						</p>
-
-						<div class="header__geo-confirm-btns">
-
-							<button type="button" class="btn btn--medium header__geo-confirm-true">Всё верно</button>
-
-							<button type="button" class="btn btn--medium btn--link" data-modal="geo">Выбрать другой</button>
-
-						</div>
-
-					</div>
-
-					<button type="button" class="header__geo-current header__link header__link--geo button"  data-modal="geo" data-confirm-false="Город не выбран">
-						Северодвинск
-					</button>
-
-				</div>
-
-				<div class="header__links">
-
-					<div class="header__links-item">
-
-						<a href="/adresa-ofisov/" class="header__link header__link--office">
-							Адреса офисов
+				<ul class="header__tel">
+					<li>
+						<a href="tel:+74952830203">
+							<em>Москва</em>
+							<span>+7 495</span> 283-02-03
 						</a>
+					</li>
+					<li>
+						<a href="tel:+78124072210">
+							<em>Санкт-Петербург</em>
+							<span>+7 812</span> 407-22-10
+						</a>
+					</li>
+				</ul>
 
-					</div>
-
-					<div class="header__links-item">
-
-						<button type="button" class="header__link header__link--support button" data-modal="help">
-							Помощь
-						</button>
-
-					</div>
-
-				</div>
-
-				<button type="button" class="header__btn-lk header__btn-lk--unlock btn btn--big" data-mobile="Войти" data-modal="lk">
-					Личный кабинет
+				<button type="button" class="header__btn-callback btn btn--gray" data-modal="callback">
+					Заказать звонок
 				</button>
 
 				<button class="button header__btn-menu-toggle visible-md" type="button">
@@ -63,258 +33,73 @@
 
 			</div>
 
-			<hr>
+		</div>
 
-			<div class="header__nav">
+		<div class="header__top">
 
-				<form class="header__search" action="/search-result.html" autocomplete="off">
+			<div class="center">
 
-					<input id="header-search-input" class="header__search-input input" placeholder="Поиск по сайту">
+				<nav class="header__menu-top">
 
-					<button type="reset" class="header__search-btn button">Искать</button>
-
-					<div class="header__search-result hide" data-head="результаты поиска"></div>
-
-				</form>
-
-				<button type="button" class="header__btn-full-menu button">Всё меню</button>
-
-				<nav class="header__menu">
-
-					<ul class="header__menu-top">
+					<ul class="menu-top">
 
 {% set menuTop = [
 	{
-		title: "Займы",
-		link: "products"
-	},
-	{
-		title: "Акции",
-		link: "akcii"
-	},
-	{
-		title: "Новости",
-		link: "novosti"
-	},
-	{
-		title: "Блог",
-		link: "blog"
-	},
-	{
-		title: "Вопросы - ответы",
-		link: "vopros-otvet"
-	},
-	{
-		title: "Вакансии",
-		link: "vakansii"
+		title: "Asko",
+		link: "pochemu_asko"
 	},
 	{
 		title: "Контакты",
 		link: "kontakty"
+	},
+	{
+		title: "Доставка и оплата",
+		link: "dostavka_oplata"
+	},
+	{
+		title: "Гарантия",
+		link: "garantiya"
+	},
+	{
+		title: "Новинки",
+		link: "new"
+	},
+	{
+		title: "Акции",
+		link: "action"
 	}
 ] %}
 
 {% for item in menuTop %}
 
-						<li class="header__menu-top-item">
-							<a class="header__menu-top-link" href="/{{item.link}}.html">{{item.title}}</a>
+						<li class="menu-top__item">
+
+							<a class="menu-top__link" href="/{{item.link}}/">{{item.title}}</a>
+
 						</li>
 
 {% endfor %}
 
 					</ul>
 
-{% set menuFull = [
-	{
-		head: "Кредитные продукты"
-	},
-		{
-			title: "Простой"
-		},
-		{
-			title: "Пенсионный"
-		},
-		{
-			title: "Долгосрочный"
-		},
-		{
-			title: "Неделя даром"
-		},
-		{
-			title: "Онлайн"
-		},
-	{
-		head: "Центрофинанс"
-	},
-		{
-			title: "О компании"
-		},
-		{
-			title: "Документы"
-		},
-		{
-			title: "Вакансии"
-		},
-		{
-			title: "Работа у нас"
-		},
-		{
-			title: "Адреса офисов"
-		},
-		{
-			title: "Контакты"
-		},
-		{
-			title: "Центрофорбс"
-		},
-	{
-		head: "Разделы сайта"
-	},
-		{
-			title: "Акции"
-		},
-		{
-			title: "Новости"
-		},
-		{
-			title: "Блог"
-		},
-		{
-			title: "Вопросы - ответы"
-		},
-		{
-			title: "Правила цитирования"
-		},
-		{
-			title: "Арендодателям"
-		},
-		{
-			title: "Отзывы клиентов"
-		},
-		{
-			title: "Карта сайта"
-		}
-] %}
-
-					<div class="header__menu-full">
-
-{% set menuFullCol = 0 %}
-
-{% for item in menuFull %}
-
-	{% if item.head %}
-
-		{% set menuFullCol = menuFullCol + 1 %}
-
-		{% if loop.first == false %}
-
-							</ul>
-
-						</div>
-
-		{% endif %}
-
-						<div class="header__menu-full-col header__menu-full-col--{{ menuFullCol }}">
-
-							<p class="header__menu-full-head">
-								{{item.head}}
-							</p>
-
-							<ul class="header__menu-full-list">
-
-	{% else %}
-
-								<li class="header__menu-full-item">
-									<a class="header__menu-full-link{% if item.title == 'Центрофорбс' %} header__menu-full-link--target-blank" target="_blank" rel="nofollow{% endif %}" href="/">{{ item.title }}</a>
-								</li>
-
-		{% if loop.last %}
-
-							</ul>
-
-						</div>
-
-		{% endif %}
-
-	{% endif %}
-
-{% endfor %}
-
-					</div>
-
 				</nav>
+
+				<div class="header__top-right">
+
+					<a href="/zakaz/" class="header__cart">Корзина пуста</a>
+
+					<form class="header__search" action="poisk/" autocomplete="off">
+
+						<input name="model" class="header__search-input input" placeholder="Поиск...">
+
+						<button class="header__search-btn button">Искать</button>
+
+					</form>
+
+				</div>
 
 			</div>
 
 		</div>
 
 	</header>
-
-	<header id="header">
-		<div class="center">
-			<a href="https://asko-home.ru/" class="logo"><img src="/logo.png" alt="Asko"></a>
-			<nav>
-				<ul>
-					<li class="logo_home"><a title="" href="https://asko-home.ru/"></a></li>
-					<li><a title="" href="https://asko-home.ru/pochemu_asko/">Asko</a></li>
-					<li><a title="" href="https://asko-home.ru/kontakty/">Контакты</a></li>
-					<li><a title="" href="https://asko-home.ru/dostavka_oplata/">Доставка и оплата</a></li>
-					<li><a title="Гарантия на технику ASKO" href="https://asko-home.ru/garantiya/">Гарантия</a></li>
-					<li><a title="Новинка от Asko, новый модельный ряд стиральных и сушильных машин Asko" href="https://asko-home.ru/new/">Новинки</a></li>
-					<li><a title="Акция от Asko, скидка 10% на встраиваемую технику" href="https://asko-home.ru/action/">Акции</a></li>
-				</ul>
-			</nav>
-			<form class="search" action="poisk/">
-				<input name="model" type="text" class="input" onfocus="if(this.value=='Поиск...') this.value=''" onblur="if(this.value=='') this.value='Поиск...'" value="Поиск...">
-				<button type="submit" class="button"></button>
-			</form>
-			<a href="https://asko-home.ru/zakaz/" class="cart">Корзина пуста</a>
-			<span class="callback">Заказать звонок</span>
-			<p class="tel"><span>Москва<br> <a><i>+7 495</i> 283-02-03</a></span><span>Санкт-Петербург<br> <a>  <i>+7 812</i> 407-22-10</a> </span></p>
-		</div>
-	</header>
-
-	<nav class="menu"><span class="slider_shadow"></span>
-		<ul class="center">
-			<li><a href="https://asko-home.ru/pochemu_asko/">Почему Asko</a>
-				<div class="sub show" style="display: none;">
-					<div class="center">
-						<ul class="first">
-							<li><a href="https://asko-home.ru/pochemu_asko/kak_gotovit_s_asko/">Как готовить с ASKO</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/pochemu_duhovye_shkafy">Преимущество духовок ASKO</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/shef-povar/">Режим “Шеф-повар”</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/rabochie_poverhnosti_wok/">Как работают газовые поверхности</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/induction_poverhnosti/">Готовим на индукционных поверхностях</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/vytyajki_asko_v_pomosch/">Вытяжки ASKO в помощь</a></li>
-						</ul>
-						<ul>
-							<li><a href="https://asko-home.ru//pochemu_asko/preimuschestva_posudomoechnyh_mashin/">Преимущества посудомоечных машин ASKO</a></li>
-							<li><a href="https://asko-home.ru/pochemu_asko/orrefors/">Orrefors рекомендует ASKO</a></li>
-						</ul>
-
-					</div>
-				</div>
-			</li>
-			<li><a title="Техника для кухни" href="https://asko-home.ru/catalog/tekhnika_dlya_kuhni/">Техника для кухни</a>
-				<div class="sub show" style="display: none;">
-					<div class="center">
-<ul class="first"><li><a title="Духовые шкафы" href="https://asko-home.ru/catalog/duhovye_shkafy/">Духовые шкафы</a></li><li><a title="Пиролитические духовые шкафы" href="https://asko-home.ru/catalog/piroliticheskie/">Пиролитические духовые шкафы</a></li><li><a title="Духовые шкафы с паром" href="https://asko-home.ru/catalog/duhovye_shkafy_s_parom/">Духовые шкафы с паром</a></li><li><a title="Стандартные духовые шкафы" href="https://asko-home.ru/catalog/standartnye_duhovye_shkafy/">Стандартные духовые шкафы</a></li><li><a title="Аксессуары" href="https://asko-home.ru/catalog/aksessuary_dlya_duhovok/">Аксессуары</a></li></ul><ul><li><a title="Компактные духовые шкафы" href="https://asko-home.ru/catalog/kompaktnye_duhovye_shkafy/">Компактные духовые шкафы</a></li><li><a title="Компактные духовые шкафы с паром" href="https://asko-home.ru/catalog/s_parom/">Компактные духовые шкафы с паром</a></li><li><a title="Компактные пиролитические духовые шкафы" href="https://asko-home.ru/catalog/kompakt_piroliticheskie/">Компактные пиролитические духовые шкафы</a></li><li><a title="Компактные духовые шкафы комбинированные с СВЧ" href="https://asko-home.ru/catalog/kombinirovannye_s_svch/">Компактные духовые шкафы комбинированные с СВЧ</a></li><li><a title="Микроволновые печи" href="https://asko-home.ru/catalog/mikrovolnovye_pechi/">Микроволновые печи</a></li></ul><ul class="w230"><li><a title="Варочные панели" href="https://asko-home.ru/catalog/varochnye_paneli/">Варочные панели</a></li><li><a title="Стеклокерамические панели HiLight" href="https://asko-home.ru/catalog/steklokeramicheskie_paneli_hilight/">Стеклокерамические панели HiLight</a></li><li><a title="Индукционные панели" href="https://asko-home.ru/catalog/indukcionnye_paneli/">Индукционные панели</a></li><li><a title="Газовые панели" href="https://asko-home.ru/catalog/gazovye_paneli/">Газовые панели</a></li><li><a title="Комбинированные панели" href="https://asko-home.ru/catalog/combi/">Комбинированные панели</a></li><li><a title="Панели Domino" href="https://asko-home.ru/catalog/paneli_domino/">Панели Domino</a></li><li><a title="Аксессуары" href="https://asko-home.ru/catalog/aksessuary/">Аксессуары</a></li></ul><ul><li><a title="Посудомоечные машины" href="https://asko-home.ru/catalog/posudomoechnye_mashiny/">Посудомоечные машины</a></li><li><a title="Отдельностоящие посудомоечные машины" href="https://asko-home.ru/catalog/otdelnostoyashchie_posudomoechnye_mashiny/">Отдельностоящие посудомоечные машины</a></li><li><a title="Встраиваемые посудомоечные машины" href="https://asko-home.ru/catalog/vstraivaemye_posudomoechnye_mashiny/">Встраиваемые посудомоечные машины</a></li></ul><ul class="first va-t"><li><a title="Вытяжки" href="https://asko-home.ru/catalog/vytyazhki/">Вытяжки</a></li><li><a title="Настенные вытяжки" href="https://asko-home.ru/catalog/nastennye_vytyazhki/">Настенные вытяжки</a></li><li><a title="Островные вытяжки" href="https://asko-home.ru/catalog/ostrovnye_vytyazhki/">Островные вытяжки</a></li><li><a title="Встраиваемые вытяжки" href="https://asko-home.ru/catalog/recessed/">Встраиваемые вытяжки</a></li><li><a title="Аксессуары" href="https://asko-home.ru/catalog/aksessuary_dlya_vytyazhek/">Аксессуары</a></li></ul><ul class="w260"><li><a title="Кофемашины" href="https://asko-home.ru/catalog/kofemashiny/">Кофемашины</a></li></ul><ul><li><a title="Подогреватели посуды" href="https://asko-home.ru/catalog/podogrevateli_posudy/">Подогреватели посуды</a></li><li><a title="Вакууматоры" href="https://asko-home.ru/catalog/vakuumatory/">Вакууматоры</a></li></ul><ul><li><a title="Холодильники - морозильники" href="https://asko-home.ru/catalog/holodilniki-morozilniki/">Холодильники - морозильники</a></li><li><a title="Встраиваемые холодильники" href="https://asko-home.ru/catalog/vstraivaemye_holodilniki/">Встраиваемые холодильники</a></li><li><a title="Аксессуары для холодильников" href="https://asko-home.ru/catalog/aksessuary_dlya_holodilnikov/">Аксессуары для холодильников</a></li></ul>
-					</div>
-				</div>
-			</li>
-			<li><a href="https://asko-home.ru/catalog/uhod_za_belem/">Уход за бельем</a>
-				<div class="sub show" style="display: none;">
-					<div class="center">
-<ul class="first"><li><a title="Стиральные машины" href="https://asko-home.ru/catalog/stiralnye_mashiny/">Стиральные машины</a></li><li><a title="Отдельностоящие стиральные машины" href="https://asko-home.ru/catalog/otdelnostoyashchie_stiralnye_mashiny/">Отдельностоящие стиральные машины</a></li><li><a title="Встраиваемые стиральные машины" href="https://asko-home.ru/catalog/vstraivaemye_stiralnye_mashiny/">Встраиваемые стиральные машины</a></li></ul><ul><li><a title="Сушильные машины" href="https://asko-home.ru/catalog/sushilnye_mashiny/">Сушильные машины</a></li><li><a title="Конденсационные сушильные машины" href="https://asko-home.ru/catalog/kondensacionnye_sushilnye_mashiny/">Конденсационные сушильные машины</a></li><li><a title="Сушильные машины с тепловым насосом" href="https://asko-home.ru/catalog/sushilnye_mashiny_s_teplovym_nasosom/">Сушильные машины с тепловым насосом</a></li><li><a title="Встраиваемые сушильные машины" href="https://asko-home.ru/catalog/vstraivaemye_sushilnye_mashiny/">Встраиваемые сушильные машины</a></li></ul><ul class="w230"><li><a title="Сушильные шкафы" href="https://asko-home.ru/catalog/sushilnye_shkafy/">Сушильные шкафы</a></li><li><a title="Вентиляционные сушильные шкафы" href="https://asko-home.ru/catalog/ventilyacionnye/">Вентиляционные сушильные шкафы</a></li></ul><ul><li><a title="Аксессуары Hidden Helpers" href="https://asko-home.ru/catalog/aksessuary_hidden_helpers/">Аксессуары Hidden Helpers</a></li></ul>
-					</div>
-				</div>
-			</li>
-			<li><a href="https://asko-home.ru/catalog/professional/">PROFESSIONAL</a>
-				<div class="sub show" style="display: none;">
-					<div class="center">
-<ul class="first"><li><a title="Профессиональный уход за бельем" href="https://asko-home.ru/catalog/professionalnyi_yhod_za_belem/">Профессиональный уход за бельем</a></li><li><a title="Стиральные машины" href="https://asko-home.ru/catalog/professionalnye_stiralnye_mashiny/">Стиральные машины</a></li><li><a title="Сушильные машины" href="https://asko-home.ru/catalog/professionalnye_sushilnye_mashiny/">Сушильные машины</a></li><li><a title="Сушильные шкафы" href="https://asko-home.ru/catalog/professionalnye_sushilnye_shkafy/">Сушильные шкафы</a></li></ul><ul><li><a title="Профессиональная мойка посуды" href="https://asko-home.ru/catalog/professionalnaya_moika_posudy/">Профессиональная мойка посуды</a></li><li><a title="Посудомоечные машины" href="https://asko-home.ru/catalog/professionalnye_posudomoechnye_mashiny/">Посудомоечные машины</a></li></ul>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</nav>

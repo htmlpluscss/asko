@@ -32,74 +32,16 @@
 	border: 0;
 	background-color: var(--red);
 
-	a& {
-
-		display: block;
-
-	}
-
 	&:hover {
 
 
 	}
 
-	&--big {
-
-		height: 52px;
-		line-height: 52px;
-		padding: 0 20px;
-		font-size: 16px;
-		font-weight: 700;
-
-	}
-
-	&--small {
-
-		height: 32px;
-		line-height: 32px;
-		padding: 0 20px;
-		font-size: 13px;
-		font-weight: 400;
-
-	}
-
-	&--medium {
-
-		height: 40px;
-		line-height: 40px;
-		padding: 0 18px;
-		font-size: 14px;
-		font-weight: 700;
-
-	}
-
-	&--yellow {
-
-		color: var(--color);
-		background-color: var(--yellow);
-
-	}
-
-	&--link {
-
-		color: var(--color) !important;
-		background-color: transparent !important;
-		text-decoration: underline;
-		font-weight: 400;
-
-		&:hover {
-
-			text-decoration: none;
-
-		}
-
-	}
-
 	&[disabled] {
 
-		color: var(--gray);
+		color: var(--color);
 		cursor: default;
-		background-color: color(var(--light) a(20%)) !important;
+		background-color: color(var(--color) a(20%)) !important;
 
 	}
 
@@ -142,14 +84,14 @@
 
 	&::placeholder {
 
-		color: var(--light);
+		color: var(--color);
 		opacity: 1;
 
 	}
 
 	&:focus::placeholder {
 
-		color: var(--light);
+		color: var(--color);
 		opacity: .4;
 
 	}
@@ -174,13 +116,13 @@
 
 	&[disabled] {
 
-		border-color: var(--gray);
-		color: var(--light);
+		border-color: var(--color);
+		color: var(--color);
 
 	}
 
 }
-
+/*
 .input-label {
 
 	display: block;
@@ -203,7 +145,7 @@
 		left: 18px;
 		pointer-events: none;
 		font-size: 16px;
-		color: var(--light);
+		color: var(--color);
 
 	}
 
@@ -345,8 +287,8 @@
 
 		&:hover {
 
-			border-color: var(--gray);
-			color: var(--light);
+			border-color: var(--color);
+			color: var(--color);
 			cursor: pointer;
 
 		}
@@ -369,4 +311,4 @@
 
 	}
 
-}
+} */

@@ -32,17 +32,13 @@
 
 	<link href="/css/styles.css" rel="stylesheet">
 
-	<script>
-		var SITE_TEMPLATE_PATH = '';
-	</script>
 </head>
 
 {#
 
 Доступные модификаторы шаблона:
 
-seoBlock (bool) - показать СЕО Блок
-hideBreadcrumbs (bool) - скрыть хлебные крошки (притом микроразметка BreadcrumbList на всех)
+hideBreadcrumbs (bool) - скрыть хлебные крошки
 
 #}
 
@@ -54,13 +50,9 @@ hideBreadcrumbs (bool) - скрыть хлебные крошки (притом 
 
 {% include "template/header.html" %}
 
+{% include "template/nav.html" %}
+
 	<main class="main">
-
-{% if seoBlock %}
-
-{% include "template/seo.html" %}
-
-{% endif %}
 
 {% block content %}{% endblock %}
 

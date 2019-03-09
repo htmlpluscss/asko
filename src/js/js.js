@@ -8,15 +8,15 @@ https://github.com/htmlpluscss/
 
 */
 
-var CF = {};
+var ASKO = {};
 
 (function(){
 
-	CF.body = document.body;
-	CF.width = window.innerWidth;
-	CF.height = window.innerHeight;
+	ASKO.body = document.body;
+	ASKO.width = window.innerWidth;
+	ASKO.height = window.innerHeight;
 
-	CF.touchDevice = "ontouchstart" in document.documentElement;
+	ASKO.touchDevice = "ontouchstart" in document.documentElement;
 
 // resize
 
@@ -29,8 +29,8 @@ var CF = {};
 			resizeTimeout = setTimeout(function() {
 
 				resizeTimeout = null;
-				CF.width = window.innerWidth;
-				CF.height = window.innerHeight;
+				ASKO.width = window.innerWidth;
+				ASKO.height = window.innerHeight;
 
 			}, 100);
 
@@ -40,7 +40,7 @@ var CF = {};
 
 // href="tel:"
 
-	if(!CF.touchDevice || CF.width > 1200) {
+	if(!ASKO.touchDevice || ASKO.width > 1200) {
 
 		Array.prototype.forEach.call(document.querySelectorAll('[href^="tel"]'), function (el) {
 
@@ -51,7 +51,7 @@ var CF = {};
 	}
 
 // склонение
-	CF.declension = function(num, expressions) {
+	ASKO.declension = function(num, expressions) {
 		var r;
 		var count = num % 100;
 		if (count > 4 && count < 21)
@@ -82,12 +82,12 @@ var CF = {};
 	}
 
 	// обработчик анимаций
-	CF.cssAnimation = function(a){var b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
+	ASKO.cssAnimation = function(a){var b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
 
 	// Determine if an element is in the visible viewport
-	CF.isInViewport = function(element) {
+	ASKO.isInViewport = function(element) {
 		var rect = element.getBoundingClientRect();
-		return (rect.top >= 0 && rect.bottom <= CF.height);
+		return (rect.top >= 0 && rect.bottom <= ASKO.height);
 	}
 
 })();

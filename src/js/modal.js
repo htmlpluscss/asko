@@ -15,7 +15,7 @@
 
 			if(e.target.classList.contains('modal') || e.target.classList.contains('modal__close')){
 
-				CF.hideModal();
+				ASKO.hideModal();
 
 			}
 
@@ -23,9 +23,9 @@
 
 	});
 
-	CF.hideModal = function() {
+	ASKO.hideModal = function() {
 
-		CF.videoToggle('play');
+		ASKO.videoToggle('play');
 
 		Array.prototype.forEach.call(modal, function (el) {
 
@@ -33,9 +33,9 @@
 
 		});
 
-		CF.body.classList.remove('modal-show');
+		ASKO.body.classList.remove('modal-show');
 		wrapper.style.top = 0;
-		window.scrollTo(0,CF.windowScrollOld);
+		window.scrollTo(0,ASKO.windowScrollOld);
 
 		activeItem = false;
 
@@ -48,16 +48,16 @@
 
 	};
 
-	CF.modalShow = function (selector,title,text) {
+	ASKO.modalShow = function (selector,title,text) {
 
-		CF.videoToggle('stop');
+		ASKO.videoToggle('stop');
 
 		// если модальные окна не показаны
         if (!activeItem) {
 
-			CF.windowScrollOld = window.pageYOffset;
+			ASKO.windowScrollOld = window.pageYOffset;
 
-			wrapper.style.top = -CF.windowScrollOld + 'px';
+			wrapper.style.top = -ASKO.windowScrollOld + 'px';
 
 		}
 
@@ -122,14 +122,14 @@
 		activeItem.closest('.modal').classList.remove('hidden-visible');
 		activeItem.closest('.modal__box').classList.remove('hidden-visible');
 
-		CF.body.classList.add('modal-show');
+		ASKO.body.classList.add('modal-show');
 		window.scrollTo(0,0);
 
 		// close menu
-		if(CF.OpenMenu){
+		if(ASKO.OpenMenu){
 
-			CF.body.classList.remove('menu-show');
-			CF.OpenMenu = false;
+			ASKO.body.classList.remove('menu-show');
+			ASKO.OpenMenu = false;
 
 		}
 
@@ -153,7 +153,7 @@
 
 			if (target.hasAttribute('data-modal')) {
 
-				CF.modalShow(target.getAttribute('data-modal'));
+				ASKO.modalShow(target.getAttribute('data-modal'));
 
 			}
 

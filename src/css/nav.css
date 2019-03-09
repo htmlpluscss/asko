@@ -1,0 +1,164 @@
+.nav {
+
+	position: relative;
+	z-index: 9;
+	background-image: linear-gradient(to bottom, #fafafa, #d2d2d2);
+
+	&__list {
+
+		display: flex;
+		justify-content: center;
+		position: static;
+
+	}
+
+	&__item {
+
+		position: static;
+		display: flex;
+
+		&::before {
+
+			width: 1px;
+			content: '';
+			background-image: linear-gradient(to bottom, rgba(197,197,197,0), rgba(197,197,197,1));
+
+		}
+
+	}
+
+	&__item:first-child::before,
+	&__item:first-child &__link::before {
+
+		display: none;
+
+	}
+
+	&__link {
+
+		display: block;
+		color: #313131;
+		font-size: 18px;
+		line-height: 48px;
+		padding: 0 42px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 0 #fff;
+		position: relative;
+		white-space: nowrap;
+
+		&::before {
+
+			width: 1px;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			content: '';
+			background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+
+		}
+
+	}
+
+	&__item:hover &__sub {
+
+		display: block;
+
+	}
+
+	&__sub {
+
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 9;
+		display: none;
+		background-image: linear-gradient(to bottom, #3c3c3c, #575757);
+		box-shadow: 0 5px 5px #575757;
+		overflow: hidden;
+
+		.center {
+
+			display: flex;
+			flex-wrap: wrap;
+			background-color: #575757;
+			box-shadow: 0 0 100px #3c3c3c;
+			padding-bottom: 20px;
+
+		}
+
+	}
+
+	&__column {
+
+		flex-basis: 25%;
+		padding: 22px 0 20px 30px;
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			top: -110px;
+			left: -400px;
+			border-radius: 50%;
+			content: '';
+			box-shadow: 0 0 10px 5px #3c3c3c;
+
+		}
+
+		&:nth-child(4n+1) {
+
+			padding-left: 26px;
+
+			&::before {
+
+				display: none;
+
+			}
+
+		}
+
+		li {
+
+			font-size: 13px;
+			line-height: 15px;
+
+			a {
+
+				color: #a7a7a7;
+				display: block;
+				padding: 6px 10px 4px 0;
+
+				&:hover {
+
+					color: #fff;
+					text-decoration: underline;
+
+				}
+
+			}
+
+			&:first-child {
+
+				font-size: 18px;
+				line-height: 22px;
+
+				a {
+
+					color: #fff;
+					padding-bottom: 12px;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

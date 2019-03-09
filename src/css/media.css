@@ -4,9 +4,9 @@
 	display: none;
 }
 
-.center-new {
+.center {
 
-	width: 1170px;
+	width: 972px;
 	max-width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -37,20 +37,9 @@
 
 	}
 
-	.center-new {
+	.center {
 
 		width: 768px;
-
-	}
-
-	.md-joint {
-
-		margin-left: calc(var(--borderPage) * -1);
-		margin-right: calc(var(--borderPage) * -1);
-		width: auto;
-		max-width: none;
-		padding-left: var(--borderPage);
-		padding-right: var(--borderPage);
 
 	}
 
