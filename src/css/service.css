@@ -1,0 +1,41 @@
+.service {
+
+	box-shadow: 0 6px 4px color(var(--color) a(40%));
+	padding: 24px 0 36px;
+	position: relative;
+	z-index: 1;
+
+	&__list {
+
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	&__item {
+
+		flex-basis: 270px;
+		line-height: 20px;
+
+	}
+
+	img {
+
+		display: block;
+		margin: auto;
+
+	}
+
+	&__name {
+
+		padding: 5px 0;
+		color: #d50427;
+		display: block;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 18px;
+
+	}
+
+}

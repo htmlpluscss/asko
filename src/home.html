@@ -2,124 +2,229 @@
 
 {% set description = "ASKO | Официальный партнер компании ASKO в России." %}
 
-{% set hideBreadcrumbs = true %}
-
 {% extends "template/base.html" %}
 
 {% block content %}
 
 {% include "_include/slider.html" %}
 
-	<div class="center">
-home
-	</div>
+{% include "_include/service.html" %}
 
-{% endblock %}
-
-
-
+	<div class="main__bg home">
 
 		<div class="center">
 
+			<div class="home__cat">
 
+				<h2 class="h1">
+					Каталог ASKO
+				</h2>
 
-			<ul class="service">
-				<li>
-					<img src="/dostavka.png" alt="Бесплатная доставка">
-					<h3>Бесплатная доставка</h3>
-					<p>Мы осуществляем бесплатную доставку техники ASKO по всей России</p>
+				<ul class="cat-img">
+					<li>
+						<a href="/catalog/stiralnye_mashiny/">
+							<img src="/img/cat-img/cat5.png" alt="Стиральные машины">
+							Стиральные <br>машины
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/sushilnye_mashiny/">
+							<img src="/img/cat-img/cat7.png" alt="Сушильные барабаны">
+							Сушильные <br>барабаны
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/sushilnye_shkafy/">
+							<img src="/img/cat-img/cat6.png" alt="Сушильный шкаф">
+							Сушильные<br> шкафы
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/posudomoechnye_mashiny/">
+							<img src="/img/cat-img/cat4.png" alt="Посудомоечные машины">
+							Посудомоечные машины
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/aksessuary_hidden_helpers/">
+							<img src="/img/cat-img/cat8.png" alt="Дополнительные полочки и ящики">
+							Дополнительные полочки и ящики
+						</a>
+					</li>
 
-				</li>
-				<li>
-					<img src="/paymend.png" alt="Способы оплаты">
-					<h3>Способы оплаты</h3>
-					<p>Оплата наличными и банковскими картами, оплата по безналичному расчету и on-line оплата</p>
-				</li>
-				<li>
-					<img src="/service.png" alt="Официальная гарантия">
-					<h3>Официальная гарантия</h3>
-					<p>На всю технику распространяется бесплатная гарантия до 2-х лет*</p>
-				</li>
-			</ul>
-
-		</div>
-		<section class="home bg">
-			<div class="center">
-				<h2>Каталог ASKO</h2>
-									<ul class="list_cat clr">
-					<li><a href="https://asko-home.ru/catalog/stiralnye_mashiny"><img src="/cat5.png" alt="Стиральные машины">Стиральные машины</a></li>
-					<li><a href="https://asko-home.ru/catalog/sushilnye_mashiny"><img src="/cat7.png" alt="Сушильные барабаны">Сушильные барабаны</a></li>
-					<li><a href="https://asko-home.ru/catalog/sushilnye_shkafy"><img src="/cat6.png" alt="Сушильный шкаф">Сушильные<br> шкафы</a></li>
-					<li><a href="https://asko-home.ru/catalog/posudomoechnye_mashiny"><img src="/cat4.png" alt="Посудомоечные машины">Посудомоечные машины</a></li>
-					<li><a href="https://asko-home.ru/catalog/aksessuary_hidden_helpers"><img src="/cat8.png" alt="Дополнительные полочки и ящики">Дополнительные полочки и ящики</a></li>
-
-					<li><a href="https://asko-home.ru/catalog/duhovye_shkafy"><img src="/cat1.png" alt="Духовые шкафы">Духовые шкафы</a></li>
-					<li><a href="https://asko-home.ru/catalog/kompaktnye_duhovye_shkafy/"><img src="/kompaktnye_duhovye_shkafy.png" alt="Компактные духовые шкафы">Компактные духовые шкафы</a></li>
-					<li><a href="https://asko-home.ru/catalog/varochnye_paneli"><img src="/cat2.png" alt="Рабочие поверхности">Рабочие поверхности</a></li>
-					<li><a href="https://asko-home.ru/catalog/kofemashiny"><img src="/kofemashiny.png" alt="Кофе-машины">Кофемашины</a></li>
-					<li><a href="https://asko-home.ru/catalog/vytyazhki"><img src="/cat3.png" alt="Вытяжки">Вытяжки</a></li>
-					<li><a href="https://asko-home.ru/catalog/podogrevateli_posudy"><img src="/podogrevateli_posudy.png" alt="Подогреватели посуды">Подогреватели посуды</a></li>
-					<li><a href="https://asko-home.ru/catalog/holodilniki-morozilniki"><img src="/holodilniki.png" alt="Холодильники">Холодильники</a></li>
-					<li><a href="https://asko-home.ru/catalog/professionalnyi_yhod_za_belem/"><img src="/professionalnyi_yhod_za_belem.png" alt="Профессиональный уход за бельем">Профессиональный уход за бельем</a></li>
-					<li><a href="https://asko-home.ru/catalog/professionalnaya_moika_posudy/"><img src="/professionalnaya_moika_posudy.png" alt="Профессиональная мойка посуды">Профессиональная мойка посуды</a></li>
-					<li><a href="#"><img src="/cat10.png" alt="Аксессуары">Аксессуары</a></li>
+					<li>
+						<a href="/catalog/duhovye_shkafy/">
+							<img src="/img/cat-img/cat1.png" alt="Духовые шкафы">
+							Духовые шкафы
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/kompaktnye_duhovye_shkafy/">
+							<img src="/img/cat-img/kompaktnye_duhovye_shkafy.png" alt="Компактные духовые шкафы">
+							Компактные духовые шкафы
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/varochnye_paneli/">
+							<img src="/img/cat-img/cat2.png" alt="Рабочие поверхности">
+							Рабочие <br>поверхности
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/kofemashiny/">
+							<img src="/img/cat-img/kofemashiny.png" alt="Кофе-машины">
+							Кофемашины
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/vytyazhki/">
+							<img src="/img/cat-img/cat3.png" alt="Вытяжки">
+							Вытяжки
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/podogrevateli_posudy/">
+							<img src="/img/cat-img/podogrevateli_posudy.png" alt="Подогреватели посуды">
+							Подогреватели <br>посуды
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/holodilniki-morozilniki/">
+							<img src="/img/cat-img/holodilniki.png" alt="Холодильники">
+							Холодильники
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/professionalnyi_yhod_za_belem/">
+							<img src="/img/cat-img/professionalnyi_yhod_za_belem.png" alt="Профессиональный уход за бельем">Профессиональный уход за бельем
+						</a>
+					</li>
+					<li>
+						<a href="/catalog/professionalnaya_moika_posudy/">
+							<img src="/img/cat-img/professionalnaya_moika_posudy.png" alt="Профессиональная мойка посуды">Профессиональная мойка посуды
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="/img/cat-img/cat10.png" alt="Аксессуары">
+							Аксессуары
+						</a>
+					</li>
 				</ul>
 
-
-				<article>
-					<h2>Фирменный магазин Asko</h2>
-					<p><a href="https://asko-home.ru/img/sertificat.jpg" onclick="window.open(this.href,this.target,'width=566,height=800,'+'location=no,toolbar=no,menubar=no,status=no,scrollbars=no');return false;" rel="nofollow"><img alt="СЕРТИФИКАТ ФИРМЕННОГО МАГАЗИНА" src="/sertificat.jpg" style="border-width: 0px; border-style: solid; width: 142px; height: 200px;" class="leftimg"></a>
-
-
-
-
-
-Официальный партнер бытовой техники ASKO в России. Шведское качество с 1950 года.
-<br>Миллионы людей во всем мире пользуются скандинавской бытовой техникой <b>ASKO</b>.
-<br>Их выбор - высокое качество, инновационные решения, длительный срок эксплуатации и лаконичный дизайн.
-<br><br>Покупатели нашего интернет-магазина по достоинству оценят
-продукцию Asko, т.к. она полностью соответствует статусу «техника
-премиум-класса» , а чаще, превышает ожидания наших клиентов.</p>
-					<h3>Техника Asko – забота об экологии с акцентом на дизайн с 1950 года.</h3>
-					<p>Более 60-ти лет продукция Asko  помогает людям во всем мире
-готовить, убирать и ухаживать за своими семьями. Сегодня ASKO это лидер
-по производству премиум техники для кухни, прачечной и профессиональной
-техники. Техника Asko отвечает самым высоким требованиям дизайна,
-функциональности, надежности и экологической безопасности.
-<br>А началось все в 1950 году в городе Вара (Швеция), когда молодой
-фермер Карл-Эрик Андерсон получил свой первый заказ на стиральную машину
- от своей мамы. Он тщательно продумал конструкцию и создал уникальную
-стиральную машину с низким потреблением воды и электроэнергии, которая
-сама нагревала воду, вращала белье в надежном, современном стальном
-барабане. Он создал стиральную машину, подобной которой еще не было...</p>
-					<a href="https://asko-home.ru/pochemu_asko/" class="readmore">подробнее</a>
-				</article>
-
-				<aside class="clr">
-
-					<h2>Статьи</h2>
-					<ul>
-						<li>
-							<a title="Модная прачечная: коллаборация ASKO x Alena Akhmadullina" href="https://asko-home.ru/pochemu_asko/kollaboraciya-asko-x-akhmadullina/" class="img"><img src="/art1.png" alt="Модная прачечная: коллаборация ASKO x Alena Akhmadullina"></a>
-							<h3>Коллаборация ASKO x Alena Akhmadullina</h3>
-							<p>ASKO x Alena Akhmadullina: домашняя прачечная ASKO Pro Home
-Laundry с авторским рисунком Алены Ахмадуллиной. Авторские принты с
-изображением львов, повторяют мотивы новой коллекции Spring-Summer 2019 и
- выполнены в стилистике средневековых гравюр.</p>
-						</li>
-						<li>
-							<a title="Уникальный барабан Active Drum в стиральных машинах Asko" href="https://asko-home.ru/pochemu_asko/active_drum/" class="img"><img src="/art2.png" alt=""></a>
-							<h3>Уникальный барабан Active Drum™</h3>
-							<p><a title="Стиральные машины Asko" href="https://asko-home.ru/catalog/stiralnye_mashiny/">Современные стиральные машины Asko</a>
- оснащены барабанами уникальной конструкции Active Drum™, обеспечивающей
- высокое качество стирки и максимальную сохранность вещей.</p>
-						</li>
-						<li>
-							<a href="https://asko-home.ru/pochemu_asko/rabochie_poverhnosti_wok/" class="img"><img src="/art3.png" alt=""></a>
-							<h3>Газовая конфорка Fusion Volcano</h3>
-							<p>Новая технология конфорки Fusion Volcano от Asko поддерживает пламя там, где это необходимо - по всему дну посуды. </p>
-						</li>
-					</ul>
-				</aside>
 			</div>
-		</section>
+
+			<hr class="home__hr">
+
+			<article class="home__article">
+
+				<h1 class="h1">
+					Фирменный магазин Asko
+				</h1>
+
+				<a href="/img/sertificat.jpg" target="_blank">
+					<img alt="сертификат фирменного магазина ASKO" src="/img/sertificat.jpg" width="142">
+				</a>
+
+				<p>
+					Официальный партнер бытовой техники ASKO в России. Шведское качество с 1950 года.
+					<br>Миллионы людей во всем мире пользуются скандинавской бытовой техникой <strong>ASKO</strong>.
+					<br>Их выбор - высокое качество, инновационные решения, длительный срок эксплуатации и лаконичный дизайн.
+				</p>
+
+				<p>
+					Покупатели нашего интернет-магазина по достоинству оценят продукцию Asko, т.к. она полностью соответствует статусу «техника премиум-класса» , а чаще, превышает ожидания наших клиентов.
+				</p>
+
+				<h2>
+					Техника Asko – забота об экологии с акцентом на дизайн с 1950 года.
+				</h2>
+
+				<p>
+					Более 60-ти лет продукция Asko  помогает людям во всем мире готовить, убирать и ухаживать за своими семьями. Сегодня ASKO это лидер по производству премиум техники для кухни, прачечной и профессиональной техники. Техника Asko отвечает самым высоким требованиям дизайна, функциональности, надежности и экологической безопасности. <br>А началось все в 1950 году в городе Вара (Швеция), когда молодой фермер Карл-Эрик Андерсон получил свой первый заказ на стиральную машину от своей мамы. Он тщательно продумал конструкцию и создал уникальную стиральную машину с низким потреблением воды и электроэнергии, которая сама нагревала воду, вращала белье в надежном, современном стальном барабане. Он создал стиральную машину, подобной которой еще не было...
+				</p>
+
+				<a href="/pochemu_asko/" class="link">подробнее</a>
+
+			</article>
+
+			<hr class="home__hr">
+
+			<aside class="home__articles">
+
+				<h3 class="h1">
+					Статьи
+				</h3>
+
+				<ul>
+
+					<li>
+
+						<a title="Модная прачечная: коллаборация ASKO x Alena Akhmadullina" href="/pochemu_asko/kollaboraciya-asko-x-akhmadullina/">
+
+							<figure>
+
+								<img src="/img/article/art1.png" alt="Модная прачечная: коллаборация ASKO x A	lena Akhmadullina">
+
+								<figcaption>Коллаборация ASKO x Alena Akhmadullina</figcaption>
+
+							</figure>
+
+						</a>
+
+						<p>
+
+							ASKO x Alena Akhmadullina: домашняя прачечная ASKO Pro Home Laundry с авторским рисунком Алены Ахмадуллиной. Авторские принты с изображением львов, повторяют мотивы новой коллекции Spring-Summer 2019 и выполнены в стилистике средневековых гравюр.
+						</p>
+
+					</li>
+
+					<li>
+
+						<a title="Уникальный барабан Active Drum в стиральных машинах Asko" href="/pochemu_asko/active_drum/">
+
+							<figure>
+
+								<img src="/img/article/art2.png" alt="">
+
+								<figcaption>Уникальный барабан Active Drum™</figcaption>
+
+							</figure>
+
+						</a>
+
+						<p>
+							<a title="Стиральные машины Asko" href="/catalog/stiralnye_mashiny/" class="link">Современные стиральные машины Asko</a> оснащены барабанами уникальной конструкции Active Drum™, обеспечивающей высокое качество стирки и максимальную сохранность вещей.
+						</p>
+
+					</li>
+
+					<li>
+
+						<a href="/pochemu_asko/rabochie_poverhnosti_wok/">
+
+							<figure>
+
+								<img src="/img/article/art3.png" alt="">
+
+								<figcaption>Газовая конфорка Fusion Volcano</figcaption>
+
+							</figure>
+
+						</a>
+
+						<p>
+							Новая технология конфорки Fusion Volcano от Asko поддерживает пламя там, где это необходимо - по всему дну посуды.
+						</p>
+
+					</li>
+
+				</ul>
+
+			</aside>
+
+		</div>
+
+	</div>
+
+{% endblock %}

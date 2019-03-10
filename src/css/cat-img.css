@@ -1,0 +1,43 @@
+.cat-img {
+
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+
+		width: 20%;
+		margin-bottom: 40px;
+		text-align: center;
+
+	}
+
+	a {
+
+		padding: 0 20px;
+		display: block;
+		text-decoration: none;
+
+		&::after {
+
+			content: '';
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			position: relative;
+			left: 4px;
+			top: 1px;
+			background-size: contain;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M381.048 248.633L146.381 3.299C143.36.153 138.735-.868 134.693.778c-4.042 1.615-6.688 5.542-6.688 9.896v42.667c0 2.729 1.042 5.354 2.917 7.333l185.063 195.333-185.062 195.334c-1.875 1.979-2.917 4.604-2.917 7.333v42.667c0 4.354 2.646 8.281 6.688 9.896 1.292.521 2.646.771 3.979.771 2.854 0 5.646-1.146 7.708-3.292l234.667-245.333c3.938-4.125 3.938-10.625 0-14.75z'/%3E%3C/svg%3E");
+
+		}
+
+	}
+
+	img {
+
+		display: block;
+		margin: auto;
+
+	}
+
+}

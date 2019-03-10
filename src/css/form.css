@@ -84,15 +84,14 @@
 
 	&::placeholder {
 
-		color: var(--color);
+		color: #747474;
 		opacity: 1;
 
 	}
 
 	&:focus::placeholder {
 
-		color: var(--color);
-		opacity: .4;
+		opacity: 1;
 
 	}
 
