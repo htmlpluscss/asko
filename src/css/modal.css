@@ -7,16 +7,9 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		margin: 12px;
 		overflow: hidden;
 		pointer-events: none;
 		z-index: 1;
-
-		@media ($mdWidth) {
-
-			margin: 0;
-
-		}
 
 		@media ($smWidth) {
 
@@ -36,7 +29,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(255,255,255,.97);
+	background-color: rgba(0,0,0,.5);
 	z-index: 2;
 
 	@media ($mdWidth) {
@@ -49,98 +42,63 @@
 
 		position: relative;
 		display: flex;
-		width: 420px;
-		max-width: calc(100% - 30px);
 		margin: auto;
-		flex-grow: 0;
-		min-width: 290px;
+
+	}
+
+	&__outline {
+
+		margin: 0 3px 2px;
+		padding: 15px;
+		border: 1px solid #e7e7e7;
 
 	}
 
 	&__item {
 
-		border-radius: 4px;
-		padding: 40px 50px;
 		background-color: #fff;
-		border: 1px solid var(--color);
+		width: 570px;
+		padding: 3px 0 1px;
+		border-radius: 3px;
+		box-shadow: 0 0 24px rgba(0,0,0,.31);
 		flex-grow: 1;
-
-		@media ($mdWidth) {
-
-			padding: 20px;
-			max-width: 100%;
-
-		}
 
 	}
 
 	&__title {
 
+		margin: 0 3px 2px;
+		color: #d6001f;
+		font-size: 30px;
+		line-height: 36px;
 		text-align: center;
-		font-size: 24px;
-		line-height: 30px;
 		font-weight: normal;
-		margin-bottom: 12px;
-
-		@media ($mdWidth) {
-
-			font-size: 20px;
-			line-height: 26px;
-			margin-top: 6px;
-
-		}
+		text-transform: uppercase;
 
 	}
 
 	&__text {
 
-		font-size: 16px;
-		line-height: 1.5;
+		font-size: 18px;
+		margin-bottom: 14px;
+		color: #4c4c4c;
 		text-align: center;
-		margin: 12px 0 25px;
-
-	}
-
-	&__text-error {
-
-		font-size: 16px;
-		line-height: 20px;
-		text-align: center;
-		color: var(--red);
-
-	}
-
-	&__input {
-
-		margin: 20px 0;
-
-	}
-
-	&__checkbox {
-
-		margin: 20px 0;
-
-	}
-
-	&__btn {
-
-		display: block;
-		width: 100%;
-		margin-top: 20px;
 
 	}
 
 	&__close-btn {
 
 		position: absolute;
-		top: 6px;
-		right: 6px;
-		width: 40px;
-		height: 40px;
+		top: 0;
+		right: 0;
+		width: 30px;
+		height: 30px;
 		font-size: 0;
 		color: transparent;
-		outline:1px solid red;
-		background: url(/images/sprite-new.svg) -68px -57px;
+		background-size: 12px 12px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.331 23.331'%3E%3Cpath fill='%239d9e99' d='M16.043 11.667L22.609 5.1c.963-.963.963-2.539 0-3.502l-.875-.875c-.963-.964-2.539-.964-3.502 0L11.666 7.29 5.099.723c-.962-.963-2.538-.963-3.501 0l-.876.875c-.962.963-.962 2.539 0 3.502l6.566 6.566-6.566 6.567c-.962.963-.962 2.539 0 3.501l.876.875c.963.963 2.539.963 3.501 0l6.567-6.565 6.566 6.565c.963.963 2.539.963 3.502 0l.875-.875c.963-.963.963-2.539 0-3.501l-6.566-6.566z'/%3E%3C/svg%3E");
 
 	}
 

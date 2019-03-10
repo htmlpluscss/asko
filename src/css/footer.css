@@ -1,56 +1,103 @@
 .footer {
 
 	flex-shrink: 0;
-	padding: 80px 0 32px;
+	font-size: 12px;
+
+	&__menu {
+
+		display: flex;
+		justify-content: center;
+		box-shadow: 0 0 10px rgba(0,0,0,.3);
+
+		li {
+
+			padding: 12px 8px;
+
+			&::before {
+
+				content: '';
+				top: 15px;
+				left: 0;
+				width: 1px;
+				bottom: 15px;
+				background-color: #6d6d6d;
+				position: absolute;
+
+			}
+
+			&:first-child::before {
+
+				display: none;
+
+			}
+
+		}
+
+		a {
+
+			display: block;
+			line-height: 19px;
+			padding: 0 7px;
+			color: #404040;
+
+			&.is-active {
+
+				border-radius: 5px;
+				color: #fff;
+				background: #d60428;
+
+			}
+
+		}
+
+	}
 
 	@media ($mdWidth) {
 
-		padding: 40px 20px;
 
 	}
 
-
-	&__logo {
-
-		font-size: 0;
-		color: transparent;
-		height: 40px;
-		width: 258px;
-		background: url(/images/sprite-new.svg) -29px -196px;
-		display: block;
-
-	}
-
-	&__left {
-
-		width: 470px;
-		flex-shrink: 0;
-		padding-right: 100px;
-
-		p  {
-
-			font-size: 15px;
-			line-height: 1.4;
-			margin: 22px 0;
-
-		}
-
-		h3 {
-
-			margin: 32px 0 22px;
-			font-size: 18px;
-			font-weight: 600;
-			line-height: 24px;
-
-		}
-
-	}
-
-	&__right {
+	.center {
 
 		display: flex;
-		flex-grow: 1;
-		margin: 7px 0;
+		padding: 20px 0;
+		justify-content: space-between;
+
+	}
+
+	&__copyright {
+
+		order: -1;
+		line-height: 18px;
+		color: #787878;
+
+		strong {
+
+			font-weight: 400;
+			color: #494949;
+
+		}
+
+	}
+
+	&__tel {
+
+		display: block;
+		padding-top: 5px;
+		line-height: 18px;
+		color: #7e7e7e;
+
+		span {
+
+			color: #d50427;
+
+		}
+
+		span ~ span {
+
+			color: #535353;
+
+		}
 
 	}
 

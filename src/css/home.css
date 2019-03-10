@@ -1,8 +1,18 @@
 .home {
 
+	display: flex;
+	flex-direction: column;
+	padding: 30px 0;
+
 	&__cat {
 
-		padding: 30px 0;
+		order: -1;
+
+	}
+
+	&__cat + &__hr {
+
+		order: -1;
 
 	}
 
@@ -14,7 +24,7 @@
 
 	&__article {
 
-		margin: 40px 0;
+		margin-bottom: 20px;
 
 		img {
 
@@ -49,7 +59,7 @@
 
 	&__articles {
 
-		margin: 30px 0;
+		margin-bottom: 20px;
 
 		ul {
 

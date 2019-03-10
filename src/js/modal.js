@@ -1,21 +1,40 @@
 
 (function(){
 
-	var modal = document.querySelectorAll('.modal'),
-		box = document.querySelectorAll('.modal__box'),
-		items = document.querySelectorAll('.modal__item'),
-		wrapper = document.querySelector('.wrapper'),
-		videoBox = document.getElementById('modal-video'),
-		activeItem = null;
+	var modal = document.querySelector('.modal'),
+		items = modal.querySelectorAll('.modal__item'),
+		close = document.querySelectorAll('.modal__close'),
+		wrapper = document.querySelector('.wrapper');
 
-	// клик по фону или кнопкам закрыть
-	Array.prototype.forEach.call(modal, function (el) {
+	Array.prototype.forEach.call(close, function(el){
 
-		el.addEventListener('click', function (e) {
+		el.addEventListener('click', function () {
 
-			if(e.target.classList.contains('modal') || e.target.classList.contains('modal__close')){
+			ASKO.closeModal();
 
-				ASKO.hideModal();
+		});
+
+	});
+
+	modal.addEventListener('click', function (e) {
+
+		if(e.target.classList.contains('modal')) {
+
+			ASKO.closeModal();
+
+		}
+
+	});
+
+	Array.prototype.forEach.call(items, function(el){
+
+		el.addEventListener(ASKO.cssAnimation('transition'),function(){
+
+			if(ASKO.activeModal && !ASKO.activeModal.classList.contains('modal__item--active')){
+
+				ASKO.body.classList.remove('modal-show');
+				wrapper.style.top = 0;
+				window.scrollTo(0,ASKO.windowScrollOld);
 
 			}
 
@@ -23,128 +42,47 @@
 
 	});
 
-	ASKO.hideModal = function() {
+	ASKO.closeModal = function() {
 
-		ASKO.videoToggle('play');
-
-		Array.prototype.forEach.call(modal, function (el) {
-
-			el.classList.add('hidden-visible');
-
-		});
-
-		ASKO.body.classList.remove('modal-show');
-		wrapper.style.top = 0;
-		window.scrollTo(0,ASKO.windowScrollOld);
-
-		activeItem = false;
-
-		// clear video
-		if (videoBox){
-
-			videoBox.innerHTML = '';
-
-		}
+		ASKO.activeModal.classList.remove('modal__item--active');
 
 	};
 
-	ASKO.modalShow = function (selector,title,text) {
+	ASKO.modalShow = function (selector) {
 
-		ASKO.videoToggle('stop');
+		ASKO.activeModal = modal.querySelector('.modal__item--' + selector);
 
-		// если модальные окна не показаны
-        if (!activeItem) {
-
-			ASKO.windowScrollOld = window.pageYOffset;
-
-			wrapper.style.top = -ASKO.windowScrollOld + 'px';
-
-		}
-
-        activeItem = null;
-
-		// ищем активное окно и его бокс
 		Array.prototype.forEach.call(items, function(el){
 
-			if(el.classList.contains('modal__item--' + selector)) {
-
-				el.classList.remove('hidden-visible');
-
-				activeItem = el;
-
-			}
-			else {
-
-				el.classList.add('hidden-visible');
-
-			}
+			el.classList.toggle('modal__item--active', ASKO.activeModal == el);
 
 		});
 
-        if (!activeItem) {
-            console.warn('Modal "%s" not found', selector);
-			return;
-        }
+		ASKO.windowScrollOld = window.pageYOffset;
 
-        if (selector === 'ok') {
-
-			if(!title) {
-
-				title = '';
-
-			}
-
-			if(!text) {
-
-				text = '';
-
-			}
-
-			activeItem.querySelector('.modal__title').innerHTML = title;
-			activeItem.querySelector('.modal__text').innerHTML = text;
-
-		}
-
-		// скрываем все боксы
-		Array.prototype.forEach.call(modal, function (el) {
-
-			el.classList.add('hidden-visible');
-
-		});
-
-		Array.prototype.forEach.call(box, function (el) {
-
-			el.classList.add('hidden-visible');
-
-		});
-
-		// показывыем активный бокс
-		activeItem.closest('.modal').classList.remove('hidden-visible');
-		activeItem.closest('.modal__box').classList.remove('hidden-visible');
+		wrapper.style.top = -ASKO.windowScrollOld + 'px';
 
 		ASKO.body.classList.add('modal-show');
 		window.scrollTo(0,0);
 
-		// close menu
-		if(ASKO.OpenMenu){
+		ASKO.activeModal.focus();
 
-			ASKO.body.classList.remove('menu-show');
-			ASKO.OpenMenu = false;
+	}
+
+	document.addEventListener('keydown',function(e) {
+
+		var keyCode = e.keyCode || e.which;
+
+		if(keyCode === 27){
+
+			e.preventDefault();
+			var event = new Event('click');
+			modal.dispatchEvent(event);
 
 		}
 
-		activeItem.focus();
+	});
 
-		// вызывыем событие на активном окне
-		if (typeof window.CustomEvent === 'function') {
-
-			activeItem.dispatchEvent(new Event('modalShow'));
-
-		}
-
-	};
-
-	// слушаем источник клика
 	document.addEventListener('click', function (e) {
 
 		var target = e.target;
