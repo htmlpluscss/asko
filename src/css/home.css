@@ -49,7 +49,7 @@
 
 		h2 {
 
-			color: #aeaeae;
+			color: var(--light);
 			font-weight: normal;
 			font-size: 24px;
 
@@ -80,7 +80,7 @@
 			font-size: 20px;
 			margin: 14px 0;
 			font-weight: normal;
-			color: #d50427;
+			color: var(--red);
 
 		}
 

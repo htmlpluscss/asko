@@ -20,7 +20,7 @@
 				left: 0;
 				width: 1px;
 				bottom: 15px;
-				background-color: #6d6d6d;
+				background-color: var(--light);
 				position: absolute;
 
 			}
@@ -38,13 +38,12 @@
 			display: block;
 			line-height: 19px;
 			padding: 0 7px;
-			color: #404040;
 
 			&.is-active {
 
 				border-radius: 5px;
 				color: #fff;
-				background: #d60428;
+				background-color: var(--red);
 
 			}
 
@@ -69,12 +68,12 @@
 
 		order: -1;
 		line-height: 18px;
-		color: #787878;
+		color: var(--light);
 
 		strong {
 
 			font-weight: 400;
-			color: #494949;
+			color: var(--color);
 
 		}
 
@@ -85,17 +84,17 @@
 		display: block;
 		padding-top: 5px;
 		line-height: 18px;
-		color: #7e7e7e;
+		color: var(--light);
 
 		span {
 
-			color: #d50427;
+			color: var(--red);
 
 		}
 
 		span ~ span {
 
-			color: #535353;
+			color: var(--color);
 
 		}
 

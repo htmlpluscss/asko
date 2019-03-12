@@ -29,7 +29,7 @@
 	&__name {
 
 		padding: 5px 0;
-		color: #d50427;
+		color: var(--red);
 		display: block;
 		text-align: center;
 		font-size: 14px;
