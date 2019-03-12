@@ -21,6 +21,7 @@
 
 			width: 1px;
 			content: '';
+			pointer-events: none;
 			background-image: linear-gradient(to bottom, rgba(197,197,197,0), rgba(197,197,197,1));
 
 		}
@@ -54,7 +55,14 @@
 			left: 0;
 			bottom: 0;
 			content: '';
+			pointer-events: none;
 			background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+
+		}
+
+		&--active {
+
+			color: var(--red);
 
 		}
 
@@ -62,8 +70,9 @@
 
 	&__item:hover &__sub {
 
-		display: block;
-		backface-visibility: hidden;
+		opacity: 1;
+		visibility: visible;
+		transition: .1s;
 
 	}
 
@@ -74,10 +83,13 @@
 		left: 0;
 		right: 0;
 		z-index: 9;
-		display: none;
+		visibility: hidden;
 		background-image: linear-gradient(to bottom, #3c3c3c, #575757);
 		box-shadow: 0 5px 5px #575757;
 		overflow: hidden;
+		backface-visibility: hidden;
+		transition: .1s .1s;
+		opacity: 0;
 
 		.center {
 

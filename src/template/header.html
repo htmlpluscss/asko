@@ -1,4 +1,4 @@
-	<header class="header">
+	<header class="header bg">
 
 		<div class="header__main">
 
@@ -50,7 +50,8 @@
 {% set menuTop = [
 	{
 		title: "Asko",
-		link: "pochemu_asko"
+		link: "pochemu_asko",
+		active : true
 	},
 	{
 		title: "Контакты",
@@ -76,7 +77,7 @@
 
 {% for item in menuTop %}
 
-						<li class="menu-top__item">
+						<li class="menu-top__item{% if item.active %} menu-top__item--active{% endif %}">
 
 							<a class="menu-top__link" href="/{{item.link}}/">{{item.title}}</a>
 
@@ -90,8 +91,15 @@
 
 				<div class="header__top-right">
 
-					<a href="/zakaz/" class="header__cart">Корзина пуста</a>
-
+					<a href="/zakaz/" class="header__cart">
+						<span class="header__cart-value">1</span>
+						56 900 руб.
+					</a>
+<!--
+ 					<a href="/zakaz/" class="header__cart">
+ 						Корзина пуста
+ 					</a>
+-->
 					<form class="header__search" action="poisk/" autocomplete="off">
 
 						<input name="model" class="header__search-input input" placeholder="Поиск...">

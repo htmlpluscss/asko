@@ -2,17 +2,17 @@
 
 	display: flex;
 	flex-direction: column;
-	padding: 30px 0;
 
-	&__cat {
+	&__top {
 
-		order: -1;
+		order: -10;
 
 	}
 
-	&__cat + &__hr {
+	&__cat {
 
-		order: -1;
+		order: -9;
+		padding-top: 30px;
 
 	}
 
@@ -23,8 +23,6 @@
 	}
 
 	&__article {
-
-		margin-bottom: 20px;
 
 		img {
 
@@ -55,11 +53,17 @@
 
 		}
 
+		hr {
+
+			margin-top: 40px;
+
+		}
+
 	}
 
 	&__articles {
 
-		margin-bottom: 20px;
+		margin-bottom: 50px;
 
 		ul {
 

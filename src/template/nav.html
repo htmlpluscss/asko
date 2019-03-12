@@ -45,6 +45,7 @@
 	{
 		parent: "Техника для кухни",
 		link: "catalog/tekhnika_dlya_kuhni",
+		active: true,
 		columns: [
 			{
 				head: "Духовые шкафы",
@@ -289,7 +290,7 @@
 
 			<li class="nav__item">
 
-				<a href="{{ parent.link }}" title="{{ parent.parent }}" class="nav__link">
+				<a href="{{ parent.link }}" title="{{ parent.parent }}" class="nav__link{% if parent.active %} nav__link--active{% endif %}">
 					{{ parent.parent }}
 				</a>
 

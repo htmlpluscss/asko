@@ -12,6 +12,9 @@
 @import url(service.css);
 @import url(cat-img.css);
 @import url(home.css);
+@import url(billboard.css);
+@import url(breadcrumbs.css);
+@import url(catalog-desc.css);
 
 /* @import url(social.css);
 
@@ -20,10 +23,8 @@
 
 @import url(social-share.css);
 
-@import url(blog.css);
+
 @import url(article.css);
-@import url(promo.css);
 @import url(preview-list.css);
 @import url(map-toggle.css);
-@import url(office-select.css);
  */
