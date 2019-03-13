@@ -14,7 +14,10 @@
 @import url(home.css);
 @import url(billboard.css);
 @import url(breadcrumbs.css);
+@import url(catalog.css);
 @import url(catalog-desc.css);
+@import url(catalog-list.css);
+@import url(filter.css);
 
 /* @import url(social.css);
 
@@ -26,5 +29,4 @@
 
 @import url(article.css);
 @import url(preview-list.css);
-@import url(map-toggle.css);
  */

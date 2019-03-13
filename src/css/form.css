@@ -17,23 +17,48 @@
 
 .btn {
 
-	height: 46px;
-	line-height: 46px;
-	border-radius: 4px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 6px;
 	font-family: inherit;
-	font-size: 14px;
-	font-weight: 600;
+	font-size: 18px;
 	text-align: center;
 	position: relative;
 
-	padding: 0 16px;
+	padding: 0 20px;
 	white-space: nowrap;
 	color: #fff;
 	border: 0;
-	background-color: var(--red);
+	background-image: linear-gradient(to bottom, #d84253, #ca0628);
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.38);
+	box-shadow: inset 2px 1px 2px rgba(0,0,0,.13), 1px 1px 0 #fff;
+	min-width: 116px;
+
+	&::before {
+
+		position: absolute;
+		height: 3px;
+		top: 5px;
+		left: 10px;
+		right: 10px;
+		content: '';
+		background-color: #fff;
+		border-radius: 2px;
+		filter: blur(2px);
+		opacity: .8;
+
+	}
 
 	&:hover {
 
+		background-image: linear-gradient(to top, #d84253, #ca0628);
+
+		&::before {
+
+			opacity: 0;
+
+		}
 
 	}
 
@@ -42,6 +67,30 @@
 		color: var(--color);
 		cursor: default;
 		background-color: color(var(--color) a(20%)) !important;
+
+	}
+
+	&--link {
+
+		background: transparent !important;
+		color: var(--color);
+		text-decoration: underline;
+		text-shadow: none;
+		box-shadow: none;
+		text-transform: none;
+		min-width: 0;
+
+		&::before {
+
+			display: none;
+
+		}
+
+		&:hover {
+
+			text-decoration: none;
+
+		}
 
 	}
 
@@ -121,6 +170,57 @@
 	}
 
 }
+
+.checkbox {
+
+	display: block;
+	position: relative;
+	cursor: pointer;
+
+	&__label {
+
+		font-size: 14px;
+		line-height: 20px;
+		display: block;
+		padding-left: 35px;
+
+		&::before {
+
+			width: 20px;
+			height: 20px;
+			border-radius: 5px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			background-color: #dedede;
+			box-shadow: inset 1px 1px 2px rgba(0,0,0,.13), 1px 1px 0 #fff;
+
+		}
+
+	}
+
+	&__input:checked + &__label::after {
+
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		width: 12px;
+		height: 12px;
+		content: '';
+		background-size: contain;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAABblBMVEUAAAAAAAAAAAAAAAAAAADgaXkAAACWJTMOAwQAAAAAAAAAAAAAAAAAAAAAAAAAAAChKDecJjbqnaeOIzF+HytdFyBWFR4gBwsAAAAAAAAgCAsAAABKEhlhGyQbBgkAAADorrU8FBnVnaTsp7C9LkHJMUXecH7cXG2mKTjwusGwKz3LOEuiJzfutbzqrLTgd4TMTFy6Lj+1LD7VTl+UJDOCIC3klJ7vusDsrbXahpHLPU/pr7fggI11HShxGydhGCGIIS+4VGGlKDnrt723LT/moKrGcXzosrjijJdrGiRyO0LekJrjrrXVNEmiKDjUNEjPMkfSM0jIMUTWOE3XPFDfX3DBL0LcVmjLMUW+LkG6LUC1LD6zKz2wKzyrKTqmKDnspK3jeIfaSl3ZRVjXPlLEMEPuq7TqmKPni5fmhpPlg4/hbn3dW2zYQVTGMETwt77vsbnrnafokJzkfYvicoHbUmTaTF7plaDaTmHaS15+nITqAAAATXRSTlMABioRDP549puAaE8xJh4X/Prz8ebSya18bmFWUEc/OR8fCfr59fT09PDw7+jl5eXi4uHf39/d1cy+vbi3s7OzspSTfHx7e25uIyITEsNXCpIAAAGBSURBVCjPVZFle8JAEIQvCcGt7u7u7q5cjCQkIQR3KFba/vseCZRmPs77zOzdLjD0/nS2Odd7ePL4ioF/mr1b+UhHq1+1XH3xZqaLpo8+KtFMNl+PxRokvz1h6fgblXQmX+CLoljkeTG+Nk4YPcfpaLYgJpIcF0wm4j8lamdSzzxEqzmyGeQCLSHGMaFrHM15683kyHhQt3UUoNn5UR8Az7Vs49PwDSEgXLoxcJ6P8QnOBMrSvosAW7ECCphASl52egFJ8nFTgKIFJWL1gKWimAiYQEgKaw4c7H03SybAsHLEhsBpshQ0N6XCWj+quqcocyAkR+AgGv6yQNNMFzK0oMIeO3oudsuyIYSMHgYVQTgwjD4IZnYFodxCFLJZSYWwzz6GVgKwiVVZloQyy7IpSYlAaBsawfVjWcbXVTWsKEpYRTbsG7JOtU9FTF74NU2DLfUM2EemCNCWBR+9OrD5/bb+QfvwGG4Bf8J8bpfT6nBYnS63T+/vIsLrwXGPl+jYvzTPfftAKaefAAAAAElFTkSuQmCC');
+
+	}
+
+	&--error &__label::before {
+
+		background-color: var(--error);
+
+	}
+
+}
+
 /*
 .input-label {
 
@@ -181,66 +281,6 @@
 
 }
 
-.checkbox {
-
-	display: block;
-	position: relative;
-	cursor: pointer;
-
-	&__input {
-
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		top: 0;
-		left: 0;
-		opacity: 0;
-		z-index: -1;
-
-	}
-
-	&__label {
-
-		font-size: 14px;
-		line-height: 21px;
-		display: block;
-		padding: 2px 0 0 35px;
-
-		&::before {
-
-			width: 18px;
-			height: 18px;
-			border-radius: 2px;
-			border: solid 1px var(--border);
-			position: absolute;
-			top: 3px;
-			left: 0;
-			content: '';
-
-		}
-
-	}
-
-	&__input:checked + &__label::after {
-
-		position: absolute;
-		top: 4px;
-		left: 1px;
-		width: 18px;
-		height: 18px;
-		content: '';
-		background: url(/images/sprite-new.svg) -176px -68px;
-
-	}
-
-	&--error &__label::before {
-
-		background-color: var(--error);
-		opacity: .5;
-
-	}
-
-}
 
 .select {
 

@@ -9,42 +9,65 @@
 
 {% block content %}
 
+	<div class="catalog center">
+
+		<div class="catalog__order-2">
+
+			<article class="catalog-desc">
+
+				<div class="catalog-desc__text">
+
+					<h1 class="h1">
+						Техника для кухни ASKO
+					</h1>
+
+					<p>
+						Кухня - это место, где мы обычно начинаем и заканчиваем свой день. Это место, где мы собираемся всей семьей на завтрак, обед или ужин. Где встречаемся с соседями, просто получаем удовольствие от еды и от общения друг с другом. Ассортимент Техники для кухни ASKO - это не просто технические продукты, а очень красивая техника. Все они созданы, чтобы соответствовать Вашему представлению об идеальной кухне. Но в этом Вам нужно убедиться лично!
+					</p>
+
+					<a href="" class="link">Нажмите здесь, чтобы узнать больше</a>
+
+				</div>
+
+				<picture>
+
+					<source srcset="/img/catalog/desc@1x.webp 1x, /img/catalog/desc@2x.webp 2x" type="image/webp">
+
+					<source srcset="/img/catalog/desc@1x.png 1x, /img/catalog/desc@2x.png 2x">
+
+					<img src="/img/catalog/desc@1x.png" alt="Техника для кухни ASKO">
+
+				</picture>
+
+			</article>
+
+		</div>
+
+		<div class="catalog__order-4">
+
+			<section class="catalog-list">
+
+
+			</section>
+
+		</div>
+
+		<div class="catalog__order-1">
+
 {% include "_include/billboard.html" %}
 
 {% set breadcrumbs = ['Главная','Каталог','Техника для кухни'] %}
 
 {% include "_include/breadcrumbs.html" %}
 
-	<article class="catalog-desc">
+		</div>
 
-		<div class="center">
+		<div class="catalog__order-3">
 
-			<div class="catalog-desc__text">
-
-				<h1 class="h1">
-					Техника для кухни ASKO
-				</h1>
-
-				<p>
-					Кухня - это место, где мы обычно начинаем и заканчиваем свой день. Это место, где мы собираемся всей семьей на завтрак, обед или ужин. Где встречаемся с соседями, просто получаем удовольствие от еды и от общения друг с другом. Ассортимент Техники для кухни ASKO - это не просто технические продукты, а очень красивая техника. Все они созданы, чтобы соответствовать Вашему представлению об идеальной кухне. Но в этом Вам нужно убедиться лично!
-				</p>
-
-				<a href="" class="link">Нажмите здесь, чтобы узнать больше</a>
-
-			</div>
-
-			<picture>
-
-				<source srcset="/img/catalog/desc@1x.webp 1x, /img/catalog/desc@2x.webp 2x" type="image/webp">
-
-				<source srcset="/img/catalog/desc@1x.png 1x, /img/catalog/desc@2x.png 2x">
-
-				<img src="/img/catalog/desc@1x.png" alt="Техника для кухни ASKO">
-
-			</picture>
+{% include "_include/filter.html" %}
 
 		</div>
 
-	</article>
+	</div>
 
 {% endblock %}

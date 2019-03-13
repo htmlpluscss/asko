@@ -1,0 +1,19 @@
+.catalog-list {
+
+	margin-bottom: 20px;
+	display: flex;
+
+	&__text {
+
+		order: 1;
+		margin-left: 20px;
+
+		p {
+
+			margin-bottom: 20px;
+
+		}
+
+	}
+
+}

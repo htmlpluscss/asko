@@ -111,6 +111,16 @@ svg {
 
 }
 
+.border {
+
+	position: relative;
+	padding: 20px 36px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.12), inset 1px 1px 1px rgba(0,0,0,.12);
+
+}
+
 /*
 -----------------------------------------------------------------------------*/
 .notsel {

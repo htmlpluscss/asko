@@ -90,4 +90,16 @@ var ASKO = {};
 		return (rect.top >= 0 && rect.bottom <= ASKO.height);
 	}
 
+	// отделяем тысячи
+	ASKO.sepNumber = function(str){
+		str = str.toString();
+		str = str.replace(/\s+/g,'');
+		return str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+	}
+
+	// склеиваем тысячи
+	ASKO.strToNumber = function(n){
+		return parseInt(n.replace(/\s+/g,''), 10);
+	}
+
 })();
