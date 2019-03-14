@@ -2,15 +2,150 @@
 
 	margin-bottom: 20px;
 	display: flex;
+	flex-direction: column;
 
-	&__text {
+	&__item {
 
-		order: 1;
-		margin-left: 20px;
+		display: flex;
+		padding: 30px 0;
 
-		p {
+		& + & {
 
-			margin-bottom: 20px;
+			box-shadow: inset 0 1px 0 #fff;
+			border-top: 1px solid #d4d4d4;
+
+		}
+
+	}
+
+	&__img {
+
+		width: 250px;
+		flex-shrink: 0;
+		margin-right: 30px;
+		mix-blend-mode: multiply;
+
+	}
+
+	&__body {
+
+		flex-grow: 1;
+
+	}
+
+	&__title {
+
+		width: 100%;
+		font-size: 24px;
+		font-weight: 400;
+		max-width: 600px;
+		margin-bottom: 10px;
+		text-transform: none;
+
+	}
+
+	&__desc {
+
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	&__param {
+
+		max-width: 500px;
+
+		dl {
+
+			display: flex;
+			flex-wrap: wrap;
+
+		}
+
+		dt {
+
+			width: 50%;
+			flex-shrink: 0;
+			padding-top: 5px;
+
+		}
+
+		dd {
+
+			width: 50%;
+			flex-shrink: 0;
+			padding-top: 5px;
+			padding-left: 14px;
+
+		}
+
+	}
+
+	&__cart {
+
+		flex-shrink: 0;
+		white-space: nowrap;
+
+	}
+
+	&__btn {
+
+		display: flex;
+		justify-content: flex-end;
+
+	}
+
+	&__price {
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		&-pref {
+
+			font-size: 18px;
+			color: #333;
+			margin-right: 8px;
+
+		}
+
+		&-value {
+
+			color: #000;
+			font-size: 24px;
+
+		}
+
+	}
+
+	&__available {
+
+		color: var(--red);
+		line-height: 22px;
+		padding: 14px 0 18px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		&.is-not {
+
+			color: var(--light);
+
+			&::before {
+
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath fill='%237e7e7e' d='M.3 14c-.2-.2-.3-.5-.3-.7s.1-.5.3-.7l1.4-1.4c.4-.4 1-.4 1.4 0l.1.1 5.5 5.9c.2.2.5.2.7 0L22.8 3.3h.1c.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4l-16 16.6c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.5 14.3.3 14z'/%3E%3C/svg%3E%0A");
+
+			}
+
+		}
+
+		&::before {
+
+			content: '';
+			width: 26px;
+			height: 26px;
+			margin-right: 14px;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath fill='%23d50427' d='M.3 14c-.2-.2-.3-.5-.3-.7s.1-.5.3-.7l1.4-1.4c.4-.4 1-.4 1.4 0l.1.1 5.5 5.9c.2.2.5.2.7 0L22.8 3.3h.1c.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4l-16 16.6c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.5 14.3.3 14z'/%3E%3C/svg%3E%0A");
 
 		}
 

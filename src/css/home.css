@@ -3,15 +3,8 @@
 	display: flex;
 	flex-direction: column;
 
-	&__top {
-
-		order: -10;
-
-	}
-
 	&__cat {
 
-		order: -9;
 		padding-top: 30px;
 
 	}
