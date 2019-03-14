@@ -118,6 +118,8 @@ gulp.task('js', function() {
 
 		'!src/js/min/swiper.min.js',
 		'!src/js/min/nouislider.min.js',
+		'!src/js/min/jquery-3.3.1.min.js',
+		'!src/js/min/jquery.fancybox.min.js',
 
 		'src/js/js.js',
 		'src/js/*.js',
@@ -166,6 +168,8 @@ gulp.task('serve', function() {
 	gulp.src([
 		'src/js/min/swiper.min.js',
 		'src/js/min/nouislider.min.js',
+		'src/js/min/jquery-3.3.1.min.js',
+		'src/js/min/jquery.fancybox.min.js'
 	])
 	.pipe(gulp.dest('build/js'))
 
