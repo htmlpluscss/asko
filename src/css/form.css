@@ -287,8 +287,6 @@
 
 }
 
-/*
-
 .select {
 
 	position: relative;
@@ -304,7 +302,7 @@
 		content: '';
 		border-radius: 50%;
 		box-shadow: 0 0 5px #fff;
-		background: #fff url(/images/sprite-new.svg) -578px -28px;
+		background-color: #fff;
 		pointer-events: none;
 
 	}
@@ -357,4 +355,4 @@
 
 	}
 
-} */
+}

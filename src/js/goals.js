@@ -1,5 +1,5 @@
 (function () {
-
+/*
 	var yaCounterId = '51123644',
 		goals = [
 			// home
@@ -264,5 +264,5 @@
 			});
 		});
 	});
-
+*/
 })();
