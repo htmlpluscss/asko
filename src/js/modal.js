@@ -35,6 +35,7 @@
 				ASKO.body.classList.remove('modal-show');
 				wrapper.style.top = 0;
 				window.scrollTo(0,ASKO.windowScrollOld);
+				modal.classList.add('visuallyhidden');
 
 			}
 
@@ -49,6 +50,8 @@
 	};
 
 	ASKO.modalShow = function (selector) {
+
+		modal.classList.remove('visuallyhidden');
 
 		ASKO.activeModal = modal.querySelector('.modal__item--' + selector);
 

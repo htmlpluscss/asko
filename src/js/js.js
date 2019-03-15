@@ -8,7 +8,7 @@ https://github.com/htmlpluscss/
 
 */
 
-var ASKO = {};
+var ASKO = ASKO || {};
 
 (function(){
 

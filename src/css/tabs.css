@@ -7,29 +7,28 @@
 
 		display: flex;
 		position: absolute;
-		left: 0;
+		left: 20px;
 		bottom: 100%;
 
 		&-btn {
 
-			padding: 5px 12px 8px;
-			margin: 0 6px;
+			padding: 10px 20px 12px;
 			position: relative;
+			border: 1px solid transparent;
+			border-bottom: 0;
 
 			&--active {
 
-				border: 1px solid #fff;
-				padding: 5px 11px 8px;
-				border-bottom: 0;
+				border-color: #fff;
 				border-radius: 5px 5px 0 0;
 				box-shadow: 1px 0 1px rgba(0, 0, 0, 0.12), 1px 1px 1px rgba(0, 0, 0, 0.12) inset;
 
 				&::after {
 
 					position: absolute;
-					left: 12px;
-					right: 12px;
-					bottom: 6px;
+					left: 19px;
+					right: 19px;
+					bottom: 10px;
 					content: '';
 					height: 1px;
 					background-color: var(--color);

@@ -10,6 +10,7 @@
 		overflow: hidden;
 		pointer-events: none;
 		z-index: 1;
+		filter: blur(1px);
 
 		@media ($smWidth) {
 
@@ -25,12 +26,12 @@
 
 	flex-grow: 1;
 	position: relative;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: rgba(0,0,0,.5);
 	z-index: 2;
+	display: flex;
 
 	@media ($mdWidth) {
 
@@ -56,12 +57,33 @@
 
 	&__item {
 
-		background-color: #fff;
-		width: 570px;
-		padding: 3px 0 1px;
-		border-radius: 3px;
-		box-shadow: 0 0 24px rgba(0,0,0,.31);
-		flex-grow: 1;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity .1s;
+
+		width: 1px !important;
+		height: 1px !important;
+		margin-left: -1px !important;
+		overflow: hidden !important;
+
+		&--active {
+
+			pointer-events: auto;
+			opacity: 1;
+			transition: opacity .3s, box-shadow .3s .3s;
+
+			width: 570px !important;
+			height: auto !important;
+			margin: 0 !important;
+			overflow: visible !important;
+
+			background-color: #fff;
+			padding: 3px 0 1px;
+			border-radius: 3px;
+			box-shadow: 0 0 24px rgba(0,0,0,.31);
+			flex-grow: 1;
+
+		}
 
 	}
 
@@ -69,8 +91,8 @@
 
 		margin: 0 3px 2px;
 		color: #d6001f;
-		font-size: 30px;
-		line-height: 36px;
+		font-size: 26px;
+		line-height: 32px;
 		text-align: center;
 		font-weight: normal;
 		text-transform: uppercase;
@@ -80,7 +102,7 @@
 	&__text {
 
 		font-size: 18px;
-		margin-bottom: 14px;
+		margin-bottom: 20px;
 		color: #4c4c4c;
 		text-align: center;
 
@@ -99,8 +121,21 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.331 23.331'%3E%3Cpath fill='%239d9e99' d='M16.043 11.667L22.609 5.1c.963-.963.963-2.539 0-3.502l-.875-.875c-.963-.964-2.539-.964-3.502 0L11.666 7.29 5.099.723c-.962-.963-2.538-.963-3.501 0l-.876.875c-.962.963-.962 2.539 0 3.502l6.566 6.566-6.566 6.567c-.962.963-.962 2.539 0 3.501l.876.875c.963.963 2.539.963 3.501 0l6.567-6.565 6.566 6.565c.963.963 2.539.963 3.502 0l.875-.875c.963-.963.963-2.539 0-3.501l-6.566-6.566z'/%3E%3C/svg%3E");
+		display: none;
+
+		.modal__item--active ~ & {
+
+			display: block;
+
+		}
 
 	}
 
+	.btn {
+
+		display: block;
+		margin: 20px auto;
+
+	}
 
 }

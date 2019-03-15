@@ -7,7 +7,7 @@
 	Array.prototype.forEach.call(forms, function(form){
 
 		var novalidate = false,
-			showMoadalOk = form.getAttribute('data-ok'),
+			showMoadalOk = form.getAttribute('data-ok-modal'),
 			formRequired = form.querySelectorAll('[required]'),
 			formBtnSubmit = form.querySelector('.form__submit');
 
@@ -39,11 +39,7 @@
 
 				else {
 
-					if(input.classList.contains('input-label__input')){
-
-						errorInputLabel(input);
-
-					}
+					errorInput(input);
 
 					if(!input.value){
 
@@ -79,15 +75,9 @@
 
 						form.reset();
 
-						Array.prototype.forEach.call(inputLabel, function(el){
-
-							focusInputLabel(el);
-
-						});
-
 						if(showMoadalOk) {
 
-							CF.modalShow('ok',showMoadalOk.split('|')[0],showMoadalOk.split('|')[1]);
+							ASKO.modalShow('thanks');
 
 						}
 
@@ -105,53 +95,36 @@
 	});
 
 
-// input-label
+// input
 
-	var inputLabel = document.querySelectorAll('.input-label__input');
+	var inputRequired = document.querySelectorAll('.input[required]');
 
-	function focusInputLabel(el,required){
+	function errorInput(el){
 
-		el.value ?
-			el.parentNode.classList.add('input-label--no-empty'):
-			el.parentNode.classList.remove('input-label--no-empty');
-
-		if(required && el.getAttribute('required') !== null) {
-
-			errorInputLabel(el);
-
+		if(el.value) {
+			el.classList.remove('input--error');
+			el.parentNode.classList.remove('input-row__input--error');
+		}
+		else {
+			el.classList.add('input--error');
+			el.parentNode.classList.add('input-row__input--error');
 		}
 
 	}
 
-	function errorInputLabel(el){
-
-		el.value ?
-			el.parentNode.classList.remove('input-label--error'):
-			el.parentNode.classList.add('input-label--error');
-
-	}
-
-	Array.prototype.forEach.call(inputLabel, function(el){
-
-		el.addEventListener('focus', function() {
-
-			focusInputLabel(el);
-
-		});
+	Array.prototype.forEach.call(inputRequired, function(el){
 
 		el.addEventListener('keyup', function() {
 
-			focusInputLabel(el,true);
+			errorInput(el);
 
 		});
 
 		el.addEventListener('blur', function() {
 
-			focusInputLabel(el,true);
+			errorInput(el);
 
 		});
-
-		focusInputLabel(el);
 
 	});
 

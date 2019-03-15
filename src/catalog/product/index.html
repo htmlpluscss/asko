@@ -51,7 +51,8 @@
 
 					<div class="product__price">
 						Цена:
-						<span class="product__price-value">258 000 ₽</span>
+						<span class="product__price-value">258 000</span>
+						<span class="rub">₽</span>
 					</div>
 
 					<div class="product__available available">
@@ -66,7 +67,7 @@
 
 					<form action="/zakaz/" class="product__cart">
 						<button class="btn">Купить</button>
-						<button class="btn btn--link" data-modal="order">Заказать в 1 клик</button>
+						<button class="btn btn--link" data-modal="order" type="button">Заказать в 1 клик</button>
 					</form>
 
 					<dl class="product__delivery">
@@ -88,8 +89,15 @@
 
 				<div class="product__img">
 
-					<a class="product__img-big gallery" href="/img/product/img@big.jpg">
+					<a class="product__img-big fancybox-gallery" href="/img/product/img@big.jpg" data-fancybox-index="0">
 
+<!--
+
+img@1x.png
+ширина не более 300px
+высота не более 300px
+
+ -->
 						<picture>
 
 							<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
@@ -102,28 +110,83 @@
 
 					</a>
 
+<!--
+1. если фото одно, то блок .product__img-small не выводить
+
+
+img@1x.png
+ширина не более 90px
+высота не более 90px
+
+ -->
+
 					<div class="product__img-small">
 
-						<ul class="product__img-list">
-							<li>
-								<a href="/img/product/img@big.jpg">
-									<picture>
-										<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-										<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-										<img src="/img/product/img@1x.png" alt="{{ title }}">
-									</picture>
-								</a>
-							</li>
-							<li>
-								<a href="/img/product/download.jpg">
-									<picture>
-										<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-										<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-										<img src="/img/product/img@1x.png" alt="{{ title }}">
-									</picture>
-								</a>
-							</li>
-						</ul>
+						<script>
+
+							var ASKO = ASKO || {};
+
+							ASKO.gallery = [
+								{
+									src : '/img/product/download.jpg'
+								},
+								{
+									src : '/img/product/download.jpg'
+								},
+								{
+									src : '/img/product/img@big.jpg'
+								},
+								{
+									src : '/img/product/download.jpg'
+								}
+							]
+
+	/* тут указываем пути к большим фотографиям галереи */
+
+						</script>
+
+						<div class="swiper-container swiper-container--product">
+
+							<ul class="notsel swiper-wrapper">
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="0">
+										<picture>
+											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="1">
+										<picture>
+											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/img@big.jpg" class="fancybox-gallery" data-fancybox-index="2">
+										<picture>
+											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="3">
+										<picture>
+											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+											<img src="/img/product/img@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+							</ul>
+
+						</div>
 
 					</div>
 
@@ -143,8 +206,27 @@
 						Описание
 					</h2>
 
-
-					1
+					<strong><i>Тип прибора: </i></strong><br>
+					Газовая варочная панель на стеклокерамике<br>
+					Тип управления: Металлические ручки<br>
+					<br>
+					<strong><i> Особенности: </i></strong><br>
+					Конфорка малой мощности<br>
+					Конфорка вок Fusion Volcano<br>
+					Конфорки А+<br>
+					Легкая очистка конфорок<br>
+					Съемные ручки<br>
+					Количество решеток: 4<br>
+					<br>
+					<strong><i> Безопасности: </i></strong><br>
+					Газ-контроль<br>
+					<br>
+					<strong><i> Конструкция: </i></strong><br>
+					1 малая + 1 большая + 1 нормальная конфорки + 1 конфорка вок <br>
+					Передняя правая: 3 кВт, <br>
+					Задняя правая: 1 кВт, <br>
+					Левая: 6 кВт, <br>
+					центральная: 1 кВт<br>
 
 				</section>
 
@@ -154,7 +236,20 @@
 						Характеристики
 					</h2>
 
-					2
+					<dl class="product__param">
+						<dt>Ширина:</dt>
+						<dd>594 мм</dd>
+						<dt>Цвет:</dt>
+						<dd>Черный</dd>
+						<dt>Управление панели:</dt>
+						<dd>Сенсорное</dd>
+						<dt>Тип панели:</dt>
+						<dd>HiLight</dd>
+						<dt>Число уровней мощности:</dt>
+						<dd>9</dd>
+						<dt>Количество зон нагрева:</dt>
+						<dd>4</dd>
+					</dl>
 
 				</section>
 
@@ -164,7 +259,9 @@
 						Файлы для скачивания
 					</h2>
 
-					3
+					<a class="link link--pdf" title="Инструкция на варочную панель Asko HG1825AB " href="/pdf/HG1825AB.pdf">
+						Инструкция на варочную панель Asko HG1825AB
+					</a>
 
 				</section>
 
@@ -184,7 +281,11 @@
 
 		<div class="order-10">
 
-			<a href="/" class="link">Вернуться к разделу Газовые панели</a>
+			<div class="product__back-catalog">
+
+				<a href="/" class="link">Вернуться к разделу Газовые панели</a>
+
+			</div>
 
 		</div>
 

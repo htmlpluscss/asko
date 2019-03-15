@@ -1,18 +1,34 @@
 (function(){
 
-	if(ASKO.gallery) {
+	var fancyboxBtn = document.querySelectorAll('.fancybox-gallery');
 
-		Array.prototype.forEach.call(document.querySelectorAll('.gallery'), function(btn){
+	if(fancyboxBtn.length) {
 
-			btn.addEventListener('click', function(e){
+		document.addEventListener('click', function (e) {
 
-				e.preventDefault();
+			var target = e.target;
 
-/*				$.fancybox.open(ASKO.gallery, {
-					loop : true
-				});
-*/
-			});
+			while (target !== this) {
+
+				if (target.classList.contains('fancybox-gallery')) {
+
+					e.preventDefault();
+
+					var index = parseInt(target.getAttribute('data-fancybox-index'));
+
+					$.fancybox.open(
+						ASKO.gallery,
+						{
+							loop : true
+						},
+						index
+					);
+
+				}
+
+				target = target.parentNode;
+
+			}
 
 		});
 
@@ -36,6 +52,7 @@
 
 					script.onload = function () {
 
+						$.fancybox.defaults.loop = true;
 
 					};
 

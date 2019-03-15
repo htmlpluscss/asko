@@ -13,6 +13,13 @@
 
 	}
 
+	/* IE10+ CSS styles go here */
+	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+		overflow: visible;
+
+	}
+
 }
 
 .btn {
@@ -48,9 +55,16 @@
 		filter: blur(2px);
 		opacity: .8;
 
+		/* IE10+ CSS styles go here */
+		@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+			display: none;
+
+		}
+
 	}
 
-	&:hover {
+	&:not([disabled]):hover {
 
 		background-image: linear-gradient(to top, #d84253, #ca0628);
 
@@ -64,9 +78,9 @@
 
 	&[disabled] {
 
-		color: var(--color);
 		cursor: default;
-		background-color: color(var(--color) a(20%)) !important;
+		color: var(--border);
+		background-image: linear-gradient(to bottom, #bbb, #a5a5a5) !important;
 
 	}
 
@@ -99,13 +113,13 @@
 
 .input {
 
-	height: 52px;
+	height: 36px;
 	line-height: 20px;
 	border-radius: 3px;
 
 	background-color: #fff;
 	border: solid 1px var(--border);
-	padding: 16px 18px;
+	padding: 8px 12px;
 
 	width: 100%;
 	font-family: inherit;
@@ -114,13 +128,6 @@
 	display: block;
 	font-size: 16px;
 	color: var(--color);
-
-	&--error {
-
-		border-color: var(--error);
-		box-shadow: 0 0 0 1px var(--error);
-
-	}
 
 	textarea& {
 
@@ -159,6 +166,14 @@
 	&:focus {
 
 		outline: none;
+		border-color: var(--light);
+
+	}
+
+	&--error {
+
+		border-color: var(--error) !important;
+		box-shadow: 0 0 0 1px var(--error);
 
 	}
 
@@ -221,59 +236,50 @@
 
 }
 
-/*
-.input-label {
+.input-row {
 
-	display: block;
-	width: 100%;
-	cursor: text;
-	position: relative;
-
-	&__input {
-
-		padding: 24px 18px 8px;
-
-	}
+	display: flex;
+	margin: 24px auto;
+	max-width: 400px;
 
 	&__label {
 
-		font-size: 12px;
-		line-height: 20px;
-		position: absolute;
-		top: 16px;
-		left: 18px;
-		pointer-events: none;
 		font-size: 16px;
-		color: var(--color);
+		line-height: 20px;
+		color: var(--light);
+		width: 128px;
+		padding-right: 10px;
+		flex-shrink: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 
 	}
 
-	&__input:focus ~ &__label,
-	&--no-empty &__label {
+	&__input {
 
-		top: 5px;
-		font-size: 12px;
-		color: var(--color);
+		flex-grow: 1;
+		position: relative;
 
-	}
+		&--error {
 
-	&--error &__input {
+			&::after {
 
-	 	box-shadow: 0 0 0 2px var(--error);
+				content: attr(data-error);
+				color: var(--red);
+				display: block;
+				font-size: 12px;
+				line-height: 14px;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				padding: 4px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 
-	}
-
-	&--error {
-
-		&[data-error]::after {
-
-			margin-top: 2px;
-			display: block;
-			content: attr(data-error);
-			font-size: 14px;
-			line-height: 18px;
-			color: var(--error);
-			pointer-events: none;
+			}
 
 		}
 
@@ -281,6 +287,7 @@
 
 }
 
+/*
 
 .select {
 

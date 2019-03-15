@@ -17,11 +17,12 @@
 			swipeNext = document.createElement('button'),
 			swipePrev = document.createElement('button'),
 			count = swipe.querySelectorAll('.swiper-slide').length,
-			home = swipe.classList.contains('swiper-container--home');
+			home = swipe.classList.contains('swiper-container--home'),
+			product = swipe.classList.contains('swiper-container--product');
 
-		swipeNav.className = 'swiper-pagination';
-		swipePrev.className = 'swiper-button-prev button';
-		swipeNext.className = 'swiper-button-next button';
+		swipeNav.className = 'swiper-pagination hide';
+		swipePrev.className = 'swiper-button-prev button hide';
+		swipeNext.className = 'swiper-button-next button hide';
 
 		swipePrev.innerHTML = '<svg viewBox="0 0 1000 1000"><path d="M990 10H10v980h980V10zm-91.4 416.5v147H394.4l215.3 215.3-114.3 114.4L92.2 500 495.4 96.8l114.4 114.4-215.4 215.3h504.2z"/></svg>';
 
@@ -40,6 +41,7 @@
 
 			}
 
+			swipeNav.classList.remove('hide');
 			swipeNext.classList.add('hide');
 			swipePrev.classList.add('hide');
 
@@ -56,9 +58,9 @@
 
 		}
 
-		resetSwipe();
-
 		if (home) {
+
+			resetSwipe();
 
 			toggleSwipe = function() {
 
@@ -100,6 +102,36 @@
 						},
 						autoplay: {
 							delay: swipe.getAttribute('data-timer') * 1000,
+						}
+					});
+
+				}
+
+			}
+
+		}
+
+
+		if (product) {
+
+			if(count > 3) {
+
+				swipeNext.classList.remove('hide');
+				swipePrev.classList.remove('hide');
+
+			}
+
+			toggleSwipe = function() {
+
+				if(!mySwipe && count > 3) {
+
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						slidesPerView: 'auto',
+						preloadImages: false,
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
 						}
 					});
 

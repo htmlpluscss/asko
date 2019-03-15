@@ -111,6 +111,13 @@
 		position: relative;
 		overflow: hidden;
 
+		/* IE10+ CSS styles go here */
+		@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+			flex-basis: 21%;
+
+		}
+
 		&::before {
 
 			position: absolute;

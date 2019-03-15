@@ -2,6 +2,8 @@
 
 		<div class="modal__box">
 
+{% if urlCurrent == "product" %}
+
 			<form action="/order.php" target="order_done" class="modal__item modal__item--order form" data-ok-modal="thanks" novalidate="novalidate">
 
 				<input type="hidden" name="mode" value="order_quick">
@@ -17,24 +19,28 @@
 				<div class="modal__outline">
 
 					<p class="modal__text">
-						Укажите Ваше имя и телефон, и мы оперативно перезвоним Вам
+						Укажите имя и телефон, мы оперативно перезвоним Вам
 					</p>
 
 					<label class="input-row">
 						<span class="input-row__label">
 							Ваше Имя
 						</span>
-						<input name="client[Name]" class="input">
+						<span class="input-row__input">
+							<input name="client[Name]" class="input">
+						</span>
 					</label>
 
 					<label class="input-row">
 						<span class="input-row__label">
 							Ваш Телефон
 						</span>
-						<input name="client[Phone]" type="tel" class="input" required="required">
+						<span class="input-row__input" data-error="Укажите контактный телефон">
+							<input name="client[Phone]" type="tel" class="input" required="required">
+						</span>
 					</label>
 
-					<button type="button" class="btn btn--red modal__close">
+					<button class="btn form__submit">
 						Заказать
 					</button>
 
@@ -42,25 +48,7 @@
 
 			</form>
 
-			<div class="modal__item modal__item--thanks">
-
-				<h3 class="modal__title modal__outline">
-					Спасибо!
-				</h3>
-
-				<div class="modal__outline">
-
-					<p class="modal__text">
-						Мы Вам перезвоним.
-					</p>
-
-					<button type="button" class="btn btn--red modal__close">
-						Закрыть
-					</button>
-
-				</div>
-
-			</div>
+{% endif %}
 
 			<form action="feedback.php?exec" method="post" target="feedback_done" class="modal__item modal__item--callback form" data-ok-modal="thanks" novalidate="novalidate">
 
@@ -83,21 +71,47 @@
 						<span class="input-row__label">
 							Ваше Имя
 						</span>
-						<input name="client[Name]" class="input">
+						<span class="input-row__input">
+							<input name="client[Name]" class="input">
+						</span>
 					</label>
 
 					<label class="input-row">
 						<span class="input-row__label">
 							Ваш Телефон
 						</span>
-						<input name="client[Phone]" type="tel" class="input" required="required">
+						<span class="input-row__input" data-error="Укажите контактный телефон">
+							<input name="client[Phone]" type="tel" class="input" required="required">
+						</span>
 					</label>
 
-					<button class="btn btn--grey">Отправить</button>
+					<button class="btn form__submit">
+						Отправить
+					</button>
 
 				</div>
 
 			</form>
+
+			<div class="modal__item modal__item--thanks">
+
+				<h3 class="modal__title modal__outline">
+					Спасибо!
+				</h3>
+
+				<div class="modal__outline">
+
+					<p class="modal__text">
+						Мы Вам перезвоним.
+					</p>
+
+					<button type="button" class="btn modal__close">
+						Закрыть
+					</button>
+
+				</div>
+
+			</div>
 
 			<button type="button" class="modal__close modal__close-btn button">Закрыть</button>
 
