@@ -25,13 +25,53 @@
 
 			}
 
-			el.querySelector('.cart__item-price--total').textContent = ASKO.sepNumber(count * price);
+			var countUp = new CountUp(
+				el.querySelector('.cart__item-price--total'),
+				count * price, {
+					startVal: ASKO.strToNumber(el.querySelector('.cart__item-price--total').textContent),
+					useEasing: false,
+					useGrouping: true,
+					separator: ' ',
+					decimal: '',
+					duration: .5,
+				});
+
+			if (!countUp.error) {
+
+				countUp.start();
+
+			} else {
+
+				console.error(countUp.error);
+				el.querySelector('.cart__item-price--total').textContent = ASKO.sepNumber(count * price);
+
+			}
 
 			s += count * price;
 
 		});
 
-		form.querySelector('.cart__items-price').textContent = ASKO.sepNumber(s);
+		var countUp = new CountUp(
+			form.querySelector('.cart__items-price'),
+			s, {
+				startVal: ASKO.strToNumber(form.querySelector('.cart__items-price').textContent),
+				useEasing: false,
+				useGrouping: true,
+				separator: ' ',
+				decimal: '',
+				duration: .5,
+			});
+
+		if (!countUp.error) {
+
+			countUp.start();
+
+		} else {
+
+			console.error(countUp.error);
+			form.querySelector('.cart__items-price').textContent = ASKO.sepNumber(s);
+
+		}
 
 		if(s == 0) {
 
@@ -39,9 +79,23 @@
 
 		}
 
+		// send form
+
+		var formData = new FormData(form),
+			xhr = new XMLHttpRequest();
+
+		xhr.open("POST", form.getAttribute('action'));
+		xhr.send(formData);
+
 	}
 
 	result();
+
+	form.addEventListener('submit', function(e){
+
+		e.preventDefault();
+
+	});
 
 	if(quantity.length) {
 
@@ -136,13 +190,13 @@
 
 		script.type = 'text/javascript';
 		script.async = true;
-		script.src = '/js/nouislider.min.js';
+		script.src = '/js/pickmeup.min.js';
 
 		script.onload = function () {
 
-			var event = new Event('loadNoUiSlider');
+/*			var event = new Event('loadNoUiSlider');
 			window.dispatchEvent(event);
-
+*/
 		};
 
 		document.head.appendChild(script);
