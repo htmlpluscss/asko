@@ -8,6 +8,7 @@
 
 		var novalidate = false,
 			showMoadalOk = form.getAttribute('data-ok-modal'),
+			redirect = form.getAttribute('data-redirect'),
 			formRequired = form.querySelectorAll('[required]'),
 			formBtnSubmit = form.querySelector('.form__submit');
 
@@ -20,6 +21,12 @@
 				formData = new FormData(form);
 
 			Array.prototype.forEach.call(formRequired, function(input){
+
+				if(input.offsetParent === null) {
+
+					return;
+
+				}
 
 				if(input.getAttribute('type') == 'checkbox') {
 
@@ -51,15 +58,12 @@
 
 			});
 
-
 			if(!novalidate){
 
 				var xhr = new XMLHttpRequest();
 
 				xhr.open("POST", form.getAttribute('action'));
 				xhr.send(formData);
-
-				// reset
 
 				formBtnSubmit && formBtnSubmit.setAttribute('disabled','disabled');
 
@@ -73,11 +77,15 @@
 
 					if (xhr.status == 200) {
 
-						form.reset();
-
 						if(showMoadalOk) {
 
 							ASKO.modalShow('thanks');
+
+						}
+
+						if(redirect) {
+
+							window.location.assign(redirect);
 
 						}
 
@@ -91,9 +99,27 @@
 
 				}
 			}
-		});
-	});
+			else {
 
+				var inputError = form.querySelector('.input-row__input--error');
+
+				if(!ASKO.isInViewport(inputError)){
+
+					animateScroll(inputError, 500, 'linear', 20);
+
+				}
+
+				if(inputError){
+
+					inputError.querySelector('.input--error').focus();
+
+				}
+
+			}
+
+		});
+
+	});
 
 // input
 

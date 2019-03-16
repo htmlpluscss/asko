@@ -6,7 +6,7 @@
 
 	}
 
-	var form = cart.querySelector('.cart__form'),
+	var form = cart.querySelector('.cart__list'),
 		quantity = form.querySelectorAll('.quantity');
 
 	function result() {
@@ -90,12 +90,6 @@
 	}
 
 	result();
-
-	form.addEventListener('submit', function(e){
-
-		e.preventDefault();
-
-	});
 
 	if(quantity.length) {
 
@@ -184,23 +178,15 @@
 
 	}
 
-	setTimeout(function(){
+// mirror
+	Array.prototype.forEach.call(cart.querySelectorAll('[data-mirror]'), function(el){
 
-		var script = document.createElement('script');
+		el.addEventListener('blur', function(){
 
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = '/js/pickmeup.min.js';
+			document.querySelector('#' + el.getAttribute('data-mirror')).value = el.value;
 
-		script.onload = function () {
+		});
 
-/*			var event = new Event('loadNoUiSlider');
-			window.dispatchEvent(event);
-*/
-		};
-
-		document.head.appendChild(script);
-
-	}, 1000);
+	});
 
 })(document.querySelector('.cart'));

@@ -216,9 +216,9 @@
 
 /* form  */
 
-	&__data {
+	&__order {
 
-		max-width: 600px;
+		max-width: 576px;
 		margin: auto;
 
 		.input-row {
@@ -232,6 +232,36 @@
 			}
 
 		}
+
+		.checkbox {
+
+			font-size: 16px;
+
+			& + .checkbox {
+
+				margin-top: 10px;
+
+			}
+
+		}
+
+
+	}
+
+	&__info-required {
+
+		sup {
+
+			color: var(--red);
+
+		}
+
+	}
+
+	&__submit {
+
+		margin: 20px 0 20px 158px;
+		display: block;
 
 	}
 
