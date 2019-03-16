@@ -110,6 +110,11 @@
 
 }
 
+fieldset {
+
+	border: 0;
+
+}
 
 .input {
 
@@ -256,6 +261,14 @@
 
 	}
 
+	&--required &__label::after {
+
+		content: '*';
+		color: var(--red);
+		padding-left: 3px;
+
+	}
+
 	&__input {
 
 		flex-grow: 1;
@@ -290,20 +303,20 @@
 .select {
 
 	position: relative;
+	display: block;
 
 	&::after {
 
 		position: absolute;
-		width: 20px;
-		height: 20px;
 		top: 50%;
-		margin-top: -10px;
 		right: 10px;
 		content: '';
-		border-radius: 50%;
-		box-shadow: 0 0 5px #fff;
+		box-shadow: 0 0 0 10px #fff;
 		background-color: #fff;
 		pointer-events: none;
+
+		border: 5px solid transparent;
+		border-top-color: #a7a7a7;
 
 	}
 
