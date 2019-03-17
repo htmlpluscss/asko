@@ -9,7 +9,7 @@ ASKO.tabs = function(elems){
 		Array.prototype.forEach.call(btn, function(el,index){
 
 			var _btn = document.createElement('button'),
-				_pattern = document.createElement('span');;
+				_pattern = document.createElement('span');
 
 			_btn.setAttribute('type','button');
 

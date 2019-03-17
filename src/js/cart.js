@@ -7,13 +7,23 @@
 	}
 
 	var form = cart.querySelector('.cart__list'),
-		quantity = form.querySelectorAll('.quantity');
+		quantity = form.querySelectorAll('.quantity'),
+		headerCart = document.querySelector('.header__cart'),
+		headerCount = headerCart.querySelector('.header__cart-count'),
+		headerValue	= headerCart.querySelector('.header__cart-value'),
+		countUpOption = {
+			useEasing: false,
+			useGrouping: true,
+			separator: ' ',
+			decimal: ''
+		};
 
 	function result() {
 
-		var s = 0;
+		var s = 0,
+			items = cart.querySelectorAll('.cart__item');
 
-		Array.prototype.forEach.call(cart.querySelectorAll('.cart__item'), function(el){
+		Array.prototype.forEach.call(items, function(el){
 
 			var count = parseInt(el.querySelector('.quantity__count').value),
 				price = parseInt(el.querySelector('.quantity__price').value);
@@ -27,14 +37,11 @@
 
 			var countUp = new CountUp(
 				el.querySelector('.cart__item-price--total'),
-				count * price, {
-					startVal: ASKO.strToNumber(el.querySelector('.cart__item-price--total').textContent),
-					useEasing: false,
-					useGrouping: true,
-					separator: ' ',
-					decimal: '',
-					duration: .5,
-				});
+				ASKO.strToNumber(el.querySelector('.cart__item-price--total').textContent),
+				count * price,
+				0,
+				0.5,
+				countUpOption);
 
 			if (!countUp.error) {
 
@@ -51,16 +58,14 @@
 
 		});
 
+	// total sum
 		var countUp = new CountUp(
 			form.querySelector('.cart__items-price'),
-			s, {
-				startVal: ASKO.strToNumber(form.querySelector('.cart__items-price').textContent),
-				useEasing: false,
-				useGrouping: true,
-				separator: ' ',
-				decimal: '',
-				duration: .5,
-			});
+			ASKO.strToNumber(form.querySelector('.cart__items-price').textContent),
+			s,
+			0,
+			0.5,
+			countUpOption);
 
 		if (!countUp.error) {
 
@@ -73,9 +78,51 @@
 
 		}
 
+	// header cart link
+		var countUp = new CountUp(
+			headerCount,
+			parseInt(headerCount.textContent),
+			items.length,
+			0,
+			0.5,
+			countUpOption);
+
+		if (!countUp.error) {
+
+			countUp.start();
+
+		} else {
+
+			console.error(countUp.error);
+			headerCount = items.length;
+
+		}
+
+		var countUp = new CountUp(
+			headerValue,
+			ASKO.strToNumber(headerValue.textContent),
+			s,
+			0,
+			0.5,
+			countUpOption);
+
+		if (!countUp.error) {
+
+			countUp.start();
+
+		} else {
+
+			console.error(countUp.error);
+			headerValue = ASKO.sepNumber(s);
+
+		}
+
+	// hide form empty
+
 		if(s == 0) {
 
-			form.querySelector('.cart__list').classList.add('cart__list--hide');
+			form.classList.add('cart__list--hide');
+			headerCart.innerHTML = headerCart.getAttribute('data-empty');
 
 		}
 
@@ -130,6 +177,16 @@
 			count.addEventListener('blur',function(){
 
 				result();
+
+			});
+
+			count.addEventListener('focus',function(){
+
+				setTimeout(function(){
+
+					count.setSelectionRange(0,9);
+
+				},100)
 
 			});
 

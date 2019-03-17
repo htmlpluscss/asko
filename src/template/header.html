@@ -91,16 +91,16 @@
 
 				<div class="header__top-right">
 
-					<a href="/zakaz/" class="header__cart">
-						<span class="header__cart-value">1</span>
-						56 900
+					<a href="/zakaz/" class="header__cart" data-empty="Корзина пуста">
+{% if cart %}
+						<span class="header__cart-count">2</span>
+						<span class="header__cart-value">809 900</span>
 						<span class="rub">₽</span>
+{% else %}
+						Корзина пуста
+{% endif %}
 					</a>
-<!--
- 					<a href="/zakaz/" class="header__cart">
- 						Корзина пуста
- 					</a>
--->
+
 					<form class="header__search" action="poisk/" autocomplete="off">
 
 						<input name="model" class="header__search-input input" placeholder="Поиск...">

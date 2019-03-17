@@ -6,8 +6,7 @@
 
 	Array.prototype.forEach.call(forms, function(form){
 
-		var novalidate = false,
-			showMoadalOk = form.getAttribute('data-ok-modal'),
+		var showMoadalOk = form.getAttribute('data-ok-modal'),
 			redirect = form.getAttribute('data-redirect'),
 			formRequired = form.querySelectorAll('[required]'),
 			formBtnSubmit = form.querySelector('.form__submit');
