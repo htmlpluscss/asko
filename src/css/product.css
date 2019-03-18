@@ -1,9 +1,5 @@
 .product {
 
-	margin-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-
 	&__hr {
 
 		background-color: #fff;

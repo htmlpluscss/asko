@@ -1,8 +1,5 @@
 .home {
 
-	display: flex;
-	flex-direction: column;
-
 	&__cat {
 
 		padding-top: 30px;

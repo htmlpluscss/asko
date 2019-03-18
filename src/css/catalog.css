@@ -1,9 +1,5 @@
 .catalog {
 
-	margin-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-
 	&__hr {
 
 		background-color: #fff;
@@ -11,13 +7,9 @@
 
 	}
 
-}
+	.infoblock {
 
-@for $i from 1 to 10 {
-
-	.order-$(i) {
-
-		order: $(i);
+		margin: 30px 0;
 
 	}
 

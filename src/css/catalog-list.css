@@ -1,9 +1,5 @@
 .catalog-list {
 
-	margin-bottom: 20px;
-	display: flex;
-	flex-direction: column;
-
 	&__item {
 
 		display: flex;

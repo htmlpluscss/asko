@@ -1,7 +1,5 @@
 .infoblock {
 
-	margin: 30px 0;
-
 	h1,
 	h2,
 	h3,
@@ -32,12 +30,14 @@
 	hr {
 
 		margin: 28px 0;
+		width: 100%;
+		clear: both;
 
 	}
 
 	p {
 
-		margin-bottom: 18px;
+		margin: 18px 0;
 
 	}
 
@@ -64,6 +64,12 @@
 			text-decoration: none;
 
 		}
+
+	}
+
+	strong {
+
+		color: var(--red);
 
 	}
 
@@ -138,6 +144,39 @@
 
 			font-size: 14px;
 			line-height: 20px;
+
+		}
+
+	}
+
+	&__articles {
+
+		display: flex;
+		margin: 20px 0;
+		align-items: flex-start;
+
+		h2 {
+
+			color: var(--red);
+			margin: 0;
+			font-size: 20px;
+
+		}
+
+		&-img {
+
+			margin-right: 20px;
+			padding: 20px;
+			width: 300px;
+			flex-shrink: 0;
+			background-color: #fff;
+			box-shadow: inset 1px 1px 1px rgba(0,0,0,.21), 1px 1px 0 #fff;
+
+			@media ($mdWidth) {
+
+				width: 200px;
+
+			}
 
 		}
 

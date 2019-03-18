@@ -186,6 +186,11 @@ time {
 .main {
 
 	flex-grow: 1;
+
+}
+
+.flexcolumn {
+
 	display: flex;
 	flex-direction: column;
 
@@ -254,6 +259,30 @@ table {
 		font-size: 20px;
 
 	}
+
+}
+
+
+
+@for $i from 1 to 10 {
+
+	.order-$(i) {
+
+		order: $(i);
+
+	}
+
+}
+
+.mb20 {
+
+	margin-bottom: 20px;
+
+}
+
+.mb30 {
+
+	margin-bottom: 30px;
 
 }
 

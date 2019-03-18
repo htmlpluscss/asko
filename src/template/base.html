@@ -22,7 +22,7 @@
 
 	<meta property="og:site_name" content="Фирменный магазин ASKO">
 
-{% if ogType == 'product' %}
+{% if ogType == 'product' or ogType == 'article' %}
 
 	<meta property="og:image" content="{{url}}/{{ ogImage }}">
 
@@ -51,7 +51,7 @@
 
 {% include "template/nav.html" %}
 
-	<main class="main">
+	<main class="main flexcolumn">
 
 {% block content %}{% endblock %}
 
