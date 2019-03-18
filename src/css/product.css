@@ -11,6 +11,16 @@
 
 	}
 
+	&__title {
+
+		@media ($mdWidth) {
+
+			margin: 0 0 20px;
+
+		}
+
+	}
+
 	&__primary {
 
 		display: flex;
@@ -39,6 +49,13 @@
 		width: 350px;
 		margin-right: 40px;
 
+		@media ($mdWidth) {
+
+			width: 250px;
+			margin-right: 20px;
+
+		}
+
 		&-big {
 
 			width: 350px;
@@ -48,12 +65,25 @@
 			justify-content: center;
 			align-items: center;
 
+			@media ($mdWidth) {
+
+				width: 250px;
+				height: 250px;
+
+			}
+
 		}
 
 		&-small {
 
 			position: relative;
 			margin: 0 25px;
+
+			.swiper-container--product:not(.swiper-container-horizontal) .swiper-wrapper {
+
+				justify-content: center;
+
+			}
 
 			li {
 
@@ -157,11 +187,24 @@
 		font-weight: bold;
 		line-height: 50px;
 
+		@media ($mdWidth) {
+
+			font-size: 26px;
+			line-height: 30px;
+
+		}
+
 		.rub,
 		&-value {
 
 			color: var(--red);
 			margin-left: 12px;
+
+			@media ($mdWidth) {
+
+				margin-left: 5px;
+
+			}
 
 		}
 
@@ -169,7 +212,24 @@
 
 	&__available {
 
-		margin: 20px 0;
+		.available {
+
+			margin: 20px 0;
+
+			@media ($mdWidth) {
+
+				margin-right: 40px;
+				margin-top: 0;
+
+			}
+
+		}
+
+		@media ($mdWidth) {
+
+			display: flex;
+
+		}
 
 	}
 
@@ -190,6 +250,14 @@
 			clear: both;
 			margin: 4px 0;
 
+			@media ($mdWidth) {
+
+				float: none;
+				margin: 4px 0 0;
+				font-weight: 700;
+
+			}
+
 		}
 
 		dd {
@@ -197,6 +265,13 @@
 			float: left;
 			margin: 4px;
 			max-width: 400px;
+
+			@media ($mdWidth) {
+
+				float: none;
+				margin: 0 0 4px;
+
+			}
 
 		}
 

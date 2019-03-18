@@ -51,16 +51,18 @@
 
 	}
 
-	@media ($mdWidth) {
-
-
-	}
-
 	.center {
 
 		display: flex;
 		padding: 20px 0;
 		justify-content: space-between;
+
+		@media ($mdWidth) {
+
+			padding: 20px;
+			width: 100%;
+
+		}
 
 	}
 

@@ -2,4 +2,11 @@
 
 	margin: 30px 0;
 
+	img {
+
+		display: block;
+		max-width: 100%;
+
+	}
+
 }

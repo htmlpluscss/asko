@@ -17,6 +17,12 @@
 		position: static;
 		display: flex;
 
+		@media ($mdWidth) {
+
+			flex-grow: 1;
+
+		}
+
 		&::before {
 
 			width: 1px;
@@ -45,6 +51,14 @@
 		text-shadow: 1px 1px 0 #fff;
 		position: relative;
 		white-space: nowrap;
+
+		@media ($mdWidth) {
+
+			padding: 0;
+			text-align: center;
+			flex-grow: 1;
+
+		}
 
 		&::before {
 
@@ -99,6 +113,12 @@
 			box-shadow: 0 0 100px #3c3c3c;
 			padding-bottom: 20px;
 			min-height: 365px;
+
+			@media ($mdWidth) {
+
+				width: 100%;
+
+			}
 
 		}
 

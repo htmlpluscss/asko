@@ -69,6 +69,18 @@
 
 			width: 284px;
 
+			@media ($mdWidth) {
+
+				width: calc(100% / 3 - 10px);
+
+				img {
+
+					max-width: 100%;
+
+				}
+
+			}
+
 		}
 
 		figcaption {

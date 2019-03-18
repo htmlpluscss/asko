@@ -3,6 +3,13 @@
 	position: relative;
 	height: 365px;
 
+	@media ($mdWidth) {
+
+		width: 100%;
+		height: auto;
+
+	}
+
 	&__list {
 
 		display: flex;
@@ -19,7 +26,6 @@
 	&__link {
 
 		display: block;
-		height: 336px;
 
 	}
 
@@ -27,6 +33,13 @@
 
 		display: block;
 		margin: auto;
+
+		@media ($mdWidth) {
+
+			width: 100%;
+			height: auto;
+
+		}
 
 	}
 

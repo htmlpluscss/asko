@@ -21,8 +21,9 @@
 
 				<table>
 
-					<thead>
-						<tr>
+					<thead class="hidden-md">
+
+						<tr class="cart__row cart__row--head">
 							<td class="cart__col-1"></td>
 							<td class="cart__col-2">Наименование</td>
 							<td class="cart__col-3">Количество</td>
@@ -30,11 +31,12 @@
 							<td class="cart__col-5">Сумма, руб.</td>
 							<td class="cart__col-6"></td>
 						</tr>
+
 					</thead>
 
 					<tbody class="border">
 
-						<tr class="cart__item">
+						<tr class="cart__row cart__item">
 							<td class="cart__col-1">
 								<a href="/" target="_blank">
 									<picture>
@@ -52,7 +54,7 @@
 									<span class="available__value">под заказ от 2-х дней</span>
 								</div>
 							</td>
-							<td class="cart__col-3">
+							<td class="cart__col-3" data-pref="Количество">
 								<span class="quantity">
 									<button class="quantity__btn quantity__btn--down button" type="button">
 										уменьшить на одну штуку
@@ -64,12 +66,12 @@
 									</button>
 								</span>
 							</td>
-							<td class="cart__col-4">
+							<td class="cart__col-4" data-pref="Цена, руб.">
 								<div class="cart__item-price">
 									390 000
 								</div>
 							</td>
-							<td class="cart__col-5">
+							<td class="cart__col-5" data-pref="Сумма, руб.">
 								<div class="cart__item-price cart__item-price--total">
 									780 000
 								</div>
@@ -81,7 +83,7 @@
 							</td>
 						</tr>
 
-						<tr class="cart__item">
+						<tr class="cart__row cart__item">
 							<td class="cart__col-1">
 								<a href="/" target="_blank">
 									<picture>
@@ -99,7 +101,7 @@
 									<span class="available__value">есть в наличии</span>
 								</div>
 							</td>
-							<td class="cart__col-3">
+							<td class="cart__col-3" data-pref="Количество">
 								<span class="quantity">
 									<button class="quantity__btn quantity__btn--down button" type="button">
 										уменьшить на одну штуку
@@ -111,12 +113,12 @@
 									</button>
 								</span>
 							</td>
-							<td class="cart__col-4">
+							<td class="cart__col-4" data-pref="Цена, руб.">
 								<div class="cart__item-price">
 									29 900
 								</div>
 							</td>
-							<td class="cart__col-5">
+							<td class="cart__col-5" data-pref="Сумма, руб.">
 								<div class="cart__item-price cart__item-price--total">
 									29 900
 								</div>
@@ -131,7 +133,8 @@
 					</tbody>
 
 					<tfoot>
-						<tr>
+
+						<tr class="cart__row cart__row--foot">
 							<td colspan="6" class="cart__col-foot">
 								Итого:
 								<div class="cart__col-foot-bold">
@@ -142,6 +145,7 @@
 								</div>
 							</td>
 						</tr>
+
 					</tfoot>
 
 				</table>

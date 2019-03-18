@@ -9,6 +9,12 @@
 		margin-bottom: 40px;
 		text-align: center;
 
+		@media ($mdWidth) {
+
+			width: 25%;
+
+		}
+
 	}
 
 	a {

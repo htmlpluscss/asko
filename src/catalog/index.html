@@ -1,4 +1,4 @@
-{% set title = "Техника для кухни Asko. Купить   Asko." %}
+{% set title = "Техника для кухни Asko. Купить Asko." %}
 {% set description = "ASKO предлагает полную линейку оборудования для кухни, отвечающую высоким требованиям дизайна, функциональности, надежности, также как и экологическим стандартам." %}
 
 {% set urlCurrent = "catalog" %}
@@ -11,7 +11,7 @@
 
 	<div class="catalog center">
 
-		<div class="order-2">
+		<div class="order-2 hidden-md">
 
 			<article class="catalog-desc">
 
@@ -29,21 +29,25 @@
 
 				</div>
 
-				<picture>
+				<div class="catalog-desc__img">
 
-					<source srcset="/img/catalog/desc@1x.webp 1x, /img/catalog/desc@2x.webp 2x" type="image/webp">
+					<picture>
 
-					<source srcset="/img/catalog/desc@1x.png 1x, /img/catalog/desc@2x.png 2x">
+						<source srcset="/img/catalog/desc@1x.webp 1x, /img/catalog/desc@2x.webp 2x" type="image/webp">
 
-					<img src="/img/catalog/desc@1x.png" alt="Техника для кухни ASKO">
+						<source srcset="/img/catalog/desc@1x.png 1x, /img/catalog/desc@2x.png 2x">
 
-				</picture>
+						<img src="/img/catalog/desc@1x.png" alt="Техника для кухни ASKO">
+
+					</picture>
+
+				</div>
 
 			</article>
 
 		</div>
 
-		<div class="order-6">
+		<div class="order-6 hidden-md">
 
 			<article class="infoblock" id="infoblock">
 
@@ -116,7 +120,7 @@
 
 		</div>
 
-		<div class="order-5">
+		<div class="order-5 hidden-md">
 
 			<hr class="catalog__hr">
 

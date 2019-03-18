@@ -37,7 +37,7 @@
 
 		<div class="order-2">
 
-			<h1 class="h2">
+			<h1 class="product__title h2">
 				{{ title }}
 			</h1>
 
@@ -55,14 +55,18 @@
 						<span class="rub">₽</span>
 					</div>
 
-					<div class="product__available available">
-						<span class="available__pref">Москва</span>
-						<span class="available__value">В наличии</span>
-					</div>
+					<div class="product__available">
 
-					<div class="product__available available available--unavailable">
-						<span class="available__pref">Санкт-Петербург</span>
-						<span class="available__value">Нет в наличии</span>
+						<div class="available">
+							<span class="available__pref">Москва</span>
+							<span class="available__value">В наличии</span>
+						</div>
+
+						<div class="available available--unavailable">
+							<span class="available__pref">Санкт-Петербург</span>
+							<span class="available__value">Нет в наличии</span>
+						</div>
+
 					</div>
 
 					<form action="/zakaz/" class="product__cart">

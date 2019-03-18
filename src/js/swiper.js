@@ -71,15 +71,20 @@
 					mySwipe = new Swiper(swipe, {
 						loop: true,
 						pagination: {
-							el: swipeNav
+							el: swipeNav,
+							clickable: true
 						}
 					});
 
 				}
-				else if (ASKO.width < 1200) {
+				else if (ASKO.width < 1000) {
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
+						pagination: {
+							el: swipeNav,
+							clickable: true
+						},
 						navigation: {
 							nextEl: swipeNext,
 							prevEl: swipePrev
@@ -114,7 +119,7 @@
 
 		if (product) {
 
-			if(count > 3) {
+			if(count > 3 || (count > 2 && ASKO.width < 1000)) {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
@@ -123,7 +128,20 @@
 
 			toggleSwipe = function() {
 
-				if(!mySwipe && count > 3) {
+				swipeNext.classList.add('hide');
+				swipePrev.classList.add('hide');
+
+				if(mySwipe) {
+
+					mySwipe.destroy(false,true);
+					mySwipe = undefined;
+
+				}
+
+				if(count > 3 || (count > 2 && ASKO.width < 1000)) {
+
+					swipeNext.classList.remove('hide');
+					swipePrev.classList.remove('hide');
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,

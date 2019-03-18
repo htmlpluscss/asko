@@ -17,6 +17,13 @@
 		flex-basis: 270px;
 		line-height: 20px;
 
+		@media ($mdWidth) {
+
+			flex-basis: 1;
+			padding: 0 20px;
+
+		}
+
 	}
 
 	img {
