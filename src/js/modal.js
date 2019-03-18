@@ -70,6 +70,13 @@
 
 		ASKO.activeModal.focus();
 
+		// вызывыем событие на активном окне
+		if (typeof window.CustomEvent === 'function') {
+
+			ASKO.activeModal.dispatchEvent(new Event('modalShow'));
+
+		}
+
 	}
 
 	document.addEventListener('keydown',function(e) {

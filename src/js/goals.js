@@ -1,244 +1,49 @@
 (function () {
-/*
-	var yaCounterId = '51123644',
+
+	var yaCounterId = '26526729',
 		goals = [
-			// home
-			{
-				skipPages: ['/loans/ease/', '/loans/secured/', '/loans/ways/'],
-				selector: '.callback',
-				event: 'submit',
-				yandex: {
-					target: 'CallbackMain'
-				},
-				google: {
-					category: 'Callback',
-					action: 'submit',
-					label: 'Main'
-				}
-			},
-			{
-				page: '/',
-				selector: '.consultation',
-				event: 'submit',
-				yandex: {
-					target: 'ConsultationMain'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'ConsultationMain'
-				}
-			},
-			{
-				page: '/',
-				selector: '.promo__item--loan .btn',
-				event: 'click',
-				yandex: {
-					target: 'DetailZaym'
-				},
-				google: {
-					category: 'Button',
-					action: 'click',
-					label: 'DetailZaym'
-				}
-			},
-			{
-				page: '/',
-				selector: '.promo__item--auto .btn',
-				event: 'click',
-				yandex: {
-					target: 'DetailAuto'
-				},
-				google: {
-					category: 'Button',
-					action: 'click',
-					label: 'DetailAuto'
-				}
 
-			},
-			// loan (ease)
+		// Заказать звонок
 			{
-				page: '/loans/ease/',
-				selector: '.callback',
-				event: 'submit',
+				selector: '.modal__item--callback',
+				event: 'modalShow',
 				yandex: {
-					target: 'ZaymCallback'
-				},
-				google: {
-					category: 'Callback',
-					action: 'submit',
-					label: 'Zaym'
+					target: 'CALLBACK_OPEN'
 				}
-
 			},
 			{
-				page: '/loans/ease/',
-				selector: '.consultation',
+				selector: '.modal__item--callback',
 				event: 'submit',
 				yandex: {
-					target: 'ConsultationZaym'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'ConsultationZaym'
-				}
-
-			},
-			{
-				page: '/loans/ease/',
-				selector: '.calculator__form',
-				event: 'submit',
-				yandex: {
-					target: 'ZaymForm'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'Zaym'
+					target: 'CALLBACK_SEND'
 				}
 			},
 
-			// loan (auto)
+		// Мгновенный заказ
 			{
-				page: '/loans/secured/',
-				selector: '.callback',
-				event: 'submit',
+				selector: '.modal__item--order',
+				event: 'modalShow',
 				yandex: {
-					target: 'AutoCallback'
-				},
-				google: {
-					category: 'Callback',
-					action: 'submit',
-					label: 'Auto'
+					target: 'ORDER_QUICK_OPEN'
 				}
 			},
 			{
-				page: '/loans/secured/',
-				selector: '.consultation',
+				selector: '.modal__item--order',
 				event: 'submit',
 				yandex: {
-					target: 'ConsultationAuto'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'ConsultationAuto'
-				}
-
-			},
-			{
-				page: '/loans/secured/',
-				selector: '.calculator__form',
-				event: 'submit',
-				yandex: {
-					target: 'AutoForm'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'Auto'
-				}
-
-			},
-
-			// ways
-			{
-				page: '/loans/ways/',
-				selector: '.callback',
-				event: 'submit',
-				yandex: {
-					target: 'HowCallback'
-				},
-				google: {
-					category: 'Callback',
-					action: 'submit',
-					label: 'How'
+					target: 'ORDER_QUICK_SEND'
 				}
 			},
 			{
-				page: '/loans/ways/',
-				selector: '.ways__item:first-child .btn',
-				event: 'click',
+				selector: '.modal__item--thanks',
+				event: 'modalShow',
 				yandex: {
-					target: 'HowForm'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'How'
+					target: 'THANKS_OPEN'
 				}
 			},
 
-			// Получение денег
-			{
-				page: '/loans/secured/received/',
-				selector: '.callback',
-				event: 'submit',
-				yandex: {
-					target: 'GetCallback'
-				},
-				google: {
-					category: 'Callback',
-					action: 'submit',
-					label: 'Get'
-				}
-			},
-			{
-				page: '/loans/secured/received/',
-				selector: '.calculator__form',
-				event: 'submit',
-				yandex: {
-					target: 'GetForm'
-				},
-				google: {
-					category: 'Form',
-					action: 'submit',
-					label: 'Get'
-				}
-			},
-
-			// Способы погашения
-			{
-				page: '/loans/repay/',
-				selector: '.repay__item--elecsnet .btn',
-				event: 'click',
-				yandex: {
-					target: 'Elecsnet'
-				},
-				google: {
-					category: 'Button',
-					action: 'click',
-					label: 'Elecsnet'
-				}
-			},
-			{
-				page: '/loans/repay/',
-				selector: '.repay__item--transfer .btn',
-				event: 'click',
-				yandex: {
-					target: 'Transfer'
-				},
-				google: {
-					category: 'Button',
-					action: 'click',
-					label: 'Transfer'
-				}
-			},
-			{
-				page: '/loans/repay/',
-				selector: '.repay__item--bank .btn',
-				event: 'click',
-				yandex: {
-					target: 'Bank'
-				},
-				google: {
-					category: 'Button',
-					action: 'click',
-					label: 'Bank'
-				}
-			},
 		];
+
 
 	goals.forEach(function (goal) {
 		if (goal.page && goal.page !== location.pathname)
@@ -251,18 +56,12 @@
 
 		[].forEach.call(elements, function (element) {
 			element.addEventListener(goal.event, function () {
+				console.log(goal.yandex.target)
 				if (goal.yandex && window['yaCounter' + yaCounterId]) {
 					window['yaCounter' + yaCounterId].reachGoal(goal.yandex.target);
-				}
-
-				if (goal.google && window.gtag) {
-					gtag('event', goal.google.action, {
-						event_category: goal.google.category,
-						event_label: goal.google.label
-					});
 				}
 			});
 		});
 	});
-*/
+
 })();
