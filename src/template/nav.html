@@ -3,6 +3,7 @@
 	{
 		parent: "Почему Asko",
 		link: "pochemu_asko",
+		class: "hidden-sm",
 		columns: [
 			{
 				head: "Как готовить с ASKO",
@@ -284,15 +285,19 @@
 
 	<nav class="nav">
 
-		<button class="button nav__btn-toggle visible-sm" type="button">
-			<span>Каталог ASKO</span>
-		</button>
+		<div class="visible-sm">
+
+			<button class="button nav__btn-toggle" type="button">
+				<span>Каталог ASKO</span>
+			</button>
+
+		</div>
 
 		<ul class="nav__list">
 
 {% for parent in nav %}
 
-			<li class="nav__item">
+			<li class="nav__item{% if parent.class %} {{ parent.class }}{% endif %}">
 
 				<a href="{{ parent.link }}" title="{{ parent.parent }}" class="nav__link{% if parent.active %} nav__link--active{% endif %}">
 					{{ parent.parent }}

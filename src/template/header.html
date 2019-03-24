@@ -15,24 +15,20 @@
 				<ul class="header__tel">
 					<li>
 						<a href="tel:+74952830203">
-							<em>Москва</em>
+							<em class="hidden-sm">Москва</em>
 							<span>+7 495</span> 283-02-03
 						</a>
 					</li>
 					<li>
 						<a href="tel:+78124072210">
-							<em>Санкт-Петербург</em>
+							<em class="hidden-sm">Санкт-Петербург</em>
 							<span>+7 812</span> 407-22-10
 						</a>
 					</li>
 				</ul>
 
-				<button type="button" class="header__btn-callback button" data-modal="callback">
+				<button type="button" class="header__btn-callback button hidden-sm" data-modal="callback">
 					Заказать звонок
-				</button>
-
-				<button class="button header__btn-menu-toggle visible-sm" type="button">
-					<span>открыть/закрыть меню сайта</span>
 				</button>
 
 			</div>
@@ -43,7 +39,7 @@
 
 			<div class="center">
 
-				<nav class="header__menu-top">
+				<nav class="header__menu-top hidden-sm">
 
 					<ul class="menu-top">
 
@@ -101,7 +97,7 @@
 {% endif %}
 					</a>
 
-					<form class="header__search hidden-md" action="/poisk/" autocomplete="off">
+					<form class="header__search" action="/poisk/" autocomplete="off">
 
 						<input name="model" class="header__search-input input" placeholder="Поиск...">
 
