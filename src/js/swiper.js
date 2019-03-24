@@ -70,6 +70,7 @@
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
+						preloadImages: false,
 						pagination: {
 							el: swipeNav,
 							clickable: true
@@ -81,6 +82,7 @@
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
+						preloadImages: false,
 						pagination: {
 							el: swipeNav,
 							clickable: true
@@ -97,6 +99,7 @@
 					mySwipe = new Swiper(swipe, {
 						loop: true,
 						effect: 'fade',
+						preloadImages: false,
 						navigation: {
 							nextEl: swipeNext,
 							prevEl: swipePrev

@@ -1,12 +1,25 @@
 .slider {
 
 	position: relative;
-	width: 1000px;
+	width: 1080px;
 
 	@media ($mdWidth) {
 
 		width: 100%;
 		height: auto;
+
+	}
+
+	@media ($smWidth) {
+
+		.swiper-pagination {
+
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+		}
 
 	}
 
@@ -33,7 +46,7 @@
 
 		display: block;
 		margin: auto;
-		height: 365px;
+		height: 360px;
 
 		@media ($mdWidth) {
 

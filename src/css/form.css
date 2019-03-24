@@ -277,6 +277,13 @@ fieldset {
 	display: flex;
 	margin: 24px auto;
 
+	@media ($smWidth) {
+
+		display: block;
+		margin: 20px auto;
+
+	}
+
 	&__label {
 
 		font-size: 16px;
@@ -290,6 +297,12 @@ fieldset {
 		&--checkbox {
 
 			margin-top: 0;
+
+		}
+
+		@media ($smWidth) {
+
+			padding: 5px;
 
 		}
 
@@ -325,6 +338,14 @@ fieldset {
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
+
+				@media ($smWidth) {
+
+					position: relative;
+					top: 0;
+					display: block;
+
+				}
 
 			}
 
