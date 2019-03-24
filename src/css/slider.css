@@ -1,7 +1,6 @@
 .slider {
 
 	position: relative;
-	height: 365px;
 	width: 1000px;
 
 	@media ($mdWidth) {
@@ -34,6 +33,7 @@
 
 		display: block;
 		margin: auto;
+		height: 365px;
 
 		@media ($mdWidth) {
 

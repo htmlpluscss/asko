@@ -42,7 +42,7 @@ const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.wndrbase.com';
+const domain           = 'asko.wonderbase.ru';
 
 try {
 
