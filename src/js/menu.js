@@ -32,3 +32,20 @@
 	});
 
 })(document.querySelector('.header__btn-menu-toggle'));
+
+(function(btn){
+
+	if(!btn) {
+
+		return;
+
+	}
+
+	btn.addEventListener('click', function () {
+
+		btn.classList.toggle('is-open');
+		document.querySelector('.nav__list').classList.toggle('is-open');
+
+	});
+
+})(document.querySelector('.nav__btn-toggle'));

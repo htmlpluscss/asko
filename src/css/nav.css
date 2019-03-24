@@ -10,6 +10,24 @@
 		justify-content: center;
 		position: static;
 
+		@media ($smWidth) {
+
+			display: block;
+			overflow: hidden;
+			position: relative;
+			max-height: 0;
+			opacity: 0;
+			transition: .5s ease;
+
+			&.is-open {
+
+				max-height: 3000px;
+				opacity: 1;
+
+			}
+
+		}
+
 	}
 
 	&__item {
@@ -20,6 +38,18 @@
 		@media ($mdWidth) {
 
 			flex-grow: 1;
+
+		}
+
+		@media ($smWidth) {
+
+			display: block;
+
+			&::before {
+
+				display: none;
+
+			}
 
 		}
 
@@ -57,6 +87,25 @@
 			padding: 0;
 			text-align: center;
 			flex-grow: 1;
+
+		}
+
+		@media ($smWidth) {
+
+			display: block;
+			background-color: #575757;
+			border-top: 1px solid #3c3c3c;
+			text-shadow: 1px 1px 0 #000;
+			color: #fff !important;
+			font-size: 18px;
+			line-height: 30px;
+			padding: 14px 0 0;
+
+			&::before {
+
+				display: none;
+
+			}
 
 		}
 
@@ -105,6 +154,16 @@
 		transition: .1s .1s;
 		opacity: 0;
 
+		@media ($smWidth) {
+
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+			top: 0;
+			box-shadow: none;
+
+		}
+
 		.center {
 
 			display: flex;
@@ -120,6 +179,15 @@
 
 			}
 
+			@media ($smWidth) {
+
+				display: block;
+				min-height: 0;
+				padding: 0 20px 20px;
+				box-shadow: none;
+
+			}
+
 		}
 
 	}
@@ -130,6 +198,18 @@
 		padding: 22px 0 20px 30px;
 		position: relative;
 		overflow: hidden;
+
+		@media ($smWidth) {
+
+			padding: 0 !important;
+
+			&::before {
+
+				display: none;
+
+			}
+
+		}
 
 		/* IE10+ CSS styles go here */
 		@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -194,6 +274,70 @@
 					padding-bottom: 12px;
 
 				}
+
+			}
+
+		}
+
+	}
+
+	&__btn-toggle {
+
+		display: block;
+		width: 100%;
+		position: relative;
+		text-align: center;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 0 #fff;
+
+		span {
+
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			padding: 0 10px 0 40px;
+			line-height: 40px;
+
+			&::after,
+			&::before {
+
+				position: absolute;
+				width: 14px;
+				height: 2px;
+				top: 15px;
+				left: 18px;
+				content: '';
+				background-color: var(--color);
+				box-shadow: 1px 1px 0 #fff;
+				transition: linear .3s;
+
+			}
+
+			&::before {
+
+				top: 22px;
+
+			}
+
+		}
+
+
+		&.is-open {
+
+			span::after {
+
+				top: 19px;
+				transform: rotate(-45deg);
+				box-shadow: none;
+
+			}
+
+			span::before {
+
+				top: 19px;
+				transform: rotate(45deg);
+				box-shadow: none;
 
 			}
 

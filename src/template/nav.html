@@ -284,6 +284,10 @@
 
 	<nav class="nav">
 
+		<button class="button nav__btn-toggle visible-sm" type="button">
+			<span>Каталог ASKO</span>
+		</button>
+
 		<ul class="nav__list">
 
 {% for parent in nav %}
@@ -333,43 +337,3 @@
 		</ul>
 
 	</nav>
-
-<!-- {% set menuFullCol = 0 %}
-
-
-	{% if item.head %}
-
-	{% set menuFullCol = menuFullCol + 1 %}
-
-	{% if loop.first == false %}
-
-							</ul>
-
-						</div>
-
-		{% endif %}
-
-						<div class="header__menu-full-col header__menu-full-col--{{ menuFullCol }}">
-
-							<p class="header__menu-full-head">
-								{{item.head}}
-							</p>
-
-							<ul class="header__menu-full-list">
-
-	{% else %}
-
-								<li class="header__menu-full-item">
-									<a class="header__menu-full-link{% if item.title == 'Центрофорбс' %} header__menu-full-link--target-blank" target="_blank" rel="nofollow{% endif %}" href="/">{{ item.title }}</a>
-								</li>
-
-		{% if loop.last %}
-
-							</ul>
-
-						</div>
-
-		{% endif %}
-
-	{% endif %}
- -->
