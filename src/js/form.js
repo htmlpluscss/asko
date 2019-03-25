@@ -104,7 +104,7 @@
 
 				if(!ASKO.isInViewport(inputError)){
 
-					animateScroll(inputError, 500, 'linear', 20);
+					animateScroll(inputError, 500, 'linear', ASKO.width < 768 ? 40 : 20);
 
 				}
 
