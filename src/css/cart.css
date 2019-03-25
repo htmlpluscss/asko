@@ -2,13 +2,13 @@
 
 	@media ($smWidth) {
 
-		padding: 20px;
+		padding: 0 20px;
 
 	}
 
 	@media ($xsWidth) {
 
-		padding: 20px 15px;
+		padding: 0 15px;
 
 	}
 
@@ -58,6 +58,12 @@
 
 			}
 
+			@media ($smWidth) {
+
+				order: -2;
+
+			}
+
 		}
 
 		&-2 {
@@ -72,6 +78,13 @@
 
 			}
 
+			@media ($smWidth) {
+
+				padding: 10px 0;
+				width: 100%;
+
+			}
+
 		}
 
 		&-3,
@@ -79,6 +92,7 @@
 		&-5 {
 
 			width: 120px;
+			white-space: nowrap;
 
 			@media ($mdWidth) {
 
@@ -93,6 +107,12 @@
 
 			}
 
+			@media ($smWidth) {
+
+				width: calc(100% / 2 - 50px);
+
+			}
+
 		}
 
 		&-3 {
@@ -100,6 +120,13 @@
 			@media ($mdWidth) {
 
 				margin-left: 92px;
+
+			}
+
+			@media ($smWidth) {
+
+				margin: 0;
+				width: 100px;
 
 			}
 
@@ -112,6 +139,12 @@
 				display: flex;
 				align-items: center;
 				margin-left: auto;
+
+			}
+
+			@media ($smWidth) {
+
+				order: -1;
 
 			}
 
@@ -340,6 +373,12 @@
 
 		margin: 20px 0 20px 158px;
 		display: block;
+
+		@media ($smWidth) {
+
+			margin: 20px auto;
+
+		}
 
 	}
 

@@ -121,12 +121,12 @@
 
 		if (product) {
 
-			if(ASKO.width < 768 && count > 1) {
+			if(ASKO.width < 768) {
 
 				swipeNav.classList.remove('hide');
 
 			}
-			else if((count > 3 || (count > 2 && ASKO.width < 1000)) && ASKO.width >= 768) {
+			else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
@@ -135,6 +135,7 @@
 
 			toggleSwipe = function() {
 
+				swipeNav.classList.add('hide');
 				swipeNext.classList.add('hide');
 				swipePrev.classList.add('hide');
 
@@ -145,22 +146,26 @@
 
 				}
 
-				if(ASKO.width < 768 && count > 1) {
+				if(ASKO.width < 768) {
 
 					swipeNav.classList.remove('hide');
 
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						preloadImages: false,
-						pagination: {
-							el: swipeNav,
-							clickable: true
-						}
-					});
+					if(count > 1) {
+
+						mySwipe = new Swiper(swipe, {
+							loop: true,
+							preloadImages: false,
+							pagination: {
+								el: swipeNav,
+								clickable: true
+							}
+						});
+
+					}
 
 				}
 
-				else if((count > 3 || (count > 2 && ASKO.width < 1000)) && ASKO.width >= 768) {
+				else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
 
 					swipeNext.classList.remove('hide');
 					swipePrev.classList.remove('hide');
