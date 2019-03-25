@@ -59,6 +59,13 @@
 
 	}
 
+	.mobile-padding {
+
+		margin: 20px;
+		width: auto;
+
+	}
+
 }
 
 @media ($xsWidth) {
@@ -72,6 +79,12 @@
 	.visible-xs {
 
 		display: block;
+
+	}
+
+	.mobile-padding {
+
+		margin: 15px;
 
 	}
 

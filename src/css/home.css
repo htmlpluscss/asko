@@ -81,14 +81,13 @@
 
 		@media ($smWidth) {
 
-			padding: 0 20px;
-			margin-bottom: 0;
+			margin-bottom: 20px;
 
-		}
+			.h1 {
 
-		@media ($xsWidth) {
+				margin: 0 0 10px;
 
-			padding: 0 15px;
+			}
 
 		}
 

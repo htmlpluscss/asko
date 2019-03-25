@@ -1,17 +1,5 @@
 .cart  {
 
-	@media ($smWidth) {
-
-		padding: 0 20px;
-
-	}
-
-	@media ($xsWidth) {
-
-		padding: 0 15px;
-
-	}
-
 	&__row {
 
 		display: flex;
@@ -339,6 +327,12 @@
 			&__label {
 
 				width: 158px;
+
+				@media ($smWidth) {
+
+					width: auto;
+
+				}
 
 			}
 
