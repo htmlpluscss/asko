@@ -1,5 +1,17 @@
 .cart  {
 
+	@media ($smWidth) {
+
+		padding: 20px;
+
+	}
+
+	@media ($xsWidth) {
+
+		padding: 20px 15px;
+
+	}
+
 	&__row {
 
 		display: flex;

@@ -10,12 +10,30 @@
 		left: 20px;
 		bottom: 100%;
 
+		@media ($smWidth) {
+
+			left: 10px;
+
+		}
+
 		&-btn {
 
 			padding: 10px 20px 12px;
 			position: relative;
 			border: 1px solid transparent;
 			border-bottom: 0;
+
+			@media ($smWidth) {
+
+				padding: 10px;
+
+			}
+
+			@media ($xsWidth) {
+
+				padding: 8px;
+
+			}
 
 			&--active {
 
@@ -32,6 +50,12 @@
 					content: '';
 					height: 1px;
 					background-color: var(--color);
+
+					@media ($smWidth) {
+
+						display: none;
+
+					}
 
 				}
 

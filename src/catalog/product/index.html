@@ -18,17 +18,18 @@
 				"@type": "Product",
 				"name": "{{ title }}",
 				"description": "{{ description }}",
-				"image": "{{ url }}{{ ogImage }}",
-				"url": "{{ url }}{{ urlCurrent }}",
-				"brand": "jacky`s",
+				"image": "{{ url }}/{{ ogImage }}",
+				"url": "{{ url }}/{{ urlCurrent }}",
+				"brand": "asko",
 				"sku": "id",
+				"gtin13": "глобальный идентификатор товара, например код ISBN, MPN или GTIN8",
 				"offers": {
 					"@type": "Offer",
 					"price": "258000",
 					"priceValidUntil": "2019-03-03",
 					"availability": "https://schema.org/InStock",
 					"priceCurrency": "RUB",
-					"url": "{{ url }}{{ urlCurrent }}"
+					"url": "{{ url }}/{{ urlCurrent }}"
 				}
 
 			}
@@ -93,7 +94,7 @@
 
 				<div class="product__img">
 
-					<a class="product__img-big fancybox-gallery" href="/img/product/img@big.jpg" data-fancybox-index="0">
+					<a class="product__img-big fancybox-gallery hidden-sm" href="/img/product/img@big.jpg" data-fancybox-index="0">
 
 <!--
 
@@ -155,36 +156,44 @@ img@1x.png
 								<li class="swiper-slide">
 									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="0">
 										<picture>
-											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-											<img src="/img/product/img@1x.png" alt="{{ title }}">
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
 										</picture>
 									</a>
 								</li>
 								<li class="swiper-slide">
 									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="1">
 										<picture>
-											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-											<img src="/img/product/img@1x.png" alt="{{ title }}">
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
 										</picture>
 									</a>
 								</li>
 								<li class="swiper-slide">
 									<a href="/img/product/img@big.jpg" class="fancybox-gallery" data-fancybox-index="2">
 										<picture>
-											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-											<img src="/img/product/img@1x.png" alt="{{ title }}">
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
 										</picture>
 									</a>
 								</li>
 								<li class="swiper-slide">
 									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="3">
 										<picture>
-											<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-											<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-											<img src="/img/product/img@1x.png" alt="{{ title }}">
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
 										</picture>
 									</a>
 								</li>
@@ -260,7 +269,7 @@ img@1x.png
 				<section class="tabs__item">
 
 					<h2 class="tabs__btn">
-						Файлы для скачивания
+						Файлы <span class="hidden-sm">для скачивания</span>
 					</h2>
 
 					<a class="link link--pdf" title="Инструкция на варочную панель Asko HG1825AB " href="/pdf/HG1825AB.pdf">

@@ -119,10 +119,14 @@
 
 		}
 
-
 		if (product) {
 
-			if(count > 3 || (count > 2 && ASKO.width < 1000)) {
+			if(ASKO.width < 768 && count > 1) {
+
+				swipeNav.classList.remove('hide');
+
+			}
+			else if((count > 3 || (count > 2 && ASKO.width < 1000)) && ASKO.width >= 768) {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
@@ -141,7 +145,22 @@
 
 				}
 
-				if(count > 3 || (count > 2 && ASKO.width < 1000)) {
+				if(ASKO.width < 768 && count > 1) {
+
+					swipeNav.classList.remove('hide');
+
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						preloadImages: false,
+						pagination: {
+							el: swipeNav,
+							clickable: true
+						}
+					});
+
+				}
+
+				else if((count > 3 || (count > 2 && ASKO.width < 1000)) && ASKO.width >= 768) {
 
 					swipeNext.classList.remove('hide');
 					swipePrev.classList.remove('hide');
