@@ -213,4 +213,11 @@
 
 	}, 1000);
 
+
+	document.querySelector('.filter__btn-toggle .btn').addEventListener('click', function () {
+
+		document.querySelector('.filter__body').classList.toggle('is-open');
+
+	});
+
 })(document.querySelector('.filter'));

@@ -5,6 +5,12 @@
 	flex-wrap: wrap;
 	align-items: center;
 
+	@media ($mdWidth) {
+
+		justify-content: center;
+
+	}
+
 	&__item {
 
 		span {

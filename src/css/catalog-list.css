@@ -12,6 +12,19 @@
 
 		}
 
+		@media ($smWidth) {
+
+			padding: 30px 20px;
+			display: block;
+
+		}
+
+		@media ($xsWidth) {
+
+			padding: 20px 15px;
+
+		}
+
 	}
 
 	&__img {
@@ -58,12 +71,25 @@
 
 		}
 
+		@media ($smWidth) {
+
+			margin: 10px 0;
+			font-size: 20px;
+
+		}
+
 	}
 
 	&__desc {
 
 		display: flex;
 		justify-content: space-between;
+
+		@media ($smWidth) {
+
+			display: block;
+
+		}
 
 	}
 
@@ -109,6 +135,13 @@
 		display: flex;
 		justify-content: flex-end;
 
+		@media ($smWidth) {
+
+			justify-content: flex-start;
+			margin-top: 14px;
+
+		}
+
 	}
 
 	&__price {
@@ -118,6 +151,13 @@
 		justify-content: flex-end;
 		color: #000;
 		font-size: 24px;
+
+		@media ($smWidth) {
+
+			justify-content: flex-start;
+			margin-top: 12px;
+
+		}
 
 		&-pref {
 
@@ -138,6 +178,13 @@
 	&__available {
 
 		padding: 14px 0 18px;
+
+		@media ($smWidth) {
+
+			padding: 10px 0;
+			display: flex;
+
+		}
 
 	}
 
