@@ -71,8 +71,19 @@
 					</div>
 
 					<form action="/zakaz/" class="product__cart">
-						<button class="btn">Купить</button>
-						<button class="btn btn--link" data-modal="order" type="button">Заказать в 1 клик</button>
+
+						<input type="hidden" name="product" value="123456789">
+						<input type="hidden" name="product-name" value="HiLight Asko HC1643G">
+						<input type="hidden" name="buy" value="1">
+
+						<button class="btn product-in-cart" data-delete="Удалить" data-buy="Купить">
+							Купить
+						</button>
+
+						<button class="btn btn--link" data-modal="order" type="button">
+							Заказать в 1 клик
+						</button>
+
 					</form>
 
 					<dl class="product__delivery">

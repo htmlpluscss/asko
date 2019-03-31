@@ -48,7 +48,11 @@
 
 							</div>
 
-							<form action="/zakaz/" class="catalog-list__cart">
+							<form action="/zakaz/" class="catalog-list__cart" data-buy="товар в корзине">
+
+								<input type="hidden" name="product" value="123456789">
+								<input type="hidden" name="product-name" value="HiLight Asko HC1643G">
+								<input type="hidden" name="buy" value="1">
 
 								<div class="catalog-list__price">
 
@@ -72,7 +76,7 @@
 
 								<div class="catalog-list__btn">
 
-									<button class="btn">
+									<button class="btn product-in-cart" data-delete="Удалить" data-buy="Купить">
 										Купить
 									</button>
 

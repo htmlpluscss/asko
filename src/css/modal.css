@@ -153,4 +153,24 @@
 
 	}
 
+	&__btns {
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media ($smWidth) {
+
+			flex-direction: column;
+
+		}
+
+		.btn {
+
+			margin: 10px;
+
+		}
+
+	}
+
 }

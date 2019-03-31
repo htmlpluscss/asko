@@ -84,6 +84,18 @@
 
 	}
 
+	&--gray {
+
+		background-image: linear-gradient(to bottom, #a4a4a4, var(--light));
+
+		&:not([disabled]):hover {
+
+			background-image: linear-gradient(to top, #a4a4a4, var(--light));
+
+		}
+
+	}
+
 	&--link {
 
 		background: transparent !important;
