@@ -137,6 +137,13 @@
 			margin-top: 10px;
 			text-align: right;
 
+			@media ($smWidth) {
+
+				text-align: left;
+				margin-left: 5px;
+
+			}
+
 		}
 
 	}
