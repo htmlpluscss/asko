@@ -71,7 +71,7 @@ gulp.task('html', function() {
 			path: 'src/'
 		}))
 		.pipe(w3cjs())
-		.pipe(w3cjs.reporter())
+//		.pipe(w3cjs.reporter())
 
 		.pipe(f)
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
@@ -116,7 +116,6 @@ gulp.task('js', function() {
 
 		'src/js/min/*.js',
 
-		'!src/js/scripts.min.js',
 		'!src/js/min/swiper.min.js',
 		'!src/js/min/nouislider.min.js',
 		'!src/js/min/jquery.min.js',
@@ -124,6 +123,7 @@ gulp.task('js', function() {
 
 		'src/js/js.js',
 		'src/js/*.js',
+		'!src/js/scripts.min.js',
 
 	], {since: gulp.lastRun('js')})
 
