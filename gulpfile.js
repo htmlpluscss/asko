@@ -42,7 +42,7 @@ const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.wonderbase.ru';
+const domain           = 'asko.wndrbase.com';
 
 try {
 
@@ -116,6 +116,7 @@ gulp.task('js', function() {
 
 		'src/js/min/*.js',
 
+		'!src/js/scripts.min.js',
 		'!src/js/min/swiper.min.js',
 		'!src/js/min/nouislider.min.js',
 		'!src/js/min/jquery.min.js',
