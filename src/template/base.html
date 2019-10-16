@@ -14,13 +14,14 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{ description }}">
+	<meta name="theme-color" content="#ffffff">
 
+	<meta property="og:locale" content="ru_RU">
+	<meta property="og:site_name" content="Фирменный магазин ASKO">
 	<meta property="og:url" content="{{ url }}/{{ urlCurrent }}">
 	<meta property="og:type" content="{{ ogType | default('website') }}">
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:description" content="{{ description }}">
-
-	<meta property="og:site_name" content="Фирменный магазин ASKO">
 
 {% if ogType == 'product' or ogType == 'article' %}
 
@@ -29,6 +30,7 @@
 {% else %}
 
 	<meta property="og:image" content="{{url}}/{{ ogImage | default('og.png') }}">
+	<meta property="og:image:secure_url" content="{{ url }}/{{ ogImage | default('og.jpg') }}">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image" content="{{url}}/{{ ogImage236 | default('og-236.png') }}">

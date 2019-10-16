@@ -40,7 +40,7 @@
 
 				script.type = 'text/javascript';
 				script.async = true;
-				script.src = '/js/jquery-3.3.1.min.js';
+				script.src = '/js/jquery.min.js';
 
 				script.onload = function () {
 

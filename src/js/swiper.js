@@ -224,18 +224,8 @@
 
 		script.onload = function () {
 
-			if (typeof window.CustomEvent === 'function') {
-
-				var event = new Event('resize');
-				window.dispatchEvent(event);
-
-			}
-			else {
-
-				event = document.createEvent('Event');
-				event.initEvent('resize', true, true);
-
-			}
+			var event = new Event('resize');
+			window.dispatchEvent(event);
 
 		};
 

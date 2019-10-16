@@ -24,17 +24,21 @@ var ASKO = ASKO || {};
 
 	window.addEventListener("resize", function(){
 
-		if (!resizeTimeout) {
+		window.requestAnimationFrame(function(){
 
-			resizeTimeout = setTimeout(function() {
+			if (!resizeTimeout) {
 
-				resizeTimeout = null;
-				ASKO.width = window.innerWidth;
-				ASKO.height = window.innerHeight;
+				resizeTimeout = setTimeout(function() {
 
-			}, 100);
+					resizeTimeout = null;
+					ASKO.width = window.innerWidth;
+					ASKO.height = window.innerHeight;
 
-		}
+				}, 100);
+
+			}
+
+		});
 
 	});
 
@@ -66,19 +70,6 @@ var ASKO = ASKO || {};
 				r = expressions['2'];
 		}
 		return r;
-	}
-
-// загрузка калькулятора
-	if (document.querySelector('.calculator')) {
-
-		var script = document.createElement('script');
-
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = SITE_TEMPLATE_PATH + '/js/calculator.all.min.js';
-
-		document.head.appendChild(script);
-
 	}
 
 	// обработчик анимаций

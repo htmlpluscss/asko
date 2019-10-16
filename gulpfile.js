@@ -118,7 +118,7 @@ gulp.task('js', function() {
 
 		'!src/js/min/swiper.min.js',
 		'!src/js/min/nouislider.min.js',
-		'!src/js/min/jquery-3.3.1.min.js',
+		'!src/js/min/jquery.min.js',
 		'!src/js/min/jquery.fancybox.min.js',
 
 		'src/js/js.js',
@@ -137,7 +137,7 @@ gulp.task('js', function() {
 		.pipe(sourcemaps.write())
 
 // prod
-/*
+
 		.pipe(minify({
 			preserveComments: "some",
 			ext : {
@@ -153,13 +153,13 @@ gulp.task('js', function() {
 			},
 			gulp.dest('src/js')
 		));
-*/
+
 
 // dev, off minify
-		.pipe(gulp.dest('build/js'))
+/*		.pipe(gulp.dest('build/js'))
 		.pipe(rename({suffix: ".min"}))
 		.pipe(gulp.dest('build/js'))
-
+*/
 });
 
 gulp.task('serve', function() {
@@ -168,7 +168,7 @@ gulp.task('serve', function() {
 	gulp.src([
 		'src/js/min/swiper.min.js',
 		'src/js/min/nouislider.min.js',
-		'src/js/min/jquery-3.3.1.min.js',
+		'src/js/min/jquery.min.js',
 		'src/js/min/jquery.fancybox.min.js'
 	])
 	.pipe(gulp.dest('build/js'))
