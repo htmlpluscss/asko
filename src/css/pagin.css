@@ -11,7 +11,7 @@
 
 	}
 
-	&__item {
+	li {
 
 		span {
 
@@ -25,33 +25,6 @@
 			color: var(--red);
 			display: block;
 			padding: 5px 10px;
-
-		}
-
-		&--prev,
-		&--next {
-
-			font-size: 0;
-			color: transparent;
-
-			a::before {
-
-				font-size: 14px;
-				color: var(--red);
-				content: '←';
-				text-decoration: none !important;
-
-			}
-
-		}
-
-		&--next {
-
-			a::before {
-
-				content: '→';
-
-			}
 
 		}
 
