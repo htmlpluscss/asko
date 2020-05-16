@@ -36,7 +36,6 @@ const remember         = require('gulp-remember');
 const debug            = require('gulp-debug');
 const touch            = require('gulp-touch');
 
-const htmlmin          = require('gulp-html-minifier2');
 const w3cjs            = require('gulp-w3cjs');
 const svgSprite        = require('gulp-svg-sprite');
 
@@ -138,7 +137,7 @@ gulp.task('js', function() {
 		.pipe(sourcemaps.write())
 
 // prod
-
+/*
 		.pipe(minify({
 			preserveComments: "some",
 			ext : {
@@ -153,14 +152,14 @@ gulp.task('js', function() {
 				return (/min$/.test(file.stem));
 			},
 			gulp.dest('src/js')
-		));
+		));*/
 
 
 // dev, off minify
-/*		.pipe(gulp.dest('build/js'))
+		.pipe(gulp.dest('build/js'))
 		.pipe(rename({suffix: ".min"}))
 		.pipe(gulp.dest('build/js'))
-*/
+
 });
 
 gulp.task('serve', function() {
@@ -214,17 +213,12 @@ gulp.task('ftp', function () {
 
 	const f = filter('**/*.html', {restore: true});
 
-	return gulp.src('build/**/*', {since: gulp.lastRun('ftp')})
+	return gulp.src(['build/**/*','!build/img/**/*'], {since: gulp.lastRun('ftp')})
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
 		.pipe(replace('css/styles.css', 'css/styles.min.css'))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js'))
-/*		.pipe(htmlmin({
-			minifyJS: true,
-			collapseWhitespace: true,
-			processScripts: ['application/ld+json']
-		}))
-*/		.pipe(f.restore)
+		.pipe(f.restore)
 		.pipe(ftp(config.ftp));
 
 });
@@ -245,3 +239,98 @@ gulp.task('default', gulp.series(
 	'copy',
 	gulp.parallel('ftp','watch','serve')
 	));
+
+
+gulp.task('proxy', function() {
+
+	gulp.src([
+		'src/js/min/swiper.min.js',
+		'src/js/min/nouislider.min.js',
+		'src/js/min/jquery.min.js',
+		'src/js/min/jquery.fancybox.min.js'
+	])
+	.pipe(gulp.dest('build/js'))
+
+	server.init({
+		proxy: "https://asko-gallery.ru/",
+		https: true,
+		serveStatic: ['.'],
+		rewriteRules: [
+			{
+				match: new RegExp('/css/styles.css', 'g'),
+				fn: function() {
+					return '/build/proxy.css';
+				}
+			},
+			{
+				match: new RegExp('/js/scripts.js', 'g'),
+				fn: function() {
+					return '/build/proxy.js';
+				}
+			},
+			{
+				match: new RegExp('\<a href="/zakaz/" class="header__cart"[^>]*>(.|\n|\r)*?\<\/a\>'),
+				fn: function() {
+					return `
+
+					<a href="/zakaz/" class="header__cart header__cart--empty" data-empty="Корзина пуста">
+
+						<span class="header__cart-current">
+
+							<span class="header__cart-count"></span>
+							<span class="header__cart-value"></span>
+							<span class="rub"></span>
+
+						</span>
+
+					</a>
+
+					`;
+				}
+			}
+		],
+		files: [
+			{
+				match: ['build/**/*.*'],
+				fn: function (event, file) {
+					this.reload();
+				}
+			},
+			{
+				match: ['src/js/*.js'],
+				fn: function (event, file) {
+					return gulp.src([
+							'src/js/min/*.js',
+							'!src/js/min/swiper.min.js',
+							'!src/js/min/nouislider.min.js',
+							'!src/js/min/jquery.min.js',
+							'!src/js/min/jquery.fancybox.min.js',
+							'src/js/js.js',
+							'src/js/*.js',
+							'!src/js/scripts.min.js',
+						])
+						.pipe(sourcemaps.init())
+						.pipe(concat('proxy.js'))
+						.pipe(sourcemaps.write())
+						.pipe(gulp.dest('build'))
+				}
+			},
+			{
+				match: ['src/css/*.css'],
+				fn: function (event, file) {
+					return gulp.src('src/css/style.css')
+						.pipe(plumber())
+						.pipe(sourcemaps.init())
+						.pipe(postcss([
+							precss(),
+							mqpacker()
+						]))
+						.pipe(concat('proxy.css'))
+						.pipe(sourcemaps.write())
+						.pipe(gulp.dest('build'))
+				}
+			}
+		]
+	});
+
+});

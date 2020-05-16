@@ -87,14 +87,16 @@
 
 				<div class="header__top-right">
 
-					<a href="/zakaz/" class="header__cart" data-empty="Корзина пуста">
-{% if cart %}
-						<span class="header__cart-count">2</span>
-						<span class="header__cart-value">809 900</span>
-						<span class="rub">₽</span>
-{% else %}
-						Корзина пуста
-{% endif %}
+					<a href="/zakaz/" class="header__cart{% if cart == 'empty' %} header__cart--empty{% endif %}" data-empty="Корзина пуста">
+
+						<span class="header__cart-current">
+
+							<span class="header__cart-count">{% if cart != 'empty' %}2{% endif %}</span>
+							<span class="header__cart-value">{% if cart != 'empty' %}123 456{% endif %}</span>
+							<span class="rub"></span>
+
+						</span>
+
 					</a>
 
 					<form class="header__search" action="/poisk/" autocomplete="off">
