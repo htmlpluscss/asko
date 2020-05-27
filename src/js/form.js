@@ -64,7 +64,11 @@
 				xhr.open("POST", form.getAttribute('action'));
 				xhr.send(formData);
 
-				formBtnSubmit && formBtnSubmit.setAttribute('disabled','disabled');
+				if(formBtnSubmit) {
+
+					formBtnSubmit.disabled = true;
+
+				}
 
 				xhr.onreadystatechange = function() {
 
@@ -94,9 +98,14 @@
 
 					}
 
-					formBtnSubmit && formBtnSubmit.removeAttribute('disabled');
+					if(formBtnSubmit) {
+
+						formBtnSubmit.disabled = false;
+
+					}
 
 				}
+
 			}
 			else {
 

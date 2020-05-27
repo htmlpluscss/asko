@@ -3,6 +3,45 @@
 	var yaCounterId = '26526729',
 		goals = [
 
+		// Товар добавлен в корзину
+			{
+				selector: '.modal__item--product-in-cart',
+				event: 'modalShow',
+				yandex: {
+					target: 'OPEN_MODAL_PRODUCT-IN-CART'
+				}
+			},
+			{
+				selector: '.modal__item--product-in-cart .btn--gray',
+				event: 'click',
+				yandex: {
+					target: 'CLOSE_MODAL_PRODUCT-IN-CART'
+				}
+			},
+
+		// Покупка
+			{
+				selector: '.catalog-list__cart',
+				event: 'submit',
+				yandex: {
+					target: 'CLICK_BUY'
+				}
+			},
+			{
+				selector: '.product__cart',
+				event: 'submit',
+				yandex: {
+					target: 'CLICK_BUY'
+				}
+			},
+			{
+				selector: '.cart__order',
+				event: 'submit',
+				yandex: {
+					target: 'SUBMIT_ORDER'
+				}
+			},
+
 		// Заказать звонок
 			{
 				selector: '.modal__item--callback',
