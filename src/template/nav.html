@@ -299,7 +299,7 @@
 
 			<li class="nav__item{% if parent.class %} {{ parent.class }}{% endif %}">
 
-				<a href="{{ parent.link }}" title="{{ parent.parent }}" class="nav__link{% if parent.active %} nav__link--active{% endif %}">
+				<a href="/{{ parent.link }}" title="{{ parent.parent }}" class="nav__link{% if parent.active %} nav__link--active{% endif %}">
 					{{ parent.parent }}
 				</a>
 
@@ -312,7 +312,7 @@
 						<ul class="nav__column">
 
 							<li>
-								<a href="{{ columns.link }}" title="{{ columns.head }}">
+								<a href="/{{ columns.link }}" title="{{ columns.head }}">
 									{{ columns.head }}
 								</a>
 							</li>
@@ -320,7 +320,7 @@
 {% for list in columns.list %}
 
 							<li>
-								<a href="{{ list.link }}" title="{{ list.name }}">
+								<a href="/{{ list.link }}" title="{{ list.name }}">
 									{{ list.name }}
 								</a>
 							</li>
