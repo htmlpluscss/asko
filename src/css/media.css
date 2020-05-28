@@ -18,6 +18,11 @@
 
 }
 
+@media ($lgWidth) {
+
+
+}
+
 @media ($mdWidth) {
 
 	.hidden-md {

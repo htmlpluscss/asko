@@ -64,56 +64,21 @@
 
 			toggleSwipe = function() {
 
-				resetSwipe();
+				toggleSwipe = false;
 
-				if (ASKO.width < 768) {
-
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						preloadImages: false,
-						pagination: {
-							el: swipeNav,
-							clickable: true
-						}
-					});
-
-				}
-				else if (ASKO.width < 1000) {
-
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						preloadImages: false,
-						pagination: {
-							el: swipeNav,
-							clickable: true
-						},
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						}
-					});
-
-				}
-				else {
-
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						effect: 'fade',
-						preloadImages: false,
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						},
-						pagination: {
-							el: swipeNav,
-							clickable: true
-						},
-						autoplay: {
-							delay: swipe.getAttribute('data-timer') * 1000,
-						}
-					});
-
-				}
+				new Swiper(swipe, {
+					loop: true,
+					speed: 700,
+					autoHeight: true,
+					preloadImages: false,
+					pagination: {
+						el: swipeNav
+					},
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					}
+				});
 
 			}
 
@@ -200,7 +165,7 @@
 
 							windowWidthOLd = ASKO.width;
 
-							toggleSwipe();
+							toggleSwipe && toggleSwipe();
 
 						}
 
@@ -231,6 +196,6 @@
 
 		document.head.appendChild(script);
 
-	}, 3000);
+	}, 1000);
 
 })(document.querySelectorAll('.swiper-container'));

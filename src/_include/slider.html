@@ -1,55 +1,44 @@
-	<aside class="slider center">
+	<aside class="slider">
 
-		<div class="swiper-container swiper-container--home" data-timer="7">
+		<div class="swiper-container swiper-container--home">
 
 			<ul class="slider__list notsel swiper-wrapper">
 
 {% set slider = [
 
 	{
-		name: "1 кв метр Pro Home Laundry x Alena Akhmadullina",
-		link: "pochemu_asko/kollaboraciya-asko-x-akhmadullina",
-		img: "8"
+		img   : 10,
+		big   : "Где можно посмотреть технику Asko?"
 	},
 	{
-		name: "Новинка от Asko, новый модельный ряд стиральных и сушильных машин",
-		link: "new",
-		img: "1"
+		img   : 11,
+		big   : "Правильный выбор в технике Asko в фирменном шоу-руме"
 	},
 	{
-		name: "",
-		link: "new",
-		img: "9"
+		img   : 12,
+		big   : "Москва, Проспект 60-летия Октября, д. 12"
 	},
 	{
-		name: "",
-		link: "new",
-		img: "17"
+		img   : 5,
+		title : "Персональная консультация",
+		text  : "Воспользуйтесь нашим онлайн чатом и получите персональную консультацию на странице интересующего вас Miele Центра"
 	},
 	{
-		name: "",
-		link: "new",
-		img: "12"
+		img   : 2,
+		title : "Всё включено:",
+		text  : "125 циклов стирки в подарок",
+		note  : "Полугодовой запас моющих средств UltraPhase1 и UltraPhase2"
 	},
 	{
-		name: "",
-		link: "new",
-		img: "13"
+		img   : 3,
+		title : "Чистота белья на протяжении 150 стирок",
+		text  : "Выгода 20% на комплект моющих средств для стиральных машин"
 	},
 	{
-		name: "",
-		link: "new",
-		img: "14"
-	},
-	{
-		name: "",
-		link: "new",
-		img: "15"
-	},
-	{
-		name: "",
-		link: "new",
-		img: "16"
+		img   : 4,
+		title : "Всё включено:",
+		text  : "125 циклов стирки в подарок",
+		note  : "Полугодовой запас моющих средств UltraPhase1 и UltraPhase2"
 	}
 
 ] %}
@@ -58,23 +47,79 @@
 
 				<li class="slider__item swiper-slide">
 
-					<a href="/{{ item.link }}/" class="slider__link">
+					<div class="center">
+
+{% if item.big %}
+
+						<figure class="slider__figure">
+
+							<picture>
+
+								<source srcset="/img/slider/{{ item.img }}--320x640.webp 1x, /img/slider/{{ item.img }}--640x1280.webp 2x" media="(max-width: 320px)" type="image/webp">
+								<source srcset="/img/slider/{{ item.img }}--424x848.webp 1x, /img/slider/{{ item.img }}--848x1696.webp 2x" media="(max-width: 424px)" type="image/webp">
+								<source srcset="/img/slider/{{ item.img }}--1150x768.webp 1x, /img/slider/{{ item.img }}--2300x1536.webp 2x" type="image/webp">
+
+								<source srcset="/img/slider/{{ item.img }}--320x640.jpg 1x, /img/slider/{{ item.img }}--640x1280.jpg 2x" media="(max-width: 320px)">
+								<source srcset="/img/slider/{{ item.img }}--424x848.jpg 1x, /img/slider/{{ item.img }}--848x1696.jpg 2x" media="(max-width: 424px)">
+								<source srcset="/img/slider/{{ item.img }}--1150x768.jpg 1x, /img/slider/{{ item.img }}--2300x1536.jpg 2x">
+
+								<img class="slider__picture" src="/img/slider/{{ item.img }}--1150x768.jpg" alt="{{ item.big }}" width="1150" height="768" loading="lazy">
+
+							</picture>
+
+							<figcaption class="slider__figcaption">
+								{{ item.big }}
+							</figcaption>
+
+						</figure>
+
+{% else %}
 
 						<picture>
+<!--
+							<source srcset="/img/slider/{{ item.img }}--320x320.webp 1x, /img/slider/{{ item.img }}--640x640.webp 2x" media="(max-width: 320px)" type="image/webp">
+							<source srcset="/img/slider/{{ item.img }}--424x424.webp 1x, /img/slider/{{ item.img }}--848x848.webp 2x" media="(max-width: 424px)" type="image/webp">
+							<source srcset="/img/slider/{{ item.img }}--1536x768.webp 1x, /img/slider/{{ item.img }}--3072x1536.webp 2x" type="image/webp">
 
-							<source srcset="/img/slider/{{ item.img }}--320@1x.webp 1x, /img/slider/{{ item.img }}--320@2x.webp 2x" media="(max-width: 320px)" type="image/webp">
-							<source srcset="/img/slider/{{ item.img }}--414@1x.webp 1x, /img/slider/{{ item.img }}--414@2x.webp 2x" media="(max-width: 414px)" type="image/webp">
-							<source srcset="/img/slider/{{ item.img }}--1080@1x.webp 1x, /img/slider/{{ item.img }}--1080@2x.webp 2x" type="image/webp">
-
-							<source srcset="/img/slider/{{ item.img }}--320@1x.jpg 1x, /img/slider/{{ item.img }}--320@2x.jpg 2x" media="(max-width: 320px)">
-							<source srcset="/img/slider/{{ item.img }}--414@1x.jpg 1x, /img/slider/{{ item.img }}--414@2x.jpg 2x" media="(max-width: 414px)">
-							<source srcset="/img/slider/{{ item.img }}--1080@1x.jpg 1x, /img/slider/{{ item.img }}--1080@2x.jpg 2x">
-
-							<img class="slider__img" src="/img/slider/{{ item.img }}--1080@1x.jpg" alt="{{ item.name }}">
+							<source srcset="/img/slider/{{ item.img }}--320x320.png 1x, /img/slider/{{ item.img }}--640x640.png 2x" media="(max-width: 320px)">
+							<source srcset="/img/slider/{{ item.img }}--424x424.png 1x, /img/slider/{{ item.img }}--848x848.png 2x" media="(max-width: 424px)">
+							<source srcset="/img/slider/{{ item.img }}--1536x768.png 1x, /img/slider/{{ item.img }}--3072x1536.png 2x">
+ -->
+							<img class="slider__img" src="/img/slider/{{ item.img }}--1536x768.png" alt="{{ item.title }}" width="1536" height="768" loading="lazy">
 
 						</picture>
 
-					</a>
+						<div class="slider__content">
+
+							<h3 class="slider__title h1">
+								{{ item.title }}
+							</h3>
+
+							<p class="slider__text h2">
+								{{ item.text }}
+							</p>
+
+							{% if item.note %}
+
+							<small class="slider__note">
+								{{ item.note }}
+							</small>
+
+							{% endif %}
+
+							<div class="slider__btn">
+
+								<a href="/catalog/product/" class="btn">
+									{% if item.note %}Купить{% else %}Подробнее{% endif %}
+								</a>
+
+							</div>
+
+						</div>
+
+{% endif %}
+
+					</div>
 
 				</li>
 
