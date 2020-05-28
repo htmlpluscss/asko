@@ -45,6 +45,7 @@ body {
 	flex-grow: 1;
 	flex-direction: column;
 	overflow-y: scroll;
+	background-color: #f8f8f8;
 
 	/* IE10+ CSS styles go here */
 	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
