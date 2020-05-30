@@ -35,10 +35,17 @@
 				}
 			},
 			{
-				selector: '.cart__order',
+				selector: '.cart__order-create',
 				event: 'submit',
 				yandex: {
-					target: 'SUBMIT_ORDER'
+					target: 'SUBMIT_ORDER_CREATE'
+				}
+			},
+			{
+				selector: '.cart__order-details',
+				event: 'submit',
+				yandex: {
+					target: 'SUBMIT_ORDER_DETAILS'
 				}
 			},
 

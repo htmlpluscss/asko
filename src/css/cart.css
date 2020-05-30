@@ -1,34 +1,51 @@
-.cart  {
+.cart {
+
+	&__border {
+
+		margin: 70px 0;
+		padding: 0 !important;
+
+		@media ($mdWidth) {
+
+			margin: 0 0 70px;
+
+		}
+
+		@media ($smWidth) {
+
+			margin-bottom: 40px;
+
+		}
+
+	}
 
 	&__row {
 
 		display: flex;
-		border-top: 1px solid #d4d4d4;
-		box-shadow:inset 0 1px 0 #fff;
+		border-bottom: 1px solid #d4d4d4;
+		box-shadow: inset 0 -1px 0 #fff;
 		padding: 20px;
 
 		&--head {
 
-			padding-bottom: 8px;
+			border: 0;
+			box-shadow: none;
+			padding: 0 20px;
+			top: -30px;
+			position: relative;
 
-		}
+			td {
 
-		&--foot {
+				height: 0;
+				white-space: nowrap;
 
-			padding-top: 8px;
+			}
 
 		}
 
 		@media ($mdWidth) {
 
 			flex-wrap: wrap;
-
-		}
-
-		&:first-child {
-
-			border-top: 0;
-			box-shadow: none;
 
 		}
 
@@ -92,12 +109,22 @@
 
 				}
 
-
 			}
 
 			@media ($smWidth) {
 
 				width: calc(100% / 2 - 50px);
+
+			}
+
+			@media ($xsWidth) {
+
+
+				&::before {
+
+					font-size: 12px;
+
+				}
 
 			}
 
@@ -133,32 +160,6 @@
 			@media ($smWidth) {
 
 				order: -1;
-
-			}
-
-		}
-
-		&-foot {
-
-			width: 270px;
-			font-size: 16px;
-			margin-left: auto;
-			display: flex;
-			line-height: 30px;
-			align-items: baseline;
-			white-space: nowrap;
-
-			@media ($mdWidth) {
-
-				width: auto;
-
-			}
-
-			&-bold {
-
-				font-weight: 700;
-				font-size: 20px !important;
-				padding-left: 10px;
 
 			}
 
@@ -220,17 +221,44 @@
 
 	}
 
-	&__item {
 
-		&-price {
+	&__total {
+
+		font-size: 22px;
+
+		&-pref {
+
+			font-weight: 400;
+
+		}
+
+		&-suf {
+
+			font-size: 22px;
+
+		}
+
+		&-wrap {
 
 			font-size: 16px;
 			font-weight: bold;
 			color: #000;
-			line-height: 32px;
+			line-height: 36px;
 			white-space: nowrap;
+			margin: 24px 0;
+
+			@media ($smWidth) {
+
+				margin: 20px 0;
+				line-height: 24px;
+
+			}
 
 		}
+
+	}
+
+	&__item {
 
 		&-remove {
 
@@ -265,6 +293,16 @@
 
 		}
 
+		&-price {
+
+			font-size: 16px;
+			font-weight: bold;
+			color: #000;
+			line-height: 32px;
+			white-space: nowrap;
+
+		}
+
 	}
 
 	&__list {
@@ -279,30 +317,15 @@
 
 		table,
 		thead,
-		tbody,
-		tfoot {
+		tbody {
 
 			display: block;
-
-		}
-
-		thead {
-
-			border: 1px solid transparent;
-			white-space: nowrap;
 
 		}
 
 		td {
 
 			flex-shrink: 0;
-
-		}
-
-		.border {
-
-			padding: 0;
-			margin: 0;
 
 		}
 
@@ -315,10 +338,83 @@
 
 	&__order {
 
-		@media ($desktop) {
+		&-details {
 
-			max-width: 576px;
-			margin: auto;
+			max-width: 600px;
+			margin: 0 auto 70px;
+
+			.form__texterror,
+			.cart__submit {
+
+				margin-left: 170px;
+
+				@media ($smWidth) {
+
+					margin: 10px auto;
+					text-align: center;
+
+				}
+
+			}
+
+			@media ($smWidth) {
+
+				.input-row {
+
+					margin-top: 0;
+
+				}
+
+			}
+
+		}
+
+		&-create {
+
+			display: flex;
+			margin: 24px 20px 24px 110px;
+
+			@media ($mdWidth) {
+
+				margin: 10px 20px 10px 30px;
+
+			}
+
+			@media ($smWidth) {
+
+				display: block;
+				margin: 0 20px 30px;
+
+			}
+
+			&-left {
+
+				flex-grow: 1;
+
+			}
+
+			&-right {
+
+				width: 256px;
+				margin-left: 48px;
+				flex-shrink: 0;
+
+				@media ($mdWidth) {
+
+					margin-left: 40px;
+					width: 220px;
+
+				}
+
+				@media ($smWidth) {
+
+					margin: 0;
+					width: 100%;
+					text-align: center;
+
+				}
+
+			}
 
 		}
 
@@ -326,7 +422,7 @@
 
 			&__label {
 
-				width: 158px;
+				width: 170px;
 
 				@media ($smWidth) {
 
@@ -350,27 +446,48 @@
 
 		}
 
-
 	}
 
-	&__info-required {
+	&__submit {
 
-		sup {
+		@media ($smWidth) {
 
-			color: var(--red);
+			display: block;
+			margin: 20px auto;
 
 		}
 
 	}
 
-	&__submit {
+/* finish */
 
-		margin: 20px 0 20px 158px;
-		display: block;
+	&__finish {
 
-		@media ($smWidth) {
+		text-align: center;
+		font-size: 18px;
+		margin-bottom: 24px;
 
-			margin: 20px auto;
+	}
+
+	&__sklad {
+
+		&-city {
+
+			display: block;
+			color: red;
+
+		}
+
+		&-street {
+
+			display: block;
+
+		}
+
+		&-time {
+
+			display: block;
+			font-size: 12px;
 
 		}
 

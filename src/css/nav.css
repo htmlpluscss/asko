@@ -296,7 +296,7 @@
 			display: inline-block;
 			vertical-align: top;
 			position: relative;
-			padding: 0 10px 0 40px;
+			padding: 0 30px 0 40px;
 			line-height: 40px;
 
 			&::after,

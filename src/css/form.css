@@ -130,13 +130,13 @@ fieldset {
 
 .input {
 
-	height: 36px;
+	height: 40px;
 	line-height: 20px;
 	border-radius: 3px;
 
 	background-color: #fff;
 	border: solid 1px var(--border);
-	padding: 8px 12px;
+	padding: 10px 12px;
 
 	width: 100%;
 	font-family: inherit;
@@ -303,7 +303,7 @@ fieldset {
 		line-height: 20px;
 		color: var(--light);
 		width: 128px;
-		margin-top: 8px;
+		margin-top: 10px;
 		padding-right: 10px;
 		flex-shrink: 0;
 		display: block;
@@ -398,7 +398,7 @@ fieldset {
 		font-size: 16px;
 		font-family: inherit;
 		color: var(--color);
-		padding: 8px 12px;
+		padding: 10px 12px;
 		width: 100%;
 		max-width: 100%;
 		border: solid 1px var(--border);
@@ -435,6 +435,17 @@ fieldset {
 		font-family: inherit;
 		color: var(--color);
 		line-height: 1.3;
+
+	}
+
+}
+
+.form {
+
+	&__texterror {
+
+		color: var(--error);
+		margin: 20px 0;
 
 	}
 

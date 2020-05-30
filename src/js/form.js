@@ -9,7 +9,8 @@
 		var showMoadalOk = form.getAttribute('data-ok-modal'),
 			redirect = form.getAttribute('data-redirect'),
 			formRequired = form.querySelectorAll('[required]'),
-			formBtnSubmit = form.querySelector('.form__submit');
+			formBtnSubmit = form.querySelector('.form__submit'),
+			textError = form.querySelector('.form__texterror');
 
 		// отправка формы
 		form.addEventListener('submit', function(e) {
@@ -18,6 +19,12 @@
 
 			var novalidate = false,
 				formData = new FormData(form);
+
+			if(textError) {
+
+				textError.textContent = '';
+
+			}
 
 			Array.prototype.forEach.call(formRequired, function(input){
 
@@ -38,6 +45,31 @@
 
 						input.parentNode.classList.add('checkbox--error');
 						novalidate = true;
+
+					}
+
+				}
+
+				else if(input.getAttribute('type') == 'radio') {
+
+					var _name = input.getAttribute('name'),
+						_checked = false,
+						_radioGroup = document.querySelectorAll('[name="'+_name+'"]');
+
+					Array.prototype.forEach.call(_radioGroup, (el) => {
+
+						if(el.checked){
+
+							_checked = true;
+
+						}
+
+					});
+
+					if(!_checked){
+
+						novalidate = true;
+						input.closest('.input-row__input').classList.add('input-row__input--error');
 
 					}
 
@@ -111,15 +143,45 @@
 
 				var inputError = form.querySelector('.input-row__input--error');
 
+				if(textError && inputError.getAttribute('data-error')) {
+
+					textError.textContent = inputError.getAttribute('data-error');
+
+				}
+
 				if(!ASKO.isInViewport(inputError)){
 
 					inputError.closest('.input-row').scrollIntoView("smooth");
 
 				}
 
-				if(inputError){
+				if(inputError && inputError.querySelector('.input--error') && inputError.querySelector('.input--error').type === 'text'){
 
 					inputError.querySelector('.input--error').focus();
+
+				}
+
+			}
+
+		});
+
+		// изменение формы
+		form.addEventListener('change', function(e) {
+
+			var _target = e.target;
+
+			if(_target.required) {
+
+				if(_target.type === 'radio') {
+
+					_target.closest('.input-row__input').classList.remove('input-row__input--error');
+					textError.textContent = '';
+
+				}
+
+				if(_target.type === 'checkbox' && _target.checked) {
+
+					_target.closest('.checkbox').classList.remove('checkbox--error');
 
 				}
 
@@ -157,26 +219,6 @@
 		el.addEventListener('blur', function() {
 
 			errorInput(el);
-
-		});
-
-	});
-
-// checked
-
-	var checkbox = document.querySelectorAll('.checkbox');
-
-	Array.prototype.forEach.call(checkbox, function(el){
-
-		var input = el.querySelector('input');
-
-		input.addEventListener('change', function() {
-
-			if(input.checked) {
-
-				el.classList.remove('checkbox--error');
-
-			}
 
 		});
 
