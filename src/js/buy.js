@@ -16,8 +16,6 @@
 
 			var buy = form.classList.contains('in-cart') ? -1 : 1;
 
-			form.querySelector('input[name="buy"]').value = buy;
-
 			btn.disabled = true;
 
 			// send form
@@ -27,7 +25,6 @@
 
 			xhr.open("POST", form.getAttribute('action') + '&ajax/');
 			xhr.send(formData);
-			xhr.responseType = 'json';
 
 			xhr.onreadystatechange = function() {
 
@@ -40,6 +37,7 @@
 				btn.disabled = false;
 				btn.classList.toggle('btn--gray', buy === 1);
 				btn.textContent = btn.getAttribute('data-' + ( buy === 1 ? 'delete' : 'buy' ) );
+				form.querySelector('input[name="mode"]').value = ( buy === 1 ? 'del' : 'add' );
 
 				if(buy === 1) {
 
@@ -49,7 +47,7 @@
 
 				}
 
-				var cart = xhr.response;
+				var cart = JSON.parse(xhr.response);
 				console.log(cart.quantity, cart.sum);
 
 				form.classList.toggle('in-cart', buy === 1);

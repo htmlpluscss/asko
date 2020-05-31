@@ -52,7 +52,7 @@
 
 								<input type="hidden" name="product" value="123456789">
 								<input type="hidden" name="product-name" value="HiLight Asko HC1643G">
-								<input type="hidden" name="buy" value="1">
+								<input type="hidden" name="mode" value="add">
 
 								<div class="catalog-list__price">
 
@@ -70,8 +70,12 @@
 
 								</div>
 
-								<div class="catalog-list__available available available--unavailable available--catalog">
-									<span class="available__value">под заказ от 2-х дней</span>
+								<div class="catalog-list__available available available--catalog">
+									{% if unavailable %}
+									<span class="available__value available__value--unavailable">{{ unavailable }}</span>
+									{% else %}
+									<span class="available__value">В наличии</span>
+									{% endif %}
 								</div>
 
 								<div class="catalog-list__btn">

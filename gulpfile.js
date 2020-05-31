@@ -137,7 +137,7 @@ gulp.task('js', function() {
 		.pipe(sourcemaps.write())
 
 // prod
-/*
+
 		.pipe(minify({
 			preserveComments: "some",
 			ext : {
@@ -152,13 +152,13 @@ gulp.task('js', function() {
 				return (/min$/.test(file.stem));
 			},
 			gulp.dest('src/js')
-		));*/
+		));
 
 
 // dev, off minify
-		.pipe(gulp.dest('build/js'))
+	/*	.pipe(gulp.dest('build/js'))
 		.pipe(rename({suffix: ".min"}))
-		.pipe(gulp.dest('build/js'))
+		.pipe(gulp.dest('build/js'))*/
 
 });
 

@@ -194,6 +194,12 @@ time {
 
 	flex-grow: 1;
 
+	& > .bg {
+
+		flex-grow: 1;
+
+	}
+
 }
 
 .flexcolumn {
