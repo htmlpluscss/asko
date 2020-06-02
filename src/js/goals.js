@@ -65,29 +65,6 @@
 				}
 			},
 
-		// Мгновенный заказ
-			{
-				selector: '.modal__item--order',
-				event: 'modalShow',
-				yandex: {
-					target: 'ORDER_QUICK_OPEN'
-				}
-			},
-			{
-				selector: '.modal__item--order',
-				event: 'submit',
-				yandex: {
-					target: 'ORDER_QUICK_SEND'
-				}
-			},
-			{
-				selector: '.modal__item--thanks',
-				event: 'modalShow',
-				yandex: {
-					target: 'THANKS_OPEN'
-				}
-			},
-
 		];
 
 

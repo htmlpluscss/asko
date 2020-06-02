@@ -2,54 +2,6 @@
 
 		<div class="modal__box">
 
-{% if urlCurrent == "product" %}
-
-			<form action="/order.php" target="order_done" class="modal__item modal__item--order form" data-ok-modal="thanks" novalidate="novalidate">
-
-				<input type="hidden" name="mode" value="order_quick">
-				<input type="hidden" name="ID" value="315">
-				<input type="hidden" name="order[Memo]" value="Быстрый заказ">
-				<input type="hidden" name="order[DeliveryDate]" value="10.03.2019">
-
-				<h3 class="modal__title modal__outline">
-					Мгновенный заказ <br>
-					ASKO DFI 633B.P
-				</h3>
-
-				<div class="modal__outline">
-
-					<p class="modal__text">
-						Укажите имя и телефон, мы оперативно перезвоним&nbsp;Вам
-					</p>
-
-					<label class="input-row">
-						<span class="input-row__label">
-							Ваше Имя
-						</span>
-						<span class="input-row__input">
-							<input name="client[Name]" class="input">
-						</span>
-					</label>
-
-					<label class="input-row">
-						<span class="input-row__label">
-							Ваш Телефон
-						</span>
-						<span class="input-row__input" data-error="Укажите контактный телефон">
-							<input name="client[Phone]" type="tel" class="input" required="required">
-						</span>
-					</label>
-
-					<button class="btn form__submit">
-						Заказать
-					</button>
-
-				</div>
-
-			</form>
-
-{% endif %}
-
 			<form action="feedback.php?exec" method="post" target="feedback_done" class="modal__item modal__item--callback form" data-ok-modal="thanks" novalidate="novalidate">
 
 				<input type="hidden" name="nospam1" value="1">
