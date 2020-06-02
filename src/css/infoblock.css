@@ -150,6 +150,25 @@
 
 	}
 
+	&__list {
+
+		margin: 20px 0;
+
+		hr {
+
+			margin: 0;
+
+		}
+
+	}
+
+	&__readme {
+
+		display: flex;
+		justify-content: flex-end;
+
+	}
+
 	&__articles {
 
 		display: flex;
@@ -165,8 +184,15 @@
 		h2 {
 
 			color: var(--red);
-			margin: 0;
+			margin: 10px 0;
 			font-size: 20px;
+
+		}
+
+		a {
+
+			color: var(--red);
+			text-decoration: underline;
 
 		}
 
@@ -178,6 +204,14 @@
 			flex-shrink: 0;
 			background-color: #fff;
 			box-shadow: inset 1px 1px 1px rgba(0,0,0,.21), 1px 1px 0 #fff;
+
+			img {
+
+				display: block;
+				max-width: 100%;
+				height: auto;
+
+			}
 
 			@media ($mdWidth) {
 
