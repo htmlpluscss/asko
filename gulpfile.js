@@ -69,7 +69,7 @@ gulp.task('html', function() {
 			},
 			path: 'src/'
 		}))
-		.pipe(w3cjs())
+//		.pipe(w3cjs())
 //		.pipe(w3cjs.reporter())
 
 		.pipe(f)
