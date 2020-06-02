@@ -27,20 +27,10 @@
 
 
 <!--
-изменить [action]
-слушать на серверы запросы по оформлению заказа
-для примера заказ пользователя id 123456789
-- можно менять атрибут [data-redirect], в случае успеха на уту стртаницу будет переадресация
-- нужно менять атрибуты [name]
-- нужно менять атрибуты [value]
-- input type="date" - необходимо задать атрибуты [min] и [value] на какое число возможно даставка
-
-// для отключения ajax, домьаточно удалить class .form
+input type="date" - необходимо задать атрибуты [min] и [value] на какое число возможно доставка
  -->
 
-			<form action="/" novalidate="novalidate" class="cart__order cart__order-details form border" data-redirect="/zakaz/?done">
-
-				<input type="hidden" name="save_before_order" value="123456789">
+			<form action="/zakaz/" novalidate="novalidate" class="cart__order cart__order-details form border form-zakaz-details" data-redirect="/zakaz/">
 
 				<div class="input-row">
 					<label class="input-row__label input-row__label--checkbox">
@@ -237,7 +227,7 @@
 						Полные реквизиты организации
 					</label>
 					<span class="input-row__input">
-						<textarea class="input" name="OOOdesc" id="OOOdesc"></textarea>
+						<textarea class="input" name="OOOdesc" id="OOOdesc" style="height: 200px"></textarea>
 					</span>
 				</div>
 
@@ -257,6 +247,39 @@
 				</button>
 
 			</form>
+
+			<script>
+
+				// переключение с зависимыми контролами
+
+				(function(controls){
+
+					Array.prototype.forEach.call(controls, function(el) {
+
+						var hide = el.getAttribute('data-toggle-hide'),
+							show = el.getAttribute('data-toggle-show');
+
+						el.addEventListener('change', function() {
+
+							Array.prototype.forEach.call(document.querySelectorAll('[data-toggle-dependent-hide="'+hide+'"]'), function(el) {
+
+								el.classList.add('hide');
+
+							});
+
+							Array.prototype.forEach.call(document.querySelectorAll('[data-toggle-dependent-show="'+show+'"]'), function(el) {
+
+								el.classList.remove('hide');
+
+							});
+
+						});
+
+					});
+
+				})(document.querySelectorAll('.toggle-control'));
+
+			</script>
 
 		</div>
 

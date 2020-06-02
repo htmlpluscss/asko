@@ -18,6 +18,8 @@ var ASKO = ASKO || {};
 
 	ASKO.touchDevice = "ontouchstart" in document.documentElement;
 
+	ASKO.body.classList.remove('no-js');
+
 // resize
 
 	var resizeTimeout = null;

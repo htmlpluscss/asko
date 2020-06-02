@@ -266,6 +266,7 @@
 			height: 32px;
 			font-size: 0;
 			color: transparent;
+			display: block;
 			background-size: 14px 14px;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -278,6 +279,7 @@
 				width: auto;
 				padding-left: 24px;
 				height: 24px;
+				line-height: 24px;
 				background-position: 0 center;
 
 			}

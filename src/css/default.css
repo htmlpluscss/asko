@@ -193,6 +193,13 @@ time {
 .main {
 
 	flex-grow: 1;
+	margin: 20px 0;
+
+	@media ($smWidth) {
+
+		margin: 0;
+
+	}
 
 	& > .bg {
 
@@ -335,5 +342,12 @@ table {
 .white-space_nowrap {
 
 	white-space: nowrap;
+
+}
+
+.no-js .no-js-hidden,
+body:not(.no-js) .on-js-visible {
+
+	display: none !important;
 
 }

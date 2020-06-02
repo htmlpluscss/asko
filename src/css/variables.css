@@ -17,3 +17,9 @@ $lgWidth: (max-width: 1200px);
 $mdWidth: (max-width: 999px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);
+
+.color-red {
+
+	color: var(--red);
+
+}

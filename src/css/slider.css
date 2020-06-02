@@ -1,6 +1,7 @@
 .slider {
 
 	position: relative;
+	margin-top: -20px;
 
 	.swiper-pagination-bullet {
 
@@ -58,6 +59,8 @@
 	}
 
 	@media ($smWidth) {
+
+		margin-top: 0;
 
 		.swiper-button-next,
 		.swiper-button-prev {

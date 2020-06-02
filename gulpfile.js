@@ -60,7 +60,7 @@ gulp.task('html', function() {
 
 	const f = filter('**/*.html', {restore: true});
 
-	return gulp.src(['src/**/*.html','!src/_include/*.html','!src/template/*.html'], {since: gulp.lastRun('html')})
+	return gulp.src('src/**/index.html', {since: gulp.lastRun('html')})
 		.pipe(plumber())
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
@@ -73,14 +73,14 @@ gulp.task('html', function() {
 //		.pipe(w3cjs.reporter())
 
 		.pipe(f)
-		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
+		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
 		.pipe(gulp.dest('build'))
 
 });
 
 gulp.task('html-touch', function() {
-	return gulp.src(['src/**/*.html','!src/_include/*.html','!src/template/*.html'])
+	return gulp.src('src/**/index.html')
 		.pipe(touch());
 
 });
@@ -122,7 +122,6 @@ gulp.task('js', function() {
 
 		'src/js/js.js',
 		'src/js/*.js',
-		'!src/js/scripts.min.js',
 
 	], {since: gulp.lastRun('js')})
 
@@ -146,13 +145,6 @@ gulp.task('js', function() {
 		}))
 
 		.pipe(gulp.dest('build/js'))
-
-		.pipe(gulpif(
-			function(file){
-				return (/min$/.test(file.stem));
-			},
-			gulp.dest('src/js')
-		));
 
 
 // dev, off minify
@@ -226,7 +218,7 @@ gulp.task('ftp', function () {
 gulp.task('watch', function() {
 	gulp.watch('src/js/*.*', gulp.series('js'));
 	gulp.watch('src/css/*.*', gulp.series('css'));
-	gulp.watch(['src/**/*.html','!src/_include/*.html','!src/template/*.html'], gulp.series('html'));
+	gulp.watch('src/**/index.html', gulp.series('html'));
 	gulp.watch(['src/_include/*.html','src/template/*.html'], gulp.series('html-touch'));
 	gulp.watch(['src/**/*.*', '!src/**/*.{css,html,js}'], gulp.series('copy'));
 	gulp.watch('build/**/*.*', gulp.series('ftp'));
@@ -307,7 +299,6 @@ gulp.task('proxy', function() {
 							'!src/js/min/jquery.fancybox.min.js',
 							'src/js/js.js',
 							'src/js/*.js',
-							'!src/js/scripts.min.js',
 						])
 						.pipe(sourcemaps.init())
 						.pipe(concat('proxy.js'))
