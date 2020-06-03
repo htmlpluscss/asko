@@ -63,6 +63,7 @@
 												уменьшить на одну штуку
 											</button>
 											<input type="tel" name="goods[364]" value="2" class="quantity__count input" maxlength="3">
+											<input type="hidden" value="364" class="quantity__id">
 											<input type="hidden" value="390000" class="quantity__price">
 											<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
 												увеличить на одну штуку
@@ -119,6 +120,7 @@
 												уменьшить на одну штуку
 											</button>
 											<input type="tel" name="goods[141]" value="1" class="quantity__count input" maxlength="3">
+											<input type="hidden" value="141" class="quantity__id">
 											<input type="hidden" value="29900" class="quantity__price">
 											<button class="no-js-hidden quantity__btn quantity__btn--up button" type="button">
 												увеличить на одну штуку
@@ -327,6 +329,41 @@
 
 							}
 
+							setPurchase();
+
+						}
+
+						function setPurchase() {
+
+							console.log('start проверяем текущий: '+ Cookies.get('purchase'));
+
+							var purchaseUpdate = '{',
+								quantity = form.querySelectorAll('.quantity');
+
+							if(!quantity.length) {
+
+								Cookies.remove('purchase');
+								console.log('все удалил из корзины: '+Cookies.get('purchase'));
+								return;
+
+							}
+
+							Array.prototype.forEach.call(quantity, function(el){
+
+								var id = el.querySelector('.quantity__id').value,
+									count = el.querySelector('.quantity__count').value;
+
+								purchaseUpdate += '"' + id + '":' + count + ',';
+
+							});
+
+							purchaseUpdate = purchaseUpdate.slice(0,-1);
+							purchaseUpdate += '}';
+							console.log('обновляем: '+purchaseUpdate);
+							Cookies.set('purchase', purchaseUpdate);
+
+							console.log('finish проверяем текущий: '+ Cookies.get('purchase'));
+
 						}
 
 						if(quantity.length) {
@@ -398,11 +435,11 @@
 
 								var item = el.closest('.cart__item');
 
-								el.addEventListener('click',function(){
+								el.addEventListener('click', function(){
 
 									item.style.height = item.clientHeight + 'px';
 
-									item.addEventListener(ASKO.cssAnimation('transition'),function(){
+									item.addEventListener(ASKO.cssAnimation('transition'), function(){
 
 										if(item.clientHeight > 0) {
 

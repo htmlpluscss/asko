@@ -32,6 +32,13 @@
 		swipe.parentNode.appendChild(swipeNext);
 		swipe.parentNode.appendChild(swipePrev);
 
+		// eager
+		Array.prototype.forEach.call(swipe.querySelectorAll('[loading="lazy"]'), function(img){
+
+			img.getAttribute('loading','eager');
+
+		});
+
 		resetSwipe = function(){
 
 			if(mySwipe) {
