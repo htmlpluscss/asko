@@ -1,0 +1,67 @@
+.cookie {
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 24px;
+	z-index: 9;
+	box-shadow: 0 -3px 3px rgba(57,57,57,.4);
+
+	@media ($mdWidth) {
+
+		padding: 20px;
+
+		.btn {
+
+			font-size: 16px;
+
+		}
+
+	}
+
+	.center {
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 1170px;
+
+		@media ($smWidth) {
+
+			display: block;
+			text-align: center;
+
+		}
+
+	}
+
+	form {
+
+		margin-left: 24px;
+		flex-shrink: 0;
+
+		@media ($smWidth) {
+
+			margin: 20px 0 0;
+			display: flex;
+			justify-content: center;
+
+		}
+
+	}
+
+	p {
+
+		margin-top: 10px;
+
+		a {
+
+			color: var(--red);
+			text-decoration: underline;
+
+		}
+
+	}
+
+}
