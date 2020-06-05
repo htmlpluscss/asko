@@ -47,6 +47,17 @@
 
 	}
 
+	@media ($mdWidth) {
+
+		iframe {
+
+			max-width: 100%;
+			max-height: 50vw;
+
+		}
+
+	}
+
 	&__img-left {
 
 		float: left;
@@ -222,10 +233,22 @@
 
 			@media ($smWidth) {
 
-				width: 300px;
-				max-width: 100%;
+				width: 100%;
+				max-width: 490px;
 				margin: 20px 0;
 				display: block;
+
+				img {
+
+					width: 100%;
+
+				}
+
+			}
+
+			@media ($xsWidth) {
+
+				padding: 15px;
 
 			}
 

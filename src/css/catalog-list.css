@@ -38,12 +38,12 @@
 			width: 125px;
 			margin-right: 20px;
 
-			img {
+		}
 
-				max-width: 100%;
-				display: block;
+		img {
 
-			}
+			max-width: 100%;
+			display: block;
 
 		}
 
