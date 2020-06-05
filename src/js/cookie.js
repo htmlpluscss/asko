@@ -1,6 +1,17 @@
 (function(cookie){
 
-//	Cookies.set('infoCookie', 'close');
-//  var obj = JSON.parse(Cookies.get('purchase'));
+	if(cookie) {
+
+		cookie.querySelector('form').addEventListener('submit', function (e) {
+
+			e.preventDefault();
+
+			Cookies.set('cookiesPolicy', 'Accept');
+
+			cookie.classList.add('hide');
+
+		});
+
+	}
 
 })(document.querySelector('.cookie'));
