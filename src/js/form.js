@@ -7,15 +7,13 @@
 	Array.prototype.forEach.call(forms, function(form){
 
 		var showMoadalOk = form.getAttribute('data-ok-modal'),
-			redirect = form.getAttribute('data-redirect'),
+			xhrOff = form.classList.contains('form-zakaz') || form.classList.contains('form-zakaz-details'),
 			formRequired = form.querySelectorAll('[required]'),
 			formBtnSubmit = form.querySelector('.form__submit'),
 			textError = form.querySelector('.form__texterror');
 
 		// отправка формы
 		form.addEventListener('submit', function(e) {
-
-			e.preventDefault();
 
 			var novalidate = false,
 				formData = new FormData(form);
@@ -91,6 +89,12 @@
 
 			if(!novalidate){
 
+				if(xhrOff) {
+
+					return true;
+
+				}
+
 				var xhr = new XMLHttpRequest();
 
 				xhr.open("POST", form.getAttribute('action'));
@@ -115,12 +119,6 @@
 						if(showMoadalOk) {
 
 							ASKO.modalShow('thanks');
-
-						}
-
-						if(redirect) {
-
-							window.location.assign(redirect);
 
 						}
 
@@ -162,6 +160,8 @@
 				}
 
 			}
+
+			e.preventDefault();
 
 		});
 
