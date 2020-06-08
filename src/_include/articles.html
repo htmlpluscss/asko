@@ -1,0 +1,77 @@
+		<aside class="home__articles center order-4 mobile-padding">
+
+			<h3 class="h1">
+				Публикации
+			</h3>
+
+			<ul>
+
+{% set list = [
+
+	{
+		img     : "art1",
+		alt     : "Модная прачечная: коллаборация ASKO x Alena Akhmadullina",
+		link    : "/pochemu_asko/kollaboraciya-asko-x-akhmadullina/",
+		title   : "Коллаборация ASKO x Alena Akhmadullina",
+		text    : "ASKO x Alena Akhmadullina: домашняя прачечная ASKO Pro Home Laundry с авторским рисунком Алены Ахмадуллиной. Авторские принты с изображением львов, повторяют мотивы новой коллекции Spring-Summer 2019 и выполнены в стилистике средневековых гравюр."
+	},
+	{
+		img     : "art2",
+		alt     : "Уникальный барабан Active Drum в стиральных машинах Asko",
+		link    : "/pochemu_asko/active_drum/",
+		title   : "Уникальный барабан Active Drum™",
+		text    : "<a title=\"Стиральные машины Asko\" href=\"/catalog/stiralnye_mashiny/\" class=\"link\">Современные стиральные машины Asko</a> оснащены барабанами уникальной конструкции Active Drum™, обеспечивающей высокое качество стирки и максимальную сохранность вещей."
+	},
+	{
+		img     : "art3",
+		alt     : "Новая технология конфорки Fusion Volcano от Asko",
+		link    : "/pochemu_asko/rabochie_poverhnosti_wok/",
+		title   : "Газовая конфорка Fusion Volcano",
+		text    : "Новая технология конфорки Fusion Volcano от Asko поддерживает пламя там, где это необходимо - по всему дну посуды."
+	}
+
+] %}
+
+{% for item in list %}
+
+				<li>
+
+					<a title="{{ item.title }}" href="{{ item.link }}">
+
+						<figure>
+
+							<picture>
+
+								<source srcset="/img/article/{{ item.img }}--290.webp 1x, /img/article/{{ item.img }}--580.webp 2x" type="image/webp" media="(max-width: 320px)">
+								<source srcset="/img/article/{{ item.img }}--320.webp 1x, /img/article/{{ item.img }}--640.webp 2x" type="image/webp" media="(max-width: 360px)">
+								<source srcset="/img/article/{{ item.img }}--384.webp 1x, /img/article/{{ item.img }}--768.webp 2x" type="image/webp" media="(max-width: 767px)">
+								<source srcset="/img/article/{{ item.img }}--290.webp 1x, /img/article/{{ item.img }}--580.webp 2x" type="image/webp">
+
+								<source srcset="/img/article/{{ item.img }}--290.jpg 1x, /img/article/{{ item.img }}--580.jpg 2x" media="(max-width: 320px)">
+								<source srcset="/img/article/{{ item.img }}--320.jpg 1x, /img/article/{{ item.img }}--640.jpg 2x" media="(max-width: 360px)">
+								<source srcset="/img/article/{{ item.img }}--384.jpg 1x, /img/article/{{ item.img }}--768.jpg 2x" media="(max-width: 767px)">
+								<source srcset="/img/article/{{ item.img }}--290.jpg 1x, /img/article/{{ item.img }}--580.jpg 2x">
+
+								<img src="/img/article/{{ item.img }}.jpg" loading="lazy" alt="{{ item.alt }}" width="290" height="145">
+
+							</picture>
+
+							<figcaption>
+								{{ item.title }}
+							</figcaption>
+
+						</figure>
+
+					</a>
+
+					<p>
+						{{ item.text | safe }}
+					</p>
+
+				</li>
+
+{% endfor %}
+
+			</ul>
+
+		</aside>

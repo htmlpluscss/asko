@@ -106,15 +106,19 @@
 
 		li {
 
-			width: 284px;
+			max-width: 290px;
+			width: calc(100% / 3 - 10px);
 
-			@media ($mdWidth) {
+			img {
 
-				width: calc(100% / 3 - 10px);
+				display: block;
+				max-width: 100%;
+				object-fit: cover;
 
-				img {
+				@media ($smWidth) {
 
-					max-width: 100%;
+					width: auto;
+					height: auto;
 
 				}
 
@@ -123,6 +127,7 @@
 			@media ($smWidth) {
 
 				width: auto;
+				max-width: none;
 				margin-bottom: 30px;
 
 			}
