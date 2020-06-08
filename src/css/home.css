@@ -106,8 +106,8 @@
 
 		li {
 
-			max-width: 290px;
-			width: calc(100% / 3 - 10px);
+			max-width: 100%;
+			width: calc(100% / 3 - 15px);
 
 			img {
 
@@ -127,7 +127,6 @@
 			@media ($smWidth) {
 
 				width: auto;
-				max-width: none;
 				margin-bottom: 30px;
 
 			}

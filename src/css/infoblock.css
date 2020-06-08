@@ -209,9 +209,11 @@
 
 		&-img {
 
+			display: block;
 			margin-right: 20px;
-			padding: 20px;
+			padding: 15px;
 			width: 300px;
+			max-width: 100%;
 			flex-shrink: 0;
 			background-color: #fff;
 			box-shadow: inset 1px 1px 1px rgba(0,0,0,.21), 1px 1px 0 #fff;
@@ -221,34 +223,26 @@
 				display: block;
 				max-width: 100%;
 				margin: auto;
-				height: auto;
 
 			}
 
 			@media ($mdWidth) {
 
-				width: 200px;
-
-			}
-
-			@media ($smWidth) {
-
-				width: 100%;
-				max-width: 490px;
-				margin: 20px 0;
-				display: block;
+				width: 220px;
 
 				img {
 
-					width: 100%;
+					width: auto;
+					height: auto;
 
 				}
 
 			}
 
-			@media ($xsWidth) {
+			@media ($smWidth) {
 
-				padding: 15px;
+				width: 384px;
+				margin: 20px 0;
 
 			}
 
