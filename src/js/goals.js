@@ -5,10 +5,17 @@
 
 		// Фильтр
 			{
+				selector: '.filter__btn-toggle .btn',
+				event: 'click',
+				yandex: {
+					target: 'FILTER_OPEN'
+				}
+			},
+			{
 				selector: '.filter',
 				event: 'submit',
 				yandex: {
-					target: 'FILTER'
+					target: 'FILTER_SUBMIT'
 				}
 			},
 

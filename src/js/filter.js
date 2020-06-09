@@ -211,7 +211,7 @@
 
 		document.head.appendChild(script);
 
-	}, 1000);
+	}, 8000);
 
 
 	document.querySelector('.filter__btn-toggle .btn').addEventListener('click', function () {

@@ -1,10 +1,8 @@
 .filter {
 
-	margin: 20px 0;
-
 	@media ($smWidth) {
 
-		margin: 10px;
+		padding: 0 15px;
 
 	}
 
@@ -12,27 +10,31 @@
 
 		display: flex;
 		justify-content: flex-end;
-		margin-bottom: 10px;
+
+		svg {
+
+			position: absolute;
+			top: 13px;
+			right: -2px;
+
+		}
 
 	}
 
 	&__body {
 
-		@media ($smWidth) {
+		overflow: hidden;
+		position: relative;
+		max-height: 0;
+		opacity: 0;
+		transition: .5s ease;
+		padding: 0 15px !important;
 
-			overflow: hidden;
-			position: relative;
-			max-height: 0;
-			opacity: 0;
-			transition: .5s ease;
-			padding: 1px;
+		&.is-open {
 
-			&.is-open {
-
-				max-height: 3000px;
-				opacity: 1;
-
-			}
+			max-height: 1000px;
+			opacity: 1;
+			padding: 15px !important;
 
 		}
 
@@ -54,13 +56,42 @@
 	&__foot {
 
 		display: flex;
-		align-items: center;
 		justify-content: flex-end;
-		margin-top: 20px;
+		margin-top: 10px;
 
-		.btn {
+		@media ($smWidth) {
+
+			justify-content: center;
+			margin-top: 20px;
+
+		}
+
+		.btn + .btn {
 
 			margin-left: 20px;
+
+		}
+
+		@media ($xsWidth) {
+
+			.btn {
+
+				padding: 0 10px;
+
+			}
+
+			justify-content: center;
+
+		}
+
+	}
+
+	&__range {
+
+		@media ($mdWidth) {
+
+			width: calc(100% - 10px);
+			margin-bottom: 30px;
 
 		}
 
@@ -68,9 +99,9 @@
 
 	&__item {
 
-		flex-basis: 50%;
+		width: calc(50% - 10px);
 		font-size: 16px;
-		margin-top: 10px;
+		margin: 5px;
 
 		&:nth-child(n+3) {
 
@@ -80,7 +111,8 @@
 
 		@media ($smWidth) {
 
-			margin-top: 5px;
+			width: 100%;
+			margin: 5px 0 0;
 
 			&:nth-child(n+2) {
 
