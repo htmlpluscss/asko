@@ -14,7 +14,7 @@
 
 			e.preventDefault();
 
-			var buy = form.classList.contains('in-cart') ? -1 : 1;
+			var buy = !form.classList.contains('in-cart');
 
 			btn.disabled = true;
 
@@ -23,8 +23,7 @@
 			var formData = new FormData(form),
 				xhr = new XMLHttpRequest();
 
-			xhr.open("POST", form.getAttribute('action') + '&ajax/');
-			xhr.send(formData);
+			xhr.open("POST", form.getAttribute('action') + 'ajax/');
 
 			xhr.onreadystatechange = function() {
 
@@ -35,11 +34,11 @@
 				}
 
 				btn.disabled = false;
-				btn.classList.toggle('btn--gray', buy === 1);
-				btn.textContent = btn.getAttribute('data-' + ( buy === 1 ? 'delete' : 'buy' ) );
-				form.querySelector('input[name="mode"]').value = ( buy === 1 ? 'del' : 'add' );
+				btn.classList.toggle('btn--gray', buy);
+				btn.textContent = btn.getAttribute('data-' + ( buy ? 'delete' : 'buy' ) );
+				form.querySelector('input[name="mode"]').value = ( buy ? 'del' : 'add' );
 
-				if(buy === 1) {
+				if(buy) {
 
 					document.querySelector('.modal-product-in-cart').textContent = form.querySelector('input[name="product-name"]').value;
 
@@ -50,7 +49,7 @@
 				var cart = JSON.parse(xhr.response);
 				console.log(cart.quantity, cart.sum);
 
-				form.classList.toggle('in-cart', buy === 1);
+				form.classList.toggle('in-cart', buy);
 
 				if (xhr.status != 200) {
 
@@ -69,6 +68,8 @@
 				}
 
 			}
+
+			xhr.send(formData);
 
 		});
 

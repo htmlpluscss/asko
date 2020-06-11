@@ -342,7 +342,7 @@
 
 							if(!quantity.length) {
 
-								Cookies.remove('purchase');
+								Cookies.set('purchase', '');
 								console.log('все удалил из корзины: '+Cookies.get('purchase'));
 								return;
 
