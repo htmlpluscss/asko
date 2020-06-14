@@ -17,7 +17,6 @@
 			swipeNext = document.createElement('button'),
 			swipePrev = document.createElement('button'),
 			count = swipe.querySelectorAll('.swiper-slide').length,
-			home = swipe.classList.contains('swiper-container--home'),
 			product = swipe.classList.contains('swiper-container--product');
 
 		swipeNav.className = 'swiper-pagination hide';
@@ -60,32 +59,6 @@
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
-
-			}
-
-		}
-
-		if (home) {
-
-			resetSwipe();
-
-			toggleSwipe = function() {
-
-				toggleSwipe = false;
-
-				new Swiper(swipe, {
-					loop: true,
-					speed: 700,
-					autoHeight: true,
-					preloadImages: false,
-					pagination: {
-						el: swipeNav
-					},
-					navigation: {
-						nextEl: swipeNext,
-						prevEl: swipePrev
-					}
-				});
 
 			}
 

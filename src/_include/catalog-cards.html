@@ -1,8 +1,6 @@
-	<aside class="slider">
+	<aside class="catalog-cards center">
 
-		<div class="swiper-container swiper-container--home">
-
-			<ul class="slider__list notsel swiper-wrapper">
+		<ul class="slider__list notsel swiper-wrapper">
 
 {% set slider = [
 
@@ -46,8 +44,6 @@
 {% for item in slider %}
 
 				<li class="slider__item swiper-slide">
-
-					<div class="center">
 
 {% if item.big %}
 
@@ -118,9 +114,6 @@
 
 {% endif %}
 
-					</div>
-
-				</li>
 
 {% endfor %}
 
