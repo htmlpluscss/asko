@@ -290,7 +290,7 @@
 
 		.rub::after {
 
-			content: '₽';
+			content: '\20BD';
 			margin-left: 2px;
 
 		}
