@@ -158,65 +158,46 @@
 
 	});
 
-/*	form.addEventListener('submit', function(e) {
+	// load UiSlider
 
-		e.preventDefault();
+	var loadNoUiSlider = false;
 
-		var xhr = new XMLHttpRequest(),
-			formData = new FormData(form),
-			formBtnSubmit = form.querySelector('button[type="submit"]'),
-			inputControls = form.querySelectorAll('.filter__input .input');
+	var script = document.createElement('script');
 
-		xhr.open("POST", form.getAttribute('action'));
-		xhr.send(formData);
+	script.type = 'text/javascript';
+	script.async = true;
+	script.src = '/js/nouislider.min.js';
 
-		formBtnSubmit && formBtnSubmit.setAttribute('disabled','disabled');
+	script.onload = function () {
 
-		xhr.onreadystatechange = function() {
+		var event = new Event('loadNoUiSlider');
+		window.dispatchEvent(event);
 
-			if (xhr.readyState != 4){
-
-				formBtnSubmit && formBtnSubmit.removeAttribute('disabled');
-				return;
-
-			}
-
-			if (xhr.status == 200) {
-
-			}
-			else {
-
-				alert('ошибка ' + xhr.status);
-
-			}
-
-		}
-
-	});*/
+	};
 
 	setTimeout(function(){
 
-		var script = document.createElement('script');
+		if(!loadNoUiSlider){
 
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = '/js/nouislider.min.js';
+			document.head.appendChild(script);
 
-		script.onload = function () {
+		}
 
-			var event = new Event('loadNoUiSlider');
-			window.dispatchEvent(event);
+		loadNoUiSlider = true;
 
-		};
-
-		document.head.appendChild(script);
-
-	}, 1000);
-
+	}, 8000);
 
 	document.querySelector('.filter__btn-toggle .btn').addEventListener('click', function () {
 
-		document.querySelector('.filter__body').classList.toggle('is-open');
+		if(!loadNoUiSlider){
+
+			document.head.appendChild(script);
+
+		}
+
+		loadNoUiSlider = true;
+
+		form.classList.toggle('is-open');
 
 	});
 
