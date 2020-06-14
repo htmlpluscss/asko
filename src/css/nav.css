@@ -133,10 +133,10 @@
 
 	&__item:hover &__sub {
 
-		opacity: 1;
-		visibility: visible;
-		transition: .1s .3s;
-
+/* 		opacity: 1;
+visibility: visible;
+transition: .1s .3s;
+ */
 	}
 
 	&__sub {

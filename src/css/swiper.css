@@ -17,38 +17,6 @@
 	list-style: none;
 	padding: 0;
 	z-index: 1;
-/*
-	@media ($mdWidth) {
-
-		&::after,
-		&::before {
-
-			position: absolute;
-			width: 50px;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			content: '';
-			z-index: 2;
-			background-image: linear-gradient(to right, color(#fff a(100%)), color(#fff a(0%)));
-
-			@media ($smWidth) {
-
-				width: 20px;
-
-			}
-
-		}
-
-		&::after {
-
-			left: auto;
-			right: 0;
-			transform: rotate(180deg);
-
-		}
-
-	} */
 
 }
 
