@@ -134,9 +134,14 @@
 		li {
 
 			padding: 20px;
+			font-size: 18px;
+			line-height: 34px;
 
 			@media ($smWidth) {
 
+				font-size: 16px;
+				line-height: 20px;
+				text-align: right;
 				padding: 2px 4px;
 
 			}
@@ -173,50 +178,16 @@
 
 			white-space: nowrap;
 			color: #626262;
-			font-size: 30px;
-			line-height: 34px;
-
-			@media ($mdWidth) {
-
-				font-size: 20px;
-
-			}
-
-			@media ($smWidth) {
-
-				font-size: 18px;
-				line-height: 22px;
-
-			}
 
 			em {
 
 				display: block;
 				text-align: right;
 				color: var(--color);
-				font-size: 14px;
+				font-size: 12px;
 				line-height: 16px;
 				text-shadow: 1px 1px 0 #fff;
 				font-style: normal;
-
-			}
-
-			span {
-
-				color: #606060;
-				font-size: 24px;
-
-				@media ($mdWidth) {
-
-					font-size: 20px;
-
-				}
-
-				@media ($smWidth) {
-
-					font-size: 18px;
-
-				}
 
 			}
 
@@ -434,7 +405,7 @@
 
 		@media ($mdWidth) {
 
-			margin-right: 10px;
+			display: none;
 
 		}
 
