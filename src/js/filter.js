@@ -180,10 +180,9 @@
 		if(!loadNoUiSlider){
 
 			document.head.appendChild(script);
+			loadNoUiSlider = true;
 
 		}
-
-		loadNoUiSlider = true;
 
 	}, 8000);
 
@@ -192,10 +191,9 @@
 		if(!loadNoUiSlider){
 
 			document.head.appendChild(script);
+			loadNoUiSlider = true;
 
 		}
-
-		loadNoUiSlider = true;
 
 		form.classList.toggle('is-open');
 
