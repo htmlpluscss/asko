@@ -9,27 +9,15 @@
 
 	<div class="flexcolumn home">
 
-		<article class="home__article center order-3 hidden-sm">
+{% include "home/service.html" %}
 
-{% include "home/article.html" %}
-
-			<hr class="home__hr">
-
-		</article>
-
-		<div class="home__catalog center order-2">
+		<div class="home__catalog center">
 
 			<hr class="home__hr">
 
 {% include "home/catalog-cards.html" %}
 
 			<hr class="home__hr">
-
-		</div>
-
-		<div class="order-1">
-
-{% include "home/service.html" %}
 
 		</div>
 
