@@ -54,7 +54,7 @@
 						_checked = false,
 						_radioGroup = document.querySelectorAll('[name="'+_name+'"]');
 
-					Array.prototype.forEach.call(_radioGroup, (el) => {
+					Array.prototype.forEach.call(_radioGroup, function(el) {
 
 						if(el.checked){
 

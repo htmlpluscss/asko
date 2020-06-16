@@ -1,6 +1,6 @@
 .home {
 
-	&__cat {
+	&__catalog {
 
 		padding-top: 30px;
 
@@ -81,13 +81,21 @@
 
 		@media ($smWidth) {
 
-			margin-bottom: 20px;
+			margin: 20px auto;
+			max-width: 380px;
+			padding: 0 20px;
 
 			.h1 {
 
 				margin: 0 0 10px;
 
 			}
+
+		}
+
+		@media ($xsWidth) {
+
+			padding: 0;
 
 		}
 
