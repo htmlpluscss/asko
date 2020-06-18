@@ -45,7 +45,7 @@ body {
 	flex-grow: 1;
 	flex-direction: column;
 	overflow-y: scroll;
-	background-color: #f8f8f8;
+	background-color: var(--bg);
 
 	/* IE10+ CSS styles go here */
 	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -68,6 +68,7 @@ body {
 	flex-grow: 1;
 	position: relative;
 	flex-direction: column;
+	padding-top: 70px;
 
 }
 

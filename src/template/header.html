@@ -1,112 +1,45 @@
 	<header class="header bg">
 
-		<div class="header__main">
+		<a class="header__logo" href="/" title="Фирменный магазин ASKO">
+			<svg width="172" height="42" viewBox="0 4 230 56">
+				<path d="M77.39,11.08h9.08l15.05,40.26H92.33l-3-9H74.23l-3.16,9h-9Zm-.84,24.7H87L81.9,21h-.11ZM111.67,38c0,5.36,4.17,7.44,8.91,7.44,3.1,0,7.84-.9,7.84-5,0-4.34-6-5.07-12-6.65s-12-3.89-12-11.45c0-8.23,7.78-12.18,15.05-12.18,8.4,0,16.13,3.67,16.13,13H127c-.28-4.85-3.72-6.09-8-6.09-2.73-.07-6,1.12-6,4.5,0,3.1,1.92,3.5,12,6.09,2.93.73,12,2.59,12,11.73,0,7.39-5.81,12.91-16.75,12.91-8.92,0-17.25-4.4-17.15-14.3ZM143.8,11.08h8.86V27.77l15.73-16.69h11.05L163.71,27,181,51.34H169.85l-12.12-18.1-5.07,5.13v13H143.8Z"/>
+				<path d="M200.21,10.12c12.46,0,19.79,9.31,19.79,21.26C220,43,212.67,52.3,200.21,52.3S180.42,43,180.42,31.38c0-11.95,7.33-21.26,19.79-21.26Zm0,34.73c7.95,0,10.94-6.77,10.94-13.48,0-7-3-13.81-10.94-13.81s-10.94,6.77-10.94,13.81c0,6.72,3,13.49,10.94,13.49ZM52.36,10V41.76s0,10.67-10.58,10.67V36.55H20.59v5.28H36.46s0,10.59-10.62,10.59H10v-16c0-10.54,10.59-10.54,10.59-10.54H36.46c5.29,0,5.28-5.23,5.28-5.23H10S10,10,20.59,10Z"/>
+			</svg>
+		</a>
 
-			<div class="center">
+		<div class="header__left">
 
-				<a class="header__logo" href="/">
-					<svg width="230" height="56" viewBox="0 0 230 56">
-						<path d="M77.39,11.08h9.08l15.05,40.26H92.33l-3-9H74.23l-3.16,9h-9Zm-.84,24.7H87L81.9,21h-.11ZM111.67,38c0,5.36,4.17,7.44,8.91,7.44,3.1,0,7.84-.9,7.84-5,0-4.34-6-5.07-12-6.65s-12-3.89-12-11.45c0-8.23,7.78-12.18,15.05-12.18,8.4,0,16.13,3.67,16.13,13H127c-.28-4.85-3.72-6.09-8-6.09-2.73-.07-6,1.12-6,4.5,0,3.1,1.92,3.5,12,6.09,2.93.73,12,2.59,12,11.73,0,7.39-5.81,12.91-16.75,12.91-8.92,0-17.25-4.4-17.15-14.3ZM143.8,11.08h8.86V27.77l15.73-16.69h11.05L163.71,27,181,51.34H169.85l-12.12-18.1-5.07,5.13v13H143.8Z"/>
-						<path d="M200.21,10.12c12.46,0,19.79,9.31,19.79,21.26C220,43,212.67,52.3,200.21,52.3S180.42,43,180.42,31.38c0-11.95,7.33-21.26,19.79-21.26Zm0,34.73c7.95,0,10.94-6.77,10.94-13.48,0-7-3-13.81-10.94-13.81s-10.94,6.77-10.94,13.81c0,6.72,3,13.49,10.94,13.49ZM52.36,10V41.76s0,10.67-10.58,10.67V36.55H20.59v5.28H36.46s0,10.59-10.62,10.59H10v-16c0-10.54,10.59-10.54,10.59-10.54H36.46c5.29,0,5.28-5.23,5.28-5.23H10S10,10,20.59,10Z"/>
-					</svg>
-					Фирменный магазин <span class="visuallyhidden">ASKO</span>
-				</a>
+			<button class="button header__btn-toggle" type="button">
+				<span>меню ASKO</span>
+			</button>
 
-				<ul class="header__tel">
-					<li>
-						<a href="tel:+74952830203">
-							<em class="hidden-sm">Москва</em>
-							+7 495 283-02-03
-						</a>
-					</li>
-					<li>
-						<a href="tel:+78124072210">
-							<em class="hidden-sm">Санкт-Петербург</em>
-							+7 812 407-22-10
-						</a>
-					</li>
-					<li>
-						<a href="tel:88007077838">
-							<em class="hidden-sm">Бесплатный по России</em>
-							8 800 707-78-38
-						</a>
-					</li>
-				</ul>
-
-				<button type="button" class="header__btn-callback button hidden-sm" data-modal="callback">
-					Заказать звонок
-				</button>
-
-			</div>
+			<button type="button" class="header__btn-callback button hidden-sm" data-modal="callback">
+				Заказать звонок
+			</button>
 
 		</div>
 
-		<div class="header__top">
+		<div class="header__right">
 
-			<div class="center">
+			<a href="/zakaz/" class="header__cart{% if cart == 'empty' %} header__cart--empty{% endif %}" data-empty="Корзина пуста">
 
-				<nav class="header__menu-top hidden-sm">
+				<span class="header__cart-current">
 
-					<ul class="menu-top">
+					<span class="header__cart-count">{% if cart != 'empty' %}2{% endif %}</span>
+					<span class="header__cart-value">{% if cart != 'empty' %}809 900{% endif %}</span>
+					<span class="rub"></span>
 
-{% set menuTop = [
-	{
-		title: "Доставка и оплата",
-		link: "dostavka_oplata"
-	},
-	{
-		title: "Гарантия",
-		link: "garantiya"
-	},
-	{
-		title: "Акции",
-		link: "action"
-	},
-	{
-		title: "Контакты",
-		link: "kontakty"
-	}
-] %}
+				</span>
 
-{% for item in menuTop %}
+			</a>
 
-						<li class="menu-top__item{% if item.active %} menu-top__item--active{% endif %}">
+			<form class="header__search" action="/poisk/" autocomplete="off">
 
-							<a class="menu-top__link" href="/{{item.link}}/">{{item.title}}</a>
+				<input name="model" class="header__search-input input bg" placeholder="Поиск...">
 
-						</li>
+				<button class="header__search-btn button">Искать</button>
 
-{% endfor %}
-
-					</ul>
-
-				</nav>
-
-				<div class="header__top-right">
-
-					<a href="/zakaz/" class="header__cart{% if cart == 'empty' %} header__cart--empty{% endif %}" data-empty="Корзина пуста">
-
-						<span class="header__cart-current">
-
-							<span class="header__cart-count">{% if cart != 'empty' %}2{% endif %}</span>
-							<span class="header__cart-value">{% if cart != 'empty' %}809 900{% endif %}</span>
-							<span class="rub"></span>
-
-						</span>
-
-					</a>
-
-					<form class="header__search" action="/poisk/" autocomplete="off">
-
-						<input name="model" class="header__search-input input" placeholder="Поиск...">
-
-						<button class="header__search-btn button">Искать</button>
-
-					</form>
-
-				</div>
-
-			</div>
+			</form>
 
 		</div>
 

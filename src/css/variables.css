@@ -10,6 +10,8 @@
 
 	--error: #dc1e38;
 
+	--bg: #f8f8f8;
+
 }
 
 $desktop: (min-width: 1000px);

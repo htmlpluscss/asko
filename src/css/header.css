@@ -1,31 +1,101 @@
 .header {
 
-	flex-shrink: 0;
-	z-index: 2;
-	white-space: nowrap;
 	display: flex;
-	flex-direction: column-reverse;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	z-index: 9;
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
 
-	@media ($smWidth) {
+	&__left,
+	&__right {
 
-		display: block;
+		display: flex;
+		align-items: center;
 
 	}
 
-	.center {
+	&__btn-toggle {
 
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		display: block;
+		position: relative;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 0 #fff;
+		margin-left: -10px;
 
-		@media ($mdWidth) {
+		&::before {
 
-			width: 100%;
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			top: 14px;
+			border-radius: 2px;
+			left: 10px;
+			content: '';
+			background-color: var(--color);
+			box-shadow: 1px 1px 0 #fff;
+			transition: linear .3s;
 
 		}
 
+		span {
+
+			display: block;
+			position: relative;
+			padding: 0 10px 0 40px;
+			line-height: 32px;
+
+			&::after,
+			&::before {
+
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				top: 20px;
+				left: 10px;
+				content: '';
+				background-color: var(--color);
+				box-shadow: 1px 1px 0 #fff;
+				transition: linear .3s;
+
+			}
+
+			&::before {
+
+				top: 8px;
+
+			}
+
+		}
+
+/*
+		&.is-open {
+
+			span::after {
+
+				top: 19px;
+				transform: rotate(-45deg);
+				box-shadow: none;
+
+			}
+
+			span::before {
+
+				top: 19px;
+				transform: rotate(45deg);
+				box-shadow: none;
+
+			}
+
+		}
+ */
 	}
 
+/*
 	&__top {
 
 		box-shadow: 0 0 6px rgba(0,0,0,.1);
@@ -71,20 +141,20 @@
 		}
 
 	}
-
+ */
 	&__logo {
 
-		font-size: 18px;
-		position: relative;
-		text-transform: uppercase;
-		color: #323232;
-		text-align: center;
-		fill: #dc1e38;
+		fill: var(--red);
+		position: absolute;
+		width: 172px;
+		height: 42px;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
 
 		@media ($mdWidth) {
-
-			font-size: 12px;
-			line-height: 20px;
 
 			svg {
 
@@ -108,8 +178,6 @@
 
 		@media ($xsWidth) {
 
-			font-size: 11px;
-
 			svg {
 
 				width: 140px;
@@ -121,109 +189,11 @@
 
 	}
 
-	&__tel {
-
-		display: flex;
-
-		@media ($smWidth) {
-
-			display: block;
-
-		}
-
-		li {
-
-			padding: 20px;
-			font-size: 18px;
-			line-height: 34px;
-
-			@media ($smWidth) {
-
-				font-size: 16px;
-				line-height: 20px;
-				text-align: right;
-				padding: 2px 4px;
-
-			}
-
-		}
-
-		li + li {
-
-			overflow: hidden;
-
-			&::before {
-
-				position: absolute;
-				width: 160px;
-				height: 160px;
-				top: 50%;
-				margin-top: -80px;
-				left: -160px;
-				border-radius: 50%;
-				content: '';
-				box-shadow: 0 0 5px 5px rgba(0,0,0,.1);
-
-				@media ($smWidth) {
-
-					display: none;
-
-				}
-
-			}
-
-		}
-
-		a {
-
-			white-space: nowrap;
-			color: #626262;
-
-			em {
-
-				display: block;
-				text-align: right;
-				color: var(--color);
-				font-size: 12px;
-				line-height: 16px;
-				text-shadow: 1px 1px 0 #fff;
-				font-style: normal;
-
-			}
-
-		}
-
-	}
-
-	&__top-right {
-
-		display: flex;
-		align-items: center;
-
-		@media ($mdWidth) {
-
-			margin: 0 10px;
-			flex-grow: 1;
-			justify-content: flex-end;
-
-		}
-
-		@media ($smWidth) {
-
-			width: 100%;
-			margin: 0;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-
-		}
-
-	}
-
 	&__cart {
 
 		color: #fff;
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 16px;
+		line-height: 32px;
 		white-space: nowrap;
 		padding: 0 15px 0 34px;
 		border-radius: 6px;
@@ -232,7 +202,7 @@
 		box-shadow: inset 1px 2px 2px rgba(0,0,0,.13);
 		position: relative;
 		background-color: var(--red);
-		background-position: 10px 2px;
+		background-position: 10px 7px;
 		background-repeat: no-repeat;
 		background-size: 16px 16px;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 438 438'%3E%3Cpath fill='white' d='M418 135h-70c-11 0-20 9-20 20v19h-54v-19c0-11-9-20-20-20h-70c-11 0-20 9-20 20v19h-54v-19c0-11-9-20-20-20H20c-11 0-20 9-20 20v39c0 11 9 20 20 20h1l18 192c1 10 10 18 20 18h320c11 0 19-8 20-18l18-192h1c11 0 20-9 20-20v-39c0-11-9-20-20-20zM159 349a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88zm80 0a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88zm80 0a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88z'/%3E%3Cpath fill='white' d='M64 21a20 20 0 0 0-30 27l88 96a20 20 0 0 0 28 2c8-8 9-20 1-29L64 21zM403 20c-8-8-21-7-28 1l-88 96a20 20 0 0 0 30 27l87-96c8-8 7-21-1-28z'/%3E%3C/svg%3E");
@@ -283,32 +253,24 @@
 	&__search {
 
 		width: 200px;
-		height: 22px;
+		height: 32px;
 		position: relative;
-		margin-left: 30px;
+		margin-left: 20px;
 		z-index: 1;
 
 		&-input {
 
 			width: 100%;
-			height: 22px;
+			height: 32px;
 			padding: 0 30px 0 15px;
-			font-size: 12px;
-			box-shadow: inset 1px 1px 1px rgba(0,0,0,.23);
-			border-radius: 9px;
-			background-color: #cfcfcf;
-			border: 0;
-			text-shadow: 1px 1px 0 rgba(250,250,250,.75);
+			font-size: 16px;
+			border-radius: 6px;
+			border: 1px solid var(--color);
+			text-shadow: 1px 1px 0 #fff;
 			transition: width .2s, height .2s, top .2s, left .2s, right .2s;
 			position: absolute;
 			top: 0;
 			right: 0;
-
-			@media ($mdWidth) {
-
-				border-radius: 6px;
-
-			}
 
 			@media ($smWidth) {
 
@@ -355,8 +317,8 @@
 			position: absolute;
 			width: 22px;
 			height: 22px;
-			top: 0;
-			right: 2px;
+			top: 5px;
+			right: 6px;
 			content: '';
 			font-size: 0;
 			color: transparent;
@@ -392,16 +354,14 @@
 
 	&__btn-callback {
 
-		font-size: 16px;
-		color: #fff;
-		height: 29px;
-		line-height: 28px;
-		border-radius: 5px;
+		height: 32px;
 		padding: 0 10px 0 30px;
-		text-shadow: 1px 1px 1px rgba(0,0,0,.5);
-		background-image: linear-gradient(to bottom, #a0a0a0, #b8b8b8);
-		box-shadow: inset 2px 2px 0 rgba(0,0,0,.13);
 		position: relative;
+		white-space: nowrap;
+		margin-left: 20px;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 0 #fff;
 
 		@media ($mdWidth) {
 
@@ -412,18 +372,13 @@
 		&::before {
 
 			position: absolute;
-			width: 22px;
-			height: 22px;
-			top: 3px;
-			left: 6px;
+			width: 18px;
+			height: 18px;
+			top: 6px;
+			left: 2px;
 			content: '';
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath fill='%23fff' d='M19.64 15.68a29.3 29.3 0 0 0-3.12-1.89l-.75-.44a.47.47 0 0 0-.35-.09c-.18 0-.35.13-.62.35a4.11 4.11 0 0 0-.7.79l-.66.75a.83.83 0 0 1-.57.35h-.26a3 3 0 0 1-.84-.44 13.2 13.2 0 0 1-5.55-5.98v-.26a.83.83 0 0 1 .35-.57l.75-.66a4.11 4.11 0 0 0 .79-.7c.22-.26.35-.44.35-.62a.47.47 0 0 0-.09-.35l-.26-.44-.22-.35Q7.21 4.09 6.66 3c-.3-.6-.52-.91-.66-1h-.26l-.92.13L4 2.4a3 3 0 0 0-1.34 1.54 4.88 4.88 0 0 0-.26 4.31q.68 1.79 1.5 3.52a19.25 19.25 0 0 0 2.73 3.3 19.25 19.25 0 0 0 3.3 2.73 11.4 11.4 0 0 0 2.81 1.2l1.32.44a5.46 5.46 0 0 0 1.36.22 4.7 4.7 0 0 0 2.33-.66 3 3 0 0 0 1.54-1.32 4.93 4.93 0 0 0 .35-2z' filter='url(%23f2)'/%3E%3Cdefs%3E%3Cfilter id='f2' width='200%25' height='200%25' x='0' y='0'%3E%3CfeOffset dx='1' dy='2' result='offsetblur'/%3E%3CfeFlood flood-color='rgba(0,0,0,.5)'/%3E%3CfeComposite in2='offsetblur' operator='in'/%3E%3CfeMerge%3E%3CfeMergeNode/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
-
-		}
-
-		&:hover {
-
-			background-image: linear-gradient(to top, #a0a0a0, #b8b8b8);
+			background-size: contain;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 384'%3E%3Cpath fill='%23393939' d='M353.188 252.052c-23.51 0-46.594-3.677-68.469-10.906-10.719-3.656-23.896-.302-30.438 6.417l-43.177 32.594c-50.073-26.729-80.917-57.563-107.281-107.26l31.635-42.052c8.219-8.208 11.167-20.198 7.635-31.448-7.26-21.99-10.948-45.063-10.948-68.583C132.146 13.823 118.323 0 101.333 0h-70.52C13.823 0 0 13.823 0 30.813 0 225.563 158.438 384 353.188 384c16.99 0 30.813-13.823 30.813-30.813v-70.323c-.001-16.989-13.824-30.812-30.813-30.812z'/%3E%3C/svg%3E");
 
 		}
 
@@ -432,7 +387,7 @@
 }
 
 @media ($smWidth) {
-
+/*
 	.menu-show {
 
 		background-color: var(--color);
@@ -467,9 +422,9 @@
 		}
 
 	}
-
+ */
 }
-
+/*
 .menu-top {
 
 	display: flex;
@@ -544,4 +499,4 @@
 
 	}
 
-}
+} */
