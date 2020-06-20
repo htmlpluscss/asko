@@ -197,11 +197,11 @@ gulp.task('copy', function() {
 
 gulp.task('ftp', function () {
 
-	if(!config) {
+//	if(!config) {
 
 		return true;
 
-	}
+//	}
 
 	const f = filter('**/*.html', {restore: true});
 

@@ -210,9 +210,13 @@
 
 	Array.prototype.forEach.call(inputRequired, function(el){
 
-		el.addEventListener('keyup', function() {
+		el.addEventListener('keyup', function(e) {
 
-			errorInput(el);
+			if(e.code !== "Tab") {
+
+				errorInput(el);
+
+			}
 
 		});
 
