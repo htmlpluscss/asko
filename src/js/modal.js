@@ -37,6 +37,18 @@
 				window.scrollTo(0,ASKO.windowScrollOld);
 				modal.classList.add('visuallyhidden');
 
+				// покажем корзину
+
+				if(el.classList.contains('modal__item--product-in-cart')) {
+
+					setTimeout(function(){
+
+						ASKO.headerCart.show();
+
+					}, 200);
+
+				}
+
 			}
 
 		});

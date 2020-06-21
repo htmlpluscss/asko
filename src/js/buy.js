@@ -45,6 +45,11 @@
 					ASKO.modalShow('product-in-cart');
 
 				}
+				else {
+
+					ASKO.headerCart.show();
+
+				}
 
 				var cart = JSON.parse(xhr.response);
 				console.log(cart.quantity, cart.sum);
@@ -58,12 +63,7 @@
 				}
 				else {
 
-					var headerCart = document.querySelector('.header__cart');
-
-					headerCart.querySelector('.header__cart-count').textContent = cart.quantity;
-					headerCart.querySelector('.header__cart-value').textContent = ASKO.sepNumber(cart.sum);
-
-					headerCart.classList.toggle('header__cart--empty', cart.quantity == '0');
+					ASKO.headerCart.change(cart.quantity, cart.sum);
 
 				}
 

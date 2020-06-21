@@ -72,12 +72,17 @@
 
 		}
 
-/*
-		&.is-open {
+		.menu-open & {
+
+			&::before {
+
+				transform: scaleX(0);
+
+			}
 
 			span::after {
 
-				top: 19px;
+				top: 14px;
 				transform: rotate(-45deg);
 				box-shadow: none;
 
@@ -85,63 +90,16 @@
 
 			span::before {
 
-				top: 19px;
+				top: 14px;
 				transform: rotate(45deg);
 				box-shadow: none;
 
 			}
 
 		}
- */
-	}
-
-/*
-	&__top {
-
-		box-shadow: 0 0 6px rgba(0,0,0,.1);
-		background-image: linear-gradient(to bottom, #505050, #2c2c2c);
-
-		@media ($smWidth) {
-
-			padding: 10px;
-			box-shadow: none;
-
-		}
 
 	}
 
-	&__main {
-
-		overflow: hidden;
-		position: relative;
-		padding: 15px 0;
-
-		&::before {
-
-			position: absolute;
-			top: 0;
-			left: -30px;
-			right: -30px;
-			bottom: 0;
-			content: '';
-			box-shadow: inset 0 4px 15px rgba(0,0,0,.5);
-
-			@media ($smWidth) {
-
-				display: none;
-
-			}
-
-		}
-
-		@media ($mdWidth) {
-
-			padding: 10px;
-
-		}
-
-	}
- */
 	&__logo {
 
 		fill: var(--red);
@@ -191,41 +149,56 @@
 
 	&__cart {
 
-		color: #fff;
-		font-size: 16px;
-		line-height: 32px;
-		white-space: nowrap;
-		padding: 0 15px 0 34px;
-		border-radius: 6px;
-		flex-shrink: 0;
-		text-shadow: 1px 1px 0 rgba(0,0,0,.29);
-		box-shadow: inset 1px 2px 2px rgba(0,0,0,.13);
+		margin-left: 20px;
 		position: relative;
-		background-color: var(--red);
-		background-position: 10px 7px;
-		background-repeat: no-repeat;
-		background-size: 16px 16px;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 438 438'%3E%3Cpath fill='white' d='M418 135h-70c-11 0-20 9-20 20v19h-54v-19c0-11-9-20-20-20h-70c-11 0-20 9-20 20v19h-54v-19c0-11-9-20-20-20H20c-11 0-20 9-20 20v39c0 11 9 20 20 20h1l18 192c1 10 10 18 20 18h320c11 0 19-8 20-18l18-192h1c11 0 20-9 20-20v-39c0-11-9-20-20-20zM159 349a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88zm80 0a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88zm80 0a20 20 0 1 1-40 0v-88a20 20 0 0 1 40 0v88z'/%3E%3Cpath fill='white' d='M64 21a20 20 0 0 0-30 27l88 96a20 20 0 0 0 28 2c8-8 9-20 1-29L64 21zM403 20c-8-8-21-7-28 1l-88 96a20 20 0 0 0 30 27l87-96c8-8 7-21-1-28z'/%3E%3C/svg%3E");
+		white-space: nowrap;
+
+		&--show &-current,
+		&:hover &-current {
+
+			opacity: 1;
+			pointer-events: auto;
+
+		}
 
 		&-current {
 
+			opacity: 0;
+			pointer-events: none;
+			transition: .3s;
+
 			display: flex;
 			align-items: center;
+			position: absolute;
+			top: 40px;
+			right: -20px;
+			box-shadow: 0 0 10px rgba(0,0,0,.3);
+			padding: 8px 14px;
+			border-radius: 6px;
+
+			&::before {
+
+				content: attr(data-pre);
+				margin-right: 5px;
+
+			}
 
 		}
 
 		&-count {
 
 			border-radius: 50%;
-			background-color: #fff;
-			color: var(--red);
-			width: 18px;
-			height: 18px;
+			background-color: var(--red);
+			color: #fff;
+			width: 15px;
+			height: 15px;
 			text-align: center;
-			line-height: 18px;
+			line-height: 15px;
 			text-shadow: none;
-			margin-right: 5px;
-			flex-shrink: 0;
+			position: absolute;
+			top: -5px;
+			right: -3px;
+			font-size: 10px;
 
 		}
 
@@ -236,13 +209,16 @@
 
 		}
 
-		&--empty &-current {
+		&--empty &-count,
+		&--empty &-value,
+		&--empty .rub,
+		&--empty &-current::before {
 
 			display: none;
 
 		}
 
-		&--empty::after {
+		&--empty &-current::after {
 
 			content: attr(data-empty);
 
@@ -252,25 +228,28 @@
 
 	&__search {
 
-		width: 200px;
-		height: 32px;
+		width: 24px;
+		height: 24px;
 		position: relative;
 		margin-left: 20px;
 		z-index: 1;
 
 		&-input {
 
-			width: 100%;
-			height: 32px;
-			padding: 0 30px 0 15px;
+			width: 12px;
+			height: 40px;
+			padding: 0;
 			font-size: 16px;
 			border-radius: 6px;
+			background-position: right;
 			border: 1px solid var(--color);
 			text-shadow: 1px 1px 0 #fff;
-			transition: width .2s, height .2s, top .2s, left .2s, right .2s;
+			transition: .01s;
+			transition-delay: .5s;
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: -8px;
+			right: 8px;
+			opacity: 0;
 
 			@media ($smWidth) {
 
@@ -287,7 +266,11 @@
 
 			&:focus {
 
-				width: 400px;
+				width: 256px;
+				padding: 0 40px 0 15px;
+				opacity: 1;
+				right: -8px;
+				transition: width .2s, height .2s, top .2s, left .2s, right .2s;
 
 				@media ($mdWidth) {
 
@@ -314,18 +297,8 @@
 
 		&-btn {
 
-			position: absolute;
-			width: 22px;
-			height: 22px;
-			top: 5px;
-			right: 6px;
-			content: '';
-			font-size: 0;
-			color: transparent;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: 16px 16px;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1' viewBox='0 0 60 60'%3E%3Cpath fill='%23545454' d='M55 52L42 38A23 23 0 0 0 24 0a23 23 0 1 0 13 42l14 14a3 3 0 0 0 4 0v-4zM24 6a17 17 0 1 1 0 34 17 17 0 0 1 0-34z'/%3E%3C/svg%3E%0A");
+			position: relative;
+			z-index: 1;
 
 		}
 
@@ -352,6 +325,27 @@
 
 	}
 
+	&__tel {
+
+		white-space: nowrap;
+		font-size: 21px;
+		line-height: 26px;
+		text-shadow: 1px 1px 0 #fff;
+		margin-left: 10px;
+
+		em {
+
+			display: block;
+			font-size: 14px;
+			line-height: 16px;
+			font-weight: 400;
+			font-style: normal;
+
+		}
+
+	}
+
+/*
 	&__btn-callback {
 
 		height: 32px;
@@ -382,121 +376,10 @@
 
 		}
 
-	}
+	} */
 
 }
 
 @media ($smWidth) {
-/*
-	.menu-show {
 
-		background-color: var(--color);
-
-		.main,
-		.footer {
-
-			display: none;
-
-		}
-
-		.header {
-
-			flex-grow: 1;
-			background-color: var(--color);
-			padding-bottom: 40px;
-
-			&__logo,
-			&__btn-lk {
-
-				display: none;
-
-			}
-
-			&__nav {
-
-				display: block;
-				padding: 0;
-
-			}
-
-		}
-
-	}
- */
 }
-/*
-.menu-top {
-
-	display: flex;
-
-	&__item {
-
-		padding-left: 1px;
-
-		&::before {
-
-			width: 1px;
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			background-image: linear-gradient(to bottom, #343434, #2d2d2d);
-
-		}
-
-		&:first-child {
-
-			padding-left: 0;
-
-		}
-
-	}
-
-	&__item:first-child::before,
-	&__item:first-child &__link::before,
-	&__item--active + &__item &__link::before {
-
-		display: none;
-
-	}
-
-	&__item--active &__link {
-
-		text-shadow: 1px 1px 0 #fff;
-		color: var(--color);
-		background: linear-gradient(to bottom, #f6f6f6 0%,#d2d2d2 100%);
-
-	}
-
-	&__link {
-
-		line-height: 34px;
-		color: #fff;
-		padding: 0 19px;
-		font-size: 12px;
-		text-shadow: 1px 1px 0 rgba(0,0,0,.42);
-		display: block;
-		position: relative;
-
-		@media ($mdWidth) {
-
-			padding: 0 14px;
-
-		}
-
-		&::before {
-
-			width: 1px;
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			background-image: linear-gradient(to bottom, #616161, #606060 50%, #2d2d2d);
-
-		}
-
-	}
-
-} */

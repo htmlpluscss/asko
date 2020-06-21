@@ -93,10 +93,10 @@
 
 	&__copyright {
 
-		order: -1;
 		line-height: 18px;
 		color: var(--light);
-		width: 256px;
+		text-align: center;
+		padding: 20px;
 
 		strong {
 
@@ -107,25 +107,16 @@
 
 		@media ($smWidth) {
 
-			order: 3;
-			width: auto;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-
 		}
 
 	}
 
 	&__contact {
 
-		text-align: center;
+		display: flex;
+		flex-direction: column;
 
 		@media ($smWidth) {
-
-			order: 1;
-			padding-top: 10px;
 
 		}
 
@@ -133,10 +124,15 @@
 
 	&__tel {
 
-		display: block;
-		padding-top: 5px;
 		line-height: 18px;
-		color: var(--light);
+		font-size: 14px;
+		white-space: nowrap;
+
+		li + li {
+
+			margin-top: 8px;
+
+		}
 
 		span {
 
@@ -144,24 +140,16 @@
 
 		}
 
-		span ~ span {
+		em {
 
-			color: var(--color);
-
-			@media ($smWidth) {
-
-				display: none;
-
-			}
+			color: var(--light);
+			font-style: normal;
+			font-size: 12px;
 
 		}
 
 		@media ($smWidth) {
 
-			font-size: 18px;
-			padding-top: 0;
-			line-height: 24px;
-			margin-top: 20px;
 
 		}
 

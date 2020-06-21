@@ -3,6 +3,15 @@
 	var yaCounterId = '26526729',
 		goals = [
 
+		// Телефон
+			{
+				selector: 'a[href^="tel"]',
+				event: 'click',
+				yandex: {
+					target: 'PHONE'
+				}
+			},
+
 		// Фильтр
 			{
 				selector: '.filter__btn-toggle .btn',
