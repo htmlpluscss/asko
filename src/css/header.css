@@ -16,6 +16,12 @@
 		display: flex;
 		align-items: center;
 
+		svg {
+
+			fill: var(--color);
+
+		}
+
 	}
 
 	&__btn-toggle {
@@ -105,12 +111,15 @@
 		fill: var(--red);
 		position: absolute;
 		width: 172px;
-		height: 42px;
+		height: 60px;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		margin: auto;
+		text-align: center;
+		white-space: nowrap;
+		font: 15px/18px Arial;
 
 		@media ($mdWidth) {
 

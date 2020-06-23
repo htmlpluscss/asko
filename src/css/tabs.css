@@ -3,6 +3,15 @@
 	margin: 60px 0;
 	position: relative;
 
+	@media ($xsWidth) {
+
+		margin: 60px -15px 60px -17px;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+
+	}
+
 	&__nav {
 
 		display: flex;
@@ -25,7 +34,8 @@
 
 			@media ($smWidth) {
 
-				padding: 10px;
+				padding: 10px 8px;
+				font-size: 12px;
 
 			}
 

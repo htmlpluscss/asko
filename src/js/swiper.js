@@ -176,6 +176,6 @@
 
 		document.head.appendChild(script);
 
-	}, 1000);
+	}, 5000);
 
 })(document.querySelectorAll('.swiper-container'));

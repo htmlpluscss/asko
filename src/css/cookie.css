@@ -4,13 +4,11 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 24px;
+	padding: 14px;
 	z-index: 9;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
 
 	@media ($mdWidth) {
-
-		padding: 20px;
 
 		.btn {
 
@@ -52,8 +50,6 @@
 	}
 
 	p {
-
-		margin-top: 10px;
 
 		a {
 

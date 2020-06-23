@@ -1,5 +1,11 @@
 .cart {
 
+	.h2 {
+
+		text-align: center;
+
+	}
+
 	&__border {
 
 		margin: 70px 0;
@@ -462,14 +468,6 @@
 	}
 
 /* finish */
-
-	&__finish {
-
-		text-align: center;
-		font-size: 18px;
-		margin-bottom: 24px;
-
-	}
 
 	&__sklad {
 
