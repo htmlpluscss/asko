@@ -116,83 +116,95 @@
 
 <nav class="nav visuallyhidden">
 
-	<div class="nav__inner bg">
+	<div class="nav__wrap bg">
 
-		<ul class="nav__list">
+		<div class="nav__inner">
+
+			<ul class="nav__list">
 
 {% for item in nav %}
 
-			<li class="nav__item nav__item--parent">
+				<li class="nav__item nav__item--parent">
 
-				<a class="nav__head nav__head--arrow" href="/" title="{{ item.parent }}">
-					{{ item.parent }}
-				</a>
+					<a class="nav__head nav__head--arrow" href="/" title="{{ item.parent }}">
+						{{ item.parent }}
+					</a>
 
-				<div class="nav__level2">
+					<button class="button nav__level2-btn-back">
+						Назад
+					</button>
+
+					<div class="nav__level2">
 
 {% for level2 in item.category %}
 
-					<div class="nav__level2-list">
+						<div class="nav__level2-list">
 
-						<div class="nav__level2-item{% if level2.list %} nav__level2-item--parent{% endif %}">
+							<div class="nav__level2-item{% if level2.list %} nav__level2-item--parent{% endif %}">
 
-							<a class="nav__level2-link" href="/" title="{{ level2.name }}">
-								{{ level2.name }}
-							</a>
+								<a class="nav__level2-link" href="/" title="{{ level2.name }}">
+									{{ level2.name }}
+								</a>
 
 
 
-						</div>
+							</div>
 
 {% if level2.list %}
 
-						<ul class="nav__level3">
+							<button class="button nav__level3-btn-back">
+								Назад
+							</button>
+
+							<ul class="nav__level3">
 
 {% for level3 in level2.list %}
 
-							<li class="nav__level3-item">
+								<li class="nav__level3-item">
 
-								<a class="nav__level3-link" href="/" title="{{ level3 }}">
-									{{ level3 }}
-								</a>
+									<a class="nav__level3-link" href="/" title="{{ level3 }}">
+										{{ level3 }}
+									</a>
 
-							</li>
+								</li>
 
 {% endfor %}
 
-						</ul>
+							</ul>
 
 {% endif %}
 
+						</div>
+
+{% endfor %}
+
 					</div>
 
-{% endfor %}
-
-				</div>
-
-			</li>
+				</li>
 
 {% endfor %}
 
-		</ul>
+			</ul>
 
-		<hr>
+			<hr>
 
-		<ul class="nav__list">
+			<ul class="nav__list">
 
 {% for item in ["Доставка и оплата", "Гарантия", "Акции", "Контакты"] %}
 
-			<li class="nav__item">
+				<li class="nav__item">
 
-				<a class="nav__head" href="/">
-					{{ item }}
-				</a>
+					<a class="nav__head" href="/">
+						{{ item }}
+					</a>
 
-			</li>
+				</li>
 
 {% endfor %}
 
-		</ul>
+			</ul>
+
+		</div>
 
 	</div>
 
