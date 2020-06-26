@@ -45,6 +45,22 @@
 			});
 
 		}
+		else {
+
+			el.querySelector('.nav__head').addEventListener('touchstart', function (e) {
+
+				e.preventDefault();
+				e.stopPropagation();
+
+				Array.prototype.forEach.call(level1, function(elem){
+
+					elem.classList.toggle('is-hover', elem === el);
+
+				});
+
+			});
+
+		}
 
 		el.addEventListener('mouseenter', function () {
 

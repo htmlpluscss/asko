@@ -27,7 +27,9 @@
 
 	&__section {
 
-		width: 25%;
+		flex-grow: 1;
+		flex-shrink: 0;
+		max-width: 25%;
 
 	}
 
@@ -115,6 +117,13 @@
 
 			padding-left: 34px;
 			display: inline-block;
+			font-size: 16px;
+
+			@media ($mdWidth) {
+
+				font-size: 14px;
+
+			}
 
 		}
 
@@ -137,9 +146,18 @@
 
 	&__yandex-market {
 
-		width: auto;
+		flex-grow: 0;
 
-		@media ($smWidth) {
+		@media ($mdWidth) {
+
+			max-width: 150px;
+
+			img {
+
+				width: 75px;
+				height: 50px;
+
+			}
 
 		}
 

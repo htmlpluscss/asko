@@ -3,12 +3,18 @@
 	background-color: rgba(0,0,0,.5);
 	display: flex;
 	z-index: 9;
-	top: 82px;
+	top: 80px;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	position: fixed;
 	flex-grow: 1;
+
+	@media ($mdWidth) {
+
+		top: 60px;
+
+	}
 
 	&__inner {
 
@@ -21,27 +27,29 @@
 		position: static;
 		padding: 20px 0;
 
+		@media ($mdWidth) {
+
+			padding: 10px 0;
+			width: 228px;
+
+		}
+
 	}
 
 	&__item {
 
 		position: static;
-		padding: 0 40px 0 20px;
+		padding: 0 20px;
+
+		@media ($mdWidth) {
+
+			padding-left: 10px;
+
+		}
 
 		&.is-hover {
 
 			background-color: var(--color);
-
-		}
-
-		&-arrow {
-
-			position: absolute;
-			top: 0;
-			right: -25px;
-			bottom: 0;
-			height: 14px;
-			margin: auto;
 
 		}
 
@@ -64,12 +72,33 @@
 		padding: 20px 0;
 		background-color: var(--color);
 
+		@media ($lgWidth) {
+
+			width: 137%;
+
+		}
+
+		@media ($mdWidth) {
+
+			width: 270px;
+			padding: 10px 0;
+
+		}
+
 		&-item {
 
 			padding: 12px 30px;
 			font-size: 16px;
 			line-height: 20px;
 			position: relative;
+
+			@media ($mdWidth) {
+
+				padding: 10px 30px 10px 20px;
+				font-size: 14px;
+				line-height: 20px;
+
+			}
 
 			&--parent::after {
 
@@ -107,19 +136,6 @@
 
 		}
 
-		&-arrow {
-
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			width: 14px;
-			height: 14px;
-			margin: auto;
-			fill: #fff;
-
-		}
-
 	}
 
 	&__level2-list:hover &__level3 {
@@ -139,11 +155,25 @@
 		padding: 20px;
 		background-color: #313131;
 
+		@media ($mdWidth) {
+
+			padding: 10px 0;
+
+		}
+
 		&-item {
 
 			padding: 12px 10px;
 			font-size: 16px;
 			line-height: 20px;
+
+			@media ($mdWidth) {
+
+				padding: 10px 20px;
+				font-size: 14px;
+				line-height: 20px;
+
+			}
 
 		}
 
@@ -186,13 +216,20 @@
 		position: relative;
 		white-space: nowrap;
 		padding: 10px;
-		fill: var(--color);
+		padding-right: 30px;
+
+		@media ($mdWidth) {
+
+			font-size: 16px;
+			line-height: 20px;
+
+		}
 
 		&--arrow::after {
 
 			position: absolute;
 			top: 0;
-			right: -25px;
+			right: -5px;
 			bottom: 0;
 			content: '';
 			width: 14px;

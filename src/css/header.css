@@ -2,13 +2,21 @@
 
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 20px;
+	padding: 0 20px;
 	z-index: 9;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	height: 80px;
+
+	@media ($mdWidth) {
+
+		height: 60px;
+
+	}
 
 	&__left,
 	&__right {
@@ -108,25 +116,40 @@
 
 	&__logo {
 
-		fill: var(--red);
 		position: absolute;
-		width: 172px;
-		height: 60px;
+		width: 160px;
+		height: 56px;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		margin: auto;
-		text-align: center;
-		white-space: nowrap;
-		font: 15px/18px Arial;
+
+		svg {
+
+			path {
+
+				fill: var(--red);
+
+			}
+
+			text {
+
+				fill: var(--color);
+
+			}
+
+		}
 
 		@media ($mdWidth) {
 
+			width: 120px;
+			height: 42px;
+
 			svg {
 
-				width: 156px;
-				height: 38px;
+				width: 120px;
+				height: 42px;
 
 			}
 
@@ -134,23 +157,10 @@
 
 		@media ($smWidth) {
 
-			svg {
-
-				width: 164px;
-				height: 40px;
-
-			}
 
 		}
 
 		@media ($xsWidth) {
-
-			svg {
-
-				width: 140px;
-				height: 34px;
-
-			}
 
 		}
 
@@ -262,9 +272,6 @@
 
 			@media ($smWidth) {
 
-				left: 0;
-				font-size: 16px;
-
 				&::placeholder {
 
 					font-size: 14px;
@@ -283,20 +290,10 @@
 
 				@media ($mdWidth) {
 
-					top: -6px;
-					right: -10px;
-					height: 34px;
-					width: 100vw;
-					border-radius: 0;
-					box-shadow: none;
-
 				}
 
 				@media ($smWidth) {
 
-					top: -10px;
-					left: -10px;
-					height: 42px;
 
 				}
 
@@ -313,22 +310,11 @@
 
 		@media ($mdWidth) {
 
-			width: auto;
-			flex-grow: 1;
-			max-width: 200px;
-			margin-left: 10px;
 
 		}
 
 		@media ($smWidth) {
 
-			margin: 0 10px 0 0;
-
-			&-input:focus + &-btn {
-
-				display: none;
-
-			}
 
 		}
 
@@ -342,6 +328,21 @@
 		text-shadow: 1px 1px 0 #fff;
 		margin-left: 10px;
 
+		@media ($mdWidth) {
+
+			font-size: 17px;
+			line-height: 20px;
+			font-weight: 700;
+
+			em {
+
+				font-size: 12px;
+				line-height: 14px;
+
+			}
+
+		}
+
 		em {
 
 			display: block;
@@ -353,42 +354,5 @@
 		}
 
 	}
-
-/*
-	&__btn-callback {
-
-		height: 32px;
-		padding: 0 10px 0 30px;
-		position: relative;
-		white-space: nowrap;
-		margin-left: 20px;
-		font-size: 18px;
-		text-transform: uppercase;
-		text-shadow: 1px 1px 0 #fff;
-
-		@media ($mdWidth) {
-
-			display: none;
-
-		}
-
-		&::before {
-
-			position: absolute;
-			width: 18px;
-			height: 18px;
-			top: 6px;
-			left: 2px;
-			content: '';
-			background-size: contain;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 384'%3E%3Cpath fill='%23393939' d='M353.188 252.052c-23.51 0-46.594-3.677-68.469-10.906-10.719-3.656-23.896-.302-30.438 6.417l-43.177 32.594c-50.073-26.729-80.917-57.563-107.281-107.26l31.635-42.052c8.219-8.208 11.167-20.198 7.635-31.448-7.26-21.99-10.948-45.063-10.948-68.583C132.146 13.823 118.323 0 101.333 0h-70.52C13.823 0 0 13.823 0 30.813 0 225.563 158.438 384 353.188 384c16.99 0 30.813-13.823 30.813-30.813v-70.323c-.001-16.989-13.824-30.812-30.813-30.812z'/%3E%3C/svg%3E");
-
-		}
-
-	} */
-
-}
-
-@media ($smWidth) {
 
 }
