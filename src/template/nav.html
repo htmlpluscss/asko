@@ -14,6 +14,9 @@
 			},
 			{
 				name : "Аксессуары Hidden Helpers"
+			},
+			{
+				name : "Домашняя прачечная"
 			}
 		]
 	},
@@ -128,6 +131,10 @@
 					{{ item.parent }}
 				</a>
 
+				<button class="button nav__level2-btn-back">
+					Назад
+				</button>
+
 				<div class="nav__level2">
 
 {% for level2 in item.category %}
@@ -145,6 +152,10 @@
 						</div>
 
 {% if level2.list %}
+
+						<button class="button nav__level3-btn-back">
+							Назад
+						</button>
 
 						<ul class="nav__level3">
 
