@@ -41,6 +41,19 @@
 		text-shadow: 1px 1px 0 #fff;
 		margin-left: -10px;
 
+		@media ($smWidth) {
+
+			margin-left: -5px;
+
+			&::before {
+
+				top: 14px;
+				left: 6px;
+
+			}
+
+		}
+
 		&::before {
 
 			position: absolute;
@@ -81,6 +94,25 @@
 			&::before {
 
 				top: 8px;
+
+			}
+
+			@media ($smWidth) {
+
+				padding: 0;
+				display: block;
+				width: 32px;
+				height: 32px;
+				font-size: 0;
+				color: transparent;
+				text-shadow: none;
+
+				&::after,
+				&::before {
+
+					left: 6px;
+
+				}
 
 			}
 
@@ -253,6 +285,12 @@
 		margin-left: 20px;
 		z-index: 1;
 
+		@media ($smWidth) {
+
+			margin-left: 10px;
+
+		}
+
 		&-input {
 
 			width: 12px;
@@ -340,6 +378,12 @@
 				line-height: 14px;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			display: none;
 
 		}
 

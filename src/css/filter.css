@@ -1,5 +1,11 @@
 .filter {
 
+	@media ($smWidth) {
+
+		margin-top: 20px;
+
+	}
+
 	&__btn-toggle {
 
 		display: flex;
@@ -17,6 +23,7 @@
 			padding: 0 14px 0 40px;
 			text-decoration: none !important;
 			font-size: 16px;
+			line-height: 38px;
 			box-shadow: inset 1px 1px 0 #fff, 1px 1px 0 #fff;
 			border: 1px solid #d4d4d4;
 
@@ -130,12 +137,6 @@
 		max-height: 0;
 		opacity: 0;
 		transition: .5s ease;
-
-		@media ($smWidth) {
-
-			margin-bottom: 10px !important;
-
-		}
 
 	}
 

@@ -5,7 +5,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	width: 1286px;
-	padding: 40px 20px 0;
+	padding: 20px 20px 0;
 
 	@media ($lgWidth) {
 
@@ -13,13 +13,12 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
-		padding: 20px 20px 0;
 
 	}
 
 	@media ($mdWidth) {
 
-		padding: 20px 0 0;
+		padding: 0;
 
 	}
 

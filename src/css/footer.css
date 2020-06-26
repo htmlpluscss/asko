@@ -7,6 +7,18 @@
 
 		padding: 30px 0;
 
+		@media ($smWidth) {
+
+			padding: 20px;
+
+		}
+
+		@media ($xsWidth) {
+
+			padding: 15px;
+
+		}
+
 	}
 
 	.center {
@@ -14,12 +26,9 @@
 		display: flex;
 		justify-content: space-between;
 
-		@media ($mdWidth) {
-
-
-		}
-
 		@media ($smWidth) {
+
+			flex-wrap: wrap;
 
 		}
 
@@ -30,6 +39,14 @@
 		flex-grow: 1;
 		flex-shrink: 0;
 		max-width: 25%;
+
+		@media ($smWidth) {
+
+			flex-wrap: wrap;
+			width: 50%;
+			max-width: none;
+
+		}
 
 	}
 
@@ -44,10 +61,20 @@
 
 		li {
 
+			padding-right: 10px;
+
+			@media ($mdWidth) {
+
+				padding: 0 10px 10px 0;
+				padding-left: 0;
+				line-height: 16px;
+
+			}
 
 		}
 
 		a {
+
 
 			&:hover {
 
@@ -66,14 +93,24 @@
 		text-align: center;
 		padding: 20px;
 
+		@media ($smWidth) {
+
+			font-size: 12px;
+			line-height: 16px;
+			padding: 10px;
+
+		}
+
 		strong {
 
 			font-weight: 400;
 			color: var(--color);
 
-		}
+			@media ($smWidth) {
 
-		@media ($smWidth) {
+				display: block;
+
+			}
 
 		}
 
@@ -85,6 +122,26 @@
 		box-shadow: 0 0 10px rgba(0,0,0,.3);
 		display: flex;
 		justify-content: center;
+
+		@media ($smWidth) {
+
+			display: block;
+			padding: 10px 20px;
+
+			li {
+
+				padding: 10px 0;
+
+			}
+
+			em {
+
+				font-size: 12px;
+				line-height: 14px;
+
+			}
+
+		}
 
 		li {
 
@@ -104,14 +161,15 @@
 
 		}
 
-		@media ($smWidth) {
-
-
-		}
-
 	}
 
 	&__callback {
+
+		@media ($smWidth) {
+
+			margin-top: 12px;
+
+		}
 
 		.btn {
 
@@ -122,6 +180,12 @@
 			@media ($mdWidth) {
 
 				font-size: 14px;
+
+			}
+
+			@media ($smWidth) {
+
+				padding-left: 22px;
 
 			}
 
@@ -139,6 +203,14 @@
 			top: 8px;
 			left: 0;
 			fill: var(--color);
+
+			@media ($smWidth) {
+
+				top: 11px;
+				width: 16px;
+				height: 16px;
+
+			}
 
 		}
 
@@ -158,6 +230,12 @@
 				height: 50px;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			margin-top: 12px;
 
 		}
 
