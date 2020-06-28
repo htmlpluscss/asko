@@ -330,6 +330,7 @@
 							}
 
 							setPurchase();
+							ASKO.sendBeacon = true; // произошли изменения в корзине, при уходе со страницы необходим отправить данные на сервер
 
 						}
 
@@ -462,6 +463,17 @@
 							});
 
 						}
+
+					// обновление корзины на сервере при уходе со страницы
+						window.addEventListener("beforeunload", function() {
+
+							if(ASKO.sendBeacon) {
+
+								navigator.sendBeacon('order.php', 'mode=save');
+
+							}
+
+						});
 
 					})(document.querySelector('.cart'));
 
