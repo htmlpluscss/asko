@@ -2,6 +2,12 @@
 
 	display: flex;
 
+	img {
+
+		max-width: 250px;
+
+	}
+
 	&__text {
 
 		order: 1;
