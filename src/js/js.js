@@ -16,8 +16,6 @@ var ASKO = ASKO || {};
 	ASKO.width = window.innerWidth;
 	ASKO.height = window.innerHeight;
 
-	ASKO.touchDevice = "ontouchstart" in document.documentElement;
-
 	ASKO.body.classList.remove('no-js');
 
 // resize
@@ -46,7 +44,7 @@ var ASKO = ASKO || {};
 
 // href="tel:"
 
-	if(!ASKO.touchDevice || ASKO.width > 1200) {
+	if(ASKO.width > 1200) {
 
 		Array.prototype.forEach.call(document.querySelectorAll('[href^="tel"]'), function (el) {
 
