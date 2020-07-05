@@ -312,25 +312,9 @@
 
 	}
 
-	&__available {
-
-		@media ($mdWidth) {
-
-			display: flex;
-
-		}
-
-		@media ($smWidth) {
-
-			display: block;
-
-		}
-
-	}
-
 	&__cart {
 
-		margin-bottom: 20px;
+		margin: 20px 0;
 
 		@media ($smWidth) {
 
