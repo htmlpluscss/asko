@@ -69,12 +69,26 @@
 
 								</div>
 
-								<div class="catalog-list__available available available--catalog">
-									{% if unavailable %}
-									<span class="available__value available__value--unavailable">{{ unavailable }}</span>
-									{% else %}
-									<span class="available__value">В наличии</span>
-									{% endif %}
+								<div class="catalog-list__available">
+
+									<div class="available">
+										<span class="available__pref">Москва</span>
+										{% if unavailable %}
+										<span class="available__value available__value--unavailable">{{ unavailable }}</span>
+										{% else %}
+										<span class="available__value">В наличии</span>
+										{% endif %}
+									</div>
+
+									<div class="available">
+										<span class="available__pref">Санкт-Петербург</span>
+										{% if unavailable %}
+										<span class="available__value available__value--unavailable">{{ unavailable }}</span>
+										{% else %}
+										<span class="available__value">В наличии</span>
+										{% endif %}
+									</div>
+
 								</div>
 
 								<div class="catalog-list__btn">

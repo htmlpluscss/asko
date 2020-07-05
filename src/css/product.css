@@ -314,19 +314,6 @@
 
 	&__available {
 
-		.available {
-
-			margin: 20px 0;
-
-			@media ($mdWidth) {
-
-				margin-right: 40px;
-				margin-top: 0;
-
-			}
-
-		}
-
 		@media ($mdWidth) {
 
 			display: flex;
