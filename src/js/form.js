@@ -91,6 +91,7 @@
 
 				if(xhrOff) {
 
+					ASKO.sendBeacon = false;
 					return true;
 
 				}
