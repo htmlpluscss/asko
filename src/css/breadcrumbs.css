@@ -11,7 +11,7 @@
 
 		&::after {
 
-			content: '»';
+			content: '\00BB';
 			margin: 0 10px;
 
 		}

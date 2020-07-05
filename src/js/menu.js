@@ -1,5 +1,16 @@
 (function(nav){
 
+	var supportsPassive = false;
+	try {
+	  var opts = Object.defineProperty({}, 'passive', {
+	    get: function() {
+	      supportsPassive = true;
+	    }
+	  });
+	  window.addEventListener("testPassive", null, opts);
+	  window.removeEventListener("testPassive", null, opts);
+	} catch (e) {}
+
 	if(!nav) {
 
 		return;
@@ -112,7 +123,7 @@
 
 				});
 
-			});
+			}, supportsPassive ? { passive: true } : false);
 
 		}
 
@@ -159,7 +170,7 @@
 
 			});
 
-		});
+		}, supportsPassive ? { passive: true } : false);
 
 	});
 

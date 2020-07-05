@@ -95,6 +95,12 @@
 
 		max-width: 500px;
 
+		p + p {
+
+			margin-top: 10px;
+
+		}
+
 		dl {
 
 			display: flex;
@@ -167,11 +173,12 @@
 		justify-content: flex-end;
 		color: #000;
 		font-size: 24px;
+		margin-bottom: 18px;
 
 		@media ($smWidth) {
 
 			justify-content: flex-start;
-			margin-top: 12px;
+			margin: 10px 0;
 
 		}
 
@@ -193,11 +200,11 @@
 
 	&__available {
 
-		padding: 14px 0 18px;
+		margin: 18px 0;
 
 		@media ($smWidth) {
 
-			padding: 10px 0;
+			margin: 10px 0;
 			display: flex;
 
 		}

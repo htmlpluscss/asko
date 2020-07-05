@@ -67,7 +67,15 @@
 
 				padding: 0 10px 10px 0;
 				padding-left: 0;
-				line-height: 16px;
+				line-height: 1.1;
+				font-size: 16px;
+
+			}
+
+			@media ($xsWidth) {
+
+				line-height: 1.4;
+				font-size: 14px;
 
 			}
 
@@ -75,6 +83,11 @@
 
 		a {
 
+			@media ($mdWidth) {
+
+				display: block;
+
+			}
 
 			&:hover {
 

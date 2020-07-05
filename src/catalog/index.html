@@ -75,11 +75,95 @@
 
 			<section class="flexcolumn catalog-list mb20">
 
-{% include "_include/catalog-item.html" %}
+				<article class="catalog-list__item">
+
+					<div class="catalog-list__img">
+
+						<a href="/catalog/product/">
+
+							<picture>
+
+								<source srcset="https://asko-home.ru/pic/250x250/asko-xx-akhmadullina.webp 1x, https://asko-home.ru/pic/500x500/asko-xx-akhmadullina.webp 2x" type="image/webp">
+
+								<source srcset="https://asko-home.ru/pic/250x250/asko-xx-akhmadullina.jpg 1x, https://asko-home.ru/pic/500x500/asko-xx-akhmadullina.jpg 2x">
+
+								<img src="https://asko-home.ru/pic/250x250/asko-xx-akhmadullina.jpg" alt="Asko Asko by ALENA AKHMADULLINA: эксклюзивная прачечная из 4 единиц техники " loading="lazy">
+
+							</picture>
+
+						</a>
+
+					</div>
+
+					<div class="catalog-list__body">
+
+						<h3 class="catalog-list__title">
+							<a href="/catalog/product/">
+								Asko by ALENA AKHMADULLINA: эксклюзивная прачечная из 4 единиц техники
+							</a>
+						</h3>
+
+						<div class="catalog-list__desc">
+
+							<div class="catalog-list__param">
+
+								<p>
+									Эксклюзивная коллекция ASKO x ALENA AKHMADULLINA состоит из 4 единиц техники (сушильный шкаф, стиральная и сушильная машина и Hidden Helpers).
+								</p>
+
+								<p>
+									Стоимость РРЦ зависит от комплектации и цветового решения. Для расчета проекта присылайте запрос на почту или звоните на телефон.
+								</p>
+
+								<p>
+									Срок изготовления примерно 3 недели.
+								</p>
+
+							</div>
+
+							<form action="/zakaz/" class="catalog-list__cart" data-buy="товар в корзине">
+
+								<input type="hidden" name="product" value="123456789">
+								<input type="hidden" name="product-name" value="HiLight Asko HC1643G">
+								<input type="hidden" name="mode" value="add">
+
+								<div class="catalog-list__price">
+
+									<span class="catalog-list__price-pref">
+										Цена:
+									</span>
+
+									<span class="catalog-list__price-value">
+										от 390 000
+									</span>
+
+									<span class="rub">
+										₽
+									</span>
+
+								</div>
+
+								<div class="catalog-list__btn">
+
+									<button class="btn product-in-cart" data-delete="Удалить" data-buy="Заказать">
+										Заказать
+									</button>
+
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</article>
+
+{% include "catalog/catalog-item.html" %}
 {% set unavailable = "под заказ от 2-х дней" %}
-{% include "_include/catalog-item.html" %}
+{% include "catalog/catalog-item.html" %}
 {% set unavailable = "Нет в наличии" %}
-{% include "_include/catalog-item.html" %}
+{% include "catalog/catalog-item.html" %}
 
 			</section>
 
