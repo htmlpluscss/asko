@@ -119,7 +119,7 @@
 
 			}
 
-			.swiper-container--product:not(.swiper-container-horizontal) .swiper-wrapper {
+			.swiper-container--off .swiper-wrapper {
 
 				justify-content: center;
 

@@ -77,12 +77,19 @@
 				swipePrev.classList.remove('hide');
 
 			}
+			else {
+
+				swipe.classList.add('swiper-container--off');
+
+			}
 
 			toggleSwipe = function() {
 
 				swipeNav.classList.add('hide');
 				swipeNext.classList.add('hide');
 				swipePrev.classList.add('hide');
+				swipe.classList.remove('swiper-container--off');
+
 
 				if(mySwipe) {
 
@@ -109,7 +116,6 @@
 					}
 
 				}
-
 				else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
 
 					swipeNext.classList.remove('hide');
@@ -124,6 +130,11 @@
 							prevEl: swipePrev
 						}
 					});
+
+				}
+				else {
+
+					swipe.classList.add('swiper-container--off');
 
 				}
 
