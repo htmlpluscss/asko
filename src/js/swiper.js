@@ -187,6 +187,6 @@
 
 		document.head.appendChild(script);
 
-	}, 5000);
+	}, 4000);
 
 })(document.querySelectorAll('.swiper-container'));

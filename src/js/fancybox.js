@@ -1,8 +1,64 @@
-(function(){
-
-	var fancyboxBtn = document.querySelectorAll('.fancybox-gallery');
+(function(fancyboxBtn){
 
 	if(fancyboxBtn.length) {
+
+		var openImg = null,
+			loadingScript = false;
+
+		function loadFancybox() {
+
+			if(loadingScript) {
+
+				return;
+
+			}
+
+			loadingScript = true;
+
+			var script = document.createElement('script');
+
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = '/js/jquery.min.js';
+
+			script.onload = function () {
+
+				var script = document.createElement('script');
+
+				script.type = 'text/javascript';
+				script.async = true;
+				script.src = '/js/jquery.fancybox.min.js';
+
+				script.onload = function () {
+
+					if(openImg !== null) {
+
+						openFancybox(openImg);
+
+					}
+
+				};
+
+				document.head.appendChild(script);
+
+			};
+
+			document.head.appendChild(script);
+
+		}
+
+		function openFancybox(index) {
+
+			window.jQuery.fancybox.open(
+				ASKO.gallery,
+				{
+					loop : true
+				},
+				index
+
+			);
+
+		}
 
 		document.addEventListener('click', function (e) {
 
@@ -14,15 +70,26 @@
 
 					e.preventDefault();
 
+					if(ASKO.width < 768) {
+
+						return;
+
+					}
+
 					var index = parseInt(target.getAttribute('data-fancybox-index'));
 
-					$.fancybox.open(
-						ASKO.gallery,
-						{
-							loop : true
-						},
-						index
-					);
+					if(window.jQuery && window.jQuery.fancybox) {
+
+						openFancybox(index);
+
+					}
+					else {
+
+						openImg = index;
+
+						loadFancybox();
+
+					}
 
 				}
 
@@ -34,38 +101,10 @@
 
 		setTimeout(function(){
 
-			if(!window.jQuery) {
+			loadFancybox();
 
-				var script = document.createElement('script');
-
-				script.type = 'text/javascript';
-				script.async = true;
-				script.src = '/js/jquery.min.js';
-
-				script.onload = function () {
-
-					var script = document.createElement('script');
-
-					script.type = 'text/javascript';
-					script.async = true;
-					script.src = '/js/jquery.fancybox.min.js';
-
-					script.onload = function () {
-
-						$.fancybox.defaults.loop = true;
-
-					};
-
-					document.head.appendChild(script);
-
-				};
-
-				document.head.appendChild(script);
-
-			}
-
-		}, 5000);
+		}, 4000);
 
 	}
 
-})();
+})(document.querySelectorAll('.fancybox-gallery'));
