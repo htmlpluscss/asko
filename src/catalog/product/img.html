@@ -1,0 +1,112 @@
+				<div class="product__img">
+
+					<a class="product__img-big fancybox-gallery hidden-sm" href="/img/product/img@big.jpg" data-fancybox-index="0">
+
+<!--
+
+img@1x.png
+ширина не более 300px
+высота не более 300px
+
+ -->
+						<picture>
+
+							<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
+
+							<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
+
+							<img src="/img/product/img@1x.png" alt="{{ title }}">
+
+						</picture>
+
+					</a>
+
+<!--
+1. если фото одно, то блок .product__img-small не выводить
+
+
+img@1x.png
+ширина не более 90px
+высота не более 90px
+
+ -->
+
+					<div class="product__img-small">
+
+						<script>
+
+							var ASKO = ASKO || {};
+
+							ASKO.gallery = [
+								{
+									src : '/img/product/download.jpg'
+								},
+								{
+									src : '/img/product/download.jpg'
+								},
+								{
+									src : '/img/product/img@big.jpg'
+								},
+								{
+									src : '/img/product/download.jpg'
+								}
+							]
+
+	/* тут указываем пути к большим фотографиям галереи */
+
+						</script>
+
+						<div class="swiper-container swiper-container--product">
+
+							<ul class="notsel swiper-wrapper">
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="0">
+										<picture>
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="1">
+										<picture>
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/img@big.jpg" class="fancybox-gallery" data-fancybox-index="2">
+										<picture>
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+								<li class="swiper-slide">
+									<a href="/img/product/download.jpg" class="fancybox-gallery" data-fancybox-index="3">
+										<picture>
+											<source srcset="/img/product/img--350@1x.webp 1x, /img/product/img--350@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.webp 1x, /img/product/img--90@2x.webp 2x" type="image/webp">
+											<source srcset="/img/product/img--350@1x.png 1x, /img/product/img--350@2x.png 2x" media="(max-width: 767px)">
+											<source srcset="/img/product/img--90@1x.png 1x, /img/product/img--90@2x.png 2x">
+											<img src="/img/product/img--90@1x.png" alt="{{ title }}">
+										</picture>
+									</a>
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+
+				</div>

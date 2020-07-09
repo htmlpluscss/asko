@@ -1,0 +1,58 @@
+				<div class="product__desc">
+
+					<p class="product__text">
+						{{ description }}
+					</p>
+
+					<div class="product__price">
+						Цена:
+						<span class="product__price-value">258 000</span>
+						<span class="rub">₽</span>
+					</div>
+
+					<div class="product__available">
+
+						<div class="available">
+
+							<div class="available__item">
+								<span class="available__pref">Москва</span>
+								<span class="available__value">В наличии</span>
+							</div>
+
+							<div class="available__item">
+								<span class="available__pref">Санкт-Петербург</span>
+								<span class="available__value available__value--unavailable">Нет в наличии</span>
+							</div>
+
+						</div>
+
+					</div>
+
+					<form action="/zakaz/" class="product__cart">
+
+						<input type="hidden" name="product" value="123456789">
+						<input type="hidden" name="product-name" value="HiLight Asko HC1643G">
+						<input type="hidden" name="buy" value="1">
+
+						<button class="btn product-in-cart" data-delete="Удалить" data-buy="Купить">
+							Купить
+						</button>
+
+					</form>
+
+					<dl class="product__delivery">
+						<dt>
+							Доставка:
+						</dt>
+						<dd>
+							<b>бесплатная доставка + бесплатная установка*</b>
+						</dd>
+						<dt>
+							Способы оплаты:
+						</dt>
+						<dd>
+							наличный и безналичный расчет, ONLINE кредитной картой
+						</dd>
+					</dl>
+
+				</div>
