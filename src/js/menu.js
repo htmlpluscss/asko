@@ -1,16 +1,5 @@
 (function(nav){
 
-	var supportsPassive = false;
-	try {
-	  var opts = Object.defineProperty({}, 'passive', {
-	    get: function() {
-	      supportsPassive = true;
-	    }
-	  });
-	  window.addEventListener("testPassive", null, opts);
-	  window.removeEventListener("testPassive", null, opts);
-	} catch (e) {}
-
 	if(!nav) {
 
 		return;
@@ -20,7 +9,8 @@
 	var level1 = nav.querySelectorAll('.nav__item'),
 		level2Parent = nav.querySelectorAll('.nav__level2-item--parent'),
 		level2Back = nav.querySelectorAll('.nav__level2-btn-back'),
-		level3Back = nav.querySelectorAll('.nav__level3-btn-back');
+		level3Back = nav.querySelectorAll('.nav__level3-btn-back'),
+		wrapper = document.querySelector('.wrapper');
 
 	// открыть|закрыть меню
 
@@ -48,6 +38,7 @@
 				setTimeout(function(){
 
 					window.scrollTo(0,ASKO.windowScrollOld);
+					wrapper.style.top = 0;
 
 				});
 
@@ -56,6 +47,7 @@
 
 				ASKO.windowScrollOld = window.pageYOffset;
 				window.scrollTo(0,0);
+				wrapper.style.top = -ASKO.windowScrollOld + 'px';
 
 			}
 
@@ -75,21 +67,29 @@
 
 			el.addEventListener('mouseleave', function () {
 
-				el.classList.remove('is-hover');
-				nav.classList.remove('is-level2');
+				if(ASKO.width >= 768) {
+
+					el.classList.remove('is-hover');
+					nav.classList.remove('is-level2');
+
+				}
 
 			});
 
 			el.addEventListener('mouseenter', function () {
 
-				el.classList.remove('is-hover');
-				nav.classList.remove('is-level2');
+				if(ASKO.width >= 768) {
 
-				Array.prototype.forEach.call(level1, function(elem){
+					el.classList.remove('is-hover');
+					nav.classList.remove('is-level2');
 
-					elem.classList.remove('is-hover');
+					Array.prototype.forEach.call(level1, function(elem){
 
-				});
+						elem.classList.remove('is-hover');
+
+					});
+
+				}
 
 			});
 
@@ -98,32 +98,39 @@
 
 			el.addEventListener('mouseenter', function () {
 
-				nav.classList.add('is-level2');
+				if(ASKO.width >= 768) {
 
-				Array.prototype.forEach.call(level1, function(elem){
+					nav.classList.add('is-level2');
 
-					elem.classList.toggle('is-hover', elem === el);
+					Array.prototype.forEach.call(level1, function(elem){
 
-				});
+						elem.classList.toggle('is-hover', elem === el);
+
+					});
+
+				}
 
 			});
 
-			el.querySelector('.nav__head').addEventListener('touchstart', function (e) {
+			el.querySelector('.nav__head').addEventListener('click', function (e) {
 
-				e.preventDefault();
-				e.stopPropagation();
+				if(ASKO.width < 768) {
 
-				nav.style.minHeight = el.querySelector('.nav__level2').scrollHeight + "px";
+					e.preventDefault();
 
-				nav.classList.add('is-level2');
+					nav.style.minHeight = el.querySelector('.nav__level2').scrollHeight + "px";
 
-				Array.prototype.forEach.call(level1, function(elem){
+					nav.classList.add('is-level2');
 
-					elem.classList.toggle('is-hover', elem === el);
+					Array.prototype.forEach.call(level1, function(elem){
 
-				});
+						elem.classList.toggle('is-hover', elem === el);
 
-			}, supportsPassive ? { passive: true } : false);
+					});
+
+				}
+
+			});
 
 		}
 
@@ -135,42 +142,53 @@
 
 		el.parentNode.addEventListener('mouseenter', function () {
 
-			nav.classList.add('is-level3');
+			if(ASKO.width >= 768) {
 
-			Array.prototype.forEach.call(level2Parent, function(elem){
+				nav.classList.add('is-level3');
 
-				elem.classList.toggle('is-hover', elem === el);
+				Array.prototype.forEach.call(level2Parent, function(elem){
 
-			});
+					elem.classList.toggle('is-hover', elem === el);
+
+				});
+
+			}
 
 		});
 
 		el.parentNode.addEventListener('mouseleave', function () {
 
-			nav.classList.remove('is-level3');
+			if(ASKO.width >= 768) {
 
-			Array.prototype.forEach.call(level2Parent, function(elem){
+				nav.classList.remove('is-level3');
 
-				elem.classList.remove('is-hover');
+				Array.prototype.forEach.call(level2Parent, function(elem){
 
-			});
+					elem.classList.remove('is-hover');
+
+				});
+
+			}
 
 		});
 
-		el.querySelector('.nav__level2-link').addEventListener('touchstart', function (e) {
+		el.querySelector('.nav__level2-link').addEventListener('click', function (e) {
 
-			e.preventDefault();
-			e.stopPropagation();
+			if(ASKO.width < 768) {
 
-			nav.classList.add('is-level3');
+				e.preventDefault();
 
-			Array.prototype.forEach.call(level2Parent, function(elem){
+				nav.classList.add('is-level3');
 
-				elem.classList.toggle('is-hover', elem === el);
+				Array.prototype.forEach.call(level2Parent, function(elem){
 
-			});
+					elem.classList.toggle('is-hover', elem === el);
 
-		}, supportsPassive ? { passive: true } : false);
+				});
+
+			}
+
+		});
 
 	});
 
