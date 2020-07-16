@@ -14,6 +14,12 @@
 
 	}
 
+	.header {
+
+		filter: blur(1px);
+
+	}
+
 	.nav {
 
 		display: none !important;
@@ -59,30 +65,16 @@
 
 	&__item {
 
-		pointer-events: none;
-		opacity: 0;
-		transition: opacity .1s;
-
-		width: 1px !important;
-		height: 1px !important;
-		margin-left: -1px !important;
-		overflow: hidden !important;
+		display: none;
+		background-color: #fff;
+		padding: 3px 0 1px;
+		border-radius: 3px;
+		box-shadow: 0 0 24px rgba(0,0,0,.31);
+		flex-grow: 1;
 
 		&--active {
 
-			pointer-events: auto;
-			opacity: 1;
-			transition: opacity .3s, box-shadow .3s .3s;
-
-			height: auto !important;
-			margin: 0 !important;
-			overflow: visible !important;
-
-			background-color: #fff;
-			padding: 3px 0 1px;
-			border-radius: 3px;
-			box-shadow: 0 0 24px rgba(0,0,0,.31);
-			flex-grow: 1;
+			display: block;
 
 		}
 

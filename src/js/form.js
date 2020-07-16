@@ -96,6 +96,28 @@
 
 				}
 
+				// проверка на бота
+
+				if(form.offsetParent === null) {
+
+					e.preventDefault();
+					return;
+
+				}
+
+				if(form.classList.contains('modal__item--callback')) {
+
+					var phone = form.querySelector('.input[type="tel"]');
+
+					if(phone && phone.value.replace(/[^+\d]/g, '') === ''){
+
+						e.preventDefault();
+						return;
+
+					}
+
+				}
+
 				var xhr = new XMLHttpRequest();
 
 				xhr.open("POST", form.getAttribute('action'));

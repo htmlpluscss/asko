@@ -26,44 +26,28 @@
 
 	});
 
-	Array.prototype.forEach.call(items, function(el){
-
-		el.addEventListener(ASKO.cssAnimation('transition'),function(){
-
-			if(ASKO.activeModal && !ASKO.activeModal.classList.contains('modal__item--active')){
-
-				ASKO.body.classList.remove('modal-show');
-				wrapper.style.top = 0;
-				window.scrollTo(0,ASKO.windowScrollOld);
-				modal.classList.add('visuallyhidden');
-
-				// покажем корзину
-
-				if(el.classList.contains('modal__item--product-in-cart')) {
-
-					setTimeout(function(){
-
-						ASKO.headerCart.show();
-
-					}, 200);
-
-				}
-
-			}
-
-		});
-
-	});
-
 	ASKO.closeModal = function() {
 
 		ASKO.activeModal.classList.remove('modal__item--active');
+		ASKO.body.classList.remove('modal-show');
+		wrapper.style.top = 0;
+		window.scrollTo(0,ASKO.windowScrollOld);
+
+		// покажем корзину
+
+		if(ASKO.activeModal.classList.contains('modal__item--product-in-cart') && !ASKO.activeModal.classList.contains('modal__item--active')) {
+
+			setTimeout(function(){
+
+				ASKO.headerCart.show();
+
+			}, 200);
+
+		}
 
 	};
 
 	ASKO.modalShow = function (selector) {
-
-		modal.classList.remove('visuallyhidden');
 
 		ASKO.activeModal = modal.querySelector('.modal__item--' + selector);
 
