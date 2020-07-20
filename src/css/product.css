@@ -1,3 +1,15 @@
+
+@import url(variables.css);
+@import url(media.css);
+@import url(breadcrumbs.css);
+@import url(youtube.css);
+@import url(infoblock.css);
+
+@import url(swiper.css);
+@import url(tabs.css);
+@import url(jquery.fancybox.css);
+@import url(review.css);
+
 .product {
 
 	@media ($smWidth) {
