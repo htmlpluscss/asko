@@ -6,10 +6,16 @@
 
 	<title>{{ title }}</title>
 
-	<link href="/css/styles.css" rel="preload" as="style">
+	<link href="/css/style.css" rel="preload" as="style">
 	<link href="/js/scripts.js" rel="preload" as="script">
 	<link href="/js/swiper.min.js" rel="preload" as="script">
 	<link href="/fonts/pt-sans-ruble.woff2" rel="preload" as="font">
+
+{% if css %}
+
+	<link href="/css/{{ css }}.css" rel="preload" as="style">
+
+{% endif %}
 
 	<link href="https://mc.yandex.ru/metrika/tag.js" rel="dns-prefetch" as="script">
 	<link href="https://www.google-analytics.com/analytics.js" rel="preconnect" as="script">
@@ -45,7 +51,13 @@
 
 {% endif %}
 
-	<link href="/css/styles.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+
+{% if css %}
+
+	<link href="/css/{{ css }}.css" rel="stylesheet">
+
+{% endif %}
 
 </head>
 
