@@ -61,6 +61,22 @@
 
 	}
 
+	&.is-full &__box {
+
+		width: 100%;
+		flex-grow: 1;
+
+	}
+
+	&.is-full &__close-btn {
+
+		background-color: var(--bg);
+		width: 80px;
+		height: 80px;
+		background-size: 24px 24px;
+
+	}
+
 	&__outline {
 
 		margin: 0 3px 2px;
@@ -81,6 +97,14 @@
 		&--active {
 
 			display: block;
+
+		}
+
+		&--gallery {
+
+			background-color: transparent;
+			padding: 0;
+			box-shadow: none;
 
 		}
 
@@ -129,6 +153,7 @@
 		width: 30px;
 		height: 30px;
 		font-size: 0;
+		z-index: 1;
 		color: transparent;
 		background-size: 12px 12px;
 		background-position: center;

@@ -57,6 +57,8 @@
 
 		});
 
+		modal.classList.toggle('is-full', selector === 'gallery');
+
 		ASKO.windowScrollOld = window.pageYOffset;
 
 		wrapper.style.top = -ASKO.windowScrollOld + 'px';
