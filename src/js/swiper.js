@@ -1,44 +1,95 @@
-(function(swiperContainer){
+ASKO.swiper = function(swipe, initialSlide){
 
-	if(!swiperContainer.length) {
+	if(swipe.querySelector('.swiper-pagination')){
 
 		return;
 
 	}
 
-	Array.prototype.forEach.call(swiperContainer, function(swipe){
+	var mySwipe = null,
+		resizeTimeout = null,
+		windowWidthOLd = null,
+		toggleSwipe = null,
+		resetSwipe = null,
+		swipeNav = document.createElement('div'),
+		swipeNext = document.createElement('button'),
+		swipePrev = document.createElement('button'),
+		initialSlide = initialSlide ? parseInt(initialSlide) : 0,
+		count = swipe.querySelectorAll('.swiper-slide').length,
+		product = swipe.classList.contains('swiper-container--product'),
+		gallery = swipe.classList.contains('swiper-container--gallery');
 
-		var mySwipe = null,
-			resizeTimeout = null,
-			windowWidthOLd = null,
-			toggleSwipe = null,
-			resetSwipe = null,
-			swipeNav = document.createElement('div'),
-			swipeNext = document.createElement('button'),
-			swipePrev = document.createElement('button'),
-			count = swipe.querySelectorAll('.swiper-slide').length,
-			product = swipe.classList.contains('swiper-container--product');
+	swipeNav.className = 'swiper-pagination hide';
+	swipePrev.className = 'swiper-button-prev button hide';
+	swipeNext.className = 'swiper-button-next button hide';
 
-		swipeNav.className = 'swiper-pagination hide';
-		swipePrev.className = 'swiper-button-prev button hide';
-		swipeNext.className = 'swiper-button-next button hide';
+	swipePrev.innerHTML = '<svg viewBox="0 0 1000 1000"><path d="M990 10H10v980h980V10zm-91.4 416.5v147H394.4l215.3 215.3-114.3 114.4L92.2 500 495.4 96.8l114.4 114.4-215.4 215.3h504.2z"/></svg>';
 
-		swipePrev.innerHTML = '<svg viewBox="0 0 1000 1000"><path d="M990 10H10v980h980V10zm-91.4 416.5v147H394.4l215.3 215.3-114.3 114.4L92.2 500 495.4 96.8l114.4 114.4-215.4 215.3h504.2z"/></svg>';
+	swipeNext.innerHTML = '<svg viewBox="0 0 1000 1000"><path d="M990 10H10v980h980V10zm-91.4 416.5v147H394.4l215.3 215.3-114.3 114.4L92.2 500 495.4 96.8l114.4 114.4-215.4 215.3h504.2z"/></svg>';
 
-		swipeNext.innerHTML = '<svg viewBox="0 0 1000 1000"><path d="M990 10H10v980h980V10zm-91.4 416.5v147H394.4l215.3 215.3-114.3 114.4L92.2 500 495.4 96.8l114.4 114.4-215.4 215.3h504.2z"/></svg>';
+	swipe.appendChild(swipeNav);
+	swipe.parentNode.appendChild(swipeNext);
+	swipe.parentNode.appendChild(swipePrev);
 
-		swipe.appendChild(swipeNav);
-		swipe.parentNode.appendChild(swipeNext);
-		swipe.parentNode.appendChild(swipePrev);
+	// eager
+	Array.prototype.forEach.call(swipe.querySelectorAll('[loading="lazy"]'), function(img){
 
-		// eager
-		Array.prototype.forEach.call(swipe.querySelectorAll('[loading="lazy"]'), function(img){
+		img.getAttribute('loading','eager');
 
-			img.getAttribute('loading','eager');
+	});
 
-		});
+	resetSwipe = function(){
 
-		resetSwipe = function(){
+		if(mySwipe) {
+
+			mySwipe.destroy(false,true);
+			mySwipe = undefined;
+
+		}
+
+		swipeNav.classList.remove('hide');
+		swipeNext.classList.add('hide');
+		swipePrev.classList.add('hide');
+
+		if (ASKO.width < 768) {
+
+
+		}
+		else {
+
+			swipeNext.classList.remove('hide');
+			swipePrev.classList.remove('hide');
+
+		}
+
+	}
+
+	if (product) {
+
+		if(ASKO.width < 768) {
+
+			swipeNav.classList.remove('hide');
+
+		}
+		else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
+
+			swipeNext.classList.remove('hide');
+			swipePrev.classList.remove('hide');
+
+		}
+		else {
+
+			swipe.classList.add('swiper-container--off');
+
+		}
+
+		toggleSwipe = function() {
+
+			swipeNav.classList.add('hide');
+			swipeNext.classList.add('hide');
+			swipePrev.classList.add('hide');
+			swipe.classList.remove('swiper-container--off');
+
 
 			if(mySwipe) {
 
@@ -47,34 +98,38 @@
 
 			}
 
-			swipeNav.classList.remove('hide');
-			swipeNext.classList.add('hide');
-			swipePrev.classList.add('hide');
-
-			if (ASKO.width < 768) {
-
-
-			}
-			else {
-
-				swipeNext.classList.remove('hide');
-				swipePrev.classList.remove('hide');
-
-			}
-
-		}
-
-		if (product) {
-
 			if(ASKO.width < 768) {
 
 				swipeNav.classList.remove('hide');
+
+				if(count > 1) {
+
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						preloadImages: false,
+						pagination: {
+							el: swipeNav,
+							clickable: true
+						}
+					});
+
+				}
 
 			}
 			else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
+
+				mySwipe = new Swiper(swipe, {
+					loop: true,
+					slidesPerView: 'auto',
+					preloadImages: false,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					}
+				});
 
 			}
 			else {
@@ -83,110 +138,129 @@
 
 			}
 
-			toggleSwipe = function() {
+		}
 
-				swipeNav.classList.add('hide');
-				swipeNext.classList.add('hide');
-				swipePrev.classList.add('hide');
-				swipe.classList.remove('swiper-container--off');
+	}
 
+	if (gallery) {
 
-				if(mySwipe) {
+		toggleSwipe = function() {
 
-					mySwipe.destroy(false,true);
-					mySwipe = undefined;
+			var countCurrent = swipe.querySelector('.swiper-count');
 
-				}
+			if(count > 1) {
 
-				if(ASKO.width < 768) {
+				swipeNext.classList.remove('hide');
+				swipePrev.classList.remove('hide');
+				countCurrent.textContent = (initialSlide + 1) + '/' + count;
 
-					swipeNav.classList.remove('hide');
+				if(!mySwipe) {
 
-					if(count > 1) {
-
-						mySwipe = new Swiper(swipe, {
-							loop: true,
-							preloadImages: false,
-							pagination: {
-								el: swipeNav,
-								clickable: true
-							}
-						});
-
-					}
-
-				}
-				else if((count > 3 || (count > 2 && ASKO.width < 1000))) {
-
-					swipeNext.classList.remove('hide');
-					swipePrev.classList.remove('hide');
+					console.log('gallery')
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
-						slidesPerView: 'auto',
-						preloadImages: false,
+						initialSlide: initialSlide,
 						navigation: {
 							nextEl: swipeNext,
 							prevEl: swipePrev
+						},
+						on: {
+
+							slideChangeTransitionEnd: function() {
+
+								if(mySwipe){
+
+									countCurrent.textContent =
+										mySwipe.activeIndex === 0 || mySwipe.activeIndex === count ?
+											count :
+											mySwipe.activeIndex % count;
+
+									countCurrent.textContent += '/' + count;
+
+								}
+
+							}
+
 						}
+
 					});
 
 				}
-				else {
 
-					swipe.classList.add('swiper-container--off');
+			}
+			else {
 
-				}
+				swipeNext.classList.add('hide');
+				swipePrev.classList.add('hide');
+				countCurrent.textContent = '';
 
 			}
 
 		}
 
-		window.addEventListener("resize", function(){
+		window.Swiper && toggleSwipe();
 
-			window.requestAnimationFrame(function(){
+	}
 
-				if (window.Swiper && !resizeTimeout) {
+	window.addEventListener("resize", function(){
 
-					resizeTimeout = setTimeout(function() {
+		window.requestAnimationFrame(function(){
 
-						resizeTimeout = null;
+			if (window.Swiper && !resizeTimeout) {
 
-						if(ASKO.width != windowWidthOLd){
+				resizeTimeout = setTimeout(function() {
 
-							windowWidthOLd = ASKO.width;
+					resizeTimeout = null;
 
-							toggleSwipe && toggleSwipe();
+					if(ASKO.width != windowWidthOLd){
 
-						}
+						windowWidthOLd = ASKO.width;
 
-					}, 1000);
+						toggleSwipe && toggleSwipe();
 
-				}
+					}
 
-			});
+				}, 1000);
+
+			}
 
 		});
 
 	});
 
-	setTimeout(function(){
+};
 
-		var script = document.createElement('script');
 
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = '/js/swiper.min.js';
+(function(item){
 
-		script.onload = function () {
+	if(item.length) {
 
-			var event = new Event('resize');
-			window.dispatchEvent(event);
+		setTimeout(function(){
 
-		};
+			var script = document.createElement('script');
 
-		document.head.appendChild(script);
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = '/js/swiper.min.js';
 
-	}, 4000);
+			script.onload = function () {
+
+				var event = new Event('resize');
+				window.dispatchEvent(event);
+
+			};
+
+			document.head.appendChild(script);
+
+		}, 4000);
+
+		Array.prototype.forEach.call(item, function(el){
+
+			ASKO.swiper(el);
+
+		});
+
+	}
 
 })(document.querySelectorAll('.swiper-container'));

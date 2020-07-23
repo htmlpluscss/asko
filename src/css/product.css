@@ -7,8 +7,9 @@
 
 @import url(swiper.css);
 @import url(tabs.css);
-@import url(jquery.fancybox.css);
 @import url(review.css);
+@import url(gallery.css);
+@import url(available.css);
 
 .product {
 
