@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'PT Sans';
+	font-family: 'pt-sans-ruble';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
@@ -9,7 +9,7 @@
 
 .rub {
 
-	font-family: 'PT Sans';
+	font-family: Roboto, Arial, pt-sans-ruble;
 
 }
 
