@@ -276,6 +276,18 @@
 
 		}
 
+		hr {
+
+			margin: 15px 30px 10px;
+
+			@media ($mdWidth) {
+
+				margin: 15px 20px 10px;
+
+			}
+
+		}
+
 	}
 
 	&__item.is-hover &__level2,

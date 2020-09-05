@@ -34,7 +34,7 @@ ASKO.swiper = function(swipe, initialSlide){
 	// eager
 	Array.prototype.forEach.call(swipe.querySelectorAll('[loading="lazy"]'), function(img){
 
-		img.getAttribute('loading','eager');
+		img.setAttribute('loading','eager');
 
 	});
 
