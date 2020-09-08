@@ -3,6 +3,15 @@
 	var yaCounterId = '26526729',
 		goals = [
 
+		// переходы по статьям из меню
+			{
+				selector: '.link-article-in-catalog-menu',
+				event: 'click',
+				yandex: {
+					target: 'LINK_ARTICLE_IN_CATALOG_MENU'
+				}
+			},
+
 		// Телефон
 			{
 				selector: 'a[href^="tel"]',
