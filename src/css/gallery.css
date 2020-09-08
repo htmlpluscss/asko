@@ -1,18 +1,27 @@
+#modal-gallery {
 
-.swiper-container--gallery {
+	.swiper-container--gallery {
 
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+	}
 
 	.swiper-slide {
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 80px;
+		padding: 80px 100px 20px;
+
+		@media ($smWidth) {
+
+			padding: 80px 20px 20px;
+
+		}
 
 	}
 
@@ -22,6 +31,12 @@
 		width: 60px;
 		height: 60px;
 		margin-top: -30px;
+
+		@media ($smWidth) {
+
+			display: none;
+
+		}
 
 	}
 

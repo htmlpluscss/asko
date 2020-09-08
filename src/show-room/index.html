@@ -1,0 +1,23 @@
+{% set title = "ASKO | Официальный партнер компании ASKO в России." %}
+{% set description = "ASKO | Официальный партнер компании ASKO в России." %}
+{% set css = "show-room" %}
+
+{% set urlCurrent = "show-room" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<div class="flexcolumn center">
+
+{% include "show-room/gallery.html" %}
+
+		<div class="mobile-padding">
+
+{% include "show-room/form.html" %}
+
+		</div>
+
+	</div>
+
+{% endblock %}

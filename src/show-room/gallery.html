@@ -1,0 +1,67 @@
+	<section class="catalog-cards show-room-gallery">
+
+		<h1 class="h2 align-center">
+			Шоу-рум проспект 60-летия Октября, д. 12
+		</h1>
+
+		<ul class="catalog-cards__list catalog-cards__list--laundry">
+
+{% set catalog = [
+	159,
+	179,
+	199,
+	209,
+	219,
+	244,
+	259,
+	269,
+	279,
+	289,
+	324,
+	339,
+	394,
+	404,
+	409,
+	419,
+	424,
+	454,
+	474,
+	484,
+	489,
+	494,
+	534,
+	539,
+	564,
+	569,
+	624
+] %}
+
+{% for item in catalog %}
+
+			<li class="catalog-cards__item">
+
+				<a href="/img/show-room/{{ item }}.jpg" class="catalog-cards__figure show-room-gallery__item">
+
+					<picture>
+
+						<source srcset="/img/show-room/{{ item }}--150@1x.webp 1x, /img/show-room/{{ item }}--150@2x.webp 2x" media="(max-width: 360px)" type="image/webp">
+						<source srcset="/img/show-room/{{ item }}--180@1x.webp 1x, /img/show-room/{{ item }}--180@2x.webp 2x" media="(max-width: 767px)" type="image/webp">
+						<source srcset="/img/show-room/{{ item }}--228@1x.webp 1x, /img/show-room/{{ item }}--228@2x.webp 2x" type="image/webp">
+
+						<source srcset="/img/show-room/{{ item }}--150@1x.jpg 1x, /img/show-room/{{ item }}--150@2x.jpg 2x" media="(max-width: 360px)">
+						<source srcset="/img/show-room/{{ item }}--180@1x.jpg 1x, /img/show-room/{{ item }}--180@2x.jpg 2x" media="(max-width: 767px)">
+						<source srcset="/img/show-room/{{ item }}--228@1x.jpg 1x, /img/show-room/{{ item }}--228@2x.jpg 2x">
+
+						<img class="catalog-cards__picture" src="/img/show-room/{{ item }}--228@1x.jpg" alt="Шоу-рум ASKO" width="228" height="228" loading="lazy">
+
+					</picture>
+
+				</a>
+
+			</li>
+
+{% endfor %}
+
+		</ul>
+
+	</section>

@@ -61,6 +61,16 @@
 
 	}
 
+	&.is-full {
+
+		@media ($mdWidth) {
+
+			padding: 0;
+
+		}
+
+	}
+
 	&.is-full &__box {
 
 		width: 100%;

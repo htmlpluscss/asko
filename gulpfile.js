@@ -93,7 +93,8 @@ gulp.task('css', function () {
 		'src/css/category.css',
 		'src/css/product.css',
 		'src/css/cart.css',
-		'src/css/page.css'
+		'src/css/page.css',
+		'src/css/show-room.css'
 		])
 			.pipe(plumber())
 			.pipe(sourcemaps.init())
