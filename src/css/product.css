@@ -333,6 +333,14 @@
 
 	}
 
+	&__form-my-list {
+
+		display: flex;
+		align-items: center;
+		margin: 8px 0;
+
+	}
+
 	&__compare,
 	&__wishlist {
 
@@ -357,7 +365,7 @@
 
 		@media ($smWidth) {
 
-			margin: 10px;
+			margin: 0 20px 0 0;
 
 		}
 
@@ -374,6 +382,12 @@
 	}
 
 	&__cart {
+
+		@media ($smWidth) {
+
+			margin-right: 10px;
+
+		}
 
 	}
 
