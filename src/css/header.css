@@ -312,6 +312,13 @@
 
 	}
 
+	&__compare,
+	&__wishlist {
+
+		margin-left: 20px;
+
+	}
+
 	&__search {
 
 		width: 24px;
