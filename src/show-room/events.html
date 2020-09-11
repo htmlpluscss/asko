@@ -1,0 +1,60 @@
+
+		<div class="order-2 flexcolumn infoblock">
+
+			<h2 class="h2">
+				Cобытия шоу-рума
+			</h2>
+
+
+{% set list = [
+
+	{
+		title : "Как готовить с ASKO",
+		img   : "rapid-heat",
+		text  : "Не так много вещей в жизни, которые могут сравниться с удовольствием вкусно и красиво поужинать в кругу любимых людей. С духовыми шкафами, варочными панелями и вытяжками ASKO это легко осуществить. Интеллектуальные технологии превращают приготовление в четкий расчет и позволяют Вам с первого же дня создавать блюда, как в ресторане. Семейный праздник или изысканный бранч – кухонная техника ASKO позволит воплотить в жизнь Вашу страсть к вкусной еде и превратит каждый момент на кухне в радость."
+	},
+	{
+		title : "Преимущество духовок ASKO",
+		img   : "termoshhup",
+		text  : "Иногда, если блюдо не удалось, можно во всем обвинить духовку. Не вы виноваты, что пища осталась сырой, подгорела или пересохла. Именно духовка должна позаботиться о том, чтобы пицца получилась сочной и хрустящей, корочка была аппетитного золотистого оттенка, все пирожки на противне одинаково хорошо пропеклись и подрумянились, жаркое аппетитно выглядело и было бы очень сочным, а сухарики стали хрустящими, но не пересушенными. Не так ли?"
+	}
+
+] %}
+
+			<div class="infoblock__list">
+
+{% for item in list %}
+
+				<hr>
+
+				<article class="infoblock__articles">
+
+					<a href="/" class="infoblock__articles-img">
+						<picture>
+							<source srcset="/img/article/{{ item.img }}.webp 1x, /img/article/{{ item.img }}@2x.webp 2x" type="image/webp">
+							<source srcset="/img/article/{{ item.img }}.jpg 1x, /img/article/{{ item.img }}@2x.jpg 2x">
+							<img src="/img/article/{{ item.img }}.jpg" alt="{{ item.title | safe }}" width="260" height="121" loading="lazy">
+						</picture>
+					</a>
+
+					<div class="infoblock__articles-text">
+
+						<h2>
+							<a href="/">
+								{{ item.title }}
+							</a>
+						</h2>
+
+						<p>
+							{{ item.text }} <span class="infoblock__readme"><a href="/">читать&nbsp;&raquo;</a></span>
+						</p>
+
+					</div>
+
+				</article>
+
+{% endfor %}
+
+			</div>
+
+		</div>

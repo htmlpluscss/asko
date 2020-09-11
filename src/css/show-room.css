@@ -10,6 +10,101 @@
 @import url(swiper.css);
 @import url(gallery.css);
 
+.show-room-gallery {
+
+	margin: 20px 0;
+
+	.catalog-cards__item:nth-child(n+13) {
+
+		display: none;
+
+	}
+
+}
+
+.show-room-address {
+
+	&__list {
+
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+
+	@media ($mdWidth) {
+
+
+	}
+
+	@media ($smWidth) {
+
+
+	}
+
+	&__item {
+
+		padding: 0 30px;
+		position: relative;
+
+		svg {
+
+			position: absolute;
+			top: 3px;
+			left: 0;
+			fill: #929292;
+
+		}
+
+		b {
+
+			color: #000;
+			display: block;
+			font-weight: 500;
+
+		}
+
+	}
+
+}
+
+.show-room-parking {
+
+	.h2 {
+
+		font-size: 20px;
+		margin: 30px 0 10px;
+
+	}
+
+	p {
+
+		margin: 10px 0;
+
+	}
+
+	b {
+
+		color: #000;
+		display: block;
+		font-weight: 500;
+
+	}
+
+	a {
+
+		color: var(--red);
+		text-decoration: underline;
+
+		&:hover {
+
+			text-decoration: none;
+
+		}
+
+	}
+
+}
+
 .show-room {
 
 	&-form {
