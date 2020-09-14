@@ -1,6 +1,6 @@
 (function(forms){
 
-	if(!forms) {
+	if(!forms.length) {
 
 		return;
 

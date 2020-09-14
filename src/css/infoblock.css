@@ -41,6 +41,26 @@
 
 	}
 
+	time {
+
+		color: #7e7e7e;
+
+		& + p {
+
+			margin-top: 10px;
+
+		}
+
+		svg {
+
+			fill: #929292;
+			float: left;
+			margin-right: 10px;
+
+		}
+
+	}
+
 	img {
 
 		max-width: 100%;
