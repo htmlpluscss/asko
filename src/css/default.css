@@ -352,6 +352,7 @@ table {
 
 }
 
+a[href^="tel"],
 .white-space_nowrap {
 
 	white-space: nowrap;
