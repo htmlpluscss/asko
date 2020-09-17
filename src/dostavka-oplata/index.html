@@ -1,0 +1,22 @@
+{% set title = "Доставка и оплата ASKO" %}
+{% set description = "ASKO | Официальный партнер компании ASKO в России." %}
+{% set css = "dostavka-oplata" %}
+
+{% set urlCurrent = "dostavka-oplata" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<div class="dostavka-oplata flexcolumn center">
+
+		<div class="mobile-padding">
+
+{% include "dostavka-oplata/dostavka.html" %}
+{% include "dostavka-oplata/oplata.html" %}
+
+		</div>
+
+	</div>
+
+{% endblock %}
