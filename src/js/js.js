@@ -15,6 +15,7 @@ var ASKO = ASKO || {};
 	ASKO.body = document.body;
 	ASKO.width = window.innerWidth;
 	ASKO.height = window.innerHeight;
+	ASKO.settimeout = Cookies.get('cookiesPolicy') ? 0 : 10000;
 
 	ASKO.body.classList.remove('no-js');
 

@@ -39,6 +39,7 @@
 	&__articles {
 
 		margin-bottom: 50px;
+		text-align: justify;
 
 		@media ($smWidth) {
 

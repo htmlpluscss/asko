@@ -28,13 +28,17 @@
 
 		ASKO.gallerySwiper += '</ul><span class="swiper-count"></span></div>';
 
-		var script = document.createElement('script');
+		setTimeout(function(){
 
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = '/js/swiper.min.js';
+			var script = document.createElement('script');
 
-		document.head.appendChild(script);
+			script.type = 'text/javascript';
+			script.async = true;
+			script.src = '/js/swiper.min.js';
+
+			document.head.appendChild(script);
+
+		}, ASKO.settimeout);
 
 	}
 

@@ -253,7 +253,7 @@ ASKO.swiper = function(swipe, initialSlide){
 
 			document.head.appendChild(script);
 
-		}, 4000);
+		}, ASKO.settimeout);
 
 		Array.prototype.forEach.call(item, function(el){
 
