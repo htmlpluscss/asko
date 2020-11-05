@@ -51,6 +51,10 @@
 
 			max-width: 100%;
 			display: block;
+			width: 250px;
+			height: 250px;
+			object-fit: contain;
+			object-position: 0 0;
 
 		}
 

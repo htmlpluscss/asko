@@ -2,6 +2,17 @@
 
 	position: relative;
 
+	@media ($desktop) {
+
+		.swiper-button-next,
+		.swiper-button-prev {
+
+			margin-top: -32px;
+
+		}
+
+	}
+
 	@media ($mdWidth) {
 
 		margin: 0 -20px;
