@@ -16,6 +16,7 @@ ASKO.swiper = function(swipe, initialSlide){
 		swipePrev = document.createElement('button'),
 		initialSlide = initialSlide ? parseInt(initialSlide) : 0,
 		count = swipe.querySelectorAll('.swiper-slide').length,
+		big = swipe.classList.contains('swiper-container--big'),
 		product = swipe.classList.contains('swiper-container--product'),
 		gallery = swipe.classList.contains('swiper-container--gallery');
 
@@ -59,6 +60,29 @@ ASKO.swiper = function(swipe, initialSlide){
 
 			swipeNext.classList.remove('hide');
 			swipePrev.classList.remove('hide');
+
+		}
+
+	}
+
+	if (big) {
+
+		resetSwipe();
+
+		toggleSwipe = function() {
+
+			toggleSwipe = false;
+
+			new Swiper(swipe, {
+				loop: true,
+				pagination: {
+					el: swipeNav
+				},
+				navigation: {
+					nextEl: swipeNext,
+					prevEl: swipePrev
+				}
+			});
 
 		}
 
