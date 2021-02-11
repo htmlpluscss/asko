@@ -117,8 +117,23 @@ ASKO.swiper = function(swipe, initialSlide){
 
 			if(mySwipe) {
 
+				console.log(mySwipe)
+
 				mySwipe.destroy(false,true);
 				mySwipe = undefined;
+
+				// удалчем ютуб в маленьком слайдере, при ресайсе или еще как
+				if(swipe.querySelector('.product__img-youtube.is-active')){
+
+					swipe.querySelector('.product__img-youtube.is-active').classList.remove('is-active');
+
+					if(swipe.querySelector('iframe')){
+
+						swipe.querySelector('iframe').remove();
+
+					}
+
+				}
 
 			}
 
@@ -134,6 +149,31 @@ ASKO.swiper = function(swipe, initialSlide){
 						pagination: {
 							el: swipeNav,
 							clickable: true
+						},
+						on: {
+
+							slideChangeTransitionStart: function() {
+
+								if(mySwipe){
+
+									// останавливаем ютуб в маленьком слайдере
+
+									if(mySwipe.slides[mySwipe.previousIndex].classList.contains('swiper-slide--youtube')){
+
+										mySwipe.slides[mySwipe.previousIndex].querySelector('.product__img-youtube').classList.remove('is-active');
+
+										if(mySwipe.slides[mySwipe.previousIndex].querySelector('iframe')){
+
+											mySwipe.slides[mySwipe.previousIndex].querySelector('iframe').remove();
+
+										}
+
+									}
+
+								}
+
+							}
+
 						}
 					});
 
@@ -191,7 +231,7 @@ ASKO.swiper = function(swipe, initialSlide){
 						},
 						on: {
 
-							slideChangeTransitionEnd: function() {
+							slideChangeTransitionStart: function() {
 
 								if(mySwipe){
 
@@ -201,6 +241,19 @@ ASKO.swiper = function(swipe, initialSlide){
 											mySwipe.activeIndex % count;
 
 									countCurrent.textContent += '/' + count;
+
+									// удалчем ютуб в модальном окне (остановка)
+									if(mySwipe.slides[mySwipe.previousIndex].classList.contains('swiper-slide--youtube')){
+
+										mySwipe.slides[mySwipe.previousIndex].querySelector('.youtube-modal-gallery').classList.remove('is-active');
+
+										if(mySwipe.slides[mySwipe.previousIndex].querySelector('iframe')){
+
+											mySwipe.slides[mySwipe.previousIndex].querySelector('iframe').remove();
+
+										}
+
+									}
 
 								}
 

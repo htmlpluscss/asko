@@ -45,6 +45,14 @@
 
 		}
 
+		// остановить видео
+
+		if(document.querySelector('#modal-gallery .youtube-modal-gallery.is-active')) {
+
+			document.querySelector('#modal-gallery .youtube-modal-gallery.is-active iframe').remove();
+
+		}
+
 	};
 
 	ASKO.modalShow = function (selector) {

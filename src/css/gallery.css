@@ -15,11 +15,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 80px 100px 20px;
+		padding: 80px 100px;
 
 		@media ($smWidth) {
 
-			padding: 80px 20px 20px;
+			padding: 80px 20px;
 
 		}
 

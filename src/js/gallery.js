@@ -6,7 +6,17 @@
 
 		Array.prototype.forEach.call(gallery.querySelectorAll('.product__img-small a'), function(link){
 
-			ASKO.gallerySwiper += '<li class="swiper-slide"><img src="' + link.getAttribute('href') + '"></li>';
+			// если ютуб в слайдере
+			if(link.classList.contains('product__img-youtube')){
+
+				ASKO.gallerySwiper += '<li class="swiper-slide swiper-slide--youtube"><div class="youtube-modal-gallery" data-id="' + link.getAttribute('data-id') + '"><img src="https://i.ytimg.com/vi/' + link.getAttribute('data-id') + '/maxresdefault.jpg"></div></li>';
+
+			}
+			else {
+
+				ASKO.gallerySwiper += '<li class="swiper-slide"><img src="' + link.getAttribute('href') + '"></li>';
+
+			}
 
 		});
 
