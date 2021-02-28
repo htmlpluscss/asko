@@ -87,16 +87,7 @@ gulp.task('html-touch', function() {
 
 gulp.task('css', function () {
 
-	return gulp.src([
-		'src/css/style.css',
-		'src/css/main.css',
-		'src/css/category.css',
-		'src/css/product.css',
-		'src/css/cart.css',
-		'src/css/page.css',
-		'src/css/show-room.css',
-		'src/css/dostavka-oplata.css'
-		])
+	return gulp.src('src/css/style.css')
 			.pipe(plumber())
 			.pipe(sourcemaps.init())
 			.pipe(postcss([
@@ -105,6 +96,7 @@ gulp.task('css', function () {
 				browserReporter()
 			]))
 			.pipe(sourcemaps.write())
+			.pipe(rename('styles.css'))
 			.pipe(gulp.dest('build/css'))
 			.pipe(postcss([
 				autoprefixer({

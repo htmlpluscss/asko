@@ -8,6 +8,12 @@ https://github.com/htmlpluscss/
 
 */
 
+if('serviceWorker' in navigator){
+	window.addEventListener('load', function(){
+		navigator.serviceWorker.register('/sw.js');
+	});
+}
+
 var ASKO = ASKO || {};
 
 (function(){
@@ -93,5 +99,16 @@ var ASKO = ASKO || {};
 	ASKO.strToNumber = function(n){
 		return parseInt(n.replace(/\s+/g,''), 10);
 	}
+
+	setTimeout(function(){
+
+		// eager
+		Array.prototype.forEach.call(document.querySelectorAll('[loading="lazy"]'), function(img){
+
+			img.setAttribute('loading','eager');
+
+		});
+
+	}, ASKO.settimeout);
 
 })();

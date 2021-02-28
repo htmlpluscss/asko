@@ -32,13 +32,6 @@ ASKO.swiper = function(swipe, initialSlide){
 	swipe.parentNode.appendChild(swipeNext);
 	swipe.parentNode.appendChild(swipePrev);
 
-	// eager
-	Array.prototype.forEach.call(swipe.querySelectorAll('[loading="lazy"]'), function(img){
-
-		img.setAttribute('loading','eager');
-
-	});
-
 	resetSwipe = function(){
 
 		if(mySwipe) {
@@ -317,14 +310,11 @@ ASKO.swiper = function(swipe, initialSlide){
 
 			var script = document.createElement('script');
 
-			script.type = 'text/javascript';
-			script.async = true;
 			script.src = '/js/swiper.min.js';
 
 			script.onload = function () {
 
-				var event = new Event('resize');
-				window.dispatchEvent(event);
+				window.dispatchEvent(new Event('resize'));
 
 			};
 

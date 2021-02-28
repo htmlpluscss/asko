@@ -6,27 +6,22 @@
 
 	<title>{{ title }}</title>
 
-	<link href="/css/style.css" rel="preload" as="style">
+	<link href="/css/styles.css" rel="preload" as="style">
 	<link href="/js/scripts.js" rel="preload" as="script">
 	<link href="/js/swiper.min.js" rel="preload" as="script">
 
-	<link href="/fonts/pt-sans-ruble.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-
-{% if css %}
-
-	<link href="/css/{{ css }}.css" rel="preload" as="style">
-
-{% endif %}
-
-	<link href="https://mc.yandex.ru/metrika/tag.js" rel="dns-prefetch" as="script">
-	<link href="https://www.google-analytics.com/analytics.js" rel="preconnect" as="script">
-	<link href="https://www.googleadservices.com/pagead/conversion.js" rel="prefetch" as="script">
+	<link rel="dns-prefetch" href="//mc.yandex.ru">
+	<link rel="preconnect" href="//mc.yandex.ru">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="dns-prefetch" href="//www.googleadservices.com">
+	<link rel="preconnect" href="//www.googleadservices.com">
 
 	<link href="/favicon.png" rel="apple-touch-icon-precomposed">
 
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ description }}">
+	<meta name="description" content="{{ description | default('Официальный партнер бытовой техники ASKO в России. Шведское качество с 1950 года.') }}">
 	<meta name="theme-color" content="#f8f8f8">
 
 	<meta property="og:locale" content="ru_RU">
@@ -52,13 +47,8 @@
 
 {% endif %}
 
-	<link href="/css/style.css" rel="stylesheet">
-
-{% if css %}
-
-	<link href="/css/{{ css }}.css" rel="stylesheet">
-
-{% endif %}
+	<link href="/css/styles.css" rel="stylesheet">
+	<script defer src="/js/scripts.js"></script>
 
 </head>
 
@@ -85,8 +75,6 @@
 {% include "template/modal.html" %}
 
 {% include "template/cookie.html" %}
-
-<script defer src="/js/scripts.js"></script>
 
 </body>
 </html>

@@ -1,15 +1,18 @@
 @font-face {
+
 	font-family: 'pt-sans-ruble';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('/fonts/pt-sans-ruble.woff2') format('woff2'),
-		 url('/fonts/pt-sans-ruble.woff') format('woff');
+	src: url('/fonts/pt-sans-ruble.woff');
+
 }
 
-.rub {
+/* IE10+ CSS styles go here */
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
 
-	font-family: Roboto, Arial, pt-sans-ruble;
+	.rub {
+
+		font-family: pt-sans-ruble;
+
+	}
 
 }
 
