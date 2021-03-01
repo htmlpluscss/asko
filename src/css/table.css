@@ -13,6 +13,46 @@
 
 	border: 1px solid var(--border);
 
+	.catalog-list & {
+
+		border: 0;
+
+		td, th {
+
+			border: 0;
+			background-color: transparent;
+			text-align: left;
+			padding: 6px 0;
+
+		}
+
+		tr:not([class]):hover {
+
+			outline: none;
+
+		}
+
+		th {
+
+			display: flex;
+			align-items: baseline;
+			white-space: nowrap;
+
+			&::after {
+
+				height: 1px;
+				border-bottom: 2px dotted var(--light);
+				content: '';
+				flex-grow: 1;
+				margin: 0 6px;
+				min-width: 12px;
+
+			}
+
+		}
+
+	}
+
 	&__title {
 
 		text-align: left;

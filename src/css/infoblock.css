@@ -301,3 +301,44 @@
 	width: 100%;
 
 }
+
+.text-hidden {
+
+	&__inner {
+
+		max-height: 0;
+		opacity: .001;
+		overflow: hidden;
+		transition: opacity 1s, max-height 1s, overflow 1s 1s;
+
+	}
+
+	&.is-open &__inner {
+
+		max-height: 10000px;
+		opacity: 1;
+		overflow: visible;
+
+	}
+
+	.btn {
+
+		height: 28px;
+		line-height: 28px;
+		border-radius: 0;
+		font-size: 16px;
+		padding: 0;
+		transition: height .3s;
+
+	}
+
+	&.is-open .btn {
+
+		opacity: 0;
+		height: 0;
+		line-height: 0;
+		pointer-events: none;
+
+	}
+
+}

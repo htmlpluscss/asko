@@ -20,6 +20,12 @@
 
 	}
 
+	&:disabled {
+
+		pointer-events: none;
+
+	}
+
 }
 
 .btn {
@@ -64,7 +70,7 @@
 
 	}
 
-	&:not([disabled]):hover {
+	&:hover {
 
 		background-image: linear-gradient(to top, #d84253, #ca0628);
 
@@ -76,9 +82,8 @@
 
 	}
 
-	&[disabled] {
+	&:disabled {
 
-		cursor: default;
 		color: var(--border);
 		background-image: linear-gradient(to bottom, #bbb, #a5a5a5) !important;
 
@@ -88,7 +93,7 @@
 
 		background-image: linear-gradient(to bottom, #a4a4a4, var(--light));
 
-		&:not([disabled]):hover {
+		&:hover {
 
 			background-image: linear-gradient(to top, #a4a4a4, var(--light));
 
@@ -211,7 +216,7 @@ fieldset {
 
 	}
 
-	&[disabled] {
+	&:disabled {
 
 		border-color: var(--color);
 		color: var(--color);
