@@ -254,6 +254,17 @@ fieldset {
 
 	}
 
+	&__input {
+
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		appearance: none;
+
+	}
+
 	&__input[type="checkbox"] + &__label::before {
 
 		border-radius: 5px;
@@ -467,6 +478,83 @@ fieldset {
 
 		color: var(--error);
 		margin: 20px 0;
+
+	}
+
+	&-review {
+
+		hr {
+
+			margin: 24px 0;
+
+		}
+
+		&__text {
+
+			font-weight: 500;
+			font-size: 16px;
+			margin: 0 !important;
+			text-align: center;
+
+		}
+
+		&__fieldsest {
+
+			display: flex;
+			justify-content: space-between;
+			margin: 20px 0;
+
+			@media ($smWidth) {
+
+				display: block;
+
+			}
+
+		}
+
+		&__col {
+
+			width: calc(50% - 10px);
+
+			@media ($smWidth) {
+
+				width: 100%;
+				margin-bottom: 20px;
+
+			}
+
+		}
+
+		.input {
+
+			&  + input {
+
+				margin-top: 20px;
+
+			}
+
+		}
+
+		textarea.input {
+
+			height: 100px;
+
+		}
+
+		&__checkbox {
+
+			display: flex;
+			justify-content: center;
+
+		}
+
+		&__btn {
+
+			margin-top: 24px;
+			display: flex;
+			justify-content: center;
+
+		}
 
 	}
 

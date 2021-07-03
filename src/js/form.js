@@ -141,7 +141,11 @@
 
 						if(showMoadalOk) {
 
+							document.querySelector('.modal__item--thanks .modal__text').textContent = showMoadalOk;
+
 							ASKO.modalShow('thanks');
+
+							form.reset();
 
 						}
 
