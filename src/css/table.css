@@ -1,9 +1,23 @@
 .table-scroll {
 
-	@media ($mdWidth) {
+	overflow-x: auto;
+	padding-bottom: 10px;
 
-		overflow-x: auto;
-		padding-bottom: 10px;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color) var(--border);
+
+	&::-webkit-scrollbar {
+
+		width: 4px;
+		border-radius: 4px;
+		background-color: #fff;
+
+	}
+
+	&::-webkit-scrollbar-thumb {
+
+		border-radius: 4px;
+		background-color: var(--color);
 
 	}
 

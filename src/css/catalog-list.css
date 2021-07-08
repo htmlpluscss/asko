@@ -94,9 +94,63 @@
 		display: flex;
 		justify-content: space-between;
 
+		&-left {
+
+			@media ($smWidth) {
+
+				.table-scroll {
+
+					margin: 0 -20px;
+					padding: 0 20px 10px;
+
+				}
+
+			}
+
+			@media ($xsWidth) {
+
+				.table-scroll {
+
+					margin: 0 -10px;
+					padding: 0 10px 10px;
+
+				}
+
+			}
+
+		}
+
+		&-right {
+
+			display: flex;
+			align-items: flex-end;
+
+			@media ($smWidth) {
+
+				display: block;
+
+			}
+
+		}
+
 		@media ($smWidth) {
 
 			display: block;
+
+		}
+
+	}
+
+	&__form-my-list {
+
+		display: flex;
+		height: 40px;
+		align-items: center;
+
+		form {
+
+			margin-left: 14px;
+			display: flex;
 
 		}
 

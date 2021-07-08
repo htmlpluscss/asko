@@ -1,0 +1,14 @@
+{% set title = "Сравнение" %}
+{% set description = "данный ур закрыть от индекса" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="flexcolumn compare center mb20">
+
+{% include "compare/list.html" %}
+
+	</article>
+
+{% endblock %}

@@ -777,3 +777,55 @@
 	}
 
 }
+
+.form-my-list {
+
+	&__btn {
+
+		position: relative;
+
+		&::after {
+
+			position: absolute;
+			left: 50%;
+			bottom: 100%;
+			content: attr(area-label);
+			background-color: #fff;
+			z-index: 1;
+			white-space: nowrap;
+			transform: translate(-50%);
+			pointer-events: none;
+			box-shadow: 0 0 10px rgba(0,0,0,.3);
+			padding: 8px 14px;
+			border-radius: 6px;
+			font-size: 14px;
+			line-height: 18px;
+			opacity: 0;
+			pointer-events: none;
+			transition: .3s;
+			margin-bottom: 12px;
+
+			@media ($mdWidth) {
+
+				display: none;
+
+			}
+
+		}
+
+		&:hover::after {
+
+			opacity: 1;
+			pointer-events: auto;
+
+		}
+
+	}
+
+	&.is-add &__btn::after {
+
+		content: attr(data-remove);
+
+	}
+
+}
