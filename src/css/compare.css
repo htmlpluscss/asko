@@ -1,5 +1,12 @@
 .compare {
 
+	.tooltip-help {
+
+		top: -1px;
+
+	}
+
+
 	&__col {
 
 		min-width: 190px;
