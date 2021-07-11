@@ -16,7 +16,7 @@
 
 		Array.from(tooltips, tooltip => {
 
-			const btn = tooltip.querySelector('.tooltip-help__btn');
+			const btn = tooltip.querySelector('summary');
 
 			btn.appendChild(ico.cloneNode(true));
 
@@ -30,7 +30,7 @@
 
 		window.addEventListener("click", event => {
 
-			const target = event.target.closest('.tooltip-help');
+			const target = event.target.closest('details');
 
 			Array.from(tooltips, tooltip => {
 
@@ -46,4 +46,4 @@
 
 	}
 
-})(document.querySelectorAll('.tooltip-help'));
+})(document.querySelectorAll('details'));
