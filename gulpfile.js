@@ -65,7 +65,7 @@ gulp.task('html', function() {
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
 			data: {
-				url: 'http://' + domain
+				url: 'https://' + domain
 			},
 			path: 'src/'
 		}))
