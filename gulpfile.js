@@ -40,4 +40,4 @@ gulp.task('serve', () => {
 gulp.task('clear', () => del('build'));
 gulp.task('watch', () => gulp.watch('src/index.html', gulp.series('html')));
 
-gulp.task('default', gulp.series('clear', 'html', 'watch', 'serve'));
+gulp.task('default', gulp.series('clear', 'html', gulp.parallel('watch', 'serve')));

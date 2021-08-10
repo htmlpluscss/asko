@@ -7,35 +7,506 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body style="background-color: #f8f8f8">
 
 <style>
 
-#chat_div { height: 150px; width: 300px; overflow: auto; padding: 20px; border: 1px solid gray; }
-#chat { display: none; margin: 30px 10px 10px; }
-.message_client { text-align: right; }
-.message_manager { text-align: left; }
+.messenger {
+
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 10000;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.4;
+
+}
+
+.messenger__btn-open {
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	border: 0;
+	border-radius: 50%;
+	font-family: inherit;
+	background-color: #fff;
+	transition: .3s;
+	cursor: pointer;
+	user-select: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: transparent;
+	appearance: none;
+	width: 48px;
+	height: 48px;
+	fill: #d50427;
+	padding: 12px;
+	box-shadow: 0 0 10px rgba(57, 57, 57, .5);
+	box-sizing: border-box;
+
+}
+
+.messenger__btn-close {
+
+	position: absolute;
+	right: 0;
+	bottom: 100%;
+	margin-bottom: 12px;
+
+	border: 0;
+	border-radius: 50%;
+	font-family: inherit;
+	background-color: #fff;
+	transition: .3s;
+	cursor: pointer;
+	user-select: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: transparent;
+	appearance: none;
+	width: 32px;
+	height: 32px;
+	fill: #393939;
+	padding: 0;
+	box-shadow: rgba(0, 8, 50, 0.2) 0 0 12px;
+	box-sizing: border-box;
+
+}
+
+.messenger__btn-open:focus,
+.messenger__btn-close:focus,
+.messenger__btn-submit:focus {
+
+	outline: none;
+
+}
+
+.messenger__chat {
+
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	background-color: #fff;
+	box-shadow: rgba(0, 8, 50, 0.04) 0px 4px 20px 1px, rgba(0, 8, 50, 0.08) 0px 8px 24px 2px;
+
+}
+
+
+.messenger--open .messenger__btn-open,
+.messenger:not(.messenger--open) .messenger__chat {
+
+	display: none;
+
+}
+
+.messenger__transcript {
+
+	height: 40vh;
+	width: 300px;
+	overflow: auto;
+	padding: 14px;
+	scrollbar-width: thin;
+	scrollbar-color: #393939 #eee;
+
+}
+
+.messenger__transcript::-webkit-scrollbar {
+
+	width: 4px;
+	background-color: #eee;
+
+}
+
+.messenger__transcript::-webkit-scrollbar-thumb {
+
+	background-color: #393939;
+
+}
+
+.messenger__form {
+
+	position: relative;
+	margin: 0 -10px -10px;
+	height: 48px;
+
+}
+
+.messenger__input {
+
+	position: absolute;
+	width: 100%;
+	height: 48px;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+
+	line-height: 28px;
+	padding: 10px;
+	padding-right: 50px;
+	font-size: 16px;
+	color: #393939;
+	font-family: inherit;
+	appearance: none;
+	display: block;
+	filter: none;
+	-webkit-transform: translateZ(0px);
+
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+
+}
+
+
+.messenger__input::placeholder {
+
+	font-size: 13px;
+
+}
+
+.messenger__input::-ms-clear {
+
+	display: none;
+
+}
+
+.messenger__input:focus {
+
+	outline: none;
+
+}
+
+.messenger__btn-submit {
+
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	top: 0;
+	right: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: #fff;
+	transition: .3s;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	fill: #d1d1d1;
+	padding: 12px;
+	box-sizing: border-box;
+
+}
+
+.messenger__input:valid ~ .messenger__btn-submit {
+
+	fill: #d50427;
+
+}
+
+.message {
+
+	display: flex;
+
+}
+
+.message--client {
+
+	justify-content: flex-end;
+
+}
+
+.message__inner {
+
+	display: flex;
+	flex-direction: column;
+
+}
+
+.message__text {
+
+	color: rgb(51, 51, 51);
+	font-size: 15px;
+	background-color: rgb(222, 222, 222);
+	border-radius: 5px;
+	padding: 6px 12px;
+	margin: 5px 0;
+	align-self: flex-start;
+
+}
+
+.message--client .message__text {
+
+	background-color: rgb(245, 245, 245);
+	align-self: flex-end;
+
+}
+
+.message__autor {
+
+	font-size: 12px;
+	color: #777;
+	margin-top: 10px;
+
+}
+
+.message--client .message__autor {
+
+	text-align: right;
+
+}
+
+@media (max-width: 767px) {
+
+	.messenger__transcript {
+
+		height: calc(100vh - 40px - 32px - 24px - 48px - 20px);
+		width: calc(100vw - 40px - 20px - 28px);
+		overflow: auto;
+
+	}
+
+}
+
 
 </style>
 
-<a id=chat_tieser onclick=chatOpen()>
-	ОТКРОЙ ЧАТ, А ТО САМ ОТКРОЮ !!!
-</a>
+<div class="messenger" id="messenger">
 
-<div id=chat>
+	<div class="messenger__chat" id="chat">
 
-	<div id=chat_div></div>
+		<div id="chat_div" class="messenger__transcript">
 
-	<form action=messenger.php onsubmit="return chatUpload(this)">
+			<div class="message message--manager">
 
-		<input required name=message size=30>
-		<input id=chat_submit type=submit value=ok>
+				<div class="message__inner">
 
-	</form>
+					<div class="message__autor">ASKO-HOME:</div>
+
+					<div class="message__text">Привет</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--client">
+
+				<div class="message__inner">
+
+					<div class="message__autor">Вы:</div>
+
+					<div class="message__text">test</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__autor">ASKO-HOME:</div>
+
+					<div class="message__text">Это тестовый вариант... какие элементы нужно еще добавить?</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--client">
+
+				<div class="message__inner">
+
+					<div class="message__autor">Вы:</div>
+
+					<div class="message__text">test!</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__autor">ASKO-HOME:</div>
+
+					<div class="message__text">test2</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__text">Ответ клиенту</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__text">Ответ клиенту в несколько строк</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--client">
+
+				<div class="message__inner">
+
+					<div class="message__autor">Вы:</div>
+
+					<div class="message__text">ёпрст что это?</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--client">
+
+				<div class="message__inner">
+
+					<div class="message__text">1010</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__autor">ASKO-HOME:</div>
+
+					<div class="message__text">dgdkljgsdl</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__text">ntncv</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<form action="messenger.php" onsubmit="return chatUpload(this)" class="messenger__form">
+
+			<input id="chat_input" required="required" class="messenger__input" placeholder="Напишите сообщение…" autocomplete="off">
+
+			<button id="chat_submit" class="messenger__btn-submit" aria-label="Отправить сообщение">
+				<svg width="24" height="24" viewBox="0 0 488 488">
+					<path d="M483.59 222.02a51.2 51.2 0 00-23.76-23.76L73.53 11.33A51.2 51.2 0 003.66 76.44l67.17 167.9L3.67 412.26a51.32 51.32 0 0047.46 70.26c7.75 0 15.4-1.75 22.4-5.12l386.3-186.98a51.2 51.2 0 0023.76-68.4zM58.66 446.63a17.07 17.07 0 01-23.28-21.7l65.4-163.52h340.66L58.67 446.63zm42.12-219.35L35.38 63.75a16.64 16.64 0 014.21-18.77 16.54 16.54 0 0119.07-2.89l382.79 185.17H100.78z"/>
+				</svg>
+			</button>
+
+		</form>
+
+		<button class="messenger__btn-close" onclick="chatClose()" aria-label="Закрыть чат" type="button">
+			<svg width="32" height="32" viewBox="0 0 512 512">
+				<path d="M437.13 74.94c-99.83-99.83-262.31-99.83-362.14 0C26.64 123.3 0 187.62 0 256s26.64 132.7 75 181.05c49.92 49.93 115.49 74.88 181.06 74.88s131.14-24.95 181.06-74.88c99.83-99.82 99.83-262.27 0-362.11zM409.08 409c-84.38 84.37-221.67 84.37-306.04 0-40.86-40.86-63.37-95.2-63.37-153s22.51-112.15 63.37-153.03c84.37-84.37 221.67-84.35 306.04 0 84.36 84.38 84.36 221.67 0 306.03z"/>
+				<path d="M341.52 310.83l-56.15-56.07 56.15-56.07a19.84 19.84 0 10-28.05-28.07l-56.18 56.11-56.19-56.11a19.84 19.84 0 10-28.05 28.06l56.16 56.08-56.16 56.07a19.83 19.83 0 1028.05 28.06l56.2-56.1 56.18 56.1a19.76 19.76 0 0014.02 5.8 19.83 19.83 0 0014.02-33.86z"/>
+			</svg>
+		</button>
+
+	</div>
+
+	<button class="messenger__btn-open" onclick="chatOpen()" aria-label="Открыть чат" type="button">
+		<svg width="24" height="24">
+			<path d="M22 7.5c0-2-1.6-3.5-3.5-3.5h-13C3.6 4 2 5.6 2 7.5v6C2 15.4 3.6 17 5.5 17H7v2c0 1.4 1.1 2.5 2.5 2.5.7 0 1.3-.3 1.8-.7L15 17h3.5c1.9 0 3.5-1.6 3.5-3.5v-6zm-2 2.9v3.1c0 .8-.7 1.5-1.5 1.5h-4.3l-4.3 4.3c-.1.1-.2.1-.4.1-.3.1-.5-.1-.5-.4v-4H5.5c-.8 0-1.5-.7-1.5-1.5v-6C4 6.7 4.7 6 5.5 6h13c.8 0 1.5.7 1.5 1.5v2.9z"/>
+		</svg>
+	</button>
+
+	<script>
+function wr(){window.location.reload(true)}
+
+function chatJob(new_interval){ chat_job = setInterval(chatRefresh, new_interval), chat_interval = new_interval, chat_count = 0; }
+
+function chatRefresh(w=1){
+	if (chat_xhr_load) return;
+	chat_xhr_load = 1;
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', 'messenger.php?read='+chat_last_id+'&ajax='+Date.now(), true);
+	xhr.onload = function(){
+		let r = xhr.response, id = parseInt(r.substring(0,10));
+		if ( id > chat_last_id ) {
+			if (w) chatOpen();
+			chat_last_id = id,
+			chat_div.insertAdjacentHTML('beforeEnd',r.substring(10)),
+			chat_div.scrollTop = chat_div.scrollHeight;
+			if ( chat_interval > chat_interval_min ) clearInterval(chat_job), chatJob(chat_interval_min);
+		} else { // если за минуту не было сообщений, а интервал еще не максимальный, то пошагово увеличим интервал
+			if ( ++chat_count * chat_interval >= 60000 && chat_interval < 30000 ) clearInterval(chat_job), chatJob(chat_interval + chat_interval_min);
+		}
+		chat_xhr_load = 0;
+	}
+	xhr.onerror = wr;
+	xhr.send();
+}
+
+function chatUpload(f){
+	chat_submit.disabled = true;
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', 'messenger.php?ajax='+Date.now(), true);
+	xhr.onload = function(){ f.reset(), chatRefresh(), chat_submit.disabled = false; }
+	xhr.onerror = wr;
+	xhr.send( new FormData(f) );
+	return false;
+}
+
+function chatInit(){
+	chat = document.getElementById('chat'),
+	chat_div = document.getElementById('chat_div'),
+//	chat_tieser = document.getElementById('chat_tieser'),
+	chat_submit = document.getElementById('chat_submit'),
+	chat_input = document.getElementById('chat_input'),
+	chat_interval_min = 3000,
+	chat_xhr_load = 0,
+	chat_last_id = 0,
+	open_chat = null;
+
+	chatJob(chat_interval_min), chatRefresh(0);
+}
+
+function chatOpen(){
+	if (open_chat) clearTimeout(open_chat), chatInit();
+//	chat.style.display = x ? 'block' : 'none';
+//	chat_tieser.innerHTML = x ? 'ЗАКРОЙ ЧАТ !!!' : 'ОТКРОЙ ЧАТ !!!';
+//	chat_tieser.onclick = function(){chatOpen(!x)};
+	window.messenger.classList.add('messenger--open');
+	setTimeout(chatFocus,1000);
+}
+
+function chatClose(){
+	window.messenger.classList.remove('messenger--open');
+}
+
+function chatFocus(){
+	chat_input.focus();
+}
+
+		open_chat = setTimeout(chatOpen,1000);
+
+	</script>
 
 </div>
-
-<script src="https://asko-home.ru/js/msg.js"></script>
 
 </body>
 </html>
