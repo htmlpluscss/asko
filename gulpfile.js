@@ -19,14 +19,17 @@ gulp.task('html', () => {
 		.pipe(nunjucksRender({
 			path: 'src/'
 		}))
-		.pipe(gulp.dest('build/messenger'))
+		.pipe(gulp.dest('build'))
 
 });
 
 gulp.task('serve', () => {
 
+	gulp.src('src/msg.js').pipe(gulp.dest('build/js'))
+	gulp.src('src/msg.css').pipe(gulp.dest('build/css'))
+
 	server.init({
-		server: 'build/messenger',
+		server: 'build',
 		files: [
 			{
 				match: 'build/**/*.*',

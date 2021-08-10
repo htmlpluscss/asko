@@ -37,7 +37,6 @@ function chatUpload(f){
 function chatInit(){
 	chat = document.getElementById('chat'),
 	chat_div = document.getElementById('chat_div'),
-//	chat_tieser = document.getElementById('chat_tieser'),
 	chat_submit = document.getElementById('chat_submit'),
 	chat_input = document.getElementById('chat_input'),
 	chat_interval_min = 3000,
@@ -50,11 +49,9 @@ function chatInit(){
 
 function chatOpen(){
 	if (open_chat) clearTimeout(open_chat), chatInit();
-//	chat.style.display = x ? 'block' : 'none';
-//	chat_tieser.innerHTML = x ? 'ЗАКРОЙ ЧАТ !!!' : 'ОТКРОЙ ЧАТ !!!';
-//	chat_tieser.onclick = function(){chatOpen(!x)};
 	window.messenger.classList.add('messenger--open');
 	setTimeout(chatFocus,1000);
+	chat_div.scrollTop = chat_div.scrollHeight;
 }
 
 function chatClose(){
