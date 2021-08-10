@@ -25,8 +25,9 @@ gulp.task('html', () => {
 
 gulp.task('serve', () => {
 
-	gulp.src('src/msg.js').pipe(gulp.dest('build/js'))
-	gulp.src('src/msg.css').pipe(gulp.dest('build/css'))
+	gulp.src('src/avatar.svg').pipe(gulp.dest('build/img'))
+	gulp.src('src/messenger.js').pipe(gulp.dest('build/js'))
+	gulp.src('src/messenger.css').pipe(gulp.dest('build/css'))
 
 	server.init({
 		server: 'build',
