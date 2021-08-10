@@ -37,8 +37,9 @@ function chatUpload(f){
 function chatInit(){
 	chat = document.getElementById('chat'),
 	chat_div = document.getElementById('chat_div'),
-	chat_tieser = document.getElementById('chat_tieser'),
+//	chat_tieser = document.getElementById('chat_tieser'),
 	chat_submit = document.getElementById('chat_submit'),
+	chat_input = document.getElementById('chat_input'),
 	chat_interval_min = 3000,
 	chat_xhr_load = 0,
 	chat_last_id = 0,
@@ -47,9 +48,19 @@ function chatInit(){
 	chatJob(chat_interval_min), chatRefresh(0);
 }
 
-function chatOpen(x=true){
+function chatOpen(){
 	if (open_chat) clearTimeout(open_chat), chatInit();
-	chat.style.display = x ? 'block' : 'none';
-	chat_tieser.innerHTML = x ? 'ЗАКРОЙ ЧАТ !!!' : 'ОТКРОЙ ЧАТ !!!';
-	chat_tieser.onclick = function(){chatOpen(!x)};
+//	chat.style.display = x ? 'block' : 'none';
+//	chat_tieser.innerHTML = x ? 'ЗАКРОЙ ЧАТ !!!' : 'ОТКРОЙ ЧАТ !!!';
+//	chat_tieser.onclick = function(){chatOpen(!x)};
+	window.messenger.classList.add('messenger--open');
+	setTimeout(chatFocus,1000);
+}
+
+function chatClose(){
+	window.messenger.classList.remove('messenger--open');
+}
+
+function chatFocus(){
+	chat_input.focus();
 }
