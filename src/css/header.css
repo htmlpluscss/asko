@@ -316,6 +316,24 @@
 	&__wishlist {
 
 		margin-left: 20px;
+		position: relative;
+
+		&-count {
+
+			border-radius: 50%;
+			background-color: var(--red);
+			color: #fff;
+			width: 15px;
+			height: 15px;
+			text-align: center;
+			line-height: 15px;
+			text-shadow: none;
+			position: absolute;
+			top: -5px;
+			right: -3px;
+			font-size: 10px;
+
+		}
 
 	}
 

@@ -9,7 +9,8 @@
 	Array.prototype.forEach.call(forms, function(form){
 
 		var btn = form.querySelector('.form-my-list__btn'),
-			mode = form.querySelector('[name="mode"]');
+			mode = form.querySelector('[name="mode"]'),
+			headerCounterValue = document.querySelector('.header__' + form.querySelector('[name="mylist"]').value + '-count');
 
 		form.addEventListener('submit',function(e){
 
@@ -28,7 +29,7 @@
 
 			xhr.onreadystatechange = function() {
 
-				if (xhr.readyState != 4){
+				if (xhr.readyState !== 4){
 
 					return;
 
@@ -38,23 +39,18 @@
 				form.classList.toggle('is-add', add);
 				mode.value = ( add ? 'del' : 'add' );
 
-				if(add) {
+				var response = JSON.parse(xhr.response);
+				console.log(response);
 
-					alert('добавлен')
+				if (xhr.status !== 200) {
+
+					console.log('ошибка ' + xhr.status);
 
 				}
 				else {
 
-					alert('удален')
-
-				}
-
-//				var response = JSON.parse(xhr.response);
-//				console.log(response);
-
-				if (xhr.status != 200) {
-
-					console.log('ошибка ' + xhr.status);
+					headerCounterValue.textContent = response.quantity;
+					headerCounterValue.classList.toggle('hide', response.quantity === 0);
 
 				}
 
