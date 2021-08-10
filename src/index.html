@@ -3,106 +3,39 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>ASKO</title>
-	<link href="/css/styles.css" rel="stylesheet">
-	<link href="/favicon.png" rel="apple-touch-icon-precomposed">
+	<title>ASKO messenger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script defer src="/js/scripts.js"></script>
-	<style>.wrapper hr,.wrapper ul,.wrapper p,.wrapper .btn, .wrapper > .select{margin: 10px}</style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<style>
 
-	<p class="h1">Страницы</p>
+#chat_div { height: 150px; width: 300px; overflow: auto; padding: 20px; border: 1px solid gray; }
+#chat { display: none; margin: 30px 10px 10px; }
+.message_client { text-align: right; }
+.message_manager { text-align: left; }
 
-	<ul class="h2">
+</style>
 
-		<li><a href="/home/">Главная</a></li>
-		<li><a href="/catalog/">Каталог</a></li>
-		<li><a href="/catalog/product/">Товар</a></li>
-		<li><a href="/zakaz/">Корзина</a></li>
-		<li><a href="/zakaz/details/">Корзина доставка и оплата</a></li>
-		<li><a href="/pochemu_asko/">Почему выбирают технику Аско.</a></li>
-		<li><a href="/pochemu_asko/pochemu_duhovye_shkafy/">Почему выбирают духовые шкафы Asko?</a></li>
-		<li><a href="/pochemu_asko/kollaboraciya-asko-x-akhmadullina/">ASKO от Alena Akhmadullina</a></li>
-		<li><a href="/show-room/">Шоу-рум</a></li>
-		<li><a href="/dostavka-oplata/">Доставка и оплата</a></li>
-		<li><a href="/print/">Print page product</a></li>
-		<li><a href="/compare/">Сравнение</a></li>
+<a id=chat_tieser onclick=chatOpen()>
+	ОТКРОЙ ЧАТ, А ТО САМ ОТКРОЮ !!!
+</a>
 
-	</ul>
+<div id=chat>
 
-	<hr>
+	<div id=chat_div></div>
 
-	<p class="h1">Modal</p>
+	<form action=messenger.php onsubmit="return chatUpload(this)">
 
-	<div>
+		<input required name=message size=30>
+		<input id=chat_submit type=submit value=ok>
 
-		<button class="btn" data-modal="callback">Заказать звонок</button>
-		<button class="btn" data-modal="thanks">Спасибо!</button>
-		<button class="btn" data-modal="product-in-cart">Купить</button>
-
-	</div>
-
-	<hr>
-
-	<p class="h1">PageSpeed</p>
-
-	<ul class="h2">
-
-		<li><a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fasko.wndrbase.com%2Fhome%2F&tab=mobile">Главная <b>97|100</b></a></li>
-		<li><a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fasko.wndrbase.com%2Fcatalog%2F&tab=mobile">Каталог <b>99|98</b></a></li>
-		<li><a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fasko.wndrbase.com%2Fcatalog%2Fproduct%2F">Товар <b>99|100</b></a></li>
-
-	</ul>
-
-	<hr>
-
-	<p class="h1">schema</p>
-
-	<ul class="h2">
-
-		<li><a target="_blank" href="https://search.google.com/structured-data/testing-tool?hl=ru#url=http%3A%2F%2Fasko.wndrbase.com%2Fcatalog%2Fproduct">Товар</a></li>
-
-	</ul>
-
-	<p class="h1">Позиции в выдаче</p>
-
-	<ul class="h2">
-
-		<li><a target="_blank" href="https://yandex.ru/search/?text=T208H.W">Товар T208H.W</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=T409HS.W">Товар T409HS.W</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=DC7774V.W">Товар DC7774V.W</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=W2084.W">Товар W2084.W</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=W4086C.W">Товар W4086C.W</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=ASKO">ASKO</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=стиральная машина asko">стиральная машина asko</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=asko официальный сайт">asko официальный сайт</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=asko официальный дилер">asko официальный дилер</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=домашняя прачечная asko">домашняя прачечная asko</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=аско">аско</a></li>
-		<li><a target="_blank" href="https://yandex.ru/search/?text=asco">asco</a></li>
-
-	</ul>
-
-	<p>
-		если не считать рекламу и сервисы яндекса, то позиции в выдвачи первая или вторая.
-	</p>
-
-	<p>
-		у товаров присутствуют: изображение, цена и условия доставки. <br>
-		у страниц категорий присутствуют: изображение, карусель статей или товаров с ценами
-	</p>
-
-	<p>
-		при переходе в мобильном устройстве выдача будет из турбо товаров и статей
-	</p>
+	</form>
 
 </div>
 
-{% include "template/modal.html" %}
+<script src="https://asko-home.ru/js/msg.js"></script>
 
 </body>
 </html>
