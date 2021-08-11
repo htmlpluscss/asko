@@ -143,6 +143,7 @@ gulp.task('js', function() {
 		}))
 
 		.pipe(gulp.dest('build/js'))
+		.pipe(gulp.dest('min'))
 
 
 // dev, off minify
