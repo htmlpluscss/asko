@@ -1,4 +1,4 @@
-(function(cookie){
+/*(function(cookie){
 
 	if(cookie) {
 
@@ -14,4 +14,4 @@
 
 	}
 
-})(document.querySelector('.cookie'));
+})(document.querySelector('.cookie'));*/
