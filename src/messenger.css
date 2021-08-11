@@ -96,6 +96,7 @@
 .messenger__transcript {
 
 	height: 40vh;
+	height: 80vh;
 	width: 300px;
 	overflow: auto;
 	padding: 14px;
@@ -117,11 +118,51 @@
 
 }
 
-.messenger__form {
+.messenger__forms {
 
 	position: relative;
 	margin: 0 -10px -10px;
+	display: flex;
+
+}
+
+.messenger__form {
+
+	flex-grow: 1;
+	position: relative;
 	height: 48px;
+
+}
+
+.messenger__form-file {
+
+	height: 48px;
+	width: 48px;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.messenger__form-file svg {
+
+	pointer-events: none;
+	fill: #393939;
+
+}
+
+.messenger__form-file input[type="file"] {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1000px;
+	cursor: pointer;
+	opacity: 0;
+	height: 48px;
+	width: 48px;
 
 }
 
@@ -264,6 +305,82 @@
 .message--client .message__autor {
 
 	justify-content: flex-end;
+
+}
+
+.message__photo img,
+.message__og img {
+
+	max-width: 100%;
+	max-height: 128px;
+
+}
+
+.message--client .message__photo {
+
+	justify-content: flex-end;
+	display: flex;
+
+}
+
+.message__og-link {
+
+	overflow: hidden;
+	font-size: 13px;
+	text-decoration: none;
+	color: #393939;
+	display: block;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+
+}
+
+.message__og-link:hover {
+
+	border: 1px solid #aaa;
+
+}
+
+.message__og-img {
+
+	width: 64px;
+	float: left;
+	margin-right: 10px;
+
+}
+
+.message__og-img img {
+
+	max-width: 100%;
+	height: auto;
+
+}
+
+.message__link {
+
+	margin: 10px 0;
+
+}
+
+.message__link a {
+
+	color: #d50427;
+	text-decoration: underline;
+
+}
+
+.message__link a:hover {
+
+	text-decoration: none;
+
+}
+
+.message--client .message__link {
+
+	text-align: right;
 
 }
 

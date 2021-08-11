@@ -61,3 +61,20 @@ function chatClose(){
 function chatFocus(){
 	chat_input.focus();
 }
+
+const formFile = document.querySelector('.messenger__form-file');
+
+formFile.addEventListener('change', ()=> {
+
+	fetch( 'messenger.php?ajax=' + Date.now(), {
+		method: 'POST',
+		body: new FormData(formFile)
+	})
+	.then(result => {
+
+		formFile.reset();
+		chatRefresh();
+
+	});
+
+});

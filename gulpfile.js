@@ -23,11 +23,12 @@ gulp.task('html', () => {
 
 });
 
+gulp.task('js', () => gulp.src('src/messenger.js').pipe(gulp.dest('build/js')));
+gulp.task('css', () => gulp.src('src/messenger.css').pipe(gulp.dest('build/css')));
+
 gulp.task('serve', () => {
 
 	gulp.src('src/avatar.svg').pipe(gulp.dest('build/img'))
-	gulp.src('src/messenger.js').pipe(gulp.dest('build/js'))
-	gulp.src('src/messenger.css').pipe(gulp.dest('build/css'))
 
 	server.init({
 		server: 'build',
@@ -42,6 +43,12 @@ gulp.task('serve', () => {
 });
 
 gulp.task('clear', () => del('build'));
-gulp.task('watch', () => gulp.watch('src/index.html', gulp.series('html')));
+gulp.task('watch', () => {
 
-gulp.task('default', gulp.series('clear', 'html', gulp.parallel('watch', 'serve')));
+	gulp.watch('src/messenger.js', gulp.series('js'));
+	gulp.watch('src/messenger.css', gulp.series('css'));
+	gulp.watch('src/index.html', gulp.series('html'));
+
+});
+
+gulp.task('default', gulp.series('clear', 'html', 'css', 'js', gulp.parallel('watch', 'serve')));

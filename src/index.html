@@ -188,19 +188,115 @@
 
 			</div>
 
+			<div class="message message--date">
+
+				<div class="message__inner">
+					сегодня
+				</div>
+
+			</div>
+
+			<div class="message message--client">
+
+				<div class="message__inner">
+
+					<div class="message__autor">Вы:</div>
+
+					<div class="message__text">я ищу такую модель</div>
+
+					<div class="message__photo">
+
+						<a href="https://asko-home.ru/pic/700x700/w2084.w1_0.jpg" target="_blank">
+							<img src="https://asko-home.ru/pic/700x700/w2084.w1_0.jpg" alt="">
+						</a>
+
+					</div>
+
+					<div class="message__text">такая машика есть?</div>
+
+				</div>
+
+			</div>
+
+			<div class="message message--manager">
+
+				<div class="message__inner">
+
+					<div class="message__autor">
+
+						<img class="message__avatar" src="/img/avatar.svg" width="16" height="16" alt="">
+
+						ASKO-HOME:
+
+					</div>
+
+					<div class="message__text">да, вот интересующая Вас модель</div>
+
+					<div class="message__link">
+
+						<a href="https://asko-home.ru/catalog/stiralnye_mashiny/stiralnaya_mashina_asko_w2084w_1/" target="_blank">
+							не смогли распарсить ссылку
+						</a>
+
+					</div>
+
+					<div class="message__text">она представлена в нашем шоу-руме по адресу: г.Москва</div>
+
+					<div class="message__og">
+
+						<a href="https://asko-home.ru/catalog/stiralnye_mashiny/stiralnaya_mashina_asko_w2084w_1/" class="message__og-link">
+
+							<span class="message__og-img">
+								<img src="https://asko-home.ru/pic/700x700/w2084.w1_0.jpg" alt="">
+							</span>
+
+							<span class="message__og-body">
+
+								<b>
+									Стиральная машина  Asko W2084.W/1 - купить по цене 65900 рублей
+								</b>
+
+								<br>
+
+								Модель представлена в Шоу-Руме. Новинка 2020 года. Объем загрузки, 8 кг. Скорость отжима 1400. Нагре…
+
+							</span>
+
+						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
 		</div>
 
-		<form action="messenger.php" onsubmit="return chatUpload(this)" class="messenger__form">
+		<div class="messenger__forms">
 
-			<input id="chat_input" required="required" class="messenger__input" placeholder="Напишите сообщение…" autocomplete="off">
+			<form action="messenger.php" class="messenger__form-file">
 
-			<button id="chat_submit" class="messenger__btn-submit" aria-label="Отправить сообщение">
-				<svg width="24" height="24" viewBox="0 0 488 488">
-					<path d="M483.59 222.02a51.2 51.2 0 00-23.76-23.76L73.53 11.33A51.2 51.2 0 003.66 76.44l67.17 167.9L3.67 412.26a51.32 51.32 0 0047.46 70.26c7.75 0 15.4-1.75 22.4-5.12l386.3-186.98a51.2 51.2 0 0023.76-68.4zM58.66 446.63a17.07 17.07 0 01-23.28-21.7l65.4-163.52h340.66L58.67 446.63zm42.12-219.35L35.38 63.75a16.64 16.64 0 014.21-18.77 16.54 16.54 0 0119.07-2.89l382.79 185.17H100.78z"/>
+				<input type="file" name="file">
+
+				<svg width="20" height="20" width="614" height="614" viewBox="0 0 612.67 612.67">
+					<path d="M581.2 223L269.85 530.93c-51.6 51.02-135.25 51.02-186.84 0a129.62 129.62 0 010-184.76L363.25 69.04c34.4-34 90.15-34 124.55 0a86.4 86.4 0 010 123.17L207.55 469.33a44.38 44.38 0 01-62.29 0 43.22 43.22 0 010-61.58l249.11-246.33-31.14-30.8-249.09 246.36a86.4 86.4 0 000 123.17c34.4 34 90.15 34 124.56 0l280.25-277.12a129.62 129.62 0 000-184.76c-51.6-51.03-135.25-51.03-186.84 0L36.29 330.78l1.07 1.08c-53.74 68.32-49.01 167.09 14.5 229.88 63.5 62.79 163.35 67.49 232.46 14.32l1.07 1.07 326.94-323.3L581.21 223z"/>
 				</svg>
-			</button>
 
-		</form>
+			</form>
+
+			<form action="messenger.php" onsubmit="return chatUpload(this)" class="messenger__form">
+
+				<input id="chat_input" required="required" class="messenger__input" placeholder="Напишите сообщение…" autocomplete="off">
+
+				<button id="chat_submit" class="messenger__btn-submit" aria-label="Отправить сообщение">
+					<svg width="24" height="24" viewBox="0 0 488 488">
+						<path d="M483.59 222.02a51.2 51.2 0 00-23.76-23.76L73.53 11.33A51.2 51.2 0 003.66 76.44l67.17 167.9L3.67 412.26a51.32 51.32 0 0047.46 70.26c7.75 0 15.4-1.75 22.4-5.12l386.3-186.98a51.2 51.2 0 0023.76-68.4zM58.66 446.63a17.07 17.07 0 01-23.28-21.7l65.4-163.52h340.66L58.67 446.63zm42.12-219.35L35.38 63.75a16.64 16.64 0 014.21-18.77 16.54 16.54 0 0119.07-2.89l382.79 185.17H100.78z"/>
+					</svg>
+				</button>
+
+			</form>
+
+		</div>
 
 		<button class="messenger__btn-close" onclick="chatClose()" aria-label="Закрыть чат" type="button">
 			<svg width="32" height="32" viewBox="0 0 512 512">
