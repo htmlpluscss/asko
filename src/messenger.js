@@ -24,13 +24,17 @@ function chatRefresh(w=1){
 	xhr.send();
 }
 
-function chatUpload(f){
+function chatUpload(f,v){
 	chat_submit.disabled = true;
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', 'messenger.php?ajax='+Date.now(), true);
 	xhr.onload = function(){ f.reset(), chatRefresh(), chat_submit.disabled = false; }
 	xhr.onerror = wr;
-	xhr.send( new FormData(f) );
+	let formData = new FormData(f);
+	if(v) {
+		formData.set('message', v);
+	}
+	xhr.send( formData );
 	return false;
 }
 
@@ -62,7 +66,7 @@ function chatFocus(){
 	chat_input.focus();
 }
 
-const formFile = document.querySelector('.messenger__form-file');
+const formFile = window.messenger.querySelector('.messenger__form-file');
 
 formFile.addEventListener('change', ()=> {
 
@@ -74,6 +78,42 @@ formFile.addEventListener('change', ()=> {
 
 		formFile.reset();
 		chatRefresh();
+
+	});
+
+});
+
+// быстрые вопросы в самом начале чата
+const fastText = window.messenger.querySelector('.message--fast-text');
+
+fastText.addEventListener('click', event => {
+
+	if(event.target.closest('.message__btn')) {
+
+		chatUpload(window.messenger.querySelector('.messenger__form'), event.target.closest('.message__btn').textContent.trim());
+
+		fastText.remove();
+
+	}
+
+});
+
+// smile
+const btnSmile = window.messenger.querySelector('.messenger__btn-smile');
+
+btnSmile.addEventListener('click', () => window.messenger.classList.toggle('messenger--smile'));
+
+const addSmiles = window.messenger.querySelectorAll('.messenger__add-smile');
+
+Array.from(addSmiles, btn => {
+
+	btn.addEventListener('click', () => {
+
+		window.messenger.classList.remove('messenger--smile');
+
+		chat_input.value = chat_input.value + btn.textContent.trim();
+
+		chat_input.focus();
 
 	});
 

@@ -36,27 +36,27 @@
 
 					</div>
 
-					<div class="message__text">Здравствуйте! <br>Вас приветствует фирменный магазин Шведской техники ASKO</div>
+					<div class="message__text">Здравствуйте! <br>Вас приветствует фирменный магазин <br>Шведской техники ASKO</div>
 
 				</div>
 
 			</div>
 
-			<div class="message message--link-group">
+			<div class="message message--fast-text">
 
 				<div class="message__inner">
 
-					<a href="/">
+					<button class="message__btn" type="button">
 						Узнать стоимость с доставкой
-					</a>
+					</button>
 
-					<a href="/">
+					<button class="message__btn" type="button">
 						Как оформить заказ?
-					</a>
+					</button>
 
-					<a href="/">
+					<button class="message__btn" type="button">
 						Вопрос по технике
-					</a>
+					</button>
 
 				</div>
 
@@ -306,7 +306,7 @@
 
 			<form action="messenger.php" onsubmit="return chatUpload(this)" class="messenger__form">
 
-				<input id="chat_input" required="required" class="messenger__input" placeholder="Напишите сообщение…" autocomplete="off">
+				<input id="chat_input" required="required" class="messenger__input" placeholder="Напишите сообщение…" autocomplete="off" name="message">
 
 				<button id="chat_submit" class="messenger__btn-submit" aria-label="Отправить сообщение">
 					<svg width="24" height="24" viewBox="0 0 488 488">
@@ -314,7 +314,470 @@
 					</svg>
 				</button>
 
+				<button class="messenger__btn-smile" aria-label="Добавить смайлик" type="button">
+					<svg width="24" height="24" viewBox="0 0 512 512">
+						<path d="M256 512c-68.38 0-132.67-26.63-181.02-74.98C26.63 388.67 0 324.38 0 256S26.63 123.33 74.98 74.98C123.33 26.63 187.62 0 256 0s132.67 26.63 181.02 74.98C485.37 123.33 512 187.62 512 256s-26.63 132.67-74.98 181.02C388.67 485.37 324.38 512 256 512zm0-472C136.9 40 40 136.9 40 256s96.9 216 216 216 216-96.9 216-216S375.1 40 256 40zm93.74 260.19a20 20 0 00-27.61 6.13c-.25.4-25.14 38.74-67.13 38.74s-66.88-38.35-67.13-38.74a20 20 0 10-33.74 21.48c1.48 2.34 37.17 57.26 100.87 57.26s99.38-54.92 100.87-57.26a20 20 0 00-6.13-27.61zM168 165a25 25 0 110 50 25 25 0 010-50zm150 25a25 25 0 1050 0 25 25 0 00-50 0z"/>
+					</svg>
+				</button>
+
 			</form>
+
+			<div class="messenger__smiles">
+
+				<p class="messenger__smiles-head">
+					Смайлики
+				</p>
+
+				<div class="messenger__smiles-list">
+
+					<button class="messenger__add-smile" aria-label="😀" type="button">
+						&#128512;
+					</button>
+					<button class="messenger__add-smile" aria-label="😃" type="button">
+						&#128515;
+					</button>
+					<button class="messenger__add-smile" aria-label="😄" type="button">
+						&#128516;
+					</button>
+					<button class="messenger__add-smile" aria-label="😁" type="button">
+						&#128513;
+					</button>
+					<button class="messenger__add-smile" aria-label="😆" type="button">
+						&#128518;
+					</button>
+					<button class="messenger__add-smile" aria-label="😅" type="button">
+						&#128517;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤣" type="button">
+						&#129315;
+					</button>
+					<button class="messenger__add-smile" aria-label="😂" type="button">
+						&#128514;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙂" type="button">
+						&#128578;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙃" type="button">
+						&#128579;
+					</button>
+					<button class="messenger__add-smile" aria-label="😉" type="button">
+						&#128521;
+					</button>
+					<button class="messenger__add-smile" aria-label="😊" type="button">
+						&#128522;
+					</button>
+					<button class="messenger__add-smile" aria-label="😇" type="button">
+						&#128519;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥰" type="button">
+						&#129392;
+					</button>
+					<button class="messenger__add-smile" aria-label="😍" type="button">
+						&#128525;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤩" type="button">
+						&#129321;
+					</button>
+					<button class="messenger__add-smile" aria-label="😘" type="button">
+						&#128536;
+					</button>
+					<button class="messenger__add-smile" aria-label="😗" type="button">
+						&#128535;
+					</button>
+					<button class="messenger__add-smile" aria-label="☺" type="button">
+						&#9786;
+					</button>
+					<button class="messenger__add-smile" aria-label="😚" type="button">
+						&#128538;
+					</button>
+					<button class="messenger__add-smile" aria-label="😙" type="button">
+						&#128537;
+					</button>
+					<button class="messenger__add-smile" aria-label="😋" type="button">
+						&#128523;
+					</button>
+					<button class="messenger__add-smile" aria-label="😛" type="button">
+						&#128539;
+					</button>
+					<button class="messenger__add-smile" aria-label="😜" type="button">
+						&#128540;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤪" type="button">
+						&#129322;
+					</button>
+					<button class="messenger__add-smile" aria-label="😝" type="button">
+						&#128541;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤑" type="button">
+						&#129297;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤗" type="button">
+						&#129303;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤭" type="button">
+						&#129325;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤫" type="button">
+						&#129323;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤔" type="button">
+						&#129300;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤐" type="button">
+						&#129296;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤨" type="button">
+						&#129320;
+					</button>
+					<button class="messenger__add-smile" aria-label="😐" type="button">
+						&#128528;
+					</button>
+					<button class="messenger__add-smile" aria-label="😑" type="button">
+						&#128529;
+					</button>
+					<button class="messenger__add-smile" aria-label="😶" type="button">
+						&#128566;
+					</button>
+					<button class="messenger__add-smile" aria-label="😏" type="button">
+						&#128527;
+					</button>
+					<button class="messenger__add-smile" aria-label="😒" type="button">
+						&#128530;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙄" type="button">
+						&#128580;
+					</button>
+					<button class="messenger__add-smile" aria-label="😬" type="button">
+						&#128556;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤥" type="button">
+						&#129317;
+					</button>
+					<button class="messenger__add-smile" aria-label="😌" type="button">
+						&#128524;
+					</button>
+					<button class="messenger__add-smile" aria-label="😔" type="button">
+						&#128532;
+					</button>
+					<button class="messenger__add-smile" aria-label="😪" type="button">
+						&#128554;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤤" type="button">
+						&#129316;
+					</button>
+					<button class="messenger__add-smile" aria-label="😴" type="button">
+						&#128564;
+					</button>
+					<button class="messenger__add-smile" aria-label="😷" type="button">
+						&#128567;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤒" type="button">
+						&#129298;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤕" type="button">
+						&#129301;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤢" type="button">
+						&#129314;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤮" type="button">
+						&#129326;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤧" type="button">
+						&#129319;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥵" type="button">
+						&#129397;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥶" type="button">
+						&#129398;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥴" type="button">
+						&#129396;
+					</button>
+					<button class="messenger__add-smile" aria-label="😵" type="button">
+						&#128565;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤯" type="button">
+						&#129327;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤠" type="button">
+						&#129312;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥳" type="button">
+						&#129395;
+					</button>
+					<button class="messenger__add-smile" aria-label="😎" type="button">
+						&#128526;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤓" type="button">
+						&#129299;
+					</button>
+					<button class="messenger__add-smile" aria-label="🧐" type="button">
+						&#129488;
+					</button>
+					<button class="messenger__add-smile" aria-label="😕" type="button">
+						&#128533;
+					</button>
+					<button class="messenger__add-smile" aria-label="😟" type="button">
+						&#128543;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙁" type="button">
+						&#128577;
+					</button>
+					<button class="messenger__add-smile" aria-label="☹" type="button">
+						&#9785;
+					</button>
+					<button class="messenger__add-smile" aria-label="😮" type="button">
+						&#128558;
+					</button>
+					<button class="messenger__add-smile" aria-label="😯" type="button">
+						&#128559;
+					</button>
+					<button class="messenger__add-smile" aria-label="😲" type="button">
+						&#128562;
+					</button>
+					<button class="messenger__add-smile" aria-label="😳" type="button">
+						&#128563;
+					</button>
+					<button class="messenger__add-smile" aria-label="🥺" type="button">
+						&#129402;
+					</button>
+					<button class="messenger__add-smile" aria-label="😦" type="button">
+						&#128550;
+					</button>
+					<button class="messenger__add-smile" aria-label="😧" type="button">
+						&#128551;
+					</button>
+					<button class="messenger__add-smile" aria-label="😨" type="button">
+						&#128552;
+					</button>
+					<button class="messenger__add-smile" aria-label="😰" type="button">
+						&#128560;
+					</button>
+					<button class="messenger__add-smile" aria-label="😥" type="button">
+						&#128549;
+					</button>
+					<button class="messenger__add-smile" aria-label="😢" type="button">
+						&#128546;
+					</button>
+					<button class="messenger__add-smile" aria-label="😭" type="button">
+						&#128557;
+					</button>
+					<button class="messenger__add-smile" aria-label="😱" type="button">
+						&#128561;
+					</button>
+					<button class="messenger__add-smile" aria-label="😖" type="button">
+						&#128534;
+					</button>
+					<button class="messenger__add-smile" aria-label="😣" type="button">
+						&#128547;
+					</button>
+					<button class="messenger__add-smile" aria-label="😞" type="button">
+						&#128542;
+					</button>
+					<button class="messenger__add-smile" aria-label="😓" type="button">
+						&#128531;
+					</button>
+					<button class="messenger__add-smile" aria-label="😩" type="button">
+						&#128553;
+					</button>
+					<button class="messenger__add-smile" aria-label="😫" type="button">
+						&#128555;
+					</button>
+					<button class="messenger__add-smile" aria-label="😤" type="button">
+						&#128548;
+					</button>
+					<button class="messenger__add-smile" aria-label="😡" type="button">
+						&#128545;
+					</button>
+					<button class="messenger__add-smile" aria-label="😠" type="button">
+						&#128544;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤬" type="button">
+						&#129324;
+					</button>
+					<button class="messenger__add-smile" aria-label="😈" type="button">
+						&#128520;
+					</button>
+					<button class="messenger__add-smile" aria-label="👿" type="button">
+						&#128127;
+					</button>
+					<button class="messenger__add-smile" aria-label="💀" type="button">
+						&#128128;
+					</button>
+					<button class="messenger__add-smile" aria-label="☠" type="button">
+						&#9760;
+					</button>
+					<button class="messenger__add-smile" aria-label="💩" type="button">
+						&#128169;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤡" type="button">
+						&#129313;
+					</button>
+					<button class="messenger__add-smile" aria-label="👹" type="button">
+						&#128121;
+					</button>
+					<button class="messenger__add-smile" aria-label="👺" type="button">
+						&#128122;
+					</button>
+					<button class="messenger__add-smile" aria-label="👻" type="button">
+						&#128123;
+					</button>
+					<button class="messenger__add-smile" aria-label="👽" type="button">
+						&#128125;
+					</button>
+					<button class="messenger__add-smile" aria-label="👾" type="button">
+						&#128126;
+					</button>
+					<button class="messenger__add-smile" aria-label="🤖" type="button">
+						&#129302;
+					</button>
+					<button class="messenger__add-smile" aria-label="😺" type="button">
+						&#128570;
+					</button>
+					<button class="messenger__add-smile" aria-label="😸" type="button">
+						&#128568;
+					</button>
+					<button class="messenger__add-smile" aria-label="😹" type="button">
+						&#128569;
+					</button>
+					<button class="messenger__add-smile" aria-label="😻" type="button">
+						&#128571;
+					</button>
+					<button class="messenger__add-smile" aria-label="😼" type="button">
+						&#128572;
+					</button>
+					<button class="messenger__add-smile" aria-label="😽" type="button">
+						&#128573;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙀" type="button">
+						&#128576;
+					</button>
+					<button class="messenger__add-smile" aria-label="😿" type="button">
+						&#128575;
+					</button>
+					<button class="messenger__add-smile" aria-label="😾" type="button">
+						&#128574;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙈" type="button">
+						&#128584;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙉" type="button">
+						&#128585;
+					</button>
+					<button class="messenger__add-smile" aria-label="🙊" type="button">
+						&#128586;
+					</button>
+
+				</div>
+
+				<p class="messenger__smiles-head">
+					Эмоции
+				</p>
+
+				<div class="messenger__smiles-list">
+
+					<button class="messenger__add-smile" aria-label="💋" type="button">
+						&#128139;
+					</button>
+					<button class="messenger__add-smile" aria-label="💌" type="button">
+						&#128140;
+					</button>
+					<button class="messenger__add-smile" aria-label="💘" type="button">
+						&#128152;
+					</button>
+					<button class="messenger__add-smile" aria-label="💝" type="button">
+						&#128157;
+					</button>
+					<button class="messenger__add-smile" aria-label="💖" type="button">
+						&#128150;
+					</button>
+					<button class="messenger__add-smile" aria-label="💗" type="button">
+						&#128151;
+					</button>
+					<button class="messenger__add-smile" aria-label="💓" type="button">
+						&#128147;
+					</button>
+					<button class="messenger__add-smile" aria-label="💞" type="button">
+						&#128158;
+					</button>
+					<button class="messenger__add-smile" aria-label="💕" type="button">
+						&#128149;
+					</button>
+					<button class="messenger__add-smile" aria-label="💟" type="button">
+						&#128159;
+					</button>
+					<button class="messenger__add-smile" aria-label="❣" type="button">
+						&#10083;
+					</button>
+					<button class="messenger__add-smile" aria-label="💔" type="button">
+						&#128148;
+					</button>
+					<button class="messenger__add-smile" aria-label="❤" type="button">
+						&#10084;
+					</button>
+					<button class="messenger__add-smile" aria-label="🧡" type="button">
+						&#129505;
+					</button>
+					<button class="messenger__add-smile" aria-label="💛" type="button">
+						&#128155;
+					</button>
+					<button class="messenger__add-smile" aria-label="💚" type="button">
+						&#128154;
+					</button>
+					<button class="messenger__add-smile" aria-label="💙" type="button">
+						&#128153;
+					</button>
+					<button class="messenger__add-smile" aria-label="💜" type="button">
+						&#128156;
+					</button>
+					<button class="messenger__add-smile" aria-label="🖤" type="button">
+						&#128420;
+					</button>
+					<button class="messenger__add-smile" aria-label="💯" type="button">
+						&#128175;
+					</button>
+					<button class="messenger__add-smile" aria-label="💢" type="button">
+						&#128162;
+					</button>
+					<button class="messenger__add-smile" aria-label="💥" type="button">
+						&#128165;
+					</button>
+					<button class="messenger__add-smile" aria-label="💫" type="button">
+						&#128171;
+					</button>
+					<button class="messenger__add-smile" aria-label="💦" type="button">
+						&#128166;
+					</button>
+					<button class="messenger__add-smile" aria-label="💨" type="button">
+						&#128168;
+					</button>
+					<button class="messenger__add-smile" aria-label="🕳" type="button">
+						&#128371;
+					</button>
+					<button class="messenger__add-smile" aria-label="💣" type="button">
+						&#128163;
+					</button>
+					<button class="messenger__add-smile" aria-label="💬" type="button">
+						&#128172;
+					</button>
+					<button class="messenger__add-smile" aria-label="🗨" type="button">
+						&#128488;
+					</button>
+					<button class="messenger__add-smile" aria-label="🗯" type="button">
+						&#128495;
+					</button>
+					<button class="messenger__add-smile" aria-label="💭" type="button">
+						&#128173;
+					</button>
+					<button class="messenger__add-smile" aria-label="💤" type="button">
+						&#128164;
+					</button>
+
+				</div>
+
+			</div>
 
 		</div>
 

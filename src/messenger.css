@@ -66,7 +66,8 @@
 
 .messenger__btn-open:focus,
 .messenger__btn-close:focus,
-.messenger__btn-submit:focus {
+.messenger__btn-submit:focus,
+.messenger__btn-smile:focus {
 
 	outline: none;
 
@@ -96,7 +97,7 @@
 .messenger__transcript {
 
 	height: 40vh;
-	width: 300px;
+	width: 360px;
 	overflow: auto;
 	padding: 14px;
 	scrollbar-width: thin;
@@ -176,7 +177,7 @@
 
 	line-height: 28px;
 	padding: 10px;
-	padding-right: 50px;
+	padding-right: 100px;
 	font-size: 16px;
 	color: #393939;
 	font-family: inherit;
@@ -210,7 +211,8 @@
 
 }
 
-.messenger__btn-submit {
+.messenger__btn-submit,
+.messenger__btn-smile {
 
 	position: absolute;
 	width: 48px;
@@ -230,9 +232,16 @@
 
 }
 
+.messenger__btn-smile:hover,
 .messenger__input:valid ~ .messenger__btn-submit {
 
 	fill: #d50427;
+
+}
+
+.messenger__btn-smile {
+
+	right: 48px;
 
 }
 
@@ -380,6 +389,100 @@
 .message--client .message__link {
 
 	text-align: right;
+
+}
+
+.message__btn {
+
+	border: 1px solid;
+	border-radius: 20px;
+	font-family: inherit;
+	background-color: #fff;
+	transition: .3s;
+	cursor: pointer;
+	user-select: none;
+	font-size: inherit;
+	line-height: inherit;
+	color: #d50427;
+	appearance: none;
+	padding: 0 10px;
+	line-height: 30px;
+	box-sizing: border-box;
+
+}
+
+.message--fast-text .message__inner {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-grow: 1;
+	flex-direction: row;
+	margin: 10px 0;
+
+}
+
+.message--fast-text .message__btn {
+
+	margin: 5px;
+
+}
+
+.messenger__smiles {
+
+	position: absolute;
+	height: 30vh;
+	bottom: 100%;
+	left: 10px;
+	right: 10px;
+	overflow: auto;
+	padding: 14px;
+	scrollbar-width: thin;
+	scrollbar-color: #393939 transparent;
+	background-color: #f8f8f8;
+	border-radius: 5px;
+	display: none;
+
+}
+
+.messenger--smile .messenger__smiles {
+
+	display: block;
+
+}
+
+.messenger__smiles-head {
+
+	font-size: 12px;
+	color: #393939;
+	margin: 10px;
+
+}
+
+.messenger__smiles-list {
+
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.messenger__add-smile {
+
+	width: 32px;
+	height: 32px;
+	border: 0;
+	border-radius: 5px;
+	background-color: transparent;
+	cursor: pointer;
+	appearance: none;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+.messenger__add-smile:hover {
+
+	background-color: #fff;
 
 }
 
