@@ -43,7 +43,7 @@ function chatInit(){
 	chat_div = document.getElementById('chat_div'),
 	chat_submit = document.getElementById('chat_submit'),
 	chat_input = document.getElementById('chat_input'),
-	chat_interval_min = 3000,
+	chat_interval_min = 30000,
 	chat_xhr_load = 0,
 	chat_last_id = 0,
 	open_chat = null;
@@ -114,6 +114,79 @@ Array.from(addSmiles, btn => {
 		chat_input.value = chat_input.value + btn.textContent.trim();
 
 		chat_input.focus();
+
+	});
+
+});
+
+if (window.Clipboard) {
+
+	// поддержка ClipboardEvent API
+
+	chat_input.addEventListener("paste", event => {
+
+		const items = event.clipboardData.items;
+
+		if (items) {
+
+			for (let i = 0; i < items.length; i++) {
+
+				if (items[i].type.indexOf("image") !== -1) {
+
+					const imageBlob = items[i].getAsFile();
+
+					let formData = new FormData();
+					formData.append("file", imageBlob, "paste.png");
+
+					fetch( 'messenger.php?ajax=' + Date.now(), {
+						method: 'POST',
+						body: formData
+					});
+
+				}
+
+			}
+
+		}
+
+	});
+
+}
+
+// Drag'n'Drop
+
+chat.addEventListener('dragover', event => {
+
+	event.preventDefault();
+
+	window.messenger.classList.add('messenger--drag');
+
+});
+
+chat.addEventListener('dragleave', () => {
+
+	window.messenger.classList.remove('messenger--drag');
+
+});
+
+chat.addEventListener('drop', event => {
+
+	event.preventDefault();
+
+	window.messenger.classList.remove('messenger--drag');
+
+	let dt = event.dataTransfer;
+	let files = dt.files;
+
+	[...files].forEach( file => {
+
+		let formData = new FormData();
+		formData.append('file', file)
+
+		fetch( 'messenger.php?ajax=' + Date.now(), {
+			method: 'POST',
+			body: formData
+		});
 
 	});
 

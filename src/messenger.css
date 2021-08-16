@@ -80,12 +80,10 @@
 	bottom: 0;
 	padding: 10px;
 	border-radius: 5px;
-	border: 1px solid #fff;
 	background-color: #fff;
 	box-shadow: rgba(0, 8, 50, 0.04) 0px 4px 20px 1px, rgba(0, 8, 50, 0.08) 0px 8px 24px 2px;
 
 }
-
 
 .messenger--open .messenger__btn-open,
 .messenger:not(.messenger--open) .messenger__chat {
@@ -483,6 +481,28 @@
 .messenger__add-smile:hover {
 
 	background-color: #fff;
+
+}
+
+.message__file svg {
+
+	float: left;
+	margin-right: 5px;
+
+}
+
+.messenger--drag .messenger__chat::after {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 3px;
+	border: 3px dashed #ccc;
+	background-color: rgba(255, 255, 255, .5);
+	content: '';
+	z-index: 1;
 
 }
 
