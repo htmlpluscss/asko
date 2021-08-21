@@ -8,11 +8,20 @@
 	z-index: 9;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
 
-	@media ($mdWidth) {
+	.btn {
 
-		.btn {
+		margin-left: 24px;
+		flex-shrink: 0;
+
+		@media ($mdWidth) {
 
 			font-size: 16px;
+
+		}
+
+		@media ($smWidth) {
+
+			margin: 20px auto 0;
 
 		}
 
@@ -29,21 +38,6 @@
 
 			display: block;
 			text-align: center;
-
-		}
-
-	}
-
-	form {
-
-		margin-left: 24px;
-		flex-shrink: 0;
-
-		@media ($smWidth) {
-
-			margin: 20px 0 0;
-			display: flex;
-			justify-content: center;
 
 		}
 

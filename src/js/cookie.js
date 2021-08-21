@@ -2,7 +2,7 @@
 
 	if(cookie) {
 
-		cookie.querySelector('form').addEventListener('submit', function (e) {
+		cookie.addEventListener('submit', function (e) {
 
 			e.preventDefault();
 
