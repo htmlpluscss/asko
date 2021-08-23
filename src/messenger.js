@@ -58,13 +58,11 @@ function chatOpen(){
 	chat_div.scrollTop = chat_div.scrollHeight;
 }
 
-function chatClose(){
-	window.messenger.classList.remove('messenger--open');
-}
-
 function chatFocus(){
 	chat_input.focus();
 }
+
+window.messenger.querySelector('.messenger__btn-close').addEventListener('click', ()=> window.messenger.classList.remove('messenger--open'));
 
 const formFile = window.messenger.querySelector('.messenger__form-file');
 
