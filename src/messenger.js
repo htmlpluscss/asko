@@ -52,7 +52,7 @@ function chatInit(){
 }
 
 function chatOpen(){
-	if (open_chat) clearTimeout(open_chat), chatInit();
+	if (window.open_chat) clearTimeout(open_chat), chatInit();
 	window.messenger.classList.add('messenger--open');
 	setTimeout(chatFocus,1000);
 	chat_div.scrollTop = chat_div.scrollHeight;
@@ -62,86 +62,25 @@ function chatFocus(){
 	chat_input.focus();
 }
 
-window.messenger.querySelector('.messenger__btn-close').addEventListener('click', ()=> window.messenger.classList.remove('messenger--open'));
+( messenger => {
 
-const formFile = window.messenger.querySelector('.messenger__form-file');
+	// goal auto open
+	let dateOpen = null;
 
-formFile.addEventListener('change', ()=> {
+	// close
+	messenger.querySelector('.messenger__btn-close').addEventListener('click', ()=> {
 
-	fetch( 'messenger.php?ajax=' + Date.now(), {
-		method: 'POST',
-		body: new FormData(formFile)
-	})
-	.then(result => {
+		messenger.classList.remove('messenger--open');
 
-		formFile.reset();
-		chatRefresh();
+		if(dateOpen) {
 
-	});
+			let dateClose = new Date();
 
-});
+			console.log(dateClose - dateOpen);
 
-// быстрые вопросы в самом начале чата
-const fastText = window.messenger.querySelector('.message--fast-text');
+			if(dateClose - dateOpen < 5000) {
 
-fastText.addEventListener('click', event => {
-
-	if(event.target.closest('.message__btn')) {
-
-		chatUpload(window.messenger.querySelector('.messenger__form'), event.target.closest('.message__btn').textContent.trim());
-
-		fastText.remove();
-
-	}
-
-});
-
-// smile
-const btnSmile = window.messenger.querySelector('.messenger__btn-smile');
-
-btnSmile.addEventListener('click', () => window.messenger.classList.toggle('messenger--smile'));
-
-const addSmiles = window.messenger.querySelectorAll('.messenger__add-smile');
-
-Array.from(addSmiles, btn => {
-
-	btn.addEventListener('click', () => {
-
-		window.messenger.classList.remove('messenger--smile');
-
-		chat_input.value = chat_input.value + btn.textContent.trim();
-
-		chat_input.focus();
-
-	});
-
-});
-
-if (window.Clipboard) {
-
-	// поддержка ClipboardEvent API
-
-	chat_input.addEventListener("paste", event => {
-
-		const items = event.clipboardData.items;
-
-		if (items) {
-
-			for (let i = 0; i < items.length; i++) {
-
-				if (items[i].type.indexOf("image") !== -1) {
-
-					const imageBlob = items[i].getAsFile();
-
-					let formData = new FormData();
-					formData.append("file", imageBlob, "paste.png");
-
-					fetch( 'messenger.php?ajax=' + Date.now(), {
-						method: 'POST',
-						body: formData
-					});
-
-				}
+				ym(26526729,'reachGoal','messengerClose');
 
 			}
 
@@ -149,43 +88,156 @@ if (window.Clipboard) {
 
 	});
 
-}
+	// auto open
+	messenger.addEventListener('autoOpen', ()=> {
 
-// Drag'n'Drop
+		messenger.classList.add('messenger--open');
 
-chat.addEventListener('dragover', event => {
+		ym(26526729,'reachGoal','messengerOpenAuto');
 
-	event.preventDefault();
+		dateOpen = new Date();
 
-	window.messenger.classList.add('messenger--drag');
+	});
 
-});
+	// timer auto open
 
-chat.addEventListener('dragleave', () => {
+	if(messenger.getAttribute('data-auto-open')){
 
-	window.messenger.classList.remove('messenger--drag');
+		setTimeout( ()=> {
 
-});
+			chatOpen();
 
-chat.addEventListener('drop', event => {
+			messenger.dispatchEvent(new CustomEvent("autoOpen"));
 
-	event.preventDefault();
+		}, messenger.getAttribute('data-auto-open') * 1000);
 
-	window.messenger.classList.remove('messenger--drag');
+	}
 
-	let dt = event.dataTransfer;
-	let files = dt.files;
+	// input File
+	const formFile = messenger.querySelector('.messenger__form-file');
 
-	[...files].forEach( file => {
-
-		let formData = new FormData();
-		formData.append('file', file)
+	formFile.addEventListener('change', ()=> {
 
 		fetch( 'messenger.php?ajax=' + Date.now(), {
 			method: 'POST',
-			body: formData
+			body: new FormData(formFile)
+		})
+		.then(result => {
+
+			formFile.reset();
+			chatRefresh();
+
 		});
 
 	});
 
-});
+	// быстрые вопросы в самом начале чата
+	const fastText = messenger.querySelector('.message--fast-text');
+
+	fastText.addEventListener('click', event => {
+
+		if(event.target.closest('.message__btn')) {
+
+			chatUpload(messenger.querySelector('.messenger__form'), event.target.closest('.message__btn').textContent.trim());
+
+			fastText.remove();
+
+		}
+
+	});
+
+	// smile
+	const btnSmile = messenger.querySelector('.messenger__btn-smile');
+
+	btnSmile.addEventListener('click', () => messenger.classList.toggle('messenger--smile'));
+
+	const addSmiles = messenger.querySelectorAll('.messenger__add-smile');
+
+	Array.from(addSmiles, btn => {
+
+		btn.addEventListener('click', () => {
+
+			messenger.classList.remove('messenger--smile');
+
+			chat_input.value = chat_input.value + btn.textContent.trim();
+
+			chat_input.focus();
+
+		});
+
+	});
+
+	if (window.Clipboard) {
+
+		// поддержка ClipboardEvent API
+
+		chat_input.addEventListener("paste", event => {
+
+			const items = event.clipboardData.items;
+
+			if (items) {
+
+				for (let i = 0; i < items.length; i++) {
+
+					if (items[i].type.indexOf("image") !== -1) {
+
+						const imageBlob = items[i].getAsFile();
+
+						let formData = new FormData();
+						formData.append("file", imageBlob, "paste.png");
+
+						fetch( 'messenger.php?ajax=' + Date.now(), {
+							method: 'POST',
+							body: formData
+						});
+
+					}
+
+				}
+
+			}
+
+		});
+
+	}
+
+	// Drag'n'Drop
+
+	chat.addEventListener('dragover', event => {
+
+		event.preventDefault();
+
+		messenger.classList.add('messenger--drag');
+
+	});
+
+	chat.addEventListener('dragleave', () => {
+
+		messenger.classList.remove('messenger--drag');
+
+	});
+
+	chat.addEventListener('drop', event => {
+
+		event.preventDefault();
+
+		messenger.classList.remove('messenger--drag');
+
+		let dt = event.dataTransfer;
+		let files = dt.files;
+
+		[...files].forEach( file => {
+
+			let formData = new FormData();
+			formData.append('file', file)
+
+			fetch( 'messenger.php?ajax=' + Date.now(), {
+				method: 'POST',
+				body: formData
+			});
+
+		});
+
+	});
+
+})(window.messenger);

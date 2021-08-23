@@ -6,11 +6,12 @@
 	<title>ASKO messenger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/css/messenger.css" rel="stylesheet">
+	<script defer src=/js/messenger.js></script>
 </head>
 
 <body style="background-color: #f8f8f8">
 
-<div class="messenger" id="messenger">
+<div class="messenger" id="messenger" data-auto-open="1">
 
 	<div class="messenger__chat" id="chat">
 
@@ -824,14 +825,6 @@
 	</button>
 
 </div>
-
-<script src=/js/messenger.js></script>
-
-<script>
-
-	open_chat = setTimeout(chatOpen,1000);
-
-</script>
 
 </body>
 </html>
