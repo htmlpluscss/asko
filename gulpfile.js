@@ -34,14 +34,13 @@ const gulpif           = require('gulp-if');
 const remember         = require('gulp-remember');
 
 const debug            = require('gulp-debug');
-const touch            = require('gulp-touch');
 
 const w3cjs            = require('gulp-w3cjs');
 const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.wndrbase.com';
+const domain           = 'asko.htmlpluscss.website';
 
 try {
 
@@ -81,7 +80,14 @@ gulp.task('html', function() {
 
 gulp.task('html-touch', function() {
 	return gulp.src('src/**/index.html')
-		.pipe(touch());
+		.pipe(plumber())
+		.pipe(nunjucksRender({
+			data: {
+				url: 'https://' + domain
+			},
+			path: 'src/'
+		}))
+		.pipe(gulp.dest('build'))
 
 });
 

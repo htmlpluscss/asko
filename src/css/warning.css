@@ -1,0 +1,45 @@
+.warning {
+
+	top: 80px;
+	padding: 30px 0;
+	position: relative;
+
+	@media ($mdWidth) {
+
+		padding: 20px 0;
+		top: 60px;
+
+	}
+
+	@media ($smWidth) {
+
+		padding: 16px;
+
+	}
+
+	&__text {
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: center;
+		color: var(--red);
+		font-size: 20px;
+
+		@media ($mdWidth) {
+
+			text-align: right;
+
+		}
+
+		@media ($smWidth) {
+
+			text-align: center;
+			font-size: 16px;
+			flex-direction: column-reverse;
+
+		}
+
+	}
+
+}
