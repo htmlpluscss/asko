@@ -111,6 +111,25 @@ details {
 
 }
 
+.details-icon {
+
+	width: 36px;
+	height: 36px;
+	display: block;
+
+	summary {
+
+		svg {
+
+			fill: #fff;
+			width: 36px;
+			height: 36px;
+
+		}
+
+	}
+
+}
 
 @keyframes opacity {
 	from {

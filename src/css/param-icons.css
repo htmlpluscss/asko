@@ -1,0 +1,13 @@
+.param-icons {
+
+	display: flex;
+	margin: -6px;
+	flex-wrap: wrap;
+
+	&__item {
+
+		margin: 6px;
+
+	}
+
+}

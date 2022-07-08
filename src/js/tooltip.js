@@ -18,7 +18,11 @@
 
 			const btn = tooltip.querySelector('summary');
 
-			btn.appendChild(ico.cloneNode(true));
+			if ( tooltip.className.length === 0 ) {
+
+				btn.appendChild(ico.cloneNode(true));
+
+			}
 
 			observer.observe(tooltip, {
 
