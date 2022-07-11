@@ -53,6 +53,10 @@
 
 		}
 
+		// удалить видео
+
+		document.querySelector('#modal-video').innerHTML = '';
+
 	};
 
 	ASKO.modalShow = function (selector) {
@@ -65,7 +69,7 @@
 
 		});
 
-		modal.classList.toggle('is-full', selector === 'gallery');
+		modal.classList.toggle('is-full', selector === 'gallery' || selector === 'video');
 
 		ASKO.windowScrollOld = window.pageYOffset;
 

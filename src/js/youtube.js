@@ -1,3 +1,37 @@
+// видео иконкой, запус в попап
+
+(function(youtube){
+
+	if(youtube.length) {
+
+		[...youtube].forEach( link => {
+
+			const id = link.getAttribute('data-id');
+
+			link.addEventListener('click', event => {
+
+				event.preventDefault();
+
+				const iframe = document.createElement('iframe');
+
+				iframe.setAttribute('allowfullscreen', '');
+				iframe.setAttribute('allow', 'autoplay');
+				iframe.setAttribute('src', 'https://www.youtube.com/embed/' + id + '?rel=0&showinfo=0&autoplay=1');
+
+				document.querySelector('#modal-video').appendChild(iframe);
+
+				ASKO.modalShow("video");
+
+			});
+
+		});
+
+	}
+
+})(document.querySelectorAll('.youtube-ico'));
+
+// видео в описании
+
 (function(youtube){
 
 	if(youtube.length) {
