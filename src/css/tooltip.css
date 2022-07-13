@@ -116,14 +116,23 @@ details {
 	width: 36px;
 	height: 36px;
 	display: block;
+	border-radius: 5px;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cpath fill='%237B7C7F' d='M0 5.25C0 2.35 2.35 0 5.25 0H12a.75.75 0 0 1 0 1.5H5.25A3.75 3.75 0 0 0 1.5 5.25v25.5a3.75 3.75 0 0 0 3.75 3.75h25.5a3.75 3.75 0 0 0 3.75-3.75V5.25a3.75 3.75 0 0 0-3.75-3.75h-6a.75.75 0 0 1 0-1.5h6C33.65 0 36 2.35 36 5.25v25.5c0 2.9-2.35 5.25-5.25 5.25H5.25A5.25 5.25 0 0 1 0 30.75V5.25Z'/%3E%3C/svg%3E");
 
 	summary {
 
 		svg {
 
-			fill: #fff;
+			fill: #333;
 			width: 36px;
 			height: 36px;
+
+			[stroke-width] {
+
+				stroke: #333;
+
+			}
 
 		}
 
