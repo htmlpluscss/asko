@@ -24,6 +24,12 @@
 
 		gallery.addEventListener('click', function(e) {
 
+			if(e.target.closest('.product__energ')) {
+
+				return;
+
+			}
+
 			if(e.target.closest('a')) {
 
 				e.preventDefault();
