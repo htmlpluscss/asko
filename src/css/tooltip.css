@@ -61,7 +61,7 @@ details {
 		line-height: 16px;
 		background-color: #fff;
 		border-radius: 5px;
-		box-shadow: 0 0 4px color(var(--color) a(50%)));
+		box-shadow: 0 0 4px color(var(--color) a(50%));
 
 	}
 
@@ -79,7 +79,7 @@ details {
 		transform: rotate(45deg);
 		pointer-events: none;
 		opacity: 0;
-		box-shadow: 0 0 4px color(var(--color) a(50%)));
+		box-shadow: 0 0 4px color(var(--color) a(50%));
 
 	}
 
@@ -135,6 +135,21 @@ details {
 			}
 
 		}
+
+	}
+
+}
+
+.details-img {
+
+	width: auto;
+	height: auto;
+
+	summary {
+
+		width: auto;
+		height: auto;
+		display: inline-block;
 
 	}
 

@@ -9,8 +9,22 @@
 
 		let observer = new MutationObserver(mutationRecords => {
 
-			const t = mutationRecords[0].target,
+			const t = mutationRecords[0].target.querySelector('div'),
 				  rect = t.getBoundingClientRect();
+
+			if(document.documentElement.clientWidth < rect.right) {
+
+				// левее
+
+				t.style.marginLeft = document.documentElement.clientWidth - rect.right + 'px';
+
+			} else if(rect.left < 0) {
+
+				// правее
+
+				t.style.marginLeft = -rect.left + 'px';
+
+			}
 
 		});
 

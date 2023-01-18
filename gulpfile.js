@@ -106,7 +106,7 @@ gulp.task('css', function () {
 			.pipe(gulp.dest('build/css'))
 			.pipe(postcss([
 				autoprefixer({
-					browsers: 'Android >= 4.4'
+					browsers: 'Android >= 5'
 				})
 			]))
 			.pipe(csso())
