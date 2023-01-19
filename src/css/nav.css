@@ -2,7 +2,8 @@
 
 	.menu-open {
 
-		.main {
+		.main,
+		.warning {
 
 			display: none;
 

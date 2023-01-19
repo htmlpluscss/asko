@@ -1,0 +1,41 @@
+.btn-fixed {
+
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	z-index: 9;
+	background-color: #fff;
+	fill: #d50427;
+	box-shadow: 0 0 10px rgba(57, 57, 57, .5);
+	border-radius: 5px 0 0 5px;
+	overflow: hidden;
+
+	&__btn {
+
+		padding: 8px 10px;
+		fill: #d50427;
+		display: block;
+		transition: .3s;
+
+		&:hover {
+
+			fill: #393939;
+
+		}
+
+	}
+
+	&__item:first-child &__btn {
+
+		padding-top: 12px;
+
+	}
+
+	&__item:last-child &__btn {
+
+		padding-bottom: 12px;
+
+	}
+
+}
