@@ -40,7 +40,7 @@ const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.htmlpluscss.website';
+const domain           = 'asko.htmlpluscss.site';
 
 try {
 
@@ -55,7 +55,7 @@ try {
 
 }
 
-gulp.task('html', function() {
+gulp.task('html', ()=> {
 
 	const f = filter('**/*.html', {restore: true});
 
@@ -68,8 +68,10 @@ gulp.task('html', function() {
 			},
 			path: 'src/'
 		}))
-//		.pipe(w3cjs())
-//		.pipe(w3cjs.reporter())
+		.pipe(w3cjs({
+			url : 'https://validator.w3.org/nu/'
+		}))
+		.pipe(w3cjs.reporter())
 
 		.pipe(f)
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
@@ -78,7 +80,8 @@ gulp.task('html', function() {
 
 });
 
-gulp.task('html-touch', function() {
+gulp.task('html-touch', ()=> {
+
 	return gulp.src('src/**/index.html')
 		.pipe(plumber())
 		.pipe(nunjucksRender({
@@ -91,7 +94,7 @@ gulp.task('html-touch', function() {
 
 });
 
-gulp.task('css', function () {
+gulp.task('css',  ()=> {
 
 	return gulp.src('src/css/style.css')
 			.pipe(plumber())
@@ -115,7 +118,7 @@ gulp.task('css', function () {
 
 });
 
-gulp.task('js', function() {
+gulp.task('js', ()=> {
 
 	return gulp.src([
 
@@ -159,7 +162,7 @@ gulp.task('js', function() {
 
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', ()=> {
 
 // min copy
 	gulp.src([
@@ -173,22 +176,16 @@ gulp.task('serve', function() {
 		files: [
 			{
 				match: ['build/**/*.*', '!build/**/*.min.{css,js}'],
-				fn: function (event, file) {
-					this.reload()
-				}
+				fn: server.reload()
 			}
 		]
 	});
 
 });
 
-gulp.task('clear', function() {
+gulp.task('clear', ()=> del('build'));
 
-	return del('build');
-
-});
-
-gulp.task('copy', function() {
+gulp.task('copy', ()=> {
 
 	return gulp.src(['src/**/*.*', '!src/**/*.{css,html,js}'])
 			.pipe(debug({title: 'copy:'}))
@@ -198,7 +195,7 @@ gulp.task('copy', function() {
 
 });
 
-gulp.task('ftp', function () {
+gulp.task('ftp',  ()=> {
 
 	if(!config) {
 
@@ -218,7 +215,7 @@ gulp.task('ftp', function () {
 
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ()=> {
 	gulp.watch('src/js/*.*', gulp.series('js'));
 	gulp.watch('src/css/*.*', gulp.series('css'));
 	gulp.watch('src/**/index.html', gulp.series('html'));
@@ -236,7 +233,7 @@ gulp.task('default', gulp.series(
 	));
 
 
-gulp.task('proxy', function() {
+gulp.task('proxy', ()=> {
 
 	gulp.src([
 		'src/js/min/swiper.min.js',
@@ -253,19 +250,15 @@ gulp.task('proxy', function() {
 		rewriteRules: [
 			{
 				match: new RegExp('/css/styles.css', 'g'),
-				fn: function() {
-					return '/build/proxy.css';
-				}
+				fn: '/build/proxy.css'
 			},
 			{
 				match: new RegExp('/js/scripts.js', 'g'),
-				fn: function() {
-					return '/build/proxy.js';
-				}
+				fn: '/build/proxy.js'
 			},
 			{
 				match: new RegExp('\<a href="/zakaz/" class="header__cart"[^>]*>(.|\n|\r)*?\<\/a\>'),
-				fn: function() {
+				fn: ()=> {
 					return `
 
 					<a href="/zakaz/" class="header__cart header__cart--empty" data-empty="Корзина пуста">
@@ -287,13 +280,11 @@ gulp.task('proxy', function() {
 		files: [
 			{
 				match: ['build/**/*.*'],
-				fn: function (event, file) {
-					this.reload();
-				}
+				fn: server.reload()
 			},
 			{
 				match: ['src/js/*.js'],
-				fn: function (event, file) {
+				fn: (event, file)=> {
 					return gulp.src([
 							'src/js/min/*.js',
 							'!src/js/min/swiper.min.js',
@@ -311,7 +302,7 @@ gulp.task('proxy', function() {
 			},
 			{
 				match: ['src/css/*.css'],
-				fn: function (event, file) {
+				fn: (event, file)=> {
 					return gulp.src('src/css/style.css')
 						.pipe(plumber())
 						.pipe(sourcemaps.init())

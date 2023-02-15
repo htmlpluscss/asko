@@ -18,9 +18,13 @@
 		display: block;
 		transition: .3s;
 
-		&:hover {
+		@media ($desktop) {
 
-			fill: #393939;
+			&:hover {
+
+				fill: #393939;
+
+			}
 
 		}
 
@@ -35,6 +39,14 @@
 	&__item:last-child &__btn {
 
 		padding-bottom: 12px;
+
+	}
+
+	.menu-open &,
+	.modal-show &,
+	.messenger--open & {
+
+		display: none;
 
 	}
 
