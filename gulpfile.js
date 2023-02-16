@@ -72,7 +72,6 @@ gulp.task('html', ()=> {
 			url : 'https://validator.w3.org/nu/'
 		}))
 		.pipe(w3cjs.reporter())
-
 		.pipe(f)
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
