@@ -124,6 +124,8 @@
 
 		&-left {
 
+			flex-grow: 1;
+
 			@media ($smWidth) {
 
 				.table-scroll {
@@ -151,11 +153,21 @@
 		&-right {
 
 			display: flex;
-			align-items: flex-end;
+			flex-direction: column;
+			padding-left: 20px;
+
+			&-foot {
+
+				display: flex;
+				margin-top: 18px;
+
+			}
 
 			@media ($smWidth) {
 
 				display: block;
+				padding-left: 0;
+				margin-top: 20px;
 
 			}
 
@@ -222,9 +234,6 @@
 
 	&__cart {
 
-		flex-shrink: 0;
-		white-space: nowrap;
-
 		&.in-cart::after {
 
 			display: block;
@@ -247,39 +256,35 @@
 
 	&__btn {
 
-		display: flex;
-		justify-content: flex-end;
 
-		@media ($smWidth) {
+	}
 
-			justify-content: flex-start;
-			margin-top: 14px;
+	&__available {
 
-		}
+		white-space: nowrap;
 
 	}
 
 	&__price {
 
 		display: flex;
-		align-items: center;
-		justify-content: flex-end;
+		flex-wrap: wrap;
 		color: #000;
 		font-size: 24px;
-		margin-bottom: 18px;
+		margin-top: auto;
 
 		@media ($smWidth) {
 
-			justify-content: flex-start;
 			margin: 10px 0;
 
 		}
 
-		&-pref {
+		&-old {
 
 			font-size: 18px;
 			color: #333;
-			margin-right: 8px;
+			display: flex;
+			width: 100%;
 
 		}
 

@@ -362,21 +362,27 @@
 
 		@media ($smWidth) {
 
-			font-size: 20px;
+			font-size: 18px;
 
 		}
 
-		.rub,
 		&-value {
 
 			color: var(--red);
 			font-size: 31px;
+			margin: 0 8px;
 
 			@media ($smWidth) {
 
 				font-size: 26px;
 
 			}
+
+		}
+
+		&-old {
+
+			font-weight: 500;
 
 		}
 
