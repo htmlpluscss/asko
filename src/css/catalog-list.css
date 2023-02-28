@@ -267,8 +267,6 @@
 
 	&__price {
 
-		display: flex;
-		flex-wrap: wrap;
 		color: #000;
 		font-size: 24px;
 		margin-top: auto;
@@ -279,12 +277,17 @@
 
 		}
 
+		&-value {
+
+			display: block;
+
+		}
+
 		&-old {
 
 			font-size: 18px;
 			color: #333;
-			display: flex;
-			width: 100%;
+			display: block;
 
 		}
 
