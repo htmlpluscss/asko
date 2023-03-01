@@ -21,7 +21,7 @@
 
 			<div class="product__primary">
 
-{% include "catalog/product/desc.html" %}
+{% include "catalog/product/not/desc.html" %}
 
 {% include "catalog/product/img.html" %}
 
@@ -65,6 +65,20 @@
 			</div>
 
 		</div>
+
+		<section class="order-4 related" id="related">
+
+			<h2 class="related__title h2">
+				Похожие товары
+			</h2>
+
+{% include "catalog/catalog-item.html" %}
+{% set unavailable = "под заказ от 2-х дней" %}
+{% include "catalog/catalog-item.html" %}
+{% set unavailable = "Нет в наличии" %}
+{% include "catalog/catalog-item.html" %}
+
+		</section>
 
 	</article>
 

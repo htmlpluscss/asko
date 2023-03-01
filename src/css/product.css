@@ -779,6 +779,49 @@
 
 	}
 
+	&__not {
+
+		margin: 24px 0;
+
+		&-text {
+
+			color: var(--red);
+			font-weight: 500;
+
+			font-size: 24px;
+			line-height: 40px;
+
+			@media ($smWidth) {
+
+				font-size: 18px;
+
+			}
+
+		}
+
+		&-btn {
+
+			display: flex;
+			margin: 12px 0;
+
+		}
+
+		&-info {
+
+			font-size: 16px;
+			font-weight: 500;
+
+			a {
+
+				white-space: nowrap;
+				font-weight: 600;
+
+			}
+
+		}
+
+	}
+
 }
 
 .youtube-modal-gallery {
@@ -878,5 +921,12 @@
 		content: attr(data-remove);
 
 	}
+
+}
+
+.related {
+
+	margin: 40px 0;
+	scroll-margin: 80px;
 
 }
