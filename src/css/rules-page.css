@@ -1,0 +1,123 @@
+.rules-page {
+
+	font-size: 16px;
+	counter-reset: h2;
+	margin-bottom: 128px;
+
+	header {
+
+		text-align: center;
+
+		p {
+
+			font-weight: 500;
+			margin: 20px 0;
+			font-size: 18px;
+
+		}
+
+		time {
+
+			display: block;
+			text-align: right;
+
+		}
+
+	}
+
+	h2 {
+
+		text-align: center;
+		margin: 36px 0 24px;
+		font-weight: 500;
+		font-size: 22px;
+
+		&::before {
+
+			counter-increment: h2;
+			content: counter(h2) ". ";
+
+		}
+
+	}
+
+	p, ol, ul {
+
+		margin: 24px 0;
+
+		b {
+
+			font-weight: 600;
+
+		}
+
+	}
+
+	ul {
+
+		li::before {
+
+			content: '- ';
+
+		}
+
+	}
+
+	ol {
+
+		counter-reset: ol;
+
+		li {
+
+			&::before {
+
+				counter-increment: ol;
+				font-weight: 600;
+				content: counter(h2) "." counters(ol,".") ".";
+
+			}
+
+			ol {
+
+				margin: 0;
+
+			}
+
+			ul {
+
+				margin: 0;
+
+				li::before {
+
+					counter-increment: none;
+					content: "- ";
+					font-weight: 400;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	table {
+
+		td, th {
+
+			vertical-align: top;
+			padding-bottom: 6px;
+
+		}
+
+		th {
+
+			text-align: left;
+			font-weight: 600;
+			padding-right: 20px;
+
+		}
+
+	}
+
+}
