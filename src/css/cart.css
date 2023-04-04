@@ -423,6 +423,16 @@
 
 		.input-row {
 
+			&--rules {
+
+				a {
+
+					color: inherit;
+
+				}
+
+			}
+
 			&__label {
 
 				width: 170px;

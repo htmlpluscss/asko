@@ -166,23 +166,38 @@
 			}
 			else {
 
-				var inputError = form.querySelector('.input-row__input--error');
+				var checkboxError = form.querySelector('.checkbox--error');
 
-				if(textError && inputError.getAttribute('data-error')) {
+				if ( checkboxError ) {
 
-					textError.textContent = inputError.getAttribute('data-error');
+					if(!ASKO.isInViewport(checkboxError)){
 
-				}
+						checkboxError.closest('.input-row').scrollIntoView("smooth");
 
-				if(!ASKO.isInViewport(inputError)){
-
-					inputError.closest('.input-row').scrollIntoView("smooth");
+					}
 
 				}
+				else {
 
-				if(inputError && inputError.querySelector('.input--error') && inputError.querySelector('.input--error').type === 'text'){
+					var inputError = form.querySelector('.input-row__input--error');
 
-					inputError.querySelector('.input--error').focus();
+					if(textError && inputError.getAttribute('data-error')) {
+
+						textError.textContent = inputError.getAttribute('data-error');
+
+					}
+
+					if(!ASKO.isInViewport(inputError)){
+
+						inputError.closest('.input-row').scrollIntoView("smooth");
+
+					}
+
+					if(inputError && inputError.querySelector('.input--error') && inputError.querySelector('.input--error').type === 'text'){
+
+						inputError.querySelector('.input--error').focus();
+
+					}
 
 				}
 

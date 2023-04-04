@@ -231,6 +231,7 @@ fieldset {
 	position: relative;
 	cursor: pointer;
 	font-size: 14px;
+	user-select: none;
 	line-height: 20px;
 
 	&__label {
@@ -294,9 +295,36 @@ fieldset {
 
 	}
 
-	&--error &__label::before {
+	&--error:not([data-error]) &__label::before {
 
 		background-color: var(--error);
+
+	}
+
+	&--error[data-error]::after {
+
+		content: attr(data-error);
+		color: var(--red);
+		display: block;
+		font-size: 12px;
+		line-height: 14px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		padding: 4px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		@media ($smWidth) {
+
+			position: relative;
+			top: 0;
+			white-space: normal;
+			display: block;
+
+		}
 
 	}
 
