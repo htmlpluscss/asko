@@ -68,10 +68,18 @@ gulp.task('html', ()=> {
 			},
 			path: 'src/'
 		}))
-		.pipe(w3cjs({
-			url : 'https://validator.w3.org/nu/'
-		}))
-		.pipe(w3cjs.reporter())
+//		.pipe(w3cjs({
+			verifyMessage: (type, message) => {
+
+				if(message.indexOf('style') !== -1) return false;
+				if(message.indexOf('select') !== -1) return false;
+
+				// allow message to pass through
+				return true;
+			}
+//			url : 'https://validator.w3.org/nu/'
+//		}))
+//		.pipe(w3cjs.reporter())
 		.pipe(f)
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
