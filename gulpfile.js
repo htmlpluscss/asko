@@ -40,7 +40,7 @@ const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.htmlpluscss.site';
+const domain           = 'miele.htmlpluscss.site';
 
 try {
 
