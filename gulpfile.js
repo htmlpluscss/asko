@@ -153,12 +153,6 @@ gulp.task('js', ()=> {
 		.pipe(gulp.dest('build/js'))
 		.pipe(gulp.dest('min'))
 
-
-// dev, off minify
-	/*	.pipe(gulp.dest('build/js'))
-		.pipe(rename({suffix: ".min"}))
-		.pipe(gulp.dest('build/js'))*/
-
 });
 
 gulp.task('serve', ()=> {
