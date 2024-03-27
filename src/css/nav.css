@@ -173,7 +173,7 @@
 			padding-left: 24px;
 			height: 40px;
 			line-height: 40px;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23393939' d='M176.9,256l30.2-30.2L109.3,128l97.8-97.8L176.9,0l-128,128L176.9,256z'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23231f20' d='M176.9,256l30.2-30.2L109.3,128l97.8-97.8L176.9,0l-128,128L176.9,256z'/%3E%3C/svg%3E");
 			background-position: left;
 			background-repeat: no-repeat;
 
@@ -230,7 +230,7 @@
 				@media ($smWidth) {
 
 					right: -5px;
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23393939' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23231f20' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
 
 				}
 
@@ -372,7 +372,7 @@
 
 			&--arrow::after {
 
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23393939' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23231f20' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
 
 			}
 
@@ -407,7 +407,7 @@
 			bottom: 0;
 			content: '';
 			width: 14px;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23393939' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' heigh='14' viewBox='0 0 256 256'%3E%3Cpath fill='%23231f20' d='M79.093 0L48.907 30.187 146.72 128l-97.813 97.813L79.093 256l128-128z'/%3E%3C/svg%3E");
 			background-position: left;
 			background-repeat: no-repeat;
 

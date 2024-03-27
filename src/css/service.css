@@ -75,7 +75,7 @@
 
 	&__logo {
 
-		fill: var(--red);
+		fill: var(--color);
 		margin-left: -12px;
 
 		@media ($smWidth) {

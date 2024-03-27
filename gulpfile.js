@@ -40,7 +40,7 @@ const svgSprite        = require('gulp-svg-sprite');
 
 let config             = null;
 
-const domain           = 'asko.htmlpluscss.site';
+const domain           = 'asko.htmlpluscss.website';
 
 try {
 
@@ -68,10 +68,10 @@ gulp.task('html', ()=> {
 			},
 			path: 'src/'
 		}))
-		.pipe(w3cjs({
-			url : 'https://validator.w3.org/nu/'
-		}))
-		.pipe(w3cjs.reporter())
+//		.pipe(w3cjs({
+//			url : 'https://validator.w3.org/nu/'
+//		}))
+//		.pipe(w3cjs.reporter())
 		.pipe(f)
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))

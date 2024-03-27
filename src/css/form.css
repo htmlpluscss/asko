@@ -13,13 +13,6 @@
 
 	}
 
-	/* IE10+ CSS styles go here */
-	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-		overflow: visible;
-
-	}
-
 	&:disabled {
 
 		pointer-events: none;
@@ -60,13 +53,6 @@
 		border-radius: 2px;
 		filter: blur(2px);
 		opacity: .8;
-
-		/* IE10+ CSS styles go here */
-		@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-			display: none;
-
-		}
 
 	}
 

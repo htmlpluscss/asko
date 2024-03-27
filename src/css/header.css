@@ -34,13 +34,6 @@
 
 		}
 
-		/* IE10+ CSS styles go here */
-		@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-			margin-right: auto;
-
-		}
-
 	}
 
 	&__right {
@@ -195,7 +188,7 @@
 
 			path {
 
-				fill: var(--red);
+				fill: var(--color);
 
 			}
 
