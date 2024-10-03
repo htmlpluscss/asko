@@ -6,41 +6,66 @@
 
 	}
 
+	const toggleForm = (form, buy) => {
+
+		const btn = form.querySelector('.btn');
+
+		btn.disabled = false;
+		btn.classList.toggle('btn--gray', buy);
+		btn.textContent = btn.getAttribute('data-' + ( buy ? 'delete' : 'buy' ) );
+		form.elements.mode.value = ( buy ? 'del' : 'add' );
+
+	}
+
 	Array.prototype.forEach.call(forms, function(btn){
 
-		var form = btn.closest('form');
+		const form = btn.closest('form');
+
+		const productScroll = document.querySelector('.product-scroll');
 
 		form.addEventListener('submit',function(e){
 
 			e.preventDefault();
 
-			var buy = !form.classList.contains('in-cart');
+			const buy = !form.classList.contains('in-cart');
 
 			btn.disabled = true;
 
 			// send form
 
-			var formData = new FormData(form),
+			const formData = new FormData(form),
 				xhr = new XMLHttpRequest();
 
 			xhr.open("POST", form.getAttribute('action') + 'ajax/');
 
 			xhr.onreadystatechange = function() {
 
-				if (xhr.readyState != 4){
+				if (xhr.readyState !== 4){
 
 					return;
 
 				}
 
-				btn.disabled = false;
-				btn.classList.toggle('btn--gray', buy);
-				btn.textContent = btn.getAttribute('data-' + ( buy ? 'delete' : 'buy' ) );
-				form.querySelector('input[name="mode"]').value = ( buy ? 'del' : 'add' );
+				toggleForm(form, buy);
+
+				if ( productScroll ) {
+
+					if ( form === productScroll ) {
+
+						toggleForm(document.querySelector('.product__cart'), buy);
+
+					}
+					else {
+
+						toggleForm(productScroll, buy);
+
+					}
+
+				}
 
 				if(buy) {
 
-					document.querySelector('.modal-product-in-cart').textContent = form.querySelector('input[name="product-name"]').value;
+					document.querySelector('.modal-product-in-cart').textContent = form.elements.mode.value;
 
 					ASKO.modalShow('product-in-cart');
 
