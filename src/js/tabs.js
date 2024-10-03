@@ -21,7 +21,7 @@ ASKO.tabs = function(elems){
 
 			nav.appendChild(_btn);
 
-			el.classList.add('hide');
+			el.classList.add('h2');
 
 			_btn.addEventListener('click',function(){
 
