@@ -1,0 +1,36 @@
+.faq {
+
+	&__item {
+
+		margin: 20px 0;
+
+	}
+
+	&__head {
+
+		font-weight: 500;
+		font-size: 16px;
+		color: #7e7e7e;
+
+		&::before {
+
+			content: "\275D";
+
+		}
+
+		&::after {
+
+			content: "\275E";
+
+		}
+
+	}
+
+	&__body {
+
+		font-size: 16px;
+		margin: 10px;
+
+	}
+
+}
