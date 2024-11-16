@@ -101,6 +101,7 @@
 		font-weight: 400;
 		margin-bottom: 10px;
 		text-transform: none;
+		text-wrap: balance;
 
 		@media ($mdWidth) {
 
@@ -193,6 +194,14 @@
 			display: flex;
 
 		}
+
+	}
+
+	&__text {
+
+		max-width: 500px;
+		text-align: justify;
+		margin: 10px 0;
 
 	}
 

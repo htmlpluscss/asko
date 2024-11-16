@@ -207,4 +207,22 @@
 
 	}
 
+	.column-count-2 {
+
+		column-count: 2;
+
+		@media ($mdWidth) {
+
+			column-count: auto;
+
+		}
+
+		li {
+
+			break-inside: avoid;
+
+		}
+
+	}
+
 }

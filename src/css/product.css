@@ -21,6 +21,8 @@
 
 	&__title {
 
+		text-wrap: balance;
+
 		@media ($mdWidth) {
 
 			margin: 0 0 20px;

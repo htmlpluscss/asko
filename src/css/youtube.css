@@ -144,7 +144,7 @@
 
 }
 
-.video-text {
+.figure-row {
 
 	display: flex;
 	gap: 20px;
@@ -156,11 +156,20 @@
 
 	}
 
-	&__video {
+	&__main {
 
 		width: 360px;
 		flex-shrink: 0;
 		margin: 0;
+
+		img,
+		video {
+
+			width: 100%;
+			height: auto;
+			display: block;
+
+		}
 
 		@media ($smWidth) {
 
@@ -176,7 +185,7 @@
 
 	}
 
-	&__text {
+	&__figcaption {
 
 		margin: 0 !important;
 
