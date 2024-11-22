@@ -2,6 +2,8 @@
 
 		<div class="modal__box">
 
+{% include "template/filter.html" %}
+
 			<form action="feedback.php?exec" method="post" target="feedback_done" class="modal__item modal__item--callback form" data-ok-modal="Мы Вам перезвоним." novalidate="novalidate">
 
 				<input type="hidden" name="order[Memo]" value="Прошу перезвонить">

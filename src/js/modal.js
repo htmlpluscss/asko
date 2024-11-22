@@ -101,7 +101,7 @@
 
 	document.addEventListener('click', function (e) {
 
-		var target = e.target;
+		let target = e.target;
 
 		while (target !== this) {
 

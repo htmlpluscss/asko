@@ -1,61 +1,48 @@
 .filter {
 
-	@media ($smWidth) {
+	&-fast {
 
-		margin-top: 20px;
-
-	}
-
-	&__btn-toggle {
-
+		border-top: 1px solid #d4d4d4;
+		border-bottom: 1px solid #d4d4d4;
+		padding: 16px;
+		margin: 20px 0;
 		display: flex;
-		justify-content: flex-end;
-		max-height: 100px;
+		gap: 24px;
 
-		@media ($smWidth) {
+		&__fieldset {
 
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
 			justify-content: center;
 
 		}
 
-		.btn {
+		&__checkbox {
 
-			padding: 0 14px 0 40px;
-			text-decoration: none !important;
-			font-size: 16px;
-			line-height: 38px;
-			box-shadow: inset 1px 1px 0 #fff, 1px 1px 0 #fff;
-			border: 1px solid #d4d4d4;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
 
-			&::after,
-			span::after,
-			span::before {
+		}
 
-				position: absolute;
-				height: 2px;
-				content: '';
-				background-color: #d4d4d4;
-				border-bottom: 2px solid #fff;
+		hr {
 
-				top: 19px;
-				left: 15px;
-				width: 12px;
+			width: 1px;
+			height: auto;
 
-			}
+		}
 
-			span::after {
+		&__foot {
 
-				top: 13px;
-				left: 12px;
-				width: 18px;
+			display: flex;
+			gap: 20px;
+			align-self: center;
 
-			}
+			.btn {
 
-			span::before {
-
-				top: 25px;
-				left: 18px;
-				width: 6px;
+				font-size: 16px;
+				padding: 0;
 
 			}
 
@@ -63,38 +50,44 @@
 
 	}
 
-	&__body {
+	&__open-full {
 
-		overflow: hidden;
-		position: relative;
-		max-height: 0;
-		opacity: 0;
-		transition: .5s ease;
-		padding: 0 20px !important;
+		padding: 0 14px 0 40px !important;
+		text-decoration: none !important;
+		font-size: 16px;
+		line-height: 38px;
+		box-shadow: inset 1px 1px 0 #fff, 1px 1px 0 #fff;
+		border: 1px solid #d4d4d4;
 
-		@media ($smWidth) {
+		&::after,
+		span::after,
+		span::before {
 
-			margin: 0 15px;
+			position: absolute;
+			height: 2px;
+			content: '';
+			background-color: #d4d4d4;
+			border-bottom: 2px solid #fff;
+
+			top: 19px;
+			left: 15px;
+			width: 12px;
 
 		}
 
-		@media ($xsWidth) {
+		span::after {
 
-			margin: 0 10px;
+			top: 13px;
+			left: 12px;
+			width: 18px;
 
 		}
 
-	}
+		span::before {
 
-	&.is-open &__body {
-
-		max-height: 1000px;
-		opacity: 1;
-		padding: 20px 20px !important;
-
-		@media ($xsWidth) {
-
-			padding: 15px !important;
+			top: 25px;
+			left: 18px;
+			width: 6px;
 
 		}
 
@@ -102,41 +95,8 @@
 
 	&__range {
 
-		overflow: hidden;
 		position: relative;
-		max-height: 40px;
-		transition: .5s ease;
 		padding: 5px 0 15px;
-		opacity: 0;
-
-		@media ($smWidth) {
-
-			max-height: 0;
-			padding: 0;
-
-		}
-
-	}
-
-	&__range &__label {
-
-		min-width: 0;
-
-	}
-
-	&.is-open &__range {
-
-		opacity: 1;
-		max-height: 200px;
-
-	}
-
-	&.is-open &__btn-toggle {
-
-		overflow: hidden;
-		max-height: 0;
-		opacity: 0;
-		transition: .5s ease;
 
 	}
 
@@ -153,34 +113,22 @@
 
 	}
 
+	&-modal {
+
+		padding: 24px;
+
+	}
+
 	&__foot {
 
 		display: flex;
-		justify-content: flex-end;
+		gap: 24px;
+		justify-content: center;
 		margin-top: 10px;
 
-		@media ($smWidth) {
+		.btn {
 
-			justify-content: center;
-			margin: 20px 0 10px;
-
-		}
-
-		.btn + .btn {
-
-			margin-left: 20px;
-
-		}
-
-		@media ($xsWidth) {
-
-			.btn {
-
-				padding: 0 10px;
-
-			}
-
-			justify-content: center;
+			margin: 0;
 
 		}
 
@@ -215,11 +163,9 @@
 
 	&__label {
 
-		min-width: 90px;
-		padding-right: 20px;
-		font-size: 18px;
-		line-height: 22px;
-		flex-shrink: 0;
+		font-size: 16px;
+		margin-bottom: 10px;
+		display: block;
 
 	}
 
@@ -353,7 +299,11 @@
 
 	&__checkbox {
 
-		margin: 10px 0;
+		.checkbox {
+
+			margin: 10px 0;
+
+		}
 
 	}
 

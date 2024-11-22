@@ -1067,3 +1067,45 @@
 	}
 
 }
+
+.files-list {
+
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr;
+
+	@media ($smWidth) {
+
+		display: block;
+
+	}
+
+	li {
+
+		list-style: none;
+		padding: 0 !important;
+
+		&::before {
+
+			display: none;
+
+		}
+
+	}
+
+	.link {
+
+		display: flex;
+		gap: 20px;
+		align-items: center;
+
+		&::before {
+
+			margin: 0;
+			flex-shrink: 0;
+
+		}
+
+	}
+
+}

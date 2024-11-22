@@ -314,21 +314,6 @@ fieldset {
 
 	}
 
-	&__box {
-
-		display: flex;
-		flex-wrap: wrap;
-		margin: -6px -12px;
-
-	}
-
-	&__box & {
-
-		margin: 6px 12px;
-		min-width: 50px;
-
-	}
-
 }
 
 .input-row {

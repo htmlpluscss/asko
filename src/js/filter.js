@@ -1,4 +1,4 @@
-(function(form){
+( form => {
 
 	if(!form) {
 
@@ -6,13 +6,13 @@
 
 	}
 
-	var inputRange = form.querySelectorAll('.filter__range');
+	const inputRange = form.querySelectorAll('.filter__range');
 
 	if(inputRange.length) {
 
-		Array.prototype.forEach.call(inputRange, function(el){
+		[...inputRange].forEach( el => {
 
-			var from = el.querySelector('.filter__range-from'),
+			let from = el.querySelector('.filter__range-from'),
 				to = el.querySelector('.filter__range-to'),
 				inputFrom = el.querySelector('.filter__range-input-from'),
 				inputTo = el.querySelector('.filter__range-input-to'),
@@ -122,7 +122,7 @@
 
 			}
 
-			var promise = new Promise(function(resolve, reject) {
+			const promise = new Promise(function(resolve, reject) {
 
 				window.addEventListener("loadNoUiSlider", resolve);
 
@@ -134,7 +134,7 @@
 
 	}
 
-	form.addEventListener('reset', function() {
+	form.addEventListener('reset', ()=> {
 
 		setTimeout(function(){
 
@@ -160,43 +160,28 @@
 
 	// load UiSlider
 
-	var loadNoUiSlider = false;
+	let loadNoUiSlider = false;
 
-	var script = document.createElement('script');
-
-	script.type = 'text/javascript';
-	script.async = true;
-	script.src = '/js/nouislider.min.js';
-
-	script.onload = function () {
-
-		var event = new Event('loadNoUiSlider');
-		window.dispatchEvent(event);
-
-	};
-
-	setTimeout(function(){
+	form.addEventListener('modalShow', () => {
 
 		if(!loadNoUiSlider){
 
-			document.head.appendChild(script);
+			const script = document.createElement('script');
+
+			script.src = '/js/nouislider.min.js';
+
+			script.onload = ()=> {
+
+				const event = new Event('loadNoUiSlider');
+				window.dispatchEvent(event);
+
+			};
+
+			document.head.append(script);
 			loadNoUiSlider = true;
 
 		}
-
-	}, 8000);
-
-	document.querySelector('.filter__btn-toggle .btn').addEventListener('click', function () {
-
-		if(!loadNoUiSlider){
-
-			document.head.appendChild(script);
-			loadNoUiSlider = true;
-
-		}
-
-		form.classList.toggle('is-open');
 
 	});
 
-})(document.querySelector('.filter'));
+})(document.querySelector('.filter-modal'));
