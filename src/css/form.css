@@ -555,6 +555,57 @@ fieldset {
 
 		}
 
+		&__raiting {
+
+			margin: 24px 0;
+			display: flex;
+			justify-content: center;
+
+		}
+
+	}
+
+}
+
+.checkbox-raiting {
+
+	&-box {
+
+		display: flex;
+		gap: 8px;
+
+	}
+
+	display: block;
+	position: relative;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+
+	&.is-checked svg {
+
+		fill: var(--red);
+		color: var(--red);
+
+	}
+
+	svg {
+
+		pointer-events: none;
+		fill: none;
+
+	}
+
+	&__input {
+
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		top: 0;
+		left: 0;
+		appearance: none;
+		cursor: pointer;
+
 	}
 
 }

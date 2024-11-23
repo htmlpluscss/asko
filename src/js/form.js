@@ -231,6 +231,45 @@
 
 		});
 
+		// форма с рейтингом
+
+		if ( form.classList.contains('form-review__form') ) {
+
+			const raitingBox = form.querySelector('.checkbox-raiting-box'),
+				  stars = form.querySelectorAll('.checkbox-raiting');
+
+			let raiting = form.elements.raiting.value;
+
+			form.addEventListener('change', ()=> {
+
+				raiting = form.elements.raiting.value;
+
+				if ( raiting ) {
+
+					[...stars].forEach( (star,value) => star.classList.toggle('is-checked', value < raiting) );
+
+				}
+
+			});
+
+			[...stars].forEach( (star,index) => {
+
+				star.addEventListener('mouseenter',()=>{
+
+					[...stars].forEach( (star,value) => star.classList.toggle('is-checked', value <= index) );
+
+				});
+
+			});
+
+			raitingBox.addEventListener('mouseleave',()=>{
+
+				[...stars].forEach( (star,value) => star.classList.toggle('is-checked', raiting && value < raiting) );
+
+			});
+
+		}
+
 	});
 
 // input

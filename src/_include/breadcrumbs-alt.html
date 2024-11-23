@@ -1,10 +1,8 @@
-	<ul class="breadcrumbs-alt hidden-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+	<ul class="breadcrumbs-alt" itemscope itemtype="https://schema.org/BreadcrumbList">
 
 {% for item in ["Главная","Каталог","Техника для кухни"] %}
 
-		<li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-
-			{% if not loop.last %}
+		<li class="breadcrumbs-alt__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 
 			<a class="link" href="/" itemprop="item">
 
@@ -12,15 +10,194 @@
 
 			</a>
 
-			{% else %}
-
-			<span itemprop="name">{{ item }}</span>
-
 			<link itemprop="item" href="{{ url }}/{{ urlCurrent }}">
 
-			{% endif %}
-
 			<meta itemprop="position" content="{{ loop.index }}">
+
+			<svg width="20" height="20" viewBox="0 0 24 24">
+				<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m18 10-6 5-6-5"/>
+			</svg>
+
+			<div class="breadcrumbs-alt__sub">
+
+				<ul>
+					<li>
+						<a href="/">Аксессуары</a>
+					</li>
+					<li>
+						<a href="/">Аксессуары и принадлежности</a>
+					</li>
+					<li>
+						<a href="/">Акустические системы</a>
+					</li>
+					<li>
+						<a href="/">Барбекю</a>
+					</li>
+					<li>
+						<a href="/">Беспроводные акустические системы</a>
+					</li>
+					<li>
+						<a href="/">Блендеры</a>
+					</li>
+					<li>
+						<a href="/">Вакуумные упаковщики</a>
+					</li>
+					<li>
+						<a href="/">Варочные панели</a>
+					</li>
+					<li>
+						<a href="/">Варочные центры</a>
+					</li>
+					<li>
+						<a href="/">Вафельницы</a>
+					</li>
+					<li>
+						<a href="/">Вентиляторы</a>
+					</li>
+					<li>
+						<a href="/">Весы</a>
+					</li>
+					<li>
+						<a href="/">Винные шкафы</a>
+					</li>
+					<li>
+						<a href="/">Витрины</a>
+					</li>
+					<li>
+						<a href="/">Вытяжки</a>
+					</li>
+					<li>
+						<a href="/">Гладильные системы</a>
+					</li>
+					<li>
+						<a href="/">Дровяные печи</a>
+					</li>
+					<li>
+						<a href="/">Духовые шкафы</a>
+					</li>
+					<li>
+						<a href="/">Измельчители пищевых отходов</a>
+					</li>
+					<li>
+						<a href="/">Ионизаторы воды</a>
+					</li>
+					<li>
+						<a href="/">Комби-панели, фритюрницы и грили</a>
+					</li>
+					<li>
+						<a href="/">Конвекционные печи</a>
+					</li>
+					<li>
+						<a href="/">Кофемашины</a>
+					</li>
+					<li>
+						<a href="/">Кофемолки</a>
+					</li>
+					<li>
+						<a href="/">Кухонные комбайны</a>
+					</li>
+					<li>
+						<a href="/">Ледогенераторы</a>
+					</li>
+					<li>
+						<a href="/">Массажеры и спорт. инвентарь</a>
+					</li>
+					<li>
+						<a href="/">Микроволновые печи</a>
+					</li>
+					<li>
+						<a href="/">Миксеры</a>
+					</li>
+					<li>
+						<a href="/">Мойки</a>
+					</li>
+					<li>
+						<a href="/">Мультиварки</a>
+					</li>
+					<li>
+						<a href="/">Мясорубки</a>
+					</li>
+					<li>
+						<a href="/">Наушники</a>
+					</li>
+					<li>
+						<a href="/">Обогреватели</a>
+					</li>
+					<li>
+						<a href="/">Очистители воздуха</a>
+					</li>
+					<li>
+						<a href="/">Пароварки</a>
+					</li>
+					<li>
+						<a href="/">Паровые шкафы для одежды</a>
+					</li>
+					<li>
+						<a href="/">Парогенераторы</a>
+					</li>
+					<li>
+						<a href="/">Подогреватели</a>
+					</li>
+					<li>
+						<a href="/">Посуда</a>
+					</li>
+					<li>
+						<a href="/">Посудомоечные машины</a>
+					</li>
+					<li>
+						<a href="/">Проф. аксессуары</a>
+					</li>
+					<li>
+						<a href="/">Профессиональные посудомоечные машины</a>
+					</li>
+					<li>
+						<a href="/">Пылесосы</a>
+					</li>
+					<li>
+						<a href="/">Системы кипячения воды AquaHot</a>
+					</li>
+					<li>
+						<a href="/">Смесители</a>
+					</li>
+					<li>
+						<a href="/">Соковыжималки</a>
+					</li>
+					<li>
+						<a href="/">Стаканомоечные машины</a>
+					</li>
+					<li>
+						<a href="/">Сушильные машины</a>
+					</li>
+					<li>
+						<a href="/">Телевизоры</a>
+					</li>
+					<li>
+						<a href="/">Тостеры</a>
+					</li>
+					<li>
+						<a href="/">Увлажнители воздуха</a>
+					</li>
+					<li>
+						<a href="/">Утюги</a>
+					</li>
+					<li>
+						<a href="/">Фены</a>
+					</li>
+					<li>
+						<a href="/">Холодильники</a>
+					</li>
+					<li>
+						<a href="/">Холодильное оборудование</a>
+					</li>
+					<li>
+						<a href="/">Хьюмидоры</a>
+					</li>
+					<li>
+						<a href="/">Чайники</a>
+					</li>
+				</ul>
+
+			</div>
 
 		</li>
 

@@ -141,8 +141,6 @@ gulp.task('js', ()=> {
 
 		.pipe(sourcemaps.write())
 
-// prod
-
 		.pipe(minify({
 			preserveComments: "some",
 			ext : {
