@@ -2,32 +2,23 @@
 
 		<div class="filter-fast__fieldset">
 
-			<label class="filter__label">
-				Серия
-			</label>
+			<p class="filter__label">
+				Скорость отжима
+			</p>
 
-			<div class="filter-fast__checkbox">
+			<div class="filter-fast__btns">
+=
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[103][]=112')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[103][]=112<?php echo $_GET ?>">
+					1400
+				</a>
 
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="107" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						7
-					</span>
-				</label>
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[103][]=111')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[103][]=111<?php echo $_GET ?>">
+					1600
+				</a>
 
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="108" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						8
-					</span>
-				</label>
-
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="110" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						10
-					</span>
-				</label>
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[103][]=125')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[103][]=125<?php echo $_GET ?>">
+					1800
+				</a>
 
 			</div>
 
@@ -37,32 +28,23 @@
 
 		<div class="filter-fast__fieldset">
 
-			<label class="filter__label">
+			<p class="filter__label">
 				Объем загрузки <i>(кг)</i>
-			</label>
+			</p>
 
-			<div class="filter-fast__checkbox">
+			<div class="filter-fast__btns">
 
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="107" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						7
-					</span>
-				</label>
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[102][]=108')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[102][]=108<?php echo $_GET ?>">
+					8 кг
+				</a>
 
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="108" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						8
-					</span>
-				</label>
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[102][]=109')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[102][]=109<?php echo $_GET ?>">
+					9 кг
+				</a>
 
-				<label class="checkbox">
-					<input class="checkbox__input visuallyhidden" type="checkbox" value="110" name="ATTR[102][107]">
-					<span class="checkbox__label">
-						10
-					</span>
-				</label>
+				<a class="btn<?php if (!str_contains($_GET, 'ATTR[102][]=184')) echo 'btn--gray'; ?>" href="catalogue.php?ATTR[102][]=184<?php echo $_GET ?>">
+					11 кг
+				</a>
 
 			</div>
 
@@ -76,9 +58,9 @@
 				<span>Все фильтры</span>
 			</button>
 
-			<button class="btn btn--link" type="reset">
+			<a class="btn btn--link" href="catalog/stiralnye_mashiny/">
 				Сбросить
-			</button>
+			</a>
 
 		</div>
 

@@ -18,11 +18,23 @@
 
 		}
 
-		&__checkbox {
+		&__btns {
 
 			display: flex;
 			flex-wrap: wrap;
-			gap: 16px;
+			gap: 10px;
+
+			.btn {
+
+				border-radius: 16px;
+				height: 32px;
+				line-height: 32px;
+				font-size: 16px;
+				padding: 0 14px;
+				text-transform: none;
+				min-width: 0;
+
+			}
 
 		}
 
